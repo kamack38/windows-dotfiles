@@ -1,0 +1,12 @@
+[core]
+	editor = \"C:\\Users\\kamac\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" --wait
+[user]
+	name = kamack38
+	email = 64226248+kamack38@users.noreply.github.com
+	signingkey = C4583B304CDA4CA0
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[gpg]
+	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
