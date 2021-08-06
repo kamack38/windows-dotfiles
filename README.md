@@ -7,9 +7,10 @@ A collection of configuration files fo Windows, inculding application instalatio
 ### Instalation using chcolatey and git via powershell script
 
 From PowerShell:
+> **Note:** You don't need [**Chocolatey**](https://chocolatey.org/) and Git installed, because script will download them automatically, but make sure PowerShell is run as administrator.
 
 ```powershell
-curl "https://raw.githubusercontent.com/kamack38/dotfiles/main/install/chocolatey.ps1" -o chocolatey.ps1; .\chocolatey.ps1
+iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/chocolatey.ps1'))
 ```
 
 ### Instaltion using batch script

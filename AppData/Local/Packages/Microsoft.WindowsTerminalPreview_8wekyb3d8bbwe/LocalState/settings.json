@@ -57,7 +57,9 @@
         {
             "font": 
             {
-                "face": "FiraCode NF"
+                "face": "FiraCode NF",
+                "size": 12,
+                "weight": "medium"
             }
         },
         "list": 
@@ -123,12 +125,6 @@
                 "name": "Windows PowerShell",
                 "startingDirectory": "%USERPROFILE%",
                 "useAcrylic": true
-            },
-            {
-                "acrylicOpacity": 0.75,
-                "commandline": "C:\\Users\\kamac\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\aws-shell.exe",
-                "icon": "C:\\Users\\Samo\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\aws-logo.ico",
-                "name": "AWS Shell"
             }
         ]
     },
