@@ -39,7 +39,9 @@ choco install openssh --pre
 # Non chocolatey programs
 
 # Better Discord
-wget "https://github.com/BetterDiscord/Installer/releases/download/v1.0.0-hotfix/BetterDiscord-Windows.exe" -o BetterDiscord.exe
+$ProgressPreference = 'SilentlyContinue'
+Invoke-WebRequest -Uri "https://github.com/BetterDiscord/Installer/releases/download/v1.0.0-hotfix/BetterDiscord-Windows.exe" -o BetterDiscord.exe
+Invoke-WebRequest -Uri "https://download01.logi.com/web/ftp/pub/techsupport/gaming/lghub_installer.exe" -o LGHUBInstaller.exe
 
 # Install powershell modules
 Install-Module oh-my-posh -Scope CurrentUser -Force
