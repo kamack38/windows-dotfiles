@@ -7,6 +7,7 @@ if (! (Get-Command choco -errorAction SilentlyContinue)) {
 	echo "Installing Chocolatey..."
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 	echo "Chocolatey has been installed run this file again"
+	pause
 	exit 0
 }
 echo "Chocolatey is already installed!"
@@ -30,13 +31,13 @@ choco install youtube-dl
 choco install discord
 choco install steam-client
 choco install epicgameslauncher
-choco install figma
 choco install minecraft-launcher
 choco install edgedeflector
 choco install micro
 choco install microsoft-windows-terminal --pre 
 choco install openssh --pre
 choco install vscode 
+choco install firacodenf
 
 # Non chocolatey programs
 
@@ -49,4 +50,5 @@ Invoke-WebRequest -Uri "https://download01.logi.com/web/ftp/pub/techsupport/gami
 Install-Module oh-my-posh -Scope CurrentUser -Force
 Install-Module posh-git -Scope CurrentUser -Force
 
-curl "https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1" -o install.ps1; .\install.ps1
+refreshenv
+iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1'))
