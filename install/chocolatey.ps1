@@ -2,13 +2,14 @@
 #Requires -RunAsAdministrator
 
 # Ensure chocolatey is installed 
-if (! (choco.exe --version)) {
+if (! (Get-Command choco -errorAction SilentlyContinue)) {
 	echo "Chocolatey needs to be installed!"
 	echo "Installing Chocolatey..."
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 	echo "Chocolatey has been installed run this file again"
 	exit 0
 }
+echo "Chocolatey is already installed!"
 
 echo "Installing programs.."
 
