@@ -32,7 +32,7 @@ choco install epicgameslauncher
 choco install figma
 choco install minecraft-launcher
 choco install edgedeflector
-choco install nano
+choco install micro
 choco install microsoft-windows-terminal --pre 
 choco install openssh --pre
 choco install vscode 
