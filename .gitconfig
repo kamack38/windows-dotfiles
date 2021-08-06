@@ -12,3 +12,4 @@
 	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
 [alias]
 	dtf = !git --git-dir=$HOME/.dotfiles --work-tree=$HOME
+	rdtf = !git --git-dir=$HOME/.dotfiles --work-tree=$HOME/.dotfiles

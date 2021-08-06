@@ -34,18 +34,15 @@ choco install minecraft-launcher
 choco install edgedeflector
 choco install nano
 choco install microsoft-windows-terminal --pre 
+choco install openssh --pre 
 
 # Non chocolatey programs
 
 # Better Discord
-curl "https://github.com/BetterDiscord/Installer/releases/download/v1.0.0-hotfix/BetterDiscord-Windows.exe" -L -o BetterDiscord.exe
-
-# Install Open SSH Client and Open SSH Server
-Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
-Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+wget "https://github.com/BetterDiscord/Installer/releases/download/v1.0.0-hotfix/BetterDiscord-Windows.exe" -o BetterDiscord.exe
 
 # Install powershell modules
 Install-Module oh-my-posh -Scope CurrentUser -Force
 Install-Module posh-git -Scope CurrentUser -Force
 
-curl "https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1" -L -o install.ps1
+curl "https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1" -o install.ps1; .\install.ps1
