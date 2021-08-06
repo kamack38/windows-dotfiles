@@ -34,7 +34,8 @@ choco install minecraft-launcher
 choco install edgedeflector
 choco install nano
 choco install microsoft-windows-terminal --pre 
-choco install openssh --pre 
+choco install openssh --pre
+choco install vscode 
 
 # Non chocolatey programs
 
