@@ -1,6 +1,3 @@
-# Ensure powershell version is 5.0 or newer
-#requires -version 5.0
-
 # Ensure that file is run as admin
 Write-Host "Checking for elevated permissions..."
 if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
