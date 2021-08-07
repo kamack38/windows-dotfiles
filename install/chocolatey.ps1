@@ -51,16 +51,19 @@ choco install firacodenf
 
 # Non-chocolatey programs
 
+refreshenv
+
 # Better Discord
+cd $HOME\Downloads\
 $ProgressPreference = 'SilentlyContinue'
 Invoke-WebRequest -Uri "https://github.com/BetterDiscord/Installer/releases/download/v1.0.0-hotfix/BetterDiscord-Windows.exe" -o BetterDiscord.exe
+
+# LogitechG HUB
 Invoke-WebRequest -Uri "https://download01.logi.com/web/ftp/pub/techsupport/gaming/lghub_installer.exe" -o LGHUBInstaller.exe
 
 # Install powershell modules
-Install-Module oh-my-posh -Scope CurrentUser -Force
-Install-Module posh-git -Scope CurrentUser -Force
-
-refreshenv
+pwsh.exe -Command Install-Module oh-my-posh -Scope CurrentUser -Force
+pwsh.exe -Command Install-Module posh-git -Scope CurrentUser -Force
 
 iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1'))
 
