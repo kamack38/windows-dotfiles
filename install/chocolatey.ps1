@@ -1,24 +1,36 @@
-# Ensure that file is run as admin
-#Requires -RunAsAdministrator
+# Ensure powershell version is 5.0 or newer
+#requires -version 5.0
 
-# Ensure chocolatey is installed 
+# Ensure that file is run as admin
+Write-Host "Checking for elevated permissions..."
+if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+	Write-Warning "Insufficient permissions to run this script. Open the PowerShell console as an administrator and run this script again."
+	Break
+}
+else {
+		Write-Host "Script is running as administrator — go on executing the script..." -ForegroundColor Green
+}
+
+# Ensure chocolatey is installed
 if (! (Get-Command choco -errorAction SilentlyContinue)) {
-	echo "Chocolatey needs to be installed!"
-	echo "Installing Chocolatey..."
+	Write-Host "Chocolatey needs to be installed!" -ForegroundColor red
+	Write-Host "Installing Chocolatey..." -ForegroundColor yellow
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-	echo "Chocolatey has been installed run this command"
+	Write-Host "Chocolatey has been installed succesfully!" -ForegroundColor green
 	pause
 	exit 0
 }
-echo "Chocolatey is already installed!"
+else {
+	Write-Host "Chocolatey is already installed!" -ForegroundColor green
+}
 
-echo "Installing programs.."
+Write-Host "Installing programs.." -ForegroundColor yellow
 
 # Disable confirmation
 choco feature enable -n allowGlobalConfirmation
 
 # Install Programs
-choco install firefox-dev --pre 
+choco install firefox-dev --pre
 choco install git
 choco install python3
 choco install openjdk
@@ -34,9 +46,9 @@ choco install epicgameslauncher
 choco install minecraft-launcher
 choco install edgedeflector
 choco install micro
-choco install microsoft-windows-terminal --pre 
+choco install microsoft-windows-terminal --pre
 choco install openssh --pre
-choco install vscode 
+choco install vscode
 choco install firacodenf
 
 # Non chocolatey programs
@@ -50,7 +62,7 @@ Invoke-WebRequest -Uri "https://download01.logi.com/web/ftp/pub/techsupport/gami
 Install-Module oh-my-posh -Scope CurrentUser -Force
 Install-Module posh-git -Scope CurrentUser -Force
 
-$env:ChocolateyInstall = Convert-Path "$((Get-Command choco).Path)\..\.."   
+$env:ChocolateyInstall = Convert-Path "$((Get-Command choco).Path)\..\.."
 Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 refreshenv
 iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1'))
