@@ -60,7 +60,7 @@ Invoke-WebRequest -Uri "https://download01.logi.com/web/ftp/pub/techsupport/gami
 Install-Module oh-my-posh -Scope CurrentUser -Force
 Install-Module posh-git -Scope CurrentUser -Force
 
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+refreshenv
 
 iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1'))
 
