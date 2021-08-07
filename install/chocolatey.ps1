@@ -51,7 +51,7 @@ choco install openssh --pre
 choco install vscode
 choco install firacodenf
 
-# Non chocolatey programs
+# Non-chocolatey programs
 
 # Better Discord
 $ProgressPreference = 'SilentlyContinue'
