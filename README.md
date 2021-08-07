@@ -14,7 +14,7 @@ A collection of configuration files fo Windows, inculding application instalatio
 ### Instalation using chcolatey and git via powershell script
 
 From [PowerShell](https://docs.microsoft.com/en-us/powershell/):
-> **Note:** You don't need [**Chocolatey**](https://chocolatey.org/) and [**Git**](https://git-scm.com/) installed, because the script will download them automatically, but make sure PowerShell is run as administrator.
+> **Note:** You **DON'T** need [**Chocolatey**](https://chocolatey.org/) and [**Git**](https://git-scm.com/) installed, because the script will download them automatically, but make sure PowerShell is run as administrator.
 
 ```powershell
 iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/chocolatey.ps1'))
