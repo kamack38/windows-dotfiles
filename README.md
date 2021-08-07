@@ -7,7 +7,7 @@ A collection of configuration files fo Windows, inculding application instalatio
 - Windows 10 version 1903 or higher with Build 18362 or higher
 - PowerShell 5.0 or higher
 
-> **Note:** With PowerShell, you must ensure [Get-ExecutionPolicy](https://go.microsoft.com/fwlink/?LinkID=135170) is not Restricted. We suggest using `Set-ExecutionPolicy Bypass -Scope Process` to bypass the policy or `Set-ExecutionPolicy AllSigned` for quite a bit more security.
+> **Note:** With PowerShell, you must ensure `Get-ExecutionPolicy` is not Restricted. We suggest using `Set-ExecutionPolicy Bypass -Scope Process` to bypass the policy or `Set-ExecutionPolicy AllSigned` for quite a bit more security.
 
 ## Instalation
 
