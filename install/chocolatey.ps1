@@ -5,7 +5,7 @@ if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 	Break
 }
 else {
-		Write-Host "Script is running as administrator — go on executing the script..." -ForegroundColor Green
+		Write-Host "Script is running as administrator - go on executing the script..." -ForegroundColor Green
 }
 
 # Ensure chocolatey is installed
