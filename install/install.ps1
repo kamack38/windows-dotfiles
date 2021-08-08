@@ -5,6 +5,9 @@ git clone --bare $repo $DOTFILES
 git --git-dir="$DOTFILES" --work-tree="$HOME" fetch --all
 git --git-dir="$DOTFILES" --work-tree="$HOME" config --local status.showUntrackedFiles no
 git --git-dir="$DOTFILES" --work-tree="$HOME" checkout
+
+Write-Host "Programs settings have been restored!" -ForegroundColor green
+
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR

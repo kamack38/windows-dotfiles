@@ -22,7 +22,7 @@ else {
 	Write-Host "Chocolatey is already installed!" -ForegroundColor green
 }
 
-Write-Host "Installing programs.." -ForegroundColor yellow
+Write-Host "Installing programs..." -ForegroundColor yellow
 
 # Disable confirmation
 choco feature enable -n allowGlobalConfirmation
@@ -52,7 +52,9 @@ choco install firacodenf
 
 # Non-chocolatey programs
 
-refreshenv
+Write-Host "Refreshing environment variables..." -ForegroundColor yellow
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+Write-Host "Environment variables has been refreshed!" -ForegroundColor green
 
 # Better Discord
 cd $HOME\Downloads\
@@ -67,6 +69,10 @@ pwsh.exe -Command Install-Module oh-my-posh -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module posh-git -Scope CurrentUser -Force
 
 iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1'))
+
+Write-Warning "This script will change your Windows settings!" -WarningAction Inquire
+
+iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/windows.ps1'))
 
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB

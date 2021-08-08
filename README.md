@@ -27,3 +27,7 @@ From CMD :
 ```batch
 curl "https://raw.githubusercontent.com/kamack38/dotfiles/main/install/setup.bat" -L -o setup.bat && setup.bat
 ```
+
+## Credits
+
+`windows.ps1` - taken from [jayharris/dotfiles-windows](https://github.com/jayharris/dotfiles-windows/blob/master/windows.ps1)
