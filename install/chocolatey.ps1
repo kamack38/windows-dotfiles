@@ -33,6 +33,7 @@ choco install git
 choco install python3
 choco install openjdk
 choco install nodejs
+choco install nuget.commandline
 choco install gpg4win
 choco install winrar
 choco install powershell-core
