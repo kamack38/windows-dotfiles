@@ -59,10 +59,35 @@ Write-Host "Environment variables has been refreshed!" -ForegroundColor green
 # Better Discord
 cd $HOME\Downloads\
 $ProgressPreference = 'SilentlyContinue'
+Write-Host "Downloading BetterDiscord Installer..." -ForegroundColor yellow
 Invoke-WebRequest -Uri "https://github.com/BetterDiscord/Installer/releases/download/v1.0.0-hotfix/BetterDiscord-Windows.exe" -o BetterDiscord.exe
+Write-Host "BetterDiscord Installer has been downloaded!" -ForegroundColor green
 
 # LogitechG HUB
+Write-Host "Downloading LogitechG HUB Installer..." -ForegroundColor yellow
 Invoke-WebRequest -Uri "https://download01.logi.com/web/ftp/pub/techsupport/gaming/lghub_installer.exe" -o LGHUBInstaller.exe
+Write-Host "LogitechG HUB Installer has been downloaded!" -ForegroundColor green
+
+# Download latest 7coil/DiscordForOffice release from github
+Write-Host "Downloading DiscordForOffice Installer..." -ForegroundColor yellow
+$repo = "7coil/DiscordForOffice"
+$file = "DiscordForOffice.exe"
+
+$releases = "https://api.github.com/repos/$repo/releases"
+
+Write-Host "Determining latest release" -ForegroundColor yellow
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$tag = (Invoke-WebRequest -Uri $releases -UseBasicParsing | ConvertFrom-Json)[0].tag_name
+
+$download = "https://github.com/$repo/releases/download/$tag/$file"
+$name = $file.Split(".")[0]
+$exe = "$name-$tag.exe"
+
+Write-Host "Dowloading latest release" -ForegroundColor yellow
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-WebRequest $download -Out $exe
+Write-Host "DiscordForOffice Installer has been downloaded!" -ForegroundColor green
 
 # Install powershell modules
 pwsh.exe -Command Install-Module oh-my-posh -Scope CurrentUser -Force
