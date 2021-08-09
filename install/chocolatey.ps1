@@ -89,6 +89,23 @@ Write-Host "Dowloading latest release" -ForegroundColor yellow
 Invoke-WebRequest $download -Out $exe
 Write-Host "DiscordForOffice Installer has been downloaded!" -ForegroundColor green
 
+# Steam skin (metro-for-steam)
+
+Write-Host "Downloading metro-for-steam..." -ForegroundColor yellow
+Invoke-WebRequest -Uri "https://github.com/minischetti/metro-for-steam/archive/v4.4.zip" -o metro-for-steam.zip
+Write-Host "metro-for-steam has been downloaded!" -ForegroundColor green
+Write-Host "Downloading Unofficial Patch for MetroForSteam..." -ForegroundColor yellow
+Invoke-WebRequest -Uri "https://github.com/redsigma/UPMetroSkin/archive/master.zip" -o UPMetroSkin.zip
+Write-Host "Unofficial Patch for MetroForSteam has been downloaded!" -ForegroundColor green
+Write-Host "Extracting files..." -ForegroundColor yellow
+Expand-Archive "UPMetroSkin.zip" -Force
+Expand-Archive "metro-for-steam.zip" -Force
+Remove-Item "UPMetroSkin.zip", "metro-for-steam.zip" -Recurse -Force -ErrorAction SilentlyContinue
+Move-Item "UPMetroSkin\UPMetroSkin-master", "metro-for-steam\metro-for-steam-4.4" -Destination "C:\Program Files (x86)\Steam\skins" -Force
+Remove-Item "UPMetroSkin", "metro-for-steam" -Recurse -Force
+Write-Host "All files has been extracted and moved!" -ForegroundColor green
+explorer.exe "C:\Program Files (x86)\Steam\skins"
+
 # Install powershell modules
 pwsh.exe -Command Install-Module oh-my-posh -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module posh-git -Scope CurrentUser -Force
