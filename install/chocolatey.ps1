@@ -28,27 +28,27 @@ Write-Host "Installing programs..." -ForegroundColor yellow
 choco feature enable -n allowGlobalConfirmation
 
 # Install Programs
-choco install firefox-dev --pre
-choco install git
-choco install python3
-choco install openjdk
-choco install nodejs
-choco install nuget.commandline
-choco install gpg4win
-choco install winrar
-choco install powershell-core
-choco install mpv.install
-choco install youtube-dl
-choco install discord
-choco install steam-client
-choco install epicgameslauncher
-choco install minecraft-launcher
-choco install edgedeflector
-choco install micro
-choco install microsoft-windows-terminal --pre
-choco install openssh --pre
-choco install vscode
-choco install firacodenf
+choco install firefox-dev --pre --limit-output
+choco install git --limit-output
+choco install python3 --limit-output
+choco install openjdk --limit-output
+choco install nodejs --limit-output
+choco install nuget.commandline --limit-output
+choco install gpg4win --limit-output
+choco install winrar --limit-output
+choco install powershell-core --limit-output
+choco install mpv.install --limit-output
+choco install youtube-dl --limit-output
+choco install discord --limit-output
+choco install steam-client --limit-output
+choco install epicgameslauncher --limit-output
+choco install minecraft-launcher --limit-output
+choco install edgedeflector --limit-output
+choco install micro --limit-output
+choco install microsoft-windows-terminal --pre --limit-output
+choco install openssh --pre --limit-output
+choco install vscode --limit-output
+choco install firacodenf --limit-output
 
 # Non-chocolatey programs
 
