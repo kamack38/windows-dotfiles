@@ -23,3 +23,13 @@ function ln {
 		New-Item -ItemType HardLink -Path $Path -Target $Target
 	}
 }
+function gle {
+	for ( $i = 0; $i -lt $args.count; $i++ ) {
+	$search = $search + $($args[$i]) + "+"
+	} 
+	start "https://www.google.com/search?q=$search" 
+}
+function ip {
+	echo "ssh dorota@192.168.0.$($args)"
+	ssh dorota@192.168.0.$($args)
+}

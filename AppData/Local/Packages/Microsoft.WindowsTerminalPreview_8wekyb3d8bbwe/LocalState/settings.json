@@ -55,6 +55,9 @@
     {
         "defaults": 
         {
+            "acrylicOpacity": 0.75,
+            "colorScheme": "Cobalt2",
+            "experimental.retroTerminalEffect": false,
             "font": 
             {
                 "face": "FiraCode NF",
@@ -67,7 +70,6 @@
             {
                 "acrylicOpacity": 0.75,
                 "colorScheme": "Cobalt2",
-                "experimental.retroTerminalEffect": false,
                 "font": 
                 {
                     "size": 12,
@@ -83,7 +85,6 @@
                 "acrylicOpacity": 0.75,
                 "colorScheme": "Dracula",
                 "commandline": "cmd.exe",
-                "experimental.retroTerminalEffect": false,
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt",
@@ -125,6 +126,12 @@
                 "name": "Windows PowerShell",
                 "startingDirectory": "%USERPROFILE%",
                 "useAcrylic": true
+            },
+            {
+                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
+                "hidden": false,
+                "name": "Arch",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
@@ -221,6 +228,29 @@
             "selectionBackground": "#44475A",
             "white": "#BBBBBB",
             "yellow": "#F1FA8C"
+        },
+        {
+            "background": "#BC4349",
+            "black": "#0C0C0C",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#3B78FF",
+            "brightCyan": "#61D6D6",
+            "brightGreen": "#16C60C",
+            "brightPurple": "#B4009E",
+            "brightRed": "#E74856",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9F1A5",
+            "cursorColor": "#F35645",
+            "cyan": "#3A96DD",
+            "foreground": "#EEC49A",
+            "green": "#13A10E",
+            "name": "Garuda Linux",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#FAD32F",
+            "white": "#CCCCCC",
+            "yellow": "#C19C00"
         },
         {
             "background": "#282C34",

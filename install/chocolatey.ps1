@@ -90,7 +90,6 @@ Invoke-WebRequest $download -Out $exe
 Write-Host "DiscordForOffice Installer has been downloaded!" -ForegroundColor green
 
 # Steam skin (metro-for-steam)
-
 Write-Host "Downloading metro-for-steam..." -ForegroundColor yellow
 Invoke-WebRequest -Uri "https://github.com/minischetti/metro-for-steam/archive/v4.4.zip" -o metro-for-steam.zip
 Write-Host "metro-for-steam has been downloaded!" -ForegroundColor green
