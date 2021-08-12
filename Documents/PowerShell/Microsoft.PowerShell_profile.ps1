@@ -6,6 +6,8 @@ Import-Module -Name Appx -UseWindowsPowerShell -WarningAction SilentlyContinue
 $env:POSH_GIT_ENABLED = $true
 Set-Alias -Name exp -Value C:\Windows\explorer.exe
 Set-Alias -Name List-Module -Value Get-InstalledModule
+function ... {Set-Location ../../}
+function .... {Set-Location ../../../}
 function ln { 
 	param(
 		[switch]$s,
@@ -29,7 +31,5 @@ function gle {
 	} 
 	start "https://www.google.com/search?q=$search" 
 }
-function ip {
-	echo "ssh dorota@192.168.0.$($args)"
-	ssh dorota@192.168.0.$($args)
-}
+
+winfetch

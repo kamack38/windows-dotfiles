@@ -14,3 +14,26 @@
 	dtf = !git --git-dir=$HOME/.dotfiles --work-tree=$HOME
 	rdtf = !git --git-dir=$HOME/.dotfiles --work-tree=$HOME/.dotfiles
 	alias = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
+	gconfig = !git config --global
+
+# URL shorthands
+
+[url "git@github.com:"]
+
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+
+	insteadOf = "gist:"
