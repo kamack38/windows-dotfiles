@@ -8,6 +8,7 @@ Set-Alias -Name exp -Value C:\Windows\explorer.exe
 Set-Alias -Name List-Module -Value Get-InstalledModule
 function ... {Set-Location ../../}
 function .... {Set-Location ../../../}
+function reset {clear; pwsh.exe -nologo}
 function ln { 
 	param(
 		[switch]$s,

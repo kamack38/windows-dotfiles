@@ -48,7 +48,7 @@ choco install micro --limit-output
 choco install microsoft-windows-terminal --pre --limit-output
 choco install openssh --pre --limit-output
 choco install speedtest --limit-output
-choco install winfetch --limit-output
+choco install winfetch --version 2.2.0 --limit-output
 choco install vscode --limit-output
 choco install firacodenf --limit-output
 

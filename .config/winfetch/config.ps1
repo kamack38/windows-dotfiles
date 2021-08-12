@@ -13,12 +13,12 @@
 # $all = $true
 
 # Add a custom info line
-# function info_custom_time {
-#     return @{
-#         title = "Time"
-#         content = (Get-Date)
-#     }
-# }
+function info_wheater {
+    return @{
+        title = "Wheater"
+        content = (Invoke-RestMethod https://wttr.in/poland?format=2)
+    }
+}
 
 # Configure which disks are shown
 # $ShowDisks = @("C:", "D:")
@@ -35,8 +35,8 @@
 # 'textbar' is for text + bar.
 # 'bartext' is for bar + text.
 # $cpustyle = 'bar'
-# $memorystyle = 'textbar'
-# $diskstyle = 'bartext'
+$memorystyle = 'bartext'
+$diskstyle = 'bartext'
 # $batterystyle = 'bartext'
 
 
@@ -52,6 +52,7 @@
     # "motherboard"
     # "custom_time"  # use custom info line
     "uptime"
+    "wheater"
     "pkgs"
     "pwsh"
     "resolution"

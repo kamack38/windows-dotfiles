@@ -72,11 +72,6 @@
             {
                 "colorScheme": "Cobalt2",
                 "commandline": "pwsh.exe -nologo",
-                "font": 
-                {
-                    "size": 12,
-                    "weight": "medium"
-                },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
@@ -108,12 +103,15 @@
                 "colorScheme": "Cobalt2",
                 "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
                 "hidden": false,
+                "icon": "%USERPROFILE%/.config/themes/ubuntu.png",
                 "name": "Ubuntu-20.04",
-                "source": "Windows.Terminal.Wsl"
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "//wsl$/Ubuntu-20.04/home/kamack"
             },
             {
                 "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
                 "hidden": false,
+                "icon": "%USERPROFILE%/.config/themes/archlinux.png",
                 "name": "Arch",
                 "source": "Windows.Terminal.Wsl"
             },
@@ -222,27 +220,27 @@
             "yellow": "#F1FA8C"
         },
         {
-            "background": "#BC4349",
-            "black": "#0C0C0C",
-            "blue": "#0037DA",
-            "brightBlack": "#767676",
-            "brightBlue": "#3B78FF",
-            "brightCyan": "#61D6D6",
-            "brightGreen": "#16C60C",
-            "brightPurple": "#B4009E",
-            "brightRed": "#E74856",
-            "brightWhite": "#F2F2F2",
-            "brightYellow": "#F9F1A5",
+            "background": "#0A1124",
+            "black": "#0A1124",
+            "blue": "#F35645",
+            "brightBlack": "#0A1124",
+            "brightBlue": "#F35645",
+            "brightCyan": "#FAD32F",
+            "brightGreen": "#EB3247",
+            "brightPurple": "#F6A73B",
+            "brightRed": "#F35645",
+            "brightWhite": "#EEC49A",
+            "brightYellow": "#BC4349",
             "cursorColor": "#F35645",
-            "cyan": "#3A96DD",
+            "cyan": "#FAD32F",
             "foreground": "#EEC49A",
-            "green": "#13A10E",
+            "green": "#EB3247",
             "name": "Garuda Linux",
-            "purple": "#881798",
-            "red": "#C50F1F",
+            "purple": "#F6A73B",
+            "red": "#F35645",
             "selectionBackground": "#FAD32F",
-            "white": "#CCCCCC",
-            "yellow": "#C19C00"
+            "white": "#EEC49A",
+            "yellow": "#BC4349"
         },
         {
             "background": "#282C34",
