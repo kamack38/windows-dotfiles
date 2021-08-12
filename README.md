@@ -2,6 +2,21 @@
 
 A collection of configuration files fo Windows, inculding application instalation through [**Chocolatey**](https://chocolatey.org/) or **Curl**
 
+<!-- TOC -->
+
+- [My .dotfiles for Windows 10](#my-dotfiles-for-windows-10)
+  - [Pre-requirements](#pre-requirements)
+  - [Instalation](#instalation)
+    - [Instalation using chcolatey and git via powershell script](#instalation-using-chcolatey-and-git-via-powershell-script)
+    - [Instaltion using batch script **[DEPRECATED]**](#instaltion-using-batch-script-deprecated)
+  - [Setup WSL 2](#setup-wsl-2)
+  - [GPG key](#gpg-key)
+    - [Restore](#restore)
+    - [Create](#create)
+  - [Credits](#credits)
+
+<!-- /TOC -->
+
 ## Pre-requirements
 
 - Windows 10 version 1903 or higher with Build 18362 or higher
@@ -20,7 +35,7 @@ From [PowerShell](https://docs.microsoft.com/en-us/powershell/):
 iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/chocolatey.ps1'))
 ```
 
-### Instaltion using batch script
+### Instaltion using batch script **[DEPRECATED]**
 
 From CMD :
 
@@ -51,41 +66,8 @@ Start-Process -Filepath "$wslUpdateInstallerFilePath"
 wsl --set-default-version 2
 ```
 
-- [Install Ubuntu from Microsoft Store](https://www.microsoft.com/fr-fr/p/ubuntu/9nblggh4msv6)
-
-## WSL Bridge
-
-When a port is listening from WSL 2, it cannot be reached.
-You need to create port proxies for each port you want to use.
-To avoid doing than manually each time I start my computer, I've made the `wslb` alias that will run the `wsl2bridge.ps1` script in an admin Powershell.
-
-```shell script
-#!/bin/zsh
-
-windowsUserProfile=/mnt/c/Users/$(cmd.exe /c "echo %USERNAME%" 2>/dev/null | tr -d '\r')
-
-# Get the hacky network bridge script
-cp ~/dev/dotfiles/wsl2-bridge.ps1 ${windowsUserProfile}/wsl2-bridge.ps1
-```
-
-In order to allow `wsl2-bridge.ps1` script to run, you need to update your PowerShell execution policy.
-
-```powershell
-# In PowerShell as Administrator
-
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-PowerShell -File $env:USERPROFILE\\wsl2-bridge.ps1
-```
-
-Then, when port forwarding does not work between WSL 2 and Windows, run `wslb` from zsh:
-
-```shell script
-#!/bin/zsh
-
-wslb
-```
-
-Note: This is a custom alias. See [`.aliases.zsh`](.aliases.zsh) for more details
+- [Install Ubuntu from Microsoft Store](https://www.microsoft.com/pl-pl/p/ubuntu/9nblggh4msv6)
+- [Install Arch from github](https://github.com/yuk7/ArchWSL)
 
 ## GPG key
 
