@@ -55,7 +55,7 @@ $diskstyle = 'bartext'
     "wheater"
     "pkgs"
     "pwsh"
-    "resolution"
+    # "resolution"
     "terminal"
     # "theme"
     "cpu"

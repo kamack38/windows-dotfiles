@@ -92,6 +92,34 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
+                "colorScheme": "Cobalt2",
+                "commandline": "%PROGRAMFILES%/git/usr/bin/bash.exe -i -l",
+                "guid": "{00000000-0000-0000-ba54-000000000002}",
+                "icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico",
+                "name": "GitBash",
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "acrylicOpacity": 0.55000000000000004,
+                "colorScheme": "Cobalt2",
+                "cursorShape": "underscore",
+                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
+                "hidden": false,
+                "icon": "%USERPROFILE%/.config/themes/archlinux.png",
+                "name": "Arch",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "//wsl$/Arch/home/kamack"
+            },
+            {
+                "colorScheme": "Cobalt2",
+                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "hidden": false,
+                "icon": "%USERPROFILE%/.config/themes/ubuntu.png",
+                "name": "Ubuntu-20.04",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "//wsl$/Ubuntu-20.04/home/kamack"
+            },
+            {
                 "colorScheme": "Dracula",
                 "commandline": "cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
@@ -104,34 +132,6 @@
                 "hidden": true,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
-            },
-            {
-                "colorScheme": "Cobalt2",
-                "commandline": "%PROGRAMFILES%/git/usr/bin/bash.exe -i -l",
-                "guid": "{00000000-0000-0000-ba54-000000000002}",
-                "icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico",
-                "name": "GitBash",
-                "startingDirectory": "%USERPROFILE%"
-            },
-            {
-                "colorScheme": "Cobalt2",
-                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-                "hidden": false,
-                "icon": "%USERPROFILE%/.config/themes/ubuntu.png",
-                "name": "Ubuntu-20.04",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "//wsl$/Ubuntu-20.04/home/kamack"
-            },
-            {
-                "acrylicOpacity": 0.55000000000000004,
-                "colorScheme": "Cobalt2",
-                "cursorShape": "underscore",
-                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
-                "hidden": false,
-                "icon": "%USERPROFILE%/.config/themes/archlinux.png",
-                "name": "Arch",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "//wsl$/Arch/home/kamack"
             },
             {
                 "colorScheme": "Cobalt2",
