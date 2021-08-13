@@ -11,6 +11,14 @@
             "keys": "ctrl+shift+t"
         },
         {
+            "command": "unbound",
+            "keys": ""
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+s"
+        },
+        {
             "command": 
             {
                 "action": "copy",
@@ -45,6 +53,12 @@
         {
             "command": "closePane",
             "keys": "ctrl+w"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane"
+            }
         }
     ],
     "copyFormatting": "none",
@@ -109,11 +123,15 @@
                 "startingDirectory": "//wsl$/Ubuntu-20.04/home/kamack"
             },
             {
+                "acrylicOpacity": 0.55000000000000004,
+                "colorScheme": "Cobalt2",
+                "cursorShape": "underscore",
                 "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
                 "hidden": false,
                 "icon": "%USERPROFILE%/.config/themes/archlinux.png",
                 "name": "Arch",
-                "source": "Windows.Terminal.Wsl"
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "//wsl$/Arch/home/kamack"
             },
             {
                 "colorScheme": "Cobalt2",
