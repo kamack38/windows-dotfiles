@@ -16,7 +16,7 @@
 function info_wheater {
     return @{
         title = "Wheater"
-        content = (Invoke-RestMethod https://wttr.in/poland?format=2)
+        content = (Invoke-RestMethod https://wttr.in?format=2)
     }
 }
 

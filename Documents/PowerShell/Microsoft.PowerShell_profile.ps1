@@ -9,6 +9,10 @@ Set-Alias -Name List-Module -Value Get-InstalledModule
 function ... {Set-Location ../../}
 function .... {Set-Location ../../../}
 function reset {clear; pwsh.exe -nologo}
+function wheater {
+	param ($param1)
+	Invoke-RestMethod http://wttr.in/$param1
+}
 function ln { 
 	param(
 		[switch]$s,
