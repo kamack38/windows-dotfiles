@@ -48,12 +48,14 @@ choco install micro --limit-output
 choco install microsoft-windows-terminal --pre --limit-output
 choco install openssh --pre --limit-output
 choco install speedtest --limit-output
+choco install powertoys --limit-output
 choco install winfetch --version 2.2.0 --limit-output
 choco install vscode --limit-output
 choco install firacodenf --limit-output
 
 # Non-chocolatey programs
 
+# Refresh environmental variables
 Write-Host "Refreshing environment variables..." -ForegroundColor yellow
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 Write-Host "Environment variables has been refreshed!" -ForegroundColor green
