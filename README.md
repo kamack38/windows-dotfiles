@@ -22,7 +22,7 @@ A collection of configuration files fo Windows, inculding application instalatio
 - Windows 10 version 1903 or higher with Build 18362 or higher
 - PowerShell 5.0 or higher
 
-> **Note:** With PowerShell, you must ensure `Get-ExecutionPolicy` is not Restricted. We suggest using `Set-ExecutionPolicy Bypass -Scope Process` to bypass the policy or `Set-ExecutionPolicy RemoteSigned` for quite a bit more security.
+> **Note:** With PowerShell, you must ensure `Get-ExecutionPolicy` is not Restricted. I suggest using `Set-ExecutionPolicy Bypass -Scope Process` to bypass the policy or `Set-ExecutionPolicy RemoteSigned` for quite a bit more security.
 
 ## Instalation
 
@@ -33,6 +33,12 @@ From [PowerShell](https://docs.microsoft.com/en-us/powershell/):
 
 ```powershell
 iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/chocolatey.ps1'))
+```
+
+**OR** (Shorter version)
+
+```powershell
+Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/JEt6s | iex
 ```
 
 ### Instaltion using batch script **[DEPRECATED]**
