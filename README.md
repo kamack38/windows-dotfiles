@@ -125,6 +125,10 @@ sudo /etc/init.d/xrdp start
 
 !Now in Windows, use Remote Desktop Connection
 localhost:3390
+
+!Conection form outside
+In powershell as administrator
+netsh interface portproxy add v4tov4 listenport=3390 listenaddress=0.0.0.0 connectport=3390 connectaddress=your_wsl_ip_adress (ip addr | grep -E 'inet.*eth0')
 ```
 
 ## GPG key
