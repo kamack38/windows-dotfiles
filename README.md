@@ -10,6 +10,9 @@ A collection of configuration files fo Windows, inculding application instalatio
     - [Instalation using chcolatey and git via powershell script](#instalation-using-chcolatey-and-git-via-powershell-script)
     - [Instaltion using batch script **[DEPRECATED]**](#instaltion-using-batch-script-deprecated)
   - [Setup WSL 2](#setup-wsl-2)
+    - [Enable WSL 2 and update the linux kernel (Source)](#enable-wsl-2-and-update-the-linux-kernel-source)
+    - [Install common dependencies](#install-common-dependencies)
+    - [Ubuntu GUI](#ubuntu-gui)
   - [GPG key](#gpg-key)
     - [Restore](#restore)
     - [Create](#create)
@@ -51,7 +54,7 @@ curl "https://raw.githubusercontent.com/kamack38/dotfiles/main/install/setup.bat
 
 ## Setup WSL 2
 
-- Enable WSL 2 and update the linux kernel ([Source](https://docs.microsoft.com/en-us/windows/wsl/install-win10))
+### Enable WSL 2 and update the linux kernel ([Source](https://docs.microsoft.com/en-us/windows/wsl/install-win10))
 
 ```powershell
 # In PowerShell as Administrator
@@ -74,6 +77,55 @@ wsl --set-default-version 2
 
 - [Install Ubuntu from Microsoft Store](https://www.microsoft.com/pl-pl/p/ubuntu/9nblggh4msv6)
 - [Install Arch from github](https://github.com/yuk7/ArchWSL)
+
+### Install common dependencies
+
+```shell script
+#!/bin/bash
+
+sudo apt update && sudo apt install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common \
+    git \
+    make \
+    tig \
+    tree \
+    zip unzip
+```
+
+### Ubuntu GUI
+
+```bash
+!Ubuntu GUI commands:
+sudo apt update && sudo apt -y upgrade
+sudo apt-get purge xrdp
+sudo apt install -y xrdp
+sudo apt install -y xfce4
+sudo apt install -y xfce4-goodies
+
+sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+echo xfce4-session > ~/.xsession
+
+sudo nano /etc/xrdp/startwm.sh
+!comment these lines to:
+#test -x /etc/X11/Xsession && exec /etc/X11/Xsession
+#exec /bin/sh /etc/X11/Xsession
+
+!add these lines:
+# xfce
+startxfce4
+
+sudo /etc/init.d/xrdp start
+
+!Now in Windows, use Remote Desktop Connection
+localhost:3390
+```
 
 ## GPG key
 
