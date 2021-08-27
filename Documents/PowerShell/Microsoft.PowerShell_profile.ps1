@@ -10,6 +10,10 @@ function .. {Set-Location ../}
 function ... {Set-Location ../../}
 function .... {Set-Location ../../../}
 function reset {clear; pwsh.exe -nologo}
+Set-Alias -Name ytdl -Value youtube-dl.exe
+function youtube-dl-best {youtube-dl -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio" $args}
+function youtube-dl-mp3 {youtube-dl --extract-audio -f bestaudio[ext=mp3] --no-playlist $args}
+function youtube-dl-music {youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --embed-thumbnail -o "%(title)s.%(ext)s" $args}
 function wheater {
 	param ($param1)
 	Invoke-RestMethod http://wttr.in/$param1
