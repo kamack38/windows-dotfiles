@@ -9,6 +9,8 @@ Set-Alias -Name List-Module -Value Get-InstalledModule
 function .. {Set-Location ../}
 function ... {Set-Location ../../}
 function .... {Set-Location ../../../}
+function ..... {Set-Location ../../../../}
+function ...... {Set-Location ../../../../../}
 function reset {clear; pwsh.exe -nologo}
 Set-Alias -Name ytdl -Value youtube-dl.exe
 function youtube-dl-best {youtube-dl -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio" $args}
