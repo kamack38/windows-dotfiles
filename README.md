@@ -12,7 +12,6 @@ A collection of configuration files fo Windows, inculding application instalatio
   - [Setup WSL 2](#setup-wsl-2)
     - [Enable WSL 2 and update the linux kernel (Source)](#enable-wsl-2-and-update-the-linux-kernel-source)
     - [Install common dependencies](#install-common-dependencies)
-    - [Ubuntu GUI](#ubuntu-gui)
   - [GPG key](#gpg-key)
     - [Restore](#restore)
     - [Create](#create)
@@ -94,41 +93,6 @@ sudo apt update && sudo apt install -y \
     tig \
     tree \
     zip unzip
-```
-
-### Ubuntu GUI
-
-```bash
-!Ubuntu GUI commands:
-sudo apt update && sudo apt -y upgrade
-sudo apt-get purge xrdp
-sudo apt install -y xrdp
-sudo apt install -y xfce4
-sudo apt install -y xfce4-goodies
-
-sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
-sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
-sudo sed -i 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' /etc/xrdp/xrdp.ini
-sudo sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini
-echo xfce4-session > ~/.xsession
-
-sudo nano /etc/xrdp/startwm.sh
-!comment these lines to:
-#test -x /etc/X11/Xsession && exec /etc/X11/Xsession
-#exec /bin/sh /etc/X11/Xsession
-
-!add these lines:
-# xfce
-startxfce4
-
-sudo /etc/init.d/xrdp start
-
-!Now in Windows, use Remote Desktop Connection
-localhost:3390
-
-!Conection form outside
-In powershell as administrator
-netsh interface portproxy add v4tov4 listenport=3390 listenaddress=0.0.0.0 connectport=3390 connectaddress=your_wsl_ip_adress (ip addr | grep -E 'inet.*eth0')
 ```
 
 ## GPG key
