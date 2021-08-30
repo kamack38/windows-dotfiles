@@ -49,5 +49,20 @@
 	ui = true
 
 [help]
-	# Automatically correct and execute mistyped commands.
 	autocorrect = 1
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = dark
+    navigate = true
+    line-numbers = true
+
+[interactive]
+    diffFilter = delta --color-only

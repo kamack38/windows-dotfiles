@@ -46,6 +46,7 @@ choco install minecraft-launcher --limit-output
 choco install edgedeflector --limit-output
 choco install nvim --limit-output
 choco install bat --limit-output
+choco install delta --limit-output
 choco install microsoft-windows-terminal --pre --limit-output
 choco install openssh --pre --limit-output
 choco install speedtest --limit-output
