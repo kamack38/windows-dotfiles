@@ -17,7 +17,6 @@
 
 [alias]
 	dtf = !git --git-dir=$HOME/.dotfiles --work-tree=$HOME
-	rdtf = !git --git-dir=$HOME/.dotfiles --work-tree=$HOME/.dotfiles
 	alias = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
 	gconfig = !git config --global
 	commits = !git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative

@@ -12,7 +12,7 @@ else {
 if (! (Get-Command choco -errorAction SilentlyContinue)) {
 	Write-Host "Chocolatey needs to be installed!" -ForegroundColor red
 	Write-Host "Installing Chocolatey..." -ForegroundColor yellow
-    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 	Write-Host "Chocolatey has been installed succesfully!" -ForegroundColor green
 	Write-Host "Refreshing environment variables..." -ForegroundColor yellow
 	$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
@@ -47,6 +47,8 @@ choco install edgedeflector --limit-output
 choco install nvim --limit-output
 choco install bat --limit-output
 choco install delta --limit-output
+choco install ripgrep --limit-output
+choco install mingw --limit-output
 choco install microsoft-windows-terminal --pre --limit-output
 choco install openssh --pre --limit-output
 choco install speedtest --limit-output
@@ -63,7 +65,7 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 Write-Host "Environment variables has been refreshed!" -ForegroundColor green
 
 # Better Discord
-cd $HOME\Downloads\
+Set-Location $HOME\Downloads\
 $ProgressPreference = 'SilentlyContinue'
 Write-Host "Downloading BetterDiscord Installer..." -ForegroundColor yellow
 Invoke-WebRequest -Uri "https://github.com/BetterDiscord/Installer/releases/download/v1.0.0-hotfix/BetterDiscord-Windows.exe" -o BetterDiscord.exe
@@ -115,11 +117,11 @@ explorer.exe "C:\Program Files (x86)\Steam\skins"
 pwsh.exe -Command Install-Module oh-my-posh -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module posh-git -Scope CurrentUser -Force
 
-iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1'))
+Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1'))
 
 Write-Warning "This script will change your Windows settings!" -WarningAction Inquire
 
-iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/windows.ps1'))
+Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/windows.ps1'))
 
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
