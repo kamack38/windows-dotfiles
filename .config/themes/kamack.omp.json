@@ -162,6 +162,28 @@
             }
           },
           {
+            "type": "dotnet",
+            "style": "powerline",
+            "powerline_symbol": "",
+            "foreground": "#000000",
+            "background": "#00ffff",
+            "properties": {
+              "prefix": " \uE77F ",
+              "display_version": true
+            }
+          },
+          {
+            "type": "rust",
+            "style": "powerline",
+            "powerline_symbol": "",
+            "foreground": "#193549",
+            "background": "#99908a",
+            "properties": {
+              "prefix": " \uE7a8 ",
+              "display_version": true
+            }
+          },
+          {
             "type": "azfunc",
             "style": "powerline",
             "powerline_symbol": "",
