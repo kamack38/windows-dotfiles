@@ -78,6 +78,7 @@
                 "size": 12,
                 "weight": "medium"
             },
+            "scrollbarState": "hidden",
             "startingDirectory": "%USERPROFILE%",
             "useAcrylic": true
         },
