@@ -20,21 +20,21 @@
             "leading_diamond": "\uE0B6",
             "properties": {
               "alpine": "\uf300",
-              "arch": "\uf303",
+              "arch": "<#1793d1>\uf303</>",
               "centos": "\uf304",
-              "debian": "\uf306",
+              "debian": "<#A90232>\uf306</>",
               "elementary": "\uf309",
               "fedora": "\uf30a",
               "gentoo": "\uf30d",
-              "linux": "\ue712",
+              "linux": "<#F5C11B>\ue712</>",
               "macos": "\ue711",
               "manjaro": "\uf312",
               "mint": "\uf30f",
-              "opensuse": "\uf314",
+              "opensuse": "<73BA25>\uf314</>",
               "raspbian": "\uf315",
-              "ubuntu": "\uf31c",
-              "wsl": "\ue712",
-              "wsl_separator": " on ",
+              "ubuntu": "<#E95420>\uf31c</>",
+              "wsl": "<#26C6DA>\ue70f</>",
+              "wsl_separator": " / ",
               "windows": "<#26C6DA>\ue70f</>"
             }
           },
@@ -46,7 +46,6 @@
             "background": "#2e6f95",
             "properties": {
               "enable_hyperlink": true,
-              "prefix": " \uf755 ",
               "home_icon": "\uf7db",
               "style": "full"
             }
