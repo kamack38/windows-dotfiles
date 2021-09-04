@@ -37,24 +37,25 @@ choco install nuget.commandline --limit-output
 choco install gpg4win --limit-output
 choco install winrar --limit-output
 choco install powershell-core --limit-output
-choco install mpv.install --limit-output
+choco install mpv --limit-output
 choco install youtube-dl --limit-output
 choco install ffmpeg --limit-output
-choco install discord --limit-output
-choco install steam-client --limit-output
-choco install epicgameslauncher --limit-output
-choco install minecraft-launcher --limit-output
-choco install edgedeflector --limit-output
 choco install nvim --limit-output
 choco install bat --limit-output
 choco install delta --limit-output
 choco install ripgrep --limit-output
 choco install mingw --limit-output
+choco install winfetch --version 2.2.0 --limit-output
+choco install speedtest --limit-output
 choco install microsoft-windows-terminal --pre --limit-output
 choco install openssh --pre --limit-output
-choco install speedtest --limit-output
+choco install discord --limit-output
+choco install steam-client --limit-output
+choco install epicgameslauncher --limit-output
+choco install minecraft-launcher --limit-output
+choco install edgedeflector --limit-output
 choco install powertoys --limit-output
-choco install winfetch --version 2.2.0 --limit-output
+choco install procmon --limit-output
 choco install vscode --limit-output
 choco install firacodenf --limit-output
 
