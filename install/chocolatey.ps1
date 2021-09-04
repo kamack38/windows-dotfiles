@@ -39,6 +39,7 @@ choco install winrar --limit-output
 choco install powershell-core --limit-output
 choco install mpv.install --limit-output
 choco install youtube-dl --limit-output
+choco install ffmpeg --limit-output
 choco install discord --limit-output
 choco install steam-client --limit-output
 choco install epicgameslauncher --limit-output

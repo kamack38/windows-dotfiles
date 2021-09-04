@@ -40,9 +40,18 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\DWM" "ColorPrevalence" 1
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "ConfirmFileDelete" 0
 
 ###############################################################################
+### Sound                                                                     #
+###############################################################################
+
+Set-ItemProperty "HKCU\SOFTWARE\Microsoft\Multimedia\Audio" "UserDuckingPreference" 3
+
+###############################################################################
 ### Default Windows Applications                                              #
 ###############################################################################
 Write-Host "Configuring Default Windows Applications..." -ForegroundColor "Yellow"
+
+# Set pwsh.exe as default OpenSSH
+New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Program Files\PowerShell\7\pwsh.exe" -PropertyType String -Force
 
 # Uninstall 3D Builder
 Get-AppxPackage "Microsoft.3DBuilder" -AllUsers | Remove-AppxPackage
