@@ -40,7 +40,7 @@ choco install powershell-core --limit-output
 choco install mpv --limit-output
 choco install youtube-dl --limit-output
 choco install ffmpeg --limit-output
-choco install nvim --limit-output
+choco install neovim --limit-output
 choco install bat --limit-output
 choco install delta --limit-output
 choco install ripgrep --limit-output
@@ -55,7 +55,9 @@ choco install epicgameslauncher --limit-output
 choco install minecraft-launcher --limit-output
 choco install edgedeflector --limit-output
 choco install powertoys --limit-output
+choco install modernflyouts --limit-output
 choco install procmon --limit-output
+choco install winmerge --limit-output
 choco install vscode --limit-output
 choco install firacodenf --limit-output
 
