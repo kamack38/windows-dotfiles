@@ -68,6 +68,9 @@ Write-Host "Refreshing environment variables..." -ForegroundColor yellow
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 Write-Host "Environment variables has been refreshed!" -ForegroundColor green
 
+# Spotify-downloader
+pip install spotdl
+
 # Better Discord
 Set-Location $HOME\Downloads\
 $ProgressPreference = 'SilentlyContinue'
