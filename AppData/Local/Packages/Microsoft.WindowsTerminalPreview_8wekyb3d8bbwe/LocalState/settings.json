@@ -10,9 +10,9 @@
             "command": "unbound",
             "keys": "ctrl+shift+t"
         },
-        {
-            "command": "unbound",
-            "keys": ""
+        {  
+            "command": { "action": "sendInput", "input": "\u0017"},
+            "keys": "ctrl+backspace"
         },
         {
             "command": "unbound",
