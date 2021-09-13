@@ -1,0 +1,52 @@
+; Minecraft
+
+[Version]
+signature="$CHICAGO$"
+
+[DefaultInstall]
+CopyFiles = Scheme.Cur, Scheme.Txt
+AddReg    = Scheme.Reg
+
+[DestinationDirs]
+Scheme.Cur = 10,"%CUR_DIR%"
+Scheme.Txt = 10,"%CUR_DIR%"
+
+[Scheme.Reg]
+HKCU,"Control Panel\Cursors\Schemes","%SCHEME_NAME%",,"%10%\%CUR_DIR%\%pointer%,%10%\%CUR_DIR%\%help%,%10%\%CUR_DIR%\%work%,%10%\%CUR_DIR%\%busy%,%10%\%CUR_DIR%\%cross%,%10%\%CUR_DIR%\%Text%,%10%\%CUR_DIR%\%Hand%,%10%\%CUR_DIR%\%unavailiable%,%10%\%CUR_DIR%\%Vert%,%10%\%CUR_DIR%\%Horz%,%10%\%CUR_DIR%\%Dgn1%,%10%\%CUR_DIR%\%Dgn2%,%10%\%CUR_DIR%\%move%,%10%\%CUR_DIR%\%alternate%,%10%\%CUR_DIR%\%link%"
+
+; -- Common Information
+
+[Scheme.Cur]
+01 Normal Select.ani
+02 Help Select.ani
+03 Working In Background.ani
+04 Busy.ani
+06 Text Select.ani
+08 Unavailable.ani
+09 Vertical Resize.ani
+10 Horizontal Resize.ani
+11 Diagonal Resize 1.ani
+12 Diagonal Resize 2.ani
+13 Move.ani
+15 Link Select.cur
+05 Precision Select.ani
+07 Handwriting.ani
+14 Alternate Select.ani
+[Strings]
+CUR_DIR       = "Cursors\Minecraft"
+SCHEME_NAME   = "Minecraft"
+pointer       = "01 Normal Select.ani"
+help          = "02 Help Select.ani"
+work          = "03 Working In Background.ani"
+busy          = "04 Busy.ani"
+text          = "06 Text Select.ani"
+unavailiable  = "08 Unavailable.ani"
+vert          = "10 Horizontal Resize.ani"
+horz          = "09 Vertical Resize.ani"
+dgn1          = "11 Diagonal Resize 1.ani"
+dgn2          = "12 Diagonal Resize 2.ani"
+move          = "13 Move.ani"
+link          = "15 Link Select.cur"
+cross         = "05 Precision Select.ani"
+hand          = "07 Handwriting.ani"
+alternate     = "14 Alternate Select.ani"

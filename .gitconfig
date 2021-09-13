@@ -1,5 +1,5 @@
 [core]
-	editor = \"C:\\Users\\kamac\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" --wait
+	editor = code --wait
 	
 [user]
 	name = kamack38
