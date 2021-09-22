@@ -6,6 +6,7 @@ Import-Module -Name Appx -UseWindowsPowerShell -WarningAction SilentlyContinue
 $env:POSH_GIT_ENABLED = $true
 Set-Alias -Name exp -Value C:\Windows\explorer.exe
 Set-Alias -Name List-Module -Value Get-InstalledModule
+function qrcode {curl qrcode.show/$args}
 function .. {Set-Location ../}
 function ... {Set-Location ../../}
 function .... {Set-Location ../../../}
