@@ -45,7 +45,9 @@ choco install bat --limit-output
 choco install delta --limit-output
 choco install ripgrep --limit-output
 choco install mingw --limit-output
+choco install nircmd --limit-output
 choco install winfetch --version 2.2.0 --limit-output
+choco install onefetch --limit-output
 choco install speedtest --limit-output
 choco install microsoft-windows-terminal --pre --limit-output
 choco install openssh --pre --limit-output
@@ -68,8 +70,15 @@ Write-Host "Refreshing environment variables..." -ForegroundColor yellow
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 Write-Host "Environment variables has been refreshed!" -ForegroundColor green
 
-# Spotify-downloader
+# Python Packages
 pip install spotdl
+
+# NPM Packages
+npm i -g carbon-now-cli
+
+# Install powershell modules
+pwsh.exe -Command Install-Module oh-my-posh -Scope CurrentUser -Force
+pwsh.exe -Command Install-Module posh-git -Scope CurrentUser -Force
 
 # Better Discord
 Set-Location $HOME\Downloads\
@@ -119,10 +128,6 @@ Move-Item "UPMetroSkin\UPMetroSkin-master", "metro-for-steam\metro-for-steam-4.4
 Remove-Item "UPMetroSkin", "metro-for-steam" -Recurse -Force
 Write-Host "All files has been extracted and moved!" -ForegroundColor green
 explorer.exe "C:\Program Files (x86)\Steam\skins"
-
-# Install powershell modules
-pwsh.exe -Command Install-Module oh-my-posh -Scope CurrentUser -Force
-pwsh.exe -Command Install-Module posh-git -Scope CurrentUser -Force
 
 Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1'))
 
