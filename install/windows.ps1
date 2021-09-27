@@ -196,6 +196,10 @@ Set-ItemProperty "HKLM:\Software\Policies\Microsoft\Windows\CloudContent" "Disab
 if (!(Test-Path "HKCR:\")) {New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR}
 Set-ItemProperty "HKCR:\batfile\shell\open\command" "(default)" """C:\Users\$env:USERNAME\AppData\Local\Microsoft\WindowsApps\wt.exe"" -p ""Command Prompt"" ""%1"" %*"
 
+# Set Windows Terminal as default .ps1 file opening porgram
+cmd /c assoc .ps1=PowerShellFileV
+cmd /c ftype PowerShellFileV=wt.exe pwsh.exe -wd "%1\.." -NoExit -Command "& `"%1`""
+
 ###############################################################################
 ### Customization                                                             #
 ###############################################################################

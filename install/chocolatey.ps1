@@ -79,6 +79,7 @@ npm i -g carbon-now-cli
 # Install powershell modules
 pwsh.exe -Command Install-Module oh-my-posh -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module posh-git -Scope CurrentUser -Force
+pwsh.exe -Command Install-Module npm-completion -Scope CurrentUser -Force
 
 # Better Discord
 Set-Location $HOME\Downloads\
