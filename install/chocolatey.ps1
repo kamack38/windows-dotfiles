@@ -55,6 +55,7 @@ choco install discord --limit-output
 choco install steam-client --limit-output
 choco install epicgameslauncher --limit-output
 choco install minecraft-launcher --limit-output
+choco install lghub --limit-output
 choco install edgedeflector --limit-output
 choco install powertoys --limit-output
 choco install modernflyouts --limit-output
