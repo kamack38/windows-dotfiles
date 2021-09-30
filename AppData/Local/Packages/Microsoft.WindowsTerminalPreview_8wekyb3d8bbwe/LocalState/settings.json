@@ -3,16 +3,20 @@
     "actions": 
     [
         {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
             "command": "unbound",
             "keys": "ctrl+shift+w"
         },
         {
             "command": "unbound",
             "keys": "ctrl+shift+t"
-        },
-        {  
-            "command": { "action": "sendInput", "input": "\u0017"},
-            "keys": "ctrl+backspace"
         },
         {
             "command": "unbound",
@@ -21,10 +25,10 @@
         {
             "command": 
             {
-                "action": "copy",
-                "singleLine": false
+                "action": "sendInput",
+                "input": "\u0017"
             },
-            "keys": "ctrl+c"
+            "keys": "ctrl+backspace"
         },
         {
             "command": "find",
@@ -86,7 +90,7 @@
         [
             {
                 "colorScheme": "Cobalt2",
-                "commandline": "pwsh.exe -nologo",
+                "commandline": "pwsh.exe -nologo -noexit -command winfetch",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",

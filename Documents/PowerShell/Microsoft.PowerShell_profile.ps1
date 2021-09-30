@@ -46,4 +46,3 @@ function gle {
 	start "https://www.google.com/search?q=$search" 
 }
 
-winfetch
