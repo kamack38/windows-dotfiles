@@ -198,7 +198,7 @@ Set-ItemProperty "HKCR:\batfile\shell\open\command" "(default)" """C:\Users\$env
 
 # Set Windows Terminal as default .ps1 file opening porgram
 cmd /c assoc .ps1=PowerShellFileV
-cmd /c ftype PowerShellFileV=wt.exe pwsh.exe -wd "%1\.." -NoExit -Command "& `"%1`""
+cmd /c ftype PowerShellFileV=wt.exe pwsh.exe -wd "%1\.." -NoExit -NoLogo -ExecutionPolicy Bypass -File %1 -Command "& `"%1`""
 
 ###############################################################################
 ### Customization                                                             #
