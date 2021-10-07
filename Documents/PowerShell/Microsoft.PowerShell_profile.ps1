@@ -45,4 +45,30 @@ function gle {
 	} 
 	start "https://www.google.com/search?q=$search" 
 }
-
+function faceit {
+  param (
+    [switch]$on
+  )
+  if ($on -eq $true) {
+    Write-Host "Disabling Hyper-V" -Foreground Yellow
+    bcdedit /set hypervisorlaunchtype off
+    reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity" /v "Enabled" /t REG_DWORD /d 0 /f
+    Write-Host "Restarting Computer..." -Foreground Yellow
+    shutdown.exe /t 20 /r
+    Write-Host "Your computer will be restarted in 20 sceonds." -Foreground Red
+    Write-Host "Use" -NoNewLine
+    Write-Host " shutdown.exe /a " -Foreground Green -NoNewLine
+    Write-Host "to stop restart"
+    }
+  else {
+    Write-Host "Enabling Hyper-V" -Foreground Yellow
+    bcdedit /set hypervisorlaunchtype auto
+    reg add "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity" /v "Enabled" /t REG_DWORD /d 1 /f
+    Write-Host "Restarting Computer..."
+    shutdown.exe /t 20 /r
+    Write-Host "Your computer will be restarted in 20 sceonds." -Foreground Red
+    Write-Host "Use" -NoNewLine
+    Write-Host " shutdown.exe /a " -Foreground Green -NoNewLine
+    Write-Host "to stop restart"
+  }
+}

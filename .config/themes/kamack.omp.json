@@ -47,9 +47,15 @@
             "properties": {
               "enable_hyperlink": true,
               "home_icon": "\uf7db",
-              "style": "full"
+              "style": "full",
+              "mapped_locations": {
+                "~\\Documents":"\uf718",
+                "~\\Documents\\GitHUB":"\uf408",
+                "~\\Music":"\ufc58",
+                "~\\Videos":"\uf03d"
+              }
             }
-          },
+          },  
           {
             "type": "git",
             "style": "powerline",
