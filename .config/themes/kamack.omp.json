@@ -52,7 +52,9 @@
                 "~\\Documents":"\uf718",
                 "~\\Documents\\GitHUB":"\uf408",
                 "~\\Music":"\ufc58",
-                "~\\Videos":"\uf03d"
+                "~\\Videos":"\uf03d",
+                "~\\Pictures":"\uf7ea",
+                "~\\.config":"\ue615"
               }
             }
           },  

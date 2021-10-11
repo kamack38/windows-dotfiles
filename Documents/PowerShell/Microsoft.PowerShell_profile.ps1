@@ -22,23 +22,7 @@ function wheater {
 	param ($param1)
 	Invoke-RestMethod http://wttr.in/$param1
 }
-function ln { 
-	param(
-		[switch]$s,
-		
-		[Parameter(Mandatory)]
-		[string]$Path,
-		
-		[Parameter(Mandatory)]
-		[string]$Target
-	)
-	if ($s -eq $true) {
-		New-Item -ItemType SymbolicLink -Path $Path -Target $Target
-	}
-	else {
-		New-Item -ItemType HardLink -Path $Path -Target $Target
-	}
-}
+function ip {(Get-NetIPAddress | Where-Object {$_.AddressFamily -eq 'IPv4' -and $_.PrefixOrigin -eq 'Dhcp' }).IPAddress; curl ifconfig.me}
 function gle {
 	for ( $i = 0; $i -lt $args.count; $i++ ) {
 	$search = $search + $($args[$i]) + "+"
