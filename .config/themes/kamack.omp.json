@@ -54,7 +54,9 @@
                 "~\\Music":"\ufc58",
                 "~\\Videos":"\uf03d",
                 "~\\Pictures":"\uf7ea",
-                "~\\.config":"\ue615"
+                "~\\.config":"\ue615",
+                "~\\Downloads":"\uf019",
+                "~\\Desktop":"\uf6c3"
               }
             }
           },  
