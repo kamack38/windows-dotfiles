@@ -17,13 +17,16 @@ Set-PSReadLineOption -EditMode Windows
 # Aliases
 Set-Alias -Name exp -Value C:\Windows\explorer.exe
 Set-Alias -Name List-Module -Value Get-InstalledModule
+function la {Get-ChildItem -Force}
+function lw {Get-ChildItem | Format-Wide}
+function lo {Get-ChildItem | Format-Wide -Column 3}
 function qrcode {curl qrcode.show/$args}
 function .. {Set-Location ../}
 function ... {Set-Location ../../}
 function .... {Set-Location ../../../}
 function ..... {Set-Location ../../../../}
 function ...... {Set-Location ../../../../../}
-function reset {clear; pwsh.exe -nologo}
+function reset {Clear-Host; pwsh.exe -nologo}
 Set-Alias -Name ytdl -Value youtube-dl.exe
 function youtube-dl-best {youtube-dl -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio" $args}
 function youtube-dl-mp3 {youtube-dl --extract-audio -f bestaudio[ext=mp3] --no-playlist $args}
@@ -39,7 +42,7 @@ function gle {
 	for ( $i = 0; $i -lt $args.count; $i++ ) {
 	$search = $search + $($args[$i]) + "+"
 	} 
-	start "https://www.google.com/search?q=$search" 
+	Start-Process "https://www.google.com/search?q=$search" 
 }
 function faceit {
   param (
