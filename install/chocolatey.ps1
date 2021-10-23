@@ -55,8 +55,8 @@ choco install discord --limit-output
 choco install steam-client --limit-output
 choco install epicgameslauncher --limit-output
 choco install minecraft-launcher --limit-output
-choco install lghub --limit-output
 choco install edgedeflector --limit-output
+choco install dcforoffice --limit-output
 choco install powertoys --limit-output
 choco install modernflyouts --limit-output
 choco install procmon --limit-output
@@ -96,27 +96,6 @@ Write-Host "Downloading LogitechG HUB Installer..." -ForegroundColor yellow
 Invoke-WebRequest -Uri "https://download01.logi.com/web/ftp/pub/techsupport/gaming/lghub_installer.exe" -o LGHUBInstaller.exe
 Write-Host "LogitechG HUB Installer has been downloaded!" -ForegroundColor green
 
-# Download latest 7coil/DiscordForOffice release from github
-Write-Host "Downloading DiscordForOffice Installer..." -ForegroundColor yellow
-$repo = "7coil/DiscordForOffice"
-$file = "DiscordForOffice.exe"
-
-$releases = "https://api.github.com/repos/$repo/releases"
-
-Write-Host "Determining latest release" -ForegroundColor yellow
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$tag = (Invoke-WebRequest -Uri $releases -UseBasicParsing | ConvertFrom-Json)[0].tag_name
-
-$download = "https://github.com/$repo/releases/download/$tag/$file"
-$name = $file.Split(".")[0]
-$exe = "$name-$tag.exe"
-
-Write-Host "Dowloading latest release" -ForegroundColor yellow
-
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest $download -Out $exe
-Write-Host "DiscordForOffice Installer has been downloaded!" -ForegroundColor green
-
 # Steam skin (metro-for-steam)
 Write-Host "Downloading metro-for-steam..." -ForegroundColor yellow
 Invoke-WebRequest -Uri "https://github.com/minischetti/metro-for-steam/archive/v4.4.zip" -o metro-for-steam.zip
@@ -132,6 +111,10 @@ Move-Item "UPMetroSkin\UPMetroSkin-master", "metro-for-steam\metro-for-steam-4.4
 Remove-Item "UPMetroSkin", "metro-for-steam" -Recurse -Force
 Write-Host "All files has been extracted and moved!" -ForegroundColor green
 explorer.exe "C:\Program Files (x86)\Steam\skins"
+
+# Setup NvChad
+git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+git clone https://github.com/NvChad/NvChad "$env:LOCALAPPDATA\nvim"
 
 Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1'))
 

@@ -17,6 +17,7 @@ Set-PSReadLineOption -EditMode Windows
 # Aliases
 Set-Alias -Name exp -Value C:\Windows\explorer.exe
 Set-Alias -Name List-Module -Value Get-InstalledModule
+function rmrf {Remove-Item -Recurse -Force $args}
 function la {Get-ChildItem -Force}
 function lw {Get-ChildItem | Format-Wide}
 function lo {Get-ChildItem | Format-Wide -Column 3}
