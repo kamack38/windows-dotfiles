@@ -108,6 +108,28 @@
             }
           },
           {
+            "type": "php",
+            "style": "powerline",
+            "powerline_symbol": "",
+            "foreground": "#ffffff",
+            "background": "#4063D8",
+            "properties": {
+              "prefix": " \ue73d ",
+              "enable_hyperlink": false,
+              "display_version": true
+            }
+          },
+          {
+            "type": "angular",
+            "style": "powerline",
+            "powerline_symbol": "",
+            "foreground": "#ffffff",
+            "background": "#c3002f",
+            "properties": {
+              "prefix": "\uE753"
+            }
+          },
+          {
             "type": "go",
             "style": "powerline",
             "powerline_symbol": "",
@@ -175,8 +197,8 @@
             "type": "dotnet",
             "style": "powerline",
             "powerline_symbol": "",
-            "foreground": "#000000",
-            "background": "#00ffff",
+            "foreground": "#ffffff",
+            "background": "#4E2BCD",
             "properties": {
               "prefix": " \uE77F ",
               "display_version": true
@@ -240,6 +262,7 @@
             "foreground": "#293241",
             "background": "#ffe66d",
             "properties": {
+              "style": "austin",
               "postfix": " \ufa1e "
             }
           },
