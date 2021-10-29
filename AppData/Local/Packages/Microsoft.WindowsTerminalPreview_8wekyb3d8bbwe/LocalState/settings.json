@@ -113,7 +113,7 @@
                 "cursorShape": "underscore",
                 "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
                 "hidden": false,
-                "icon": "%USERPROFILE%/.config/themes/archlinux.png",
+                "icon": "%USERPROFILE%/.config/themes/icons/archlinux.ico",
                 "name": "Arch",
                 "opacity": 55,
                 "source": "Windows.Terminal.Wsl",
@@ -123,7 +123,7 @@
                 "colorScheme": "Cobalt2",
                 "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
                 "hidden": false,
-                "icon": "%USERPROFILE%/.config/themes/ubuntu.png",
+                "icon": "%USERPROFILE%/.config/themes/icons/ubuntu.ico",
                 "name": "Ubuntu-20.04",
                 "source": "Windows.Terminal.Wsl",
                 "startingDirectory": "//wsl$/Ubuntu-20.04/home/kamack"
