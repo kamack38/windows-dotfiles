@@ -28,6 +28,10 @@ function .... {Set-Location ../../../}
 function ..... {Set-Location ../../../../}
 function ...... {Set-Location ../../../../../}
 function reset {Clear-Host; pwsh.exe -nologo}
+function Uninstall-AllOutdated {Get-InstalledModule | ForEach-Object {
+  $CurrentVersion = $PSItem.Version
+  Get-InstalledModule -Name $PSItem.Name -AllVersions | Where-Object -Property Version -LT -Value $CurrentVersion
+} | Uninstall-Module -Verbose}
 Set-Alias -Name ytdl -Value youtube-dl.exe
 function youtube-dl-best {youtube-dl -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio" $args}
 function youtube-dl-mp3 {youtube-dl --extract-audio -f bestaudio[ext=mp3] --no-playlist $args}
@@ -38,7 +42,7 @@ function wheater {
 	param ($param1)
 	Invoke-RestMethod http://wttr.in/$param1
 }
-function ip {(Get-NetIPAddress | Where-Object {$_.AddressFamily -eq 'IPv4' -and $_.PrefixOrigin -eq 'Dhcp' }).IPAddress; curl ifconfig.me}
+function ip {'Private Adress: ' + (Get-NetIPAddress | Where-Object {$_.AddressFamily -eq 'IPv4' -and $_.PrefixOrigin -eq 'Dhcp' }).IPAddress; 'Public Adress: ' + (curl -s ifconfig.me)}
 function gle {
 	for ( $i = 0; $i -lt $args.count; $i++ ) {
 	$search = $search + $($args[$i]) + "+"
