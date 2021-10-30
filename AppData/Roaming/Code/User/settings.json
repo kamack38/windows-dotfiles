@@ -1,0 +1,77 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "explorer.confirmDelete": false,
+    "editor.wordWrap": "on",
+    "workbench.startupEditor": "welcomePage",
+    "workbench.colorCustomizations": {},
+    "files.associations": {
+        "*.cfg": "CSGO cfg"
+    },
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "liveServer.settings.donotVerifyTags": true,
+    "explorer.confirmDragAndDrop": false,
+    "liveServer.settings.CustomBrowser": "firefox",
+    "diffEditor.wordWrap": "on",
+    "files.eol": "\n",
+    "markdownlint.config": {
+        "MD033": false
+    },
+    "markdown-toc.updateOnSave": false,
+    "terminal.integrated.tabs.enabled": true,
+    "workbench.editorAssociations": {
+        "*.ttf": "default"
+    },
+    "files.defaultLanguage": "${activeEditorLanguage}",
+    "workbench.colorTheme": "Community Material Theme High Contrast",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.fontFamily": "FiraCode NF",
+    "editor.fontWeight": "500",
+    "editor.fontLigatures": true,
+    "git.enableCommitSigning": true,
+    "gitlens.hovers.currentLine.over": "line",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "launch": {
+    
+        "configurations": [],
+        "compounds": []
+    },
+    "gitlens.advanced.messages": {
+        "suppressImproperWorkspaceCasingWarning": true
+    },
+    "editor.cursorBlinking": "smooth",
+    "terminal.integrated.commandsToSkipShell": [
+        "psl.stepIn",
+        "psl.stepOut",
+        "psl.stepOver",
+        "psl.sendToHostTerminal"
+    ],
+    "discord.idleTimeout": 1200,
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "path": "pwsh.exe",
+            "args": [
+                "-NoExit",
+                "-NoLogo",
+                "-ExecutionPolicy", "Bypass"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "powershell.codeFormatting.autoCorrectAliases": true,
+    "diffEditor.codeLens": true,
+    "terminal.explorerKind": "external",
+    "workbench.panel.defaultLocation": "right",
+    "terminal.integrated.confirmOnKill": "panel",
+    "terminal.integrated.localEchoExcludePrograms": [
+        "vim",
+        "vi",
+        "nano",
+        "tmux",
+        "nvim"
+    ],
+}

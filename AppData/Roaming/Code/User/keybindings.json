@@ -1,0 +1,24 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+k n",
+        "command": "extension.advancedNewFile"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "-extension.advancedNewFile"
+    },
+    {
+        "key": "alt+d",
+        "command": "editor.action.duplicateSelection"
+    },
+    {
+        "key": "ctrl+k m",
+        "command": "-workbench.action.editor.changeLanguageMode",
+        "when": "!notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+k m",
+        "command": "workbench.action.toggleMaximizedPanel"
+    }
+]
