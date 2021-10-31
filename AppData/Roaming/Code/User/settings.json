@@ -33,9 +33,7 @@
     "editor.fontLigatures": true,
     "git.enableCommitSigning": true,
     "gitlens.hovers.currentLine.over": "line",
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "launch": {
     
         "configurations": [],
@@ -87,4 +85,9 @@
         "lang": "pl"
     },
     "cSpell.language": "en,pl",
+    "tabnine.experimentalAutoImports": true,
+    "cSpell.userWords": [
+        "minmax"
+    ],
+    "editor.minimap.enabled": false,
 }
