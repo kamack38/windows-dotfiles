@@ -1,0 +1,10 @@
+{
+	"css": {
+		"snippets": {
+			"gtc": "grid-template-columns:${1:repeat(${2})}|minmax(${1})",
+			"gtr": "grid-template-rows:${1:repeat(${2})}|minmax(${1})",
+			"gt": "grid-template:${1:repeat(${2})}${3}|minmax(${1})"
+		}
+	  }
+	
+}

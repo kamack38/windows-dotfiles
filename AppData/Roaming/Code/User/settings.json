@@ -1,5 +1,5 @@
 {
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "vscode-icons",
     "liveServer.settings.donotShowInfoMsg": true,
     "explorer.confirmDelete": false,
     "editor.wordWrap": "on",
@@ -22,7 +22,8 @@
     "markdown-toc.updateOnSave": false,
     "terminal.integrated.tabs.enabled": true,
     "workbench.editorAssociations": {
-        "*.ttf": "default"
+        "*.ttf": "default",
+        "*.lnk": "default"
     },
     "files.defaultLanguage": "${activeEditorLanguage}",
     "workbench.colorTheme": "Community Material Theme High Contrast",
@@ -74,4 +75,16 @@
         "tmux",
         "nvim"
     ],
+    "explorer.compactFolders": false,
+    "editor.tabCompletion": "on",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "emmet.extensionsPath": [
+        "~\\.vscode",
+        ".\\.vscode"
+    ],
+    "emmet.variables": {
+        "lang": "pl"
+    },
+    "cSpell.language": "en,pl",
 }

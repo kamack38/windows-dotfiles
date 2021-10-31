@@ -17,6 +17,9 @@ Set-PSReadLineOption -EditMode Windows
 # Aliases
 Set-Alias -Name exp -Value C:\Windows\explorer.exe
 Set-Alias -Name List-Module -Value Get-InstalledModule
+Set-Alias -Name choco -Value choco.exe
+Set-Alias -Name code -Value code.cmd
+Set-Alias -Name node -Value node.exe
 function rmrf {Remove-Item -Recurse -Force $args}
 function la {Get-ChildItem -Force}
 function lw {Get-ChildItem | Format-Wide}
@@ -51,7 +54,9 @@ function gle {
 }
 function faceit {
   param (
-    [switch]$on
+    [Parameter(Mandatory)]
+    [ValidateSet('on','off')]
+    [string]$state
   )
   if ($on -eq $true) {
     Write-Host "Disabling Hyper-V" -Foreground Yellow
