@@ -87,7 +87,8 @@
     "cSpell.language": "en,pl",
     "tabnine.experimentalAutoImports": true,
     "cSpell.userWords": [
-        "minmax"
+        "minmax",
+        "dotfiles"
     ],
     "editor.minimap.enabled": false,
 }

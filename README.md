@@ -1,14 +1,14 @@
 # My .dotfiles for Windows 10
 
-A collection of configuration files fo Windows, inculding application instalation through [**Chocolatey**](https://chocolatey.org/) or **Curl**
+A collection of configuration files fo Windows, including application installation through [**Chocolatey**](https://chocolatey.org/) or **Curl**
 
 <!-- TOC -->
 
 - [My .dotfiles for Windows 10](#my-dotfiles-for-windows-10)
   - [Pre-requirements](#pre-requirements)
-  - [Instalation](#instalation)
-    - [Instalation using chcolatey and git via powershell script](#instalation-using-chcolatey-and-git-via-powershell-script)
-    - [Instaltion using batch script **[DEPRECATED]**](#instaltion-using-batch-script-deprecated)
+  - [Installation](#installation)
+    - [Installation using chocolatey and git via powershell script](#installation-using-chocolatey-and-git-via-powershell-script)
+    - [Installation using batch script **[DEPRECATED]**](#installation-using-batch-script-deprecated)
   - [Setup WSL 2](#setup-wsl-2)
     - [Enable WSL 2 and update the linux kernel (Source)](#enable-wsl-2-and-update-the-linux-kernel-source)
     - [Install common dependencies](#install-common-dependencies)
@@ -26,9 +26,9 @@ A collection of configuration files fo Windows, inculding application instalatio
 
 > **Note:** With PowerShell, you must ensure `Get-ExecutionPolicy` is not Restricted. I suggest using `Set-ExecutionPolicy Bypass -Scope Process` to bypass the policy or `Set-ExecutionPolicy RemoteSigned` for quite a bit more security.
 
-## Instalation
+## Installation
 
-### Instalation using chcolatey and git via powershell script
+### Installation using chocolatey and git via powershell script
 
 From [PowerShell](https://docs.microsoft.com/en-us/powershell/):
 > **Note:** You **DON'T** need [**Chocolatey**](https://chocolatey.org/) and [**Git**](https://git-scm.com/) installed, because the script will download them automatically, but make sure PowerShell is run as administrator.
@@ -43,7 +43,7 @@ iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.co
 Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/JEt6s | iex
 ```
 
-### Instaltion using batch script **[DEPRECATED]**
+### Installation using batch script **[DEPRECATED]**
 
 From CMD :
 
