@@ -65,7 +65,7 @@
     "diffEditor.codeLens": true,
     "terminal.explorerKind": "external",
     "workbench.panel.defaultLocation": "right",
-    "terminal.integrated.confirmOnKill": "panel",
+    "terminal.integrated.confirmOnKill": "never",
     "terminal.integrated.localEchoExcludePrograms": [
         "vim",
         "vi",
@@ -87,8 +87,11 @@
     "cSpell.language": "en,pl",
     "tabnine.experimentalAutoImports": true,
     "cSpell.userWords": [
+        "dotfiles",
+        "featurename",
         "minmax",
-        "dotfiles"
+        "norestart",
+        "webclient"
     ],
     "editor.minimap.enabled": false,
 }

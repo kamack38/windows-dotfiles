@@ -1,16 +1,9 @@
 ###############################################################################
-### System                                                                    #
-###############################################################################
-
-# Enables Dark Theme
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "SystemUsesLightTheme" 0
-
-###############################################################################
 ### Devices, Power, and Startup                                               #
 ###############################################################################
 Write-Host "Configuring Devices, Power, and Startup..." -ForegroundColor "Yellow"
 
-# Power: Enable Hibernatio
+# Power: Enable Hibernation
 powercfg /hibernate on
 
 ###############################################################################
@@ -46,144 +39,49 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explo
 Set-ItemProperty "HKCU\SOFTWARE\Microsoft\Multimedia\Audio" "UserDuckingPreference" 3
 
 ###############################################################################
-### Default Windows Applications                                              #
+### Debloat Windows                                                           #
 ###############################################################################
 Write-Host "Configuring Default Windows Applications..." -ForegroundColor "Yellow"
 
-# Set pwsh.exe as default OpenSSH
-New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Program Files\PowerShell\7\pwsh.exe" -PropertyType String -Force
+$programs = @(
+    'Microsoft.3DBuilder',
+    'Microsoft.WindowsAlarms',
+    '*.AutodeskSketchBook',
+    'Microsoft.BingFinance',
+    'Microsoft.BingNews',
+    'Microsoft.BingSports',
+    'Microsoft.BingWeather',
+    'king.com.BubbleWitch3Saga',
+    'Microsoft.WindowsCommunicationsApps',
+    'king.com.CandyCrushSodaSaga',
+    '*.DisneyMagicKingdoms',
+    '*.Facebook',
+    'Microsoft.GetStarted',
+    'Microsoft.WindowsMaps',
+    '*.MarchofEmpires',
+    'Microsoft.Messaging',
+    'Microsoft.OneConnect',
+    'Microsoft.Office.OneNote',
+    'Microsoft.MSPaint',
+    'Microsoft.People',
+    # 'Microsoft.Windows.Photos',
+    'Microsoft.Print3D',
+    'Microsoft.SkypeApp',
+    '*.SlingTV',
+    'Microsoft.MicrosoftStickyNotes',
+    'Microsoft.Office.Sway',
+    '*.Twitter',
+    'Microsoft.WindowsSoundRecorder',
+    'Microsoft.WindowsPhone',
+    'Microsoft.ZuneMusic',
+    'Microsoft.ZuneVideo',
+    '*.McAfeeSecurity'
+)
 
-# Uninstall 3D Builder
-Get-AppxPackage "Microsoft.3DBuilder" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.3DBuilder" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Alarms and Clock
-Get-AppxPackage "Microsoft.WindowsAlarms" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.WindowsAlarms" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Autodesk Sketchbook
-Get-AppxPackage "*.AutodeskSketchBook" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "*.AutodeskSketchBook" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Bing Finance
-Get-AppxPackage "Microsoft.BingFinance" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.BingFinance" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Bing News
-Get-AppxPackage "Microsoft.BingNews" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.BingNews" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Bing Sports
-Get-AppxPackage "Microsoft.BingSports" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.BingSports" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Bing Weather
-Get-AppxPackage "Microsoft.BingWeather" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.BingWeather" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Bubble Witch 3 Saga
-Get-AppxPackage "king.com.BubbleWitch3Saga" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "king.com.BubbleWitch3Saga" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Calendar and Mail
-Get-AppxPackage "Microsoft.WindowsCommunicationsApps" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.WindowsCommunicationsApps" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Candy Crush Soda Saga
-Get-AppxPackage "king.com.CandyCrushSodaSaga" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "king.com.CandyCrushSodaSaga" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Disney Magic Kingdoms
-Get-AppxPackage "*.DisneyMagicKingdoms" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "*.DisneyMagicKingdoms" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Dolby
-Get-AppxPackage "DolbyLaboratories.DolbyAccess" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "DolbyLaboratories.DolbyAccess" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Facebook
-Get-AppxPackage "*.Facebook" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "*.Facebook" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Get Started
-Get-AppxPackage "Microsoft.GetStarted" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.GetStarted" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Maps
-Get-AppxPackage "Microsoft.WindowsMaps" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.WindowsMaps" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall March of Empires
-Get-AppxPackage "*.MarchofEmpires" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "*.MarchofEmpires" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Messaging
-Get-AppxPackage "Microsoft.Messaging" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.Messaging" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Mobile Plans
-Get-AppxPackage "Microsoft.OneConnect" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.OneConnect" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall OneNote
-Get-AppxPackage "Microsoft.Office.OneNote" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.Office.OneNote" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Paint
-Get-AppxPackage "Microsoft.MSPaint" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.MSPaint" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall People
-Get-AppxPackage "Microsoft.People" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.People" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Photos
-Get-AppxPackage "Microsoft.Windows.Photos" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.Windows.Photos" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Print3D
-Get-AppxPackage "Microsoft.Print3D" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.Print3D" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Skype
-Get-AppxPackage "Microsoft.SkypeApp" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.SkypeApp" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall SlingTV
-Get-AppxPackage "*.SlingTV" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "*.SlingTV" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall StickyNotes
-Get-AppxPackage "Microsoft.MicrosoftStickyNotes" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.MicrosoftStickyNotes" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Sway
-Get-AppxPackage "Microsoft.Office.Sway" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.Office.Sway" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Twitter
-Get-AppxPackage "*.Twitter" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "*.Twitter" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Voice Recorder
-Get-AppxPackage "Microsoft.WindowsSoundRecorder" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.WindowsSoundRecorder" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Windows Phone Companion
-Get-AppxPackage "Microsoft.WindowsPhone" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.WindowsPhone" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall XBox
-Get-AppxPackage "Microsoft.XboxApp" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.XboxApp" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Zune Music (Groove)
-Get-AppxPackage "Microsoft.ZuneMusic" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.ZuneMusic" | Remove-AppxProvisionedPackage -Online
-
-# Uninstall Zune Video
-Get-AppxPackage "Microsoft.ZuneVideo" -AllUsers | Remove-AppxPackage
-Get-AppXProvisionedPackage -Online | Where-Object DisplayNam -like "Microsoft.ZuneVideo" | Remove-AppxProvisionedPackage -Online
+foreach ($item in $programs) {
+    Get-AppxPackage "$item" -AllUsers | Remove-AppxPackage
+    Get-AppXProvisionedPackage -Online | Where-Object DisplayName -like "$item" | Remove-AppxProvisionedPackage -Online
+}
 
 # Uninstall Windows Media Player
 Disable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -NoRestart -WarningAction SilentlyContinue | Out-Null
@@ -191,6 +89,28 @@ Disable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -NoRest
 # Prevent "Suggested Applications" from returning
 if (!(Test-Path "HKLM:\Software\Policies\Microsoft\Windows\CloudContent")) {New-Item -Path "HKLM:\Software\Policies\Microsoft\Windows\CloudContent" -Type Folder | Out-Null}
 Set-ItemProperty "HKLM:\Software\Policies\Microsoft\Windows\CloudContent" "DisableWindowsConsumerFeatures" 1
+
+#Turns off Data Collection via the AllowTelemtry key by changing it to 0
+Write-Host "Turning off Data Collection"
+$DataCollection1 = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection"
+$DataCollection2 = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection"
+$DataCollection3 = "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\DataCollection"    
+If (Test-Path $DataCollection1) {
+    Set-ItemProperty $DataCollection1  AllowTelemetry -Value 0 
+}
+If (Test-Path $DataCollection2) {
+    Set-ItemProperty $DataCollection2  AllowTelemetry -Value 0 
+}
+If (Test-Path $DataCollection3) {
+    Set-ItemProperty $DataCollection3  AllowTelemetry -Value 0 
+}
+
+###############################################################################
+### Set Default Windows Applications                                          #
+###############################################################################
+
+# Set pwsh.exe as default OpenSSH
+New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Program Files\PowerShell\7\pwsh.exe" -PropertyType String -Force
 
 # Set Windows Terminal as default batch opening porgram
 if (!(Test-Path "HKCR:\")) {New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR}
@@ -230,36 +150,20 @@ New-Shortcut "control.exe" "$LinkDir\Control Panel.lnk"
 ### Customization                                                             #
 ###############################################################################
 
-# Enable Custom Wallpaper
+# Enable Dark Theme
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "SystemUsesLightTheme" 0
+
+# Set Custom Wallpaper
 Set-ItemProperty "HKCU:\Control Panel\Desktop" "WallPaper" "$HOME\.config\themes\Minimalist Code by Daze_.jpg"
 
 # Install custom cursors
 pnputil -i -a $HOME\.config\themes\cursors\Install.inf
-
-###############################################################################
-### Debloat Windows                                                           #
-###############################################################################
-
-#Turns off Data Collection via the AllowTelemtry key by changing it to 0
-    Write-Host "Turning off Data Collection"
-    $DataCollection1 = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection"
-    $DataCollection2 = "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection"
-    $DataCollection3 = "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\DataCollection"    
-    If (Test-Path $DataCollection1) {
-        Set-ItemProperty $DataCollection1  AllowTelemetry -Value 0 
-    }
-    If (Test-Path $DataCollection2) {
-        Set-ItemProperty $DataCollection2  AllowTelemetry -Value 0 
-    }
-    If (Test-Path $DataCollection3) {
-        Set-ItemProperty $DataCollection3  AllowTelemetry -Value 0 
-    }
-    
+   
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUhx8P2KAXH61HrB0iz0KjVr5U
-# j2ygggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUQVLa/Z4mjnpnKm5G4Xk5QMa5
+# f6ygggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -281,11 +185,11 @@ pnputil -i -a $HOME\.config\themes\cursors\Install.inf
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUeM7GByv0gf3A
-# A2G7UI7lbwxKR5UwDQYJKoZIhvcNAQEBBQAEggEAW5pKnkgOqKtG2M7XjSGKyPlb
-# HYP0xe9K5K0tu7l6DZoZx2WhPKBDQmZUQ+B0tom2jaqbs6WKGqeEcucDu8kPWBYQ
-# zDZpHz4sQq0+1PaQXOE2PrroYL1CC972YPpU6uNU/RS8DgAowDxnU+66icQ4bmRZ
-# qVTGPrxbJurj7ieuTY6+nJjFnjHpe5aLn+R8LTRkBFOUr3a/pKhqOLnpx0PA49pe
-# uirIUPyqmCGmJacNCfDLi8dS9v0CacM0ySRWAnWvdVuZ2G30Ljk9ROD7db/6PIpl
-# OkFGP7a5p9fDvsTtnsEnHQjQLvLZ/JP5/ndovVFIyOlChlZGTnkVTpToGW5sVA==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUM9fy896N/GkF
+# TBP39p91w5HqMvwwDQYJKoZIhvcNAQEBBQAEggEAQBRJdGdLAi9/n2SCnSCm6SaT
+# FBjUNmZEdFEpy827ZDuDBhiiyRma8PK9TENMiMRGBwaPkzG8Cxv7ozEjv2meFflD
+# sJ5q1m2J4MycKi5KIE/ADWjcEBwTGmXEpFgJkHA80JWiMLh37MuHRXpiXuWDJD0x
+# RK2MZQGGjmuRrgSuxE3TRL44WKq1p+2D59n/i9saoa3f5Rrh2u0wMAG4M215wtag
+# d2tXW0Bl3JH0fbQMEUcxJgcl7OF/6uWcjN+6w+hzQlOIOLETSiRaqQCXw/o5bW6X
+# TS8kvP4zUB9pFLQiR4b2KHHrXiBohmLFPPN7n2NdA3kW7jH1YRYjqtoodx7NGw==
 # SIG # End signature block

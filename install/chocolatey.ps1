@@ -12,7 +12,7 @@ else {
 if (! (Get-Command choco -errorAction SilentlyContinue)) {
 	Write-Host "Chocolatey needs to be installed!" -ForegroundColor red
 	Write-Host "Installing Chocolatey..." -ForegroundColor yellow
-	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 	Write-Host "Chocolatey has been installed succesfully!" -ForegroundColor green
 	Write-Host "Refreshing environment variables..." -ForegroundColor yellow
 	$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
@@ -121,12 +121,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 Write-Warning "This script will change your Windows settings!" -WarningAction Inquire
 
 Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/windows.ps1'))
-
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUUCx+6Ooqo58bmZyhQ57WkJT+
-# yY6gggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUfujdboY7UhjURYO8yOAfUWsL
+# S4OgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -148,11 +147,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUwSihZizDpM0f
-# Ryk6ZlJp14SK3c0wDQYJKoZIhvcNAQEBBQAEggEAgr8czHBJCTX293htetL5l0bB
-# TU+YMUJ9/f0E7HqvyUnS3pn00n6ThpUrlItZS4w6O/+B1ZU/0u1QmpBrrs1+MAjX
-# ZA6M3AyYNMkFZ4dy/+pjP5bMgHh00QkcH4hn/0E3W0wEzXMEV1sygoqFCMT9oU+2
-# NYrnDo0j8ulLW1N/QyTWdBlibcgBDsWSCR4FFaQtkmDl71yvMJmdRQdiOSW+NaT4
-# 7LrdVYIJ304Djt6gg5iykgdiHts/uuATCXgHIaUJ0x30KvzF+1q0yDnhwuFLX9i6
-# F4nO9fRsWOcfPiEwdhStuDhirgjjiinwhjp0woIBLbTihjVqA3WKEw9iLJ2CYw==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUVecA5OOG7psi
+# 4qBclIhVOAL4D7MwDQYJKoZIhvcNAQEBBQAEggEAeSPX54EtoU8Trd9iC3NQP4bE
+# IssDTRMCtWYlG8z9EyQ6yzWaMjP/LpqYbftkaY9GEroeYBTRAM7h3El5vz61pqs2
+# wIO/fea0UJhGAF2LRfNIgsu/Xe1/RseGCQW3Imx67KsAxNtVDjRwb+zBbB2ItyMw
+# ubWx4c6UA1tfaW0kr523UxEGNKQgfEngmWf64NXF7FvZsVgF3qZM5Z54osJDvQc8
+# Tn0bsFodEx/JK9//wYr4VCBchyPTvZ8YgQnYHijzFq4LZ9BQF4iv03MHs/rhuzvg
+# PFd4BuN6Uvc61OV9JAwQGmhlCIJ1xTGDlLSoUq8FDEYVO0Mn25G2YR4ugjbGjg==
 # SIG # End signature block
