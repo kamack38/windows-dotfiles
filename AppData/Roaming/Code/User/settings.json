@@ -91,7 +91,8 @@
         "featurename",
         "minmax",
         "norestart",
+        "preconnect",
         "webclient"
     ],
-    "editor.minimap.enabled": false,
+    "editor.minimap.enabled": true,
 }
