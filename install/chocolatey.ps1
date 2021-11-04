@@ -76,6 +76,7 @@ pip install spotdl
 
 # NPM Packages
 npm i -g carbon-now-cli
+npm i -g neovim
 
 # Install powershell modules
 pwsh.exe -Command Install-Module -Name oh-my-posh -Scope CurrentUser -Force
