@@ -1,8 +1,7 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
-    [
+    "actions": [
         {
             "command": "unbound",
             "keys": "ctrl+shift+w"
@@ -16,39 +15,64 @@
             "keys": "alt+shift+s"
         },
         {
-            "command": 
-            {
+            "command": "unbound",
+            "keys": "alt+shift+c"
+        },
+        {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
             "keys": "ctrl+c"
         },
         {
-            "command": 
-            {
-                "action": "sendInput",
-                "input": "\u0017"
-            },
-            "keys": "ctrl+backspace"
+            "command": "paste",
+            "keys": "ctrl+v"
         },
         {
             "command": "find",
-            "keys": "ctrl+shift+f"
+            "keys": "ctrl+f"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "newTab"
             },
             "keys": "ctrl+t"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
+            "command": "closePane",
+            "keys": "ctrl+w"
         },
         {
-            "command": 
-            {
+            "command": {
+                "action": "sendInput",
+                "input": "cls\r"
+            },
+            "keys": "alt+c"
+        },
+        {
+            "command": "toggleAlwaysOnTop",
+            "keys": "alt+t"
+        },
+        {
+            "command": "toggleFocusMode",
+            "keys": "alt+shift+f"
+        },
+        {
+            "command": {
+                "action": "sendInput",
+                "input": "cd ..\r"
+            },
+            "keys": "ctrl+up"
+        },
+        {
+            "command": {
+                "action": "quakeMode"
+            },
+            "keys": "alt+q"
+        },
+        {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -56,14 +80,24 @@
             "keys": "alt+shift+d"
         },
         {
-            "command": "closePane",
-            "keys": "ctrl+w"
+            "command": {
+                "action": "sendInput",
+                "input": "\u0017"
+            },
+            "keys": "ctrl+backspace"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "splitPane"
             }
+        },
+        {
+            "command": "openNewTabDropdown",
+            "keys": "alt+n"
+        },
+        {
+            "command": "togglePaneZoom",
+            "keys": "alt+z"
         }
     ],
     "copyFormatting": "none",
@@ -72,14 +106,11 @@
     "experimental.rendering.software": false,
     "initialCols": 126,
     "initialRows": 34,
-    "profiles": 
-    {
-        "defaults": 
-        {
+    "profiles": {
+        "defaults": {
             "colorScheme": "Cobalt2",
             "experimental.retroTerminalEffect": false,
-            "font": 
-            {
+            "font": {
                 "face": "FiraCode NF",
                 "size": 12,
                 "weight": "medium"
@@ -89,8 +120,7 @@
             "startingDirectory": "%USERPROFILE%",
             "useAcrylic": true
         },
-        "list": 
-        [
+        "list": [
             {
                 "colorScheme": "Cobalt2",
                 "commandline": "pwsh.exe -nologo -noexit -command winfetch",
@@ -98,7 +128,8 @@
                 "hidden": false,
                 "name": "PowerShell",
                 "scrollbarState": "hidden",
-                "source": "Windows.Terminal.PowershellCore"
+                "source": "Windows.Terminal.PowershellCore",
+                "tabColor": "#132738"
             },
             {
                 "colorScheme": "Cobalt2",
@@ -149,11 +180,22 @@
                 "hidden": false,
                 "name": "Windows PowerShell",
                 "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "guid": "{0ec9f357-5530-5743-9400-69e781e9ffd5}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{77e52185-4733-5573-a0b3-081f248c28a7}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
-    "schemes": 
-    [
+    "schemes": [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",

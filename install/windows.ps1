@@ -146,6 +146,14 @@ New-Shortcut "mmsys.cpl" "$LinkDir\Sound Settings.lnk" "mmsys.cpl,0"
 New-Shortcut "devmgmt.msc" "$LinkDir\Device Manager.lnk"
 New-Shortcut "control.exe" "$LinkDir\Control Panel.lnk"
 
+
+$nvimQt = "HKCU:\Software\nvim-qt\nvim-qt"
+if (test-path $nvimQt) {
+    Set-ItemProperty $nvimQt "ext_tabline" "false"
+    Set-ItemProperty $nvimQt "ext_popupmenu" "false"
+}
+
+
 ###############################################################################
 ### Customization                                                             #
 ###############################################################################

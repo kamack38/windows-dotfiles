@@ -1,98 +1,101 @@
 {
-    "workbench.iconTheme": "vscode-icons",
-    "liveServer.settings.donotShowInfoMsg": true,
-    "explorer.confirmDelete": false,
-    "editor.wordWrap": "on",
-    "workbench.startupEditor": "welcomePage",
-    "workbench.colorCustomizations": {},
-    "files.associations": {
-        "*.cfg": "CSGO cfg"
-    },
-    "git.enableSmartCommit": true,
-    "git.autofetch": true,
-    "git.confirmSync": false,
-    "liveServer.settings.donotVerifyTags": true,
-    "explorer.confirmDragAndDrop": false,
-    "liveServer.settings.CustomBrowser": "firefox",
-    "diffEditor.wordWrap": "on",
-    "files.eol": "\n",
-    "markdownlint.config": {
-        "MD033": false
-    },
-    "markdown-toc.updateOnSave": false,
-    "terminal.integrated.tabs.enabled": true,
-    "workbench.editorAssociations": {
-        "*.ttf": "default",
-        "*.lnk": "default"
-    },
-    "files.defaultLanguage": "${activeEditorLanguage}",
-    "workbench.colorTheme": "Community Material Theme High Contrast",
-    "security.workspace.trust.untrustedFiles": "open",
-    "editor.fontFamily": "FiraCode NF",
-    "editor.fontWeight": "500",
-    "editor.fontLigatures": true,
-    "git.enableCommitSigning": true,
-    "gitlens.hovers.currentLine.over": "line",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "launch": {
-    
-        "configurations": [],
-        "compounds": []
-    },
-    "gitlens.advanced.messages": {
-        "suppressImproperWorkspaceCasingWarning": true
-    },
-    "editor.cursorBlinking": "smooth",
-    "terminal.integrated.commandsToSkipShell": [
-        "psl.stepIn",
-        "psl.stepOut",
-        "psl.stepOver",
-        "psl.sendToHostTerminal"
-    ],
-    "discord.idleTimeout": 1200,
-    "terminal.integrated.profiles.windows": {
-        "PowerShell": {
-            "path": "pwsh.exe",
-            "args": [
-                "-NoExit",
-                "-NoLogo",
-                "-ExecutionPolicy", "Bypass"
-            ]
-        }
-    },
-    "terminal.integrated.defaultProfile.windows": "PowerShell",
-    "powershell.codeFormatting.autoCorrectAliases": true,
-    "diffEditor.codeLens": true,
-    "terminal.explorerKind": "external",
-    "workbench.panel.defaultLocation": "right",
-    "terminal.integrated.confirmOnKill": "never",
-    "terminal.integrated.localEchoExcludePrograms": [
-        "vim",
-        "vi",
-        "nano",
-        "tmux",
-        "nvim"
-    ],
-    "explorer.compactFolders": false,
-    "editor.tabCompletion": "on",
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "emmet.extensionsPath": [
-        "~\\.vscode",
-        ".\\.vscode"
-    ],
-    "emmet.variables": {
-        "lang": "pl"
-    },
-    "cSpell.language": "en,pl",
-    "tabnine.experimentalAutoImports": true,
-    "cSpell.userWords": [
-        "dotfiles",
-        "featurename",
-        "minmax",
-        "norestart",
-        "preconnect",
-        "webclient"
-    ],
-    "editor.minimap.enabled": true,
+  "cSpell.language": "en,pl",
+  "cSpell.userWords": [
+    "commandline",
+    "dotfiles",
+    "featurename",
+    "kamack",
+    "minmax",
+    "norestart",
+    "preconnect",
+    "webclient"
+  ],
+  "diffEditor.codeLens": true,
+  "diffEditor.wordWrap": "on",
+  "discord.idleTimeout": 1200,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorStyle": "line",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "FiraCode NF",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "500",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": true,
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.wordWrap": "on",
+  "emmet.extensionsPath": ["~\\.vscode", ".\\.vscode"],
+  "emmet.variables": {
+    "lang": "pl"
+  },
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "*.cfg": "CSGO cfg"
+  },
+  "files.defaultLanguage": "${activeEditorLanguage}",
+  "files.eol": "\n",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableCommitSigning": true,
+  "git.enableSmartCommit": true,
+  "gitlens.advanced.messages": {
+    "suppressImproperWorkspaceCasingWarning": true
+  },
+  "gitlens.hovers.currentLine.over": "line",
+  "launch": {
+    "compounds": [],
+    "configurations": []
+  },
+  "liveServer.settings.CustomBrowser": "firefox",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "markdown-preview-enhanced.codeBlockTheme": "one-dark.css",
+  "markdown-preview-enhanced.previewTheme": "github-dark.css",
+  "markdown-preview-enhanced.revealjsTheme": "solarized.css",
+  "markdown-toc.updateOnSave": false,
+  "markdownlint.config": {
+    "MD033": false
+  },
+  "powershell.codeFormatting.autoCorrectAliases": true,
+  "prettier.requireConfig": true,
+  "redhat.telemetry.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "tabnine.experimentalAutoImports": true,
+  "terminal.explorerKind": "external",
+  "terminal.integrated.commandsToSkipShell": [
+    "psl.stepIn",
+    "psl.stepOut",
+    "psl.stepOver",
+    "psl.sendToHostTerminal"
+  ],
+  "terminal.integrated.confirmOnKill": "never",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.localEchoExcludePrograms": [
+    "vim",
+    "vi",
+    "nano",
+    "tmux",
+    "nvim"
+  ],
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "args": ["-NoExit", "-NoLogo", "-ExecutionPolicy", "Bypass"],
+      "path": "pwsh.exe"
+    }
+  },
+  "terminal.integrated.tabs.enabled": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.colorCustomizations": {},
+  "workbench.colorTheme": "Community Material Theme High Contrast",
+  "workbench.editorAssociations": {
+    "*.lnk": "default",
+    "*.ttf": "default"
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.panel.defaultLocation": "right",
+  "workbench.startupEditor": "welcomePage",
+  "task.quickOpen.showAll": true
 }
