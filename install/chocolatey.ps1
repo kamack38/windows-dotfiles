@@ -36,7 +36,7 @@ choco install nodejs --limit-output
 choco install nuget.commandline --limit-output
 choco install gpg4win --limit-output
 choco install winrar --limit-output
-choco install powershell-core --limit-output
+choco install powershell-core --pre --limit-output
 choco install mpv --limit-output
 choco install youtube-dl --limit-output
 choco install ffmpeg --limit-output
@@ -46,7 +46,7 @@ choco install delta --limit-output
 choco install ripgrep --limit-output
 choco install mingw --limit-output
 choco install nircmd --limit-output
-choco install winfetch --version 2.2.0 --limit-output
+choco install winfetch --limit-output
 choco install onefetch --limit-output
 choco install speedtest --limit-output
 choco install microsoft-windows-terminal --pre --limit-output

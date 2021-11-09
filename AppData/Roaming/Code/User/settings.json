@@ -97,5 +97,7 @@
   "workbench.iconTheme": "vscode-icons",
   "workbench.panel.defaultLocation": "right",
   "workbench.startupEditor": "welcomePage",
-  "task.quickOpen.showAll": true
+  "task.quickOpen.showAll": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true
 }
