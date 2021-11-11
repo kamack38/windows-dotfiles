@@ -10,9 +10,12 @@
     "preconnect",
     "webclient"
   ],
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
   "diffEditor.codeLens": true,
   "diffEditor.wordWrap": "on",
   "discord.idleTimeout": 1200,
+  "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.cursorStyle": "line",
@@ -21,6 +24,14 @@
   "editor.fontLigatures": true,
   "editor.fontWeight": "500",
   "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.highlightActiveIndentation": true,
+  "editor.guides.bracketPairsHorizontal": "active",
+  "editor.hover.above": true,
+  "editor.linkedEditing": true,
+  "html.autoClosingTags": true,
+  "javascript.autoClosingTags": true,
+  "typescript.autoClosingTags": true,
   "editor.minimap.enabled": true,
   "editor.suggestSelection": "first",
   "editor.tabCompletion": "on",
@@ -45,6 +56,7 @@
     "suppressImproperWorkspaceCasingWarning": true
   },
   "gitlens.hovers.currentLine.over": "line",
+  "javascript.suggest.paths": false,
   "launch": {
     "compounds": [],
     "configurations": []
@@ -59,11 +71,15 @@
   "markdownlint.config": {
     "MD033": false
   },
+  "path-intellisense.extensionOnImport": true,
+  "path-intellisense.showHiddenFiles": true,
   "powershell.codeFormatting.autoCorrectAliases": true,
+  "powershell.promptToUpdatePowerShell": false,
   "prettier.requireConfig": true,
   "redhat.telemetry.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
   "tabnine.experimentalAutoImports": true,
+  "task.quickOpen.showAll": true,
   "terminal.explorerKind": "external",
   "terminal.integrated.commandsToSkipShell": [
     "psl.stepIn",
@@ -87,8 +103,27 @@
     }
   },
   "terminal.integrated.tabs.enabled": true,
+  "typescript.suggest.paths": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "workbench.colorCustomizations": {},
+  "workbench.colorCustomizations": {
+    // Brackets
+    "editorBracketHighlight.foreground1": "#FFB86C",
+    "editorBracketHighlight.foreground2": "#FF75B5",
+    "editorBracketHighlight.foreground3": "#45A9F9",
+    "editorBracketHighlight.foreground4": "#B084EB",
+    "editorBracketHighlight.foreground5": "#E6E6E6",
+    "editorBracketHighlight.foreground6": "#6fce85",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#eb3247",
+
+    "editorBracketMatch.border": "#f9c4408f",
+
+    "editorBracketPairGuide.activeBackground1": "#FFB86C",
+    "editorBracketPairGuide.activeBackground2": "#FF75B5",
+    "editorBracketPairGuide.activeBackground3": "#45A9F9",
+    "editorBracketPairGuide.activeBackground4": "#B084EB",
+    "editorBracketPairGuide.activeBackground5": "#E6E6E6",
+    "editorBracketPairGuide.activeBackground6": "#6fce85"
+  },
   "workbench.colorTheme": "Community Material Theme High Contrast",
   "workbench.editorAssociations": {
     "*.lnk": "default",
@@ -96,8 +131,5 @@
   },
   "workbench.iconTheme": "vscode-icons",
   "workbench.panel.defaultLocation": "right",
-  "workbench.startupEditor": "welcomePage",
-  "task.quickOpen.showAll": true,
-  "code-runner.runInTerminal": true,
-  "code-runner.saveFileBeforeRun": true
+  "workbench.startupEditor": "welcomePage"
 }
