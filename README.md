@@ -207,4 +207,5 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
 
 ## Credits
 
-`windows.ps1` - taken from [jayharris/dotfiles-windows](https://github.com/jayharris/dotfiles-windows/blob/master/windows.ps1)
+`windows.ps1` - some reg keys taken from [jayharris/dotfiles-windows](https://github.com/jayharris/dotfiles-windows/blob/master/windows.ps1)
+`windows.ps1` - debloat script taken from [Sycnex/Windows10Debloater](https://github.com/Sycnex/Windows10Debloater/blob/master/Windows10SysPrepDebloater.ps1)

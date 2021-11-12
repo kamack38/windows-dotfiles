@@ -116,6 +116,7 @@
     "editorBracketHighlight.unexpectedBracket.foreground": "#eb3247",
 
     "editorBracketMatch.border": "#f9c4408f",
+    "editorBracketMatch.background": "#515a6b",
 
     "editorBracketPairGuide.activeBackground1": "#FFB86C",
     "editorBracketPairGuide.activeBackground2": "#FF75B5",

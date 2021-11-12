@@ -121,12 +121,12 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 
 Write-Warning "This script will change your Windows settings!" -WarningAction Inquire
 
-Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/windows.ps1'))
+Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/windows.ps1')
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUfujdboY7UhjURYO8yOAfUWsL
-# S4OgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU9OpK5JHCujVh9Rzz91i0FQGR
+# qwSgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -148,11 +148,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUVecA5OOG7psi
-# 4qBclIhVOAL4D7MwDQYJKoZIhvcNAQEBBQAEggEAeSPX54EtoU8Trd9iC3NQP4bE
-# IssDTRMCtWYlG8z9EyQ6yzWaMjP/LpqYbftkaY9GEroeYBTRAM7h3El5vz61pqs2
-# wIO/fea0UJhGAF2LRfNIgsu/Xe1/RseGCQW3Imx67KsAxNtVDjRwb+zBbB2ItyMw
-# ubWx4c6UA1tfaW0kr523UxEGNKQgfEngmWf64NXF7FvZsVgF3qZM5Z54osJDvQc8
-# Tn0bsFodEx/JK9//wYr4VCBchyPTvZ8YgQnYHijzFq4LZ9BQF4iv03MHs/rhuzvg
-# PFd4BuN6Uvc61OV9JAwQGmhlCIJ1xTGDlLSoUq8FDEYVO0Mn25G2YR4ugjbGjg==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUU6PvthMKby0h
+# 8iE0flcP2nfnxegwDQYJKoZIhvcNAQEBBQAEggEAFBNTTUBCPfuRjwvSsrJ05MRD
+# u0IEQbL/ciRVLtzbl3eCC/4L52W/5Zl9GYB49fFEEmjFRi0B14RTbxl5GmZ0K2zf
+# cQVUJwJMz5tweQ7qp4JHdqg7QN105MveTEpeg7aHzAKS4ZU4hCUk5DICNvKcIjkJ
+# hrjAEqlJsWr51Q8OpyCWun9WdiIlZz3pan0j+W8FFxZR0FNRI18MmFTmqK9nZ19G
+# xRJ1n5Vxe+e0MzkCBEvBR393lR7bKsUJ3hGjROELrlaB5FfZ6T3a5JVHfQx6VBQq
+# KVi4hKTmT+rBmTZmyRBS33Lz6bOlx0BhmWI2kvlrGfB+hxR6BlNdfX7YNbgEhw==
 # SIG # End signature block

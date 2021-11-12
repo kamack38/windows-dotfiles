@@ -4,6 +4,7 @@
     "tabWidth": 4,
     "printWidth": 60,
     "trailingComma": "all",
+    "singleQuote": true,
     "arrowParens": "always",
     "overrides": [
         {
@@ -16,6 +17,12 @@
             "files": "*.md",
             "options": {
                 "tabWidth": 1
+            }
+        },
+        {
+            "files": "*.html",
+            "options": {
+                "printWidth": 160
             }
         }
     ]
