@@ -119,90 +119,92 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
 ## Other Settings
 
 <details>
-  <summary>VSCode Extensions</summary>
-    <ul>
-      <li>aaron-bond.better-comments</li>
-      <li>akamud.vscode-caniuse</li>
-      <li>AlanWalk.markdown-toc</li>
-      <li>aster.vscode-subtitles</li>
-      <li>bagetx.inf</li>
-      <li>bierner.emojisense</li>
-      <li>bierner.markdown-preview-github-styles</li>
-      <li>bungcip.better-toml</li>
-      <li>christian-kohler.npm-intellisense</li>
-      <li>christian-kohler.path-intellisense</li>
-      <li>chunsen.bracket-select</li>
-      <li>cschlosser.doxdocgen</li>
-      <li>DavidAnson.vscode-markdownlint</li>
-      <li>dbaeumer.vscode-eslint</li>
-      <li>dirt-lxiv.language-csgo-cfg</li>
-      <li>dkundel.vscode-npm-source</li>
-      <li>DotJoshJohnson.xml</li>
-      <li>dsznajder.es7-react-js-snippets</li>
-      <li>eamodio.gitlens</li>
-      <li>ecmel.vscode-html-css</li>
-      <li>eg2.vscode-npm-script</li>
-      <li>enkia.tokyo-night</li>
-      <li>Equinusocio.vsc-community-material-theme</li>
-      <li>Equinusocio.vsc-material-theme</li>
-      <li>equinusocio.vsc-material-theme-icons</li>
-      <li>esbenp.prettier-vscode</li>
-      <li>firefox-devtools.vscode-firefox-debug</li>
-      <li>formulahendry.code-runner</li>
-      <li>GEEKiDoS.vdf</li>
-      <li>GitHub.github-vscode-theme</li>
-      <li>GitHub.vscode-pull-request-github</li>
-      <li>GrapeCity.gc-excelviewer</li>
-      <li>humao.rest-client</li>
-      <li>icrawl.discord-vscode</li>
-      <li>ionutvmi.reg</li>
-      <li>jeff-hykin.better-cpp-syntax</li>
-      <li>Kp.discord-js-snippets</li>
-      <li>liximomo.sftp</li>
-      <li>mgmcdermott.vscode-language-babel</li>
-      <li>mikestead.dotenv</li>
-      <li>mrmlnc.vscode-apache</li>
-      <li>ms-azuretools.vscode-docker</li>
-      <li>ms-python.python</li>
-      <li>ms-python.vscode-pylance</li>
-      <li>ms-vscode-remote.remote-containers</li>
-      <li>ms-vscode-remote.remote-ssh</li>
-      <li>ms-vscode-remote.remote-ssh-edit</li>
-      <li>ms-vscode-remote.remote-wsl</li>
-      <li>ms-vscode.cmake-tools</li>
-      <li>ms-vscode.cpptools</li>
-      <li>ms-vscode.powershell</li>
-      <li>ms-vscode.vscode-typescript-next</li>
-      <li>ms-vsliveshare.vsliveshare</li>
-      <li>ms-vsliveshare.vsliveshare-audio</li>
-      <li>mtxr.sqltools</li>
-      <li>patbenatar.advanced-new-file</li>
-      <li>PKief.material-icon-theme</li>
-      <li>pranaygp.vscode-css-peek</li>
-      <li>redhat.vscode-yaml</li>
-      <li>richie5um2.vscode-sort-json</li>
-      <li>ritwickdey.live-sass</li>
-      <li>ritwickdey.LiveServer</li>
-      <li>shd101wyy.markdown-preview-enhanced</li>
-      <li>slevesque.vscode-autohotkey</li>
-      <li>softwaredotcom.music-time</li>
-      <li>SPGoding.datapack-language-server</li>
-      <li>streetsidesoftware.code-spell-checker</li>
-      <li>streetsidesoftware.code-spell-checker-polish</li>
-      <li>syler.sass-indented</li>
-      <li>TabNine.tabnine-vscode</li>
-      <li>twxs.cmake</li>
-      <li>VisualStudioExptTeam.vscodeintellicode</li>
-      <li>vscode-icons-team.vscode-icons</li>
-      <li>WakaTime.vscode-wakatime</li>
-      <li>WallabyJs.quokka-vscode</li>
-      <li>WallabyJs.wallaby-vscode</li>
-      <li>wix.vscode-import-cost</li>
-      <li>xabikos.JavaScriptSnippets</li>
-      <li>xyz.plsql-language</li>
-      <li>yzhang.markdown-all-in-one</li>
-      <li>zhuangtongfa.material-theme</li>
-    </ul>
+  <summary>
+      VSCode Extesions
+  </summary>
+  <ul>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments">aaron-bond.better-comments</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=akamud.vscode-caniuse">akamud.vscode-caniuse</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=AlanWalk.markdown-toc">AlanWalk.markdown-toc</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=aster.vscode-subtitles">aster.vscode-subtitles</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=bagetx.inf">bagetx.inf</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=bierner.emojisense">bierner.emojisense</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles">bierner.markdown-preview-github-styles</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml">bungcip.better-toml</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense">christian-kohler.npm-intellisense</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense">christian-kohler.path-intellisense</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=chunsen.bracket-select">chunsen.bracket-select</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen">cschlosser.doxdocgen</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint">DavidAnson.vscode-markdownlint</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">dbaeumer.vscode-eslint</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=dirt-lxiv.language-csgo-cfg">dirt-lxiv.language-csgo-cfg</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=dkundel.vscode-npm-source">dkundel.vscode-npm-source</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml">DotJoshJohnson.xml</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets">dsznajder.es7-react-js-snippets</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">eamodio.gitlens</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css">ecmel.vscode-html-css</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script">eg2.vscode-npm-script</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night">enkia.tokyo-night</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-community-material-theme">Equinusocio.vsc-community-material-theme</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme">Equinusocio.vsc-material-theme</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=equinusocio.vsc-material-theme-icons">equinusocio.vsc-material-theme-icons</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">esbenp.prettier-vscode</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug">firefox-devtools.vscode-firefox-debug</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">formulahendry.code-runner</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=GEEKiDoS.vdf">GEEKiDoS.vdf</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme">GitHub.github-vscode-theme</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github">GitHub.vscode-pull-request-github</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer">GrapeCity.gc-excelviewer</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">humao.rest-client</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=icrawl.discord-vscode">icrawl.discord-vscode</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ionutvmi.reg">ionutvmi.reg</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax">jeff-hykin.better-cpp-syntax</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=Kp.discord-js-snippets">Kp.discord-js-snippets</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=liximomo.sftp">liximomo.sftp</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel">mgmcdermott.vscode-language-babel</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv">mikestead.dotenv</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-apache">mrmlnc.vscode-apache</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">ms-azuretools.vscode-docker</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">ms-python.python</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">ms-python.vscode-pylance</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">ms-vscode-remote.remote-containers</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">ms-vscode-remote.remote-ssh</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit">ms-vscode-remote.remote-ssh-edit</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">ms-vscode-remote.remote-wsl</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools">ms-vscode.cmake-tools</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">ms-vscode.cpptools</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.powershell">ms-vscode.powershell</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next">ms-vscode.vscode-typescript-next</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare">ms-vsliveshare.vsliveshare</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare-audio">ms-vsliveshare.vsliveshare-audio</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools">mtxr.sqltools</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=patbenatar.advanced-new-file">patbenatar.advanced-new-file</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme">PKief.material-icon-theme</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek">pranaygp.vscode-css-peek</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml">redhat.vscode-yaml</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=richie5um2.vscode-sort-json">richie5um2.vscode-sort-json</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass">ritwickdey.live-sass</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">ritwickdey.LiveServer</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">shd101wyy.markdown-preview-enhanced</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=slevesque.vscode-autohotkey">slevesque.vscode-autohotkey</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=softwaredotcom.music-time">softwaredotcom.music-time</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server">SPGoding.datapack-language-server</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">streetsidesoftware.code-spell-checker</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-polish">streetsidesoftware.code-spell-checker-polish</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=syler.sass-indented">syler.sass-indented</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode">TabNine.tabnine-vscode</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=twxs.cmake">twxs.cmake</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode">VisualStudioExptTeam.vscodeintellicode</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons">vscode-icons-team.vscode-icons</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime">WakaTime.vscode-wakatime</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode">WallabyJs.quokka-vscode</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=WallabyJs.wallaby-vscode">WallabyJs.wallaby-vscode</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost">wix.vscode-import-cost</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets">xabikos.JavaScriptSnippets</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=xyz.plsql-language">xyz.plsql-language</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">yzhang.markdown-all-in-one</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.material-theme">zhuangtongfa.material-theme</a></li>
+  </ul>
 </details>
 
 ## Credits
