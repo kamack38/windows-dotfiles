@@ -29,9 +29,11 @@
                 projects                = '00FF7F'
                 bin                     = '00FFF7'
                 tests                   = '87CEEB'
+                windows                 = '00A8E8'
+                users                   = 'F4F4F4'
+                favorites               = 'F7D72C'
                 cache                   = '87ECAF'
                 tmp                     = '87ECAF'
-                favorites               = 'F7D72C'
                 '.ssh'                  = '32C398'
                 '.config'               = '87CEAF'
                 '.cache'                = '87ECAF'
@@ -169,6 +171,15 @@
 
             '.sh'                   = 'FF4500'
 
+            # App Packages
+            '.msi'                  = 'FFC77A'
+            '.msix'                 = 'FFC77A'
+            '.msixbundle'           = 'FFC77A'
+            '.appx'                 = 'FFC77A'
+            '.AppxBundle'           = 'FFC77A'
+            '.deb'                  = 'FFC77A'
+            '.rpm'                  = 'FFC77A'
+
             # PowerShell
             '.ps1'                  = '00BFFF'
             '.psm1'                 = '00BFFF'
@@ -184,7 +195,7 @@
 
             # Java
             '.java'                 = 'F89820'
-            '.jar'                  = 'E61C21'
+            '.jar'                  = 'F89820'
 
             # Python
             '.py'                   = '4B8BBE'
@@ -224,9 +235,6 @@
             # Links
             '.lnk'                  = '4C9BF5'
             '.url'                  = '2256CD'
-
-            # Disc Image
-            '.iso'                  = 'D6D6D6'
 
             # Storage Files
             '.cache'                = '0097A7'
@@ -294,6 +302,11 @@
             '.log'                  = 'F0E68C'
             '.txt'                  = '00CED1'
 
+            # Subtitle files
+            '.srt'                  = '00CED1'
+            '.lrc'                  = '00CED1'
+            '.ass'                  = 'C50000'
+
             # HTML/css
             '.html'                 = 'CD5C5C'
             '.htm'                  = 'CD5C5C'
@@ -308,6 +321,9 @@
             '.md'                   = '00BFFF'
             '.markdown'             = '00BFFF'
             '.rst'                  = '00BFFF'
+
+            # Handlebars
+            '.hbs'                  = 'E37933'
 
             # JSON
             '.json'                 = 'FFD700'
@@ -394,6 +410,9 @@
             '.m4a'                  = 'DB7093'
             '.wma'                  = 'DB7093'
             '.aiff'                 = 'DB7093'
+            '.wav'                  = 'DB7093'
+            '.aac'                  = 'DB7093'
+            '.opus'                 = 'DB7093'
 
             # Images
             '.png'                  = '20B2AA'
@@ -417,7 +436,6 @@
             '.exr'                  = '20B2AA'
             '.fpx'                  = '20B2AA'
             '.gbr'                  = '20B2AA'
-            '.img'                  = '20B2AA'
             '.jbig2'                = '20B2AA'
             '.jb2'                  = '20B2AA'
             '.jng'                  = '20B2AA'
@@ -518,6 +536,13 @@
             '.tf'                   = '948EEC'
             '.tfvars'               = '948EEC'
             '.auto.tfvars'          = '948EEC'
+            
+            # Disk Image
+            '.vmdk'                 = 'E1E3E6'
+            '.vhd'                  = 'E1E3E6'
+            '.vhdx'                 = 'E1E3E6'
+            '.img'                  = 'E1E3E6'
+            '.iso'                  = 'E1E3E6'
         }
     }
 }

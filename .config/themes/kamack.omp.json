@@ -120,7 +120,7 @@
                     }
                 },
                 {
-                    "type": "angularcli",
+                    "type": "angular",
                     "style": "powerline",
                     "powerline_symbol": "",
                     "foreground": "#ffffff",
