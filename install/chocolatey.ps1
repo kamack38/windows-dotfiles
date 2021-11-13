@@ -63,6 +63,7 @@ choco install procmon --limit-output
 choco install winmerge --limit-output
 choco install vscode --limit-output
 choco install firacodenf --limit-output
+choco install ngrok --limit-output
 
 # Non-chocolatey programs
 
