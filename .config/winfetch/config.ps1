@@ -3,8 +3,8 @@
 # $image = "~/winfetch.png"
 # $noimage = $true
 
-# Switch the default Windows logo
-# $switchlogo = $true
+# Set the version of Windows to derive the logo from.
+# $logo = "Windows 10"
 
 # Make the logo blink
 # $blink = $true
@@ -13,10 +13,10 @@
 # $all = $true
 
 # Add a custom info line
-# function info_wheater {
+# function info_custom_time {
 #     return @{
-#         title = "Wheater"
-#         content = (Invoke-RestMethod https://wttr.in?format=2)
+#         title = "Time"
+#         content = (Get-Date)
 #     }
 # }
 
@@ -27,7 +27,18 @@
 
 # Configure which package managers are shown
 # disabling unused ones will improve speed
-# $ShowPkgs = @("scoop", "choco")
+# $ShowPkgs = @("winget", "scoop", "choco")
+
+# Use the following option to specify custom package managers.
+# Create a function with that name as suffix, and which returns
+# the number of packages. Two examples are shown here:
+# $CustomPkgs = @("cargo", "just-install")
+# function info_pkg_cargo {
+#     return (cargo install --list | Where-Object {$_ -like "*:" }).Length
+# }
+# function info_pkg_just-install {
+#     return (just-install list).Length
+# }
 
 # Configure how to show info for levels
 # Default is for text only.
@@ -52,7 +63,7 @@ $diskstyle = 'bartext'
     # "motherboard"
     # "custom_time"  # use custom info line
     "uptime"
-    # "wheater"
+    # "ps_pkgs"  # takes some time
     "pkgs"
     "pwsh"
     # "resolution"
@@ -65,6 +76,7 @@ $diskstyle = 'bartext'
     "disk"
     "battery"
     # "locale"
+    # "weather"
     # "local_ip"
     # "public_ip"
     "blank"

@@ -199,7 +199,7 @@ New-Shortcut "mmsys.cpl" "$LinkDir\Sound Settings.lnk" "mmsys.cpl,0"
 New-Shortcut "devmgmt.msc" "$LinkDir\Device Manager.lnk"
 New-Shortcut "control.exe" "$LinkDir\Control Panel.lnk"
 
-
+# Set nvim-qt settings (More info at: https://github.com/equalsraf/neovim-qt/wiki/Configuration-Options)
 $nvimQt = "HKCU:\Software\nvim-qt\nvim-qt"
 if (test-path $nvimQt) {
     Set-ItemProperty $nvimQt "ext_tabline" "false"
@@ -218,7 +218,8 @@ powercfg /hibernate on
 ### Sound                                                                     #
 ###############################################################################
 
-Set-ItemProperty "HKCU\SOFTWARE\Microsoft\Multimedia\Audio" "UserDuckingPreference" 3
+# Sound: Don't do anything when detecting comunication
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Multimedia\Audio" "UserDuckingPreference" 3
 
 ###############################################################################
 ### Customization                                                             #
@@ -261,14 +262,22 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Accen
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Accent" "AccentColorMenu" "4292311040"
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Accent" "AccentPalette" -Value ([byte[]](0xa6,0xd8,0xff,0x00,0x76,0xb9,0xed,0x00,0x42,0x9c,0xe3,0x00,0x00,0x78,0xd7,0x00,0x00,0x5a,0x9e,0x00,0x00,0x42,0x75,0x00,0x00,0x26,0x42,0x00,0xf7,0x63,0x0c,0x00)) -Type Binary
 
+# Mouse: Disable pointer precision
+Set-ItemProperty "HKCU:\Control Panel\Mouse" "MouseSpeed" 0
+Set-ItemProperty "HKCU:\Control Panel\Mouse" "MouseThreshold1" 0
+Set-ItemProperty "HKCU:\Control Panel\Mouse" "MouseThreshold2" 0
+
+# Accessibility: Disable Sticky Keys
+Set-ItemProperty "HKCU\Control Panel\Accessibility\StickyKeys" "Flags" 506
+
 # Install custom cursors
 pnputil -i -a $HOME\.config\themes\cursors\Install.inf
   
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUnOaa4QpJ/ns+Lyuw6qUi3MCm
-# +iagggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQULqZ2ngeX8ML/rl55Ob4TvrlM
+# jJigggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -290,11 +299,11 @@ pnputil -i -a $HOME\.config\themes\cursors\Install.inf
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUudEYYnOY3HeB
-# 1/XleUqHSbbDaBMwDQYJKoZIhvcNAQEBBQAEggEAL11lAOuoh/GndgtqzWh37W7l
-# hQZwOoymQ4Nyzsc8K/FcFlHxPQeFMnTenD2gnkdj2aRyplpM2LUw3aUPkYP0Bz14
-# vtWaS+B6VCQryYqBcPOQUeDnjr7xyUCYEFtZdk6YeGmw+yyB7ve9U/GdLUR2lwS9
-# 5fCDRRGsSqmXSL8OEsV863UF5jYGfUxxKgaCOUCbE4nkwrY4OCrTKDPQa++bVav2
-# 0V980W3hIo52pS67hRh0hOOi+NLnKCrRrTOHZUBR6CzsjiWBR3C9S+v5fB7Ucdz7
-# yG5FBI4616LMsjO+EV0OQEZ+HWYBlwWx9zsAQyv1jPnewcG3n3a7eDaBvJygSQ==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUFiFTJUt+LErL
+# CNMMRUTLooF9ac8wDQYJKoZIhvcNAQEBBQAEggEAkbuqmEUSCOCPRABWwluKk8so
+# PprNwZJ+EoI06c8xuuXkqf1ne8+4aG4EA0b8pQk+cOuWd2z+CppESp+RVjFJAvTt
+# dp6s13FjvB2Cp39AN+QwebwXdnr3pFxwwxqFQjWJADzAujvCrQW8lLS4u42D6yRQ
+# s3sTbJGkRyqnvQLD6gf+0uSRTlyc7l7+HMeJb8iawySgeXe0zR2QxllUu6aFnbyx
+# e+7F802Dxs2tpHkKc1u//9SxTybN8UyU9O2R0uhP6+t+tpsGQELVt7lHzR+IubNy
+# 84x+xqK1qaypQXYsAGo96oQsevPLKuSAU7SK6pbItrveVRyc0A+OXBHuZdBY+w==
 # SIG # End signature block
