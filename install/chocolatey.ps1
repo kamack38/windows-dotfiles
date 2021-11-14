@@ -64,6 +64,8 @@ choco install winmerge --limit-output
 choco install vscode --limit-output
 choco install firacodenf --limit-output
 choco install ngrok --limit-output
+choco install croc --limit-output
+choco install autohotkey --limit-output
 
 # Non-chocolatey programs
 
@@ -123,11 +125,13 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 Write-Warning "This script will change your Windows settings!" -WarningAction Inquire
 
 Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/windows.ps1'))
+
+
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU9OpK5JHCujVh9Rzz91i0FQGR
-# qwSgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU0a1c7Fx/f3xu6Jemy/nmaaW5
+# PmmgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -149,11 +153,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUU6PvthMKby0h
-# 8iE0flcP2nfnxegwDQYJKoZIhvcNAQEBBQAEggEAFBNTTUBCPfuRjwvSsrJ05MRD
-# u0IEQbL/ciRVLtzbl3eCC/4L52W/5Zl9GYB49fFEEmjFRi0B14RTbxl5GmZ0K2zf
-# cQVUJwJMz5tweQ7qp4JHdqg7QN105MveTEpeg7aHzAKS4ZU4hCUk5DICNvKcIjkJ
-# hrjAEqlJsWr51Q8OpyCWun9WdiIlZz3pan0j+W8FFxZR0FNRI18MmFTmqK9nZ19G
-# xRJ1n5Vxe+e0MzkCBEvBR393lR7bKsUJ3hGjROELrlaB5FfZ6T3a5JVHfQx6VBQq
-# KVi4hKTmT+rBmTZmyRBS33Lz6bOlx0BhmWI2kvlrGfB+hxR6BlNdfX7YNbgEhw==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUDYMthf+QvcIJ
+# vCgSnIo08iOZtxQwDQYJKoZIhvcNAQEBBQAEggEAh1Q1btmjaSk+hk3rvwRBe1rF
+# 0Yxc4q/T9t2WwqOXdzF51597jV3UWzW4kX+8F7LvPcGbxnByLTPzaVtkYF5ajkFw
+# 5apYGVW5A61H7WsUIElSmRKzdwyHqsLXC7jsKgdUPMc+0sdUyhlX//jPbLszNOvX
+# RiQC9BYjANEJJFonsALj7a3WGn9ToHzepC+OUy33GnR+1Pp9DwX1Uqsy7sK9IC0q
+# Z2d0XtbYeJzasOllEioV5oUkD4YrtQRGZ7wojYr+FK+AmiHAsd67xfEBVhla7n35
+# dhsdizzfitqhvebNhOaZQOfTy7my8SwTDKsV7Ss9O/845gxxT9XbIa6Jy04dKQ==
 # SIG # End signature block
