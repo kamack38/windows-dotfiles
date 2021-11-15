@@ -1,6 +1,7 @@
 {
   "cSpell.language": "en,pl",
   "cSpell.userWords": [
+    "Cheatsheet",
     "commandline",
     "dotfiles",
     "featurename",
@@ -70,7 +71,8 @@
   "markdown-preview-enhanced.revealjsTheme": "solarized.css",
   "markdown-toc.updateOnSave": false,
   "markdownlint.config": {
-    "MD033": false
+    "MD033": false,
+    "MD024": false
   },
   "path-intellisense.extensionOnImport": true,
   "path-intellisense.showHiddenFiles": true,
@@ -133,5 +135,9 @@
   },
   "workbench.iconTheme": "vscode-icons",
   "workbench.panel.defaultLocation": "right",
-  "workbench.startupEditor": "welcomePage"
+  "workbench.startupEditor": "welcomePage",
+  "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+  "markdown-preview-enhanced.enableTypographer": true,
+  "markdown-preview-enhanced.mermaidTheme": "dark",
+  "markdown.extension.list.indentationSize": "inherit"
 }

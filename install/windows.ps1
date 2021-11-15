@@ -268,7 +268,13 @@ Set-ItemProperty "HKCU:\Control Panel\Mouse" "MouseThreshold1" 0
 Set-ItemProperty "HKCU:\Control Panel\Mouse" "MouseThreshold2" 0
 
 # Accessibility: Disable Sticky Keys
-Set-ItemProperty "HKCU\Control Panel\Accessibility\StickyKeys" "Flags" 506
+Set-ItemProperty "HKCU:\Control Panel\Accessibility\StickyKeys" "Flags" 506
+
+# Keyboard: Disable language switch hotkey Disabled: 3, Ctrl + Shift: 2, LAlt + Shift: 1, (`): 0
+Set-ItemProperty "HKCU:\Keyboard Layout\Toggle" "Language Hotkey" 3
+
+# Keyboard: Disable layout switch hotkey Disabled: 3, Ctrl + Shift: 2, LAlt + Shift: 1, (`): 0
+Set-ItemProperty "HKCU:\Keyboard Layout\Toggle" "Layout Hotkey" 3
 
 # Install custom cursors
 pnputil -i -a $HOME\.config\themes\cursors\Install.inf
@@ -276,8 +282,8 @@ pnputil -i -a $HOME\.config\themes\cursors\Install.inf
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQULqZ2ngeX8ML/rl55Ob4TvrlM
-# jJigggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUB55iI3HPu3rBTDf5V5sp+rRn
+# IZ6gggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -299,11 +305,11 @@ pnputil -i -a $HOME\.config\themes\cursors\Install.inf
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUFiFTJUt+LErL
-# CNMMRUTLooF9ac8wDQYJKoZIhvcNAQEBBQAEggEAkbuqmEUSCOCPRABWwluKk8so
-# PprNwZJ+EoI06c8xuuXkqf1ne8+4aG4EA0b8pQk+cOuWd2z+CppESp+RVjFJAvTt
-# dp6s13FjvB2Cp39AN+QwebwXdnr3pFxwwxqFQjWJADzAujvCrQW8lLS4u42D6yRQ
-# s3sTbJGkRyqnvQLD6gf+0uSRTlyc7l7+HMeJb8iawySgeXe0zR2QxllUu6aFnbyx
-# e+7F802Dxs2tpHkKc1u//9SxTybN8UyU9O2R0uhP6+t+tpsGQELVt7lHzR+IubNy
-# 84x+xqK1qaypQXYsAGo96oQsevPLKuSAU7SK6pbItrveVRyc0A+OXBHuZdBY+w==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUx8EWyP3shWFR
+# HtKR1ru3KZhX5GgwDQYJKoZIhvcNAQEBBQAEggEAkyS+R5w6cfuKizW9kSRNHO+u
+# MZlvR4iek7lBGH58Tp0k7HFqSSfPrToiOSwmwNyPAETkuzPbxnax8OzRtSiXFiOo
+# K/uTxqwY2IA9M2z0zLH0A9eMkifteSlJ8557B5B5db3WjpuoyBW6DIG0sHVv7P9Z
+# bTLlYtUE3IL7/UpcZBUUgPcSt3ugWkptelUqzyACXifWqK3s7z38w/ijFlF6Lfy+
+# 4n+32uVGRj9Rr7DOcUNK/SAB3f+qFG3M2WTPyaFQ+0HrdfCqnMKwE/5K+HS/ozBE
+# z9wcWHW1Q28fIZuNrZdJgpxP/hRu/mCs3tzfWjRJuN5d+kwrYzXWaVluwDT0IA==
 # SIG # End signature block
