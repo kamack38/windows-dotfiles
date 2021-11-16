@@ -38,7 +38,7 @@ choco install gpg4win --limit-output
 choco install winrar --limit-output
 choco install powershell-core --pre --limit-output
 choco install mpv --limit-output
-choco install youtube-dl --limit-output
+choco install yt-dlp --limit-output
 choco install ffmpeg --limit-output
 choco install neovim --limit-output
 choco install bat --limit-output
