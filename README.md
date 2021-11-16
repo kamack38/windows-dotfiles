@@ -36,13 +36,13 @@ From [PowerShell](https://docs.microsoft.com/en-us/powershell/):
 > **Note:** You **DON'T** need [**Chocolatey**](https://chocolatey.org/) and [**Git**](https://git-scm.com/) installed, because the script will download them automatically, but make sure PowerShell is run as administrator.
 
 ```powershell
-iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/chocolatey.ps1'))
+iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1'))
 ```
 
 **OR** (Shorter version)
 
 ```powershell
-Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/JEt6s | iex
+Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
 ```
 
 ### Installation using batch script **[DEPRECATED]**
