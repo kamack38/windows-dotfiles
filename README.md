@@ -125,7 +125,6 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
   <ul>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments">aaron-bond.better-comments</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=akamud.vscode-caniuse">akamud.vscode-caniuse</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=AlanWalk.markdown-toc">AlanWalk.markdown-toc</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=aster.vscode-subtitles">aster.vscode-subtitles</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=bagetx.inf">bagetx.inf</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=bierner.emojisense">bierner.emojisense</a></li>
@@ -193,6 +192,7 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
       <li><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-polish">streetsidesoftware.code-spell-checker-polish</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=syler.sass-indented">syler.sass-indented</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode">TabNine.tabnine-vscode</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf">tomoki1207.pdf</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=twxs.cmake">twxs.cmake</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode">VisualStudioExptTeam.vscodeintellicode</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons">vscode-icons-team.vscode-icons</a></li>
