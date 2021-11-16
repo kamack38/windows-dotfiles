@@ -277,13 +277,16 @@ Set-ItemProperty "HKCU:\Keyboard Layout\Toggle" "Language Hotkey" 3
 Set-ItemProperty "HKCU:\Keyboard Layout\Toggle" "Layout Hotkey" 3
 
 # Install custom cursors
-pnputil -i -a $HOME\.config\themes\cursors\Install.inf
+# Minecraft cursors
+pnputil -i -a $HOME\.config\themes\cursors\minecraft-cursors\install.inf
+# Capitaine cursors. see: https://github.com/keeferrourke/capitaine-cursors
+pnputil -i -a $HOME\.config\themes\cursors\capitaine-cursors\install.inf
   
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUB55iI3HPu3rBTDf5V5sp+rRn
-# IZ6gggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUqDWpcjh91GeUujFBBgh8RckH
+# 5OSgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -305,11 +308,11 @@ pnputil -i -a $HOME\.config\themes\cursors\Install.inf
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUx8EWyP3shWFR
-# HtKR1ru3KZhX5GgwDQYJKoZIhvcNAQEBBQAEggEAkyS+R5w6cfuKizW9kSRNHO+u
-# MZlvR4iek7lBGH58Tp0k7HFqSSfPrToiOSwmwNyPAETkuzPbxnax8OzRtSiXFiOo
-# K/uTxqwY2IA9M2z0zLH0A9eMkifteSlJ8557B5B5db3WjpuoyBW6DIG0sHVv7P9Z
-# bTLlYtUE3IL7/UpcZBUUgPcSt3ugWkptelUqzyACXifWqK3s7z38w/ijFlF6Lfy+
-# 4n+32uVGRj9Rr7DOcUNK/SAB3f+qFG3M2WTPyaFQ+0HrdfCqnMKwE/5K+HS/ozBE
-# z9wcWHW1Q28fIZuNrZdJgpxP/hRu/mCs3tzfWjRJuN5d+kwrYzXWaVluwDT0IA==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUvYrOC1PBlVHf
+# X3IG3Y0qKUrvtjwwDQYJKoZIhvcNAQEBBQAEggEAP7mZttEShroXh1DxTxXsxYEM
+# 0i6w4Aj5Mb2ef38HdApwHlnZmVttJb2hN9vj+SqxwzVd4ilcIuOYe44KDLTsC6Bu
+# zhlzmbcM7rn6VQ8i2R6RLVQjHOkFf2vSMVS/7tWauxpzp/3DG46euJA9UJQGo3zT
+# MHSlHzNdTvpiWcibhE+N8x6V4i6dN0efP7FUYHCpac2YITPCai7kbUCR6TxO7tww
+# GudCA8P1FqmLrwSAhkxpp1L17WW/05i+TbTyOTu4VDp8HGSPjCn+EiFvavLnQWBq
+# XudzIwiyRA7W+vm5Dz2YgSIlOElm9rcaC3veB1D2Q9Rxq3ZCLmvdjpDIrEPRXQ==
 # SIG # End signature block
