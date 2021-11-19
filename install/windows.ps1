@@ -174,7 +174,6 @@ cmd /c assoc .ps1=PowerShellFileV
 cmd /c ftype PowerShellFileV=wt.exe pwsh.exe -wd "%1\.." -NoExit -NoLogo -ExecutionPolicy Bypass -File %1 -Command "& `"%1`""
 
 # Create Links to System Utilities
-
 $LinkDir = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs"
 
 function New-Shortcut {
@@ -277,6 +276,7 @@ Set-ItemProperty "HKCU:\Keyboard Layout\Toggle" "Language Hotkey" 3
 Set-ItemProperty "HKCU:\Keyboard Layout\Toggle" "Layout Hotkey" 3
 
 # Install custom cursors
+
 # Minecraft cursors
 pnputil -i -a $HOME\.config\themes\cursors\minecraft-cursors\install.inf
 # Capitaine cursors. see: https://github.com/keeferrourke/capitaine-cursors

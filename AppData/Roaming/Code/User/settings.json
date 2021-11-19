@@ -72,7 +72,8 @@
   "markdown-toc.updateOnSave": false,
   "markdownlint.config": {
     "MD033": false,
-    "MD024": false
+    "MD024": false,
+    "MD041": false
   },
   "path-intellisense.extensionOnImport": true,
   "path-intellisense.showHiddenFiles": true,

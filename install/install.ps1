@@ -113,13 +113,70 @@ Expand-Archive "metro-for-steam.zip" -Force
 Remove-Item "UPMetroSkin.zip", "metro-for-steam.zip" -Recurse -Force -ErrorAction SilentlyContinue
 Move-Item "UPMetroSkin\UPMetroSkin-master", "metro-for-steam\metro-for-steam-4.4" -Destination "C:\Program Files (x86)\Steam\skins" -Force
 Remove-Item "UPMetroSkin", "metro-for-steam" -Recurse -Force
-Write-Host "All files has been extracted and moved!" -ForegroundColor green
-explorer.exe "C:\Program Files (x86)\Steam\skins"
+Set-Location "C:\Program Files (x86)\Steam\skins"
+Copy-Item ".\UPMetroSkin-master\Unofficial 4.x Patch\Main Files ``[Install First``]\*" -Destination ".\metro-for-steam-4.4\" -Force -Recurse 
+Write-Host "Customize your settings..." -ForegroundColor yellow
+
+$categories = (Get-ChildItem ".\UPMetroSkin-master\Unofficial 4.x Patch\Extras" -Directory -Exclude '*install*', '*Remastered Extra*')
+$myObject = [pscustomobject]$categories
+for ($j = 0; $j -lt $myObject.length; $j++) {
+    $myObject[$j] | Add-Member -NotePropertyName Childs -NotePropertyValue (Get-ChildItem $myObject[$j])
+    for ($i = 0; $i -lt $myObject[$j].Childs.Length; $i++) {
+        $myObject[$j].Childs[$i] | Add-Member -NotePropertyName Color -NotePropertyValue "Red"
+    }
+}
+
+for ($j = 0; $j -lt $myObject.Length; $j++) {
+    function Show-Menu
+    {
+        param (
+            [string]$Title = 'My Menu'
+        )
+        Clear-Host
+        Write-Host "================ $Title ================"
+        Write-Host "What dou you want to install?"
+        for ($i = 0; $i -lt $myObject[$j].Childs.Length; $i++) {
+            $index = $i + 1
+            Write-Host "Press '$index' to select: " $myObject[$j].Childs[$i].Name -ForegroundColor $myObject[$j].Childs[$i].Color
+        }
+        Write-Host "A: Press 'A' to save settings and install them."
+        Write-Host "C: Press 'C' to cancel selection and go to another category."
+        Write-Host "Q: Press 'Q' to cancel EVERYTHING and quit."
+    }
+    do
+    {
+        Show-Menu -Title $myObject[$j].Name
+        $selection = Read-Host "Please make a selection"
+        if ($selection -match "^\d+$" -and $myObject[$j].Childs[$selection - 1].Color -ne "Green") {
+            $myObject[$j].Childs[$selection - 1].Color = "Green"
+        }
+        elseif ($selection -match "^\d+$" -and $myObject[$j].Childs[$selection - 1].Color -ne "Red") {
+            $myObject[$j].Childs[$selection - 1].Color = "Red"
+        }
+        elseif ($selection -eq "a") {
+            Write-Host Installing selected settings... -ForegroundColor yellow
+            (($myObject[$j].childs | Where-Object -Property color -EQ "Green").PSPath -split ".*::").Split('',[System.StringSplitOptions]::RemoveEmptyEntries).ForEach({$_ + "\Install\*"}) | Copy-Item -Destination ".\metro-for-steam-4.4\" -Force -Recurse
+            break
+        }
+        elseif ($selection -eq "q") {
+            $j = $myObject.Length
+            break
+        }
+        elseif ($selection -ne "c") {
+            Write-Host 'Wrong Input!' -ForegroundColor red
+            pause
+        }
+    }
+    until ($selection -eq "c")
+}
+
+Write-Host "All files has been extracted and moved!" -ForegroundColor yellow
 
 # Setup NvChad
 git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
 git clone https://github.com/NvChad/NvChad "$env:LOCALAPPDATA\nvim"
 
+# Restore settings files
 $DOTFILES = "$HOME\.dotfiles"
 $repo = "https://github.com/kamack38/dotfiles.git"
 
@@ -130,6 +187,7 @@ git --git-dir="$DOTFILES" --work-tree="$HOME" checkout
 
 Write-Host "Programs settings have been restored!" -ForegroundColor green
 
+Write-Host "Restoring Windows settings..." -ForegroundColor yellow
 Write-Warning "This script will change your Windows settings!" -WarningAction Inquire
 
 Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/windows.ps1'))
