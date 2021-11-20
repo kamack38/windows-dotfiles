@@ -173,6 +173,11 @@ for ($j = 0; $j -lt $myObject.Length; $j++) {
 
 Write-Host "All files has been extracted and moved!" -ForegroundColor yellow
 
+# Install ff2mpv
+git clone https://github.com/woodruffw/ff2mpv/ $HOME\ff2mpv
+Set-Location $HOME\ff2mpv
+python .\check-config-win.py -i
+
 # Setup NvChad
 git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
 git clone https://github.com/NvChad/NvChad "$env:LOCALAPPDATA\nvim"
