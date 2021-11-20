@@ -184,6 +184,7 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
       <li><a href="https://marketplace.visualstudio.com/items?itemName=richie5um2.vscode-sort-json">richie5um2.vscode-sort-json</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass">ritwickdey.live-sass</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">ritwickdey.LiveServer</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=SamuelCharpentier.remove-non-ascii-chars">SamuelCharpentier.remove-non-ascii-chars</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">shd101wyy.markdown-preview-enhanced</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=slevesque.vscode-autohotkey">slevesque.vscode-autohotkey</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=softwaredotcom.music-time">softwaredotcom.music-time</a></li>
@@ -214,3 +215,13 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
 `windows.ps1` - debloat script taken from [Sycnex/Windows10Debloater](https://github.com/Sycnex/Windows10Debloater/blob/master/Windows10SysPrepDebloater.ps1)
 
 `windows.ps1` - capitaine-cursors taken from [keeferrourke/capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors)
+
+`menu.lua` - [jonniek/mpv-menu](https://github.com/jonniek/mpv-menu)
+
+`morden.lua` - [maoiscat/mpv-osc-morden](https://github.com/maoiscat/mpv-osc-morden)
+
+`pause-indicator.lua` - [by torque](https://gist.github.com/torque/9dbc69543118347d2e5f43239a7e609a)
+
+`playlistmanager.lua` - [jonniek/mpv-playlistmanager](https://github.com/jonniek/mpv-playlistmanager)
+
+`youtube-quality.lua` - [jgreco/mpv-youtube-quality](https://github.com/jgreco/mpv-youtube-quality)
