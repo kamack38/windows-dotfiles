@@ -76,6 +76,7 @@ Write-Host "Environment variables has been refreshed!" -ForegroundColor green
 
 # Python Packages
 pip install spotdl
+pip install streamlink
 
 # NPM Packages
 npm i -g carbon-now-cli

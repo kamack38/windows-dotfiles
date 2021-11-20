@@ -226,13 +226,13 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Multimedia\Audio" "UserDuckingPrefere
 Write-Host "Configuring Explorer, Taskbar, and System Tray..." -ForegroundColor "Yellow"
 
 # Explorer: Show hidden files by default: Show Files: 1, Hide Files: 2
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "Hidden" 1
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "Hidden" 1
 
 # Explorer: Show file extensions by default
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
 
 # Explorer: Show path in title bar
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" "FullPath" 1
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" "FullPath" 1
 
 # Taskbar: Show colors on Taskbar, Start, and SysTray: Disabled: 0, Taskbar, Start, & SysTray: 1, Taskbar Only: 2
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "ColorPrevalence" 1
@@ -240,15 +240,27 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Persona
 # Taskbar: Enable Transparency
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "EnableTransparency" 0
 
+# Taskbar: Combine taskbar buttons: 0 - Always combine, hide labels, 1 - Combine when taskbar is full, 2 - Never combine
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "TaskbarGlomLevel" 0
+
+# Taskbar: Show on screen keyboard button: 0 - Disabled, 1 - Enabled
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\TabletTip\1.7" "TipbandDesiredVisibility" 1
+
+# Taskbar: Show windows search: 0 - Hide, 1 - Show search icon, 2 - Show search bar
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" "SearchboxTaskbarMode" 0
+
+# Taskbar: Disable task view button
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "ShowTaskViewButton" 0
+
 # Titlebar: Enable theme colors on titlebar
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\DWM" "ColorPrevalence" 1
 
 # Recycle Bin: Disable Delete Confirmation Dialog
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "ConfirmFileDelete" 0
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" "ConfirmFileDelete" 0
 
 # System: Enable Dark Theme
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "SystemUsesLightTheme" 0
-Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" "AppsUseLightTheme" 0
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "AppsUseLightTheme" 0
 
 # Desktop: Set Custom Wallpaper
 Set-ItemProperty "HKCU:\Control Panel\Desktop" "WallPaper" "$HOME\.config\themes\Minimalist Code by Daze_.jpg"
