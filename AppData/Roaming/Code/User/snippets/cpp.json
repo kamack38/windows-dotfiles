@@ -1,0 +1,34 @@
+{
+  "Initialize cpp": {
+    "prefix": "!!!",
+    "body": [
+      "#include <${1:iostream}>",
+      "",
+      "using namespace std;",
+      "",
+      "int main() {",
+      "    $0",
+      "    return 0;",
+      "}"
+    ]
+  },
+  "Initialize cpp with array": {
+    "prefix": "!!",
+    "body": [
+      "#include <iostream>",
+      "",
+      "using namespace std;",
+      "",
+      "int T[${1:length}];",
+      "",
+      "int main() {",
+      "    $0",
+      "    return 0;",
+      "}"
+    ]
+  },
+  "Make ur code faster": {
+    "prefix": "!fast",
+    "body": ["ios_base::sync_with_stdio(false);", "cin.tie(0);", "cout.tie(0);"]
+  }
+}
