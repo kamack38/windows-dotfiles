@@ -26,8 +26,13 @@
     "command": "-workbench.action.keybindingsReference"
   },
   {
-    "key": "ctrl+k ctrl+r",
+    "key": "f7",
     "command": "code-runner.run",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "f7",
+    "command": "-cmake.build",
+    "when": "cmake:enableFullFeatureSet && !cmake:hideBuildCommand"
   }
 ]

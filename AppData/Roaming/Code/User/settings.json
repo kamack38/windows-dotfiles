@@ -116,7 +116,29 @@
   "javascript.suggest.paths": false,
   "launch": {
     "compounds": [],
-    "configurations": []
+    "configurations": [
+      {
+        "name": "g++.exe - Build and debug active file",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${fileDirname}/bin/${fileBasenameNoExtension}.exe",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}\\bin",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "C:\\ProgramData\\chocolatey\\bin\\gdb.exe",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "preLaunchTask": "C/C++: build active file (g++)"
+      }
+    ]
   },
   "liveServer.settings.CustomBrowser": "firefox",
   "liveServer.settings.donotShowInfoMsg": true,
