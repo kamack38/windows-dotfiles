@@ -2,7 +2,7 @@
   "Initialize cpp": {
     "prefix": "!!!",
     "body": [
-      "#include <${1:iostream}>",
+      "#include <${1:bits/stdc++.h}>",
       "",
       "using namespace std;",
       "",
@@ -15,11 +15,11 @@
   "Initialize cpp with array": {
     "prefix": "!!",
     "body": [
-      "#include <iostream>",
+      "#include <${1:bits/stdc++.h}>",
       "",
       "using namespace std;",
       "",
-      "int T[${1:length}];",
+      "int T[${2:length}];",
       "",
       "int main() {",
       "    $0",

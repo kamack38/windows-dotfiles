@@ -120,12 +120,13 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
 
 <details>
   <summary>
-      VSCode Extesions
+      VSCode Extensions
   </summary>
   <ul>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments">aaron-bond.better-comments</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=akamud.vscode-caniuse">akamud.vscode-caniuse</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=aster.vscode-subtitles">aster.vscode-subtitles</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=austin.code-gnu-global">austin.code-gnu-global</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=bagetx.inf">bagetx.inf</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=bierner.emojisense">bierner.emojisense</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles">bierner.markdown-preview-github-styles</a></li>
