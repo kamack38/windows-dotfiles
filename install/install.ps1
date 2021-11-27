@@ -82,6 +82,9 @@ pip install streamlink
 npm i -g carbon-now-cli
 npm i -g neovim
 
+npm i --prefix ~\.quokka dotenv-quokka-plugin
+npm i --prefix ~\.quokka jsdom-quokka-plugin
+
 # Install powershell modules
 pwsh.exe -Command Install-Module -Name oh-my-posh -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name posh-git -Scope CurrentUser -Force

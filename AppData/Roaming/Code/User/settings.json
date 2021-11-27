@@ -14,6 +14,7 @@
     "norestart",
     "powerline",
     "preconnect",
+    "quokka",
     "webclient"
   ],
   "code-runner.executorMap": {
@@ -217,5 +218,6 @@
   "workbench.iconTheme": "vscode-icons",
   "workbench.panel.defaultLocation": "right",
   "workbench.startupEditor": "welcomePage",
-  "zenMode.hideLineNumbers": false
+  "zenMode.hideLineNumbers": false,
+  "quokka.automaticRestart": true
 }

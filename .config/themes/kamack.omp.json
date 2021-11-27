@@ -104,6 +104,18 @@
                     "background": "#689f63",
                     "properties": {
                         "postfix": " \uF898 ",
+                        "display_version": true,
+                        "display_package_manager": true
+                    }
+                },
+                {
+                    "type": "dart",
+                    "style": "powerline",
+                    "powerline_symbol": "",
+                    "foreground": "#03589c",
+                    "background": "#2bb1ee",
+                    "properties": {
+                        "prefix": " \uE798 ",
                         "display_version": true
                     }
                 },
@@ -122,7 +134,7 @@
                 {
                     "type": "angular",
                     "style": "powerline",
-                    "powerline_symbol": "",
+                    "powerline_symbol": "",
                     "foreground": "#ffffff",
                     "background": "#c3002f",
                     "properties": {
