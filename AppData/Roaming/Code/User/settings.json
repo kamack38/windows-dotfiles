@@ -91,8 +91,11 @@
   "editor.minimap.enabled": true,
   "editor.suggestSelection": "first",
   "editor.tabCompletion": "on",
-  "editor.wordWrap": "on",
-  "emmet.extensionsPath": ["~\\.vscode", ".\\.vscode"],
+"editor.wordWrap": "on",
+"emmet.extensionsPath": [
+  "~\\.vscode",
+  ".\\.vscode"
+],
   "emmet.variables": {
     "lang": "pl"
   },
