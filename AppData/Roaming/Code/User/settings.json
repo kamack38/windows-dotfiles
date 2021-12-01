@@ -3,6 +3,9 @@
   "[cpp]": {
     "editor.defaultFormatter": null
   },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "cSpell.language": "en,pl",
   "cSpell.userWords": [
     "Cheatsheet",
@@ -53,7 +56,7 @@
     "perl": "perl",
     "perl6": "perl6",
     "php": "php",
-    "powershell": "powershell -ExecutionPolicy ByPass -File",
+    "powershell": "cd $dir && powershell -ExecutionPolicy ByPass -File $fileName",
     "python": "python -u",
     "r": "Rscript",
     "racket": "racket",
@@ -82,20 +85,21 @@
   "editor.fontFamily": "FiraCode NF",
   "editor.fontLigatures": true,
   "editor.fontWeight": "500",
+  "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": "active",
   "editor.guides.bracketPairsHorizontal": "active",
   "editor.guides.highlightActiveIndentation": true,
   "editor.hover.above": true,
+  "editor.lineNumbers": "on",
   "editor.linkedEditing": true,
   "editor.minimap.enabled": true,
+  "editor.quickSuggestionsDelay": 0,
+  "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
   "editor.tabCompletion": "on",
-"editor.wordWrap": "on",
-"emmet.extensionsPath": [
-  "~\\.vscode",
-  ".\\.vscode"
-],
+  "editor.wordWrap": "on",
+  "emmet.extensionsPath": ["~\\.vscode", ".\\.vscode"],
   "emmet.variables": {
     "lang": "pl"
   },
@@ -122,25 +126,25 @@
     "compounds": [],
     "configurations": [
       {
-        "name": "g++.exe - Build and debug active file",
-        "type": "cppdbg",
-        "request": "launch",
-        "program": "${fileDirname}/bin/${fileBasenameNoExtension}.exe",
+        "MIMode": "gdb",
         "args": [],
-        "stopAtEntry": false,
         "cwd": "${fileDirname}\\bin",
         "environment": [],
         "externalConsole": false,
-        "MIMode": "gdb",
         "miDebuggerPath": "C:\\ProgramData\\chocolatey\\bin\\gdb.exe",
+        "name": "g++.exe - Build and debug active file",
+        "preLaunchTask": "C/C++: build active file (g++)",
+        "program": "${fileDirname}/bin/${fileBasenameNoExtension}.exe",
+        "request": "launch",
         "setupCommands": [
           {
             "description": "Enable pretty-printing for gdb",
-            "text": "-enable-pretty-printing",
-            "ignoreFailures": true
+            "ignoreFailures": true,
+            "text": "-enable-pretty-printing"
           }
         ],
-        "preLaunchTask": "C/C++: build active file (g++)"
+        "stopAtEntry": false,
+        "type": "cppdbg"
       }
     ]
   },
@@ -165,7 +169,12 @@
   "powershell.codeFormatting.autoCorrectAliases": true,
   "powershell.promptToUpdatePowerShell": false,
   "prettier.requireConfig": true,
+  "python.languageServer": "Pylance",
+  "quokka.automaticRestart": true,
   "redhat.telemetry.enabled": false,
+  "remote.SSH.connectTimeout": 1200,
+  "resmon.show.disk": true,
+  "resmon.disk.format": "PercentUsed",
   "security.workspace.trust.untrustedFiles": "open",
   "tabnine.experimentalAutoImports": true,
   "task.quickOpen.showAll": true,
@@ -177,7 +186,9 @@
     "psl.sendToHostTerminal"
   ],
   "terminal.integrated.confirmOnKill": "never",
+  "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontSize": 16,
   "terminal.integrated.localEchoExcludePrograms": [
     "vim",
     "vi",
@@ -187,8 +198,8 @@
   ],
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
-      "path": "pwsh.exe",
-      "args": ["-NoExit", "-NoLogo", "-ExecutionPolicy", "Bypass"]
+      "args": ["-NoExit", "-NoLogo", "-ExecutionPolicy", "Bypass"],
+      "path": "pwsh.exe"
     }
   },
   "terminal.integrated.tabs.enabled": true,
@@ -221,6 +232,5 @@
   "workbench.iconTheme": "vscode-icons",
   "workbench.panel.defaultLocation": "right",
   "workbench.startupEditor": "welcomePage",
-  "zenMode.hideLineNumbers": false,
-  "quokka.automaticRestart": true
+  "zenMode.hideLineNumbers": false
 }

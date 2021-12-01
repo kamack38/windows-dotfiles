@@ -12,6 +12,7 @@
       "}"
     ]
   },
+
   "Initialize cpp with array": {
     "prefix": "!!",
     "body": [
@@ -19,7 +20,7 @@
       "",
       "using namespace std;",
       "",
-      "int T[${2:length}];",
+      "int T[${2:/* length */}];",
       "",
       "int main() {",
       "    $0",
@@ -27,8 +28,41 @@
       "}"
     ]
   },
+
   "Make ur code faster": {
     "prefix": "!fast",
     "body": ["ios_base::sync_with_stdio(false);", "cin.tie(0);", "cout.tie(0);"]
+  },
+
+  "Declare function main": {
+    "prefix": "!main",
+    "body": ["int main () {", "    $0", "    return 0;", "}"]
+  },
+
+  "#inc": {
+    "prefix": "#inc",
+    "body": ["#include <${1:bits/stdc++.h}>$0"],
+    "description": "snippet for #include"
+  },
+
+  "using": {
+    "prefix": "!using",
+    "body": ["using namespace ${1:std};$0"],
+    "description": "Add namespace"
+  },
+
+  "fileheader": {
+    "prefix": "fileheader",
+    "body": [
+      "/**",
+      "**********************************************************************************************************************************************************************************************************************************",
+      "* @file:\t$TM_FILENAME",
+      "* @author:\t$1",
+      "* @date:\t$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND $CURRENT_DAY_NAME",
+      "* @brief:\t$2",
+      "**********************************************************************************************************************************************************************************************************************************",
+      "**/"
+    ],
+    "description": "Initialize fileheader"
   }
 }

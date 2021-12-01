@@ -120,7 +120,7 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
 
 <details>
   <summary>
-      VSCode Extensions
+      VSCode Extesions
   </summary>
   <ul>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments">aaron-bond.better-comments</a></li>
@@ -151,6 +151,7 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
       <li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">esbenp.prettier-vscode</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug">firefox-devtools.vscode-firefox-debug</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">formulahendry.code-runner</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format">foxundermoon.shell-format</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=GEEKiDoS.vdf">GEEKiDoS.vdf</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme">GitHub.github-vscode-theme</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github">GitHub.vscode-pull-request-github</a></li>
@@ -163,6 +164,7 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
       <li><a href="https://marketplace.visualstudio.com/items?itemName=liximomo.sftp">liximomo.sftp</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel">mgmcdermott.vscode-language-babel</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv">mikestead.dotenv</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=mkaufman.HTMLHint">mkaufman.HTMLHint</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-apache">mrmlnc.vscode-apache</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">ms-azuretools.vscode-docker</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">ms-python.python</a></li>
@@ -178,6 +180,7 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare">ms-vsliveshare.vsliveshare</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare-audio">ms-vsliveshare.vsliveshare-audio</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools">mtxr.sqltools</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=mutantdino.resourcemonitor">mutantdino.resourcemonitor</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=patbenatar.advanced-new-file">patbenatar.advanced-new-file</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme">PKief.material-icon-theme</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek">pranaygp.vscode-css-peek</a></li>
