@@ -340,6 +340,11 @@
             ]
         }
     ],
+    "transient_prompt": {
+        "background": "transparent",
+        "foreground": "#ffffff",
+        "template": "{{ .Shell }}> "
+    },
     "final_space": true,
     "console_title": true,
     "console_title_style": "template",

@@ -86,6 +86,7 @@ npm i --prefix ~\.quokka dotenv-quokka-plugin
 npm i --prefix ~\.quokka jsdom-quokka-plugin
 
 # Install powershell modules
+pwsh.exe -Command Set-PSRepository PSGallery -InstallationPolicy Trusted
 pwsh.exe -Command Install-Module -Name oh-my-posh -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name posh-git -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name npm-completion -Scope CurrentUser -Force
@@ -204,8 +205,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU2H4BexS/cIoxx4vdOxFPinzS
-# a0+gggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUp80z3CFXz4EDpquqZY/C3TGj
+# +uegggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -227,11 +228,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUithvbcDwbMfd
-# IMozPL1Hw/lgMj0wDQYJKoZIhvcNAQEBBQAEggEAOiNT22pbCTWwYmTvHiogaYsy
-# Pq+4hF9tO+80S41m5HQ0Jdaf9iUVqBXdFz9nbZMMz7vO9EqEFV7E50FeTOzZIM0n
-# LFONntaXnJTcm2QyreVstrf/TKF6N0wRmdGFRAngqyw5GkA0A6VxWWE6nnvz81YP
-# va7o9hvnh40CZ2uyxmu+53Ztq6xxFedE5xmXNJvZKr0YrBSxUMfRbVUm0XrtOfO0
-# E2+4DJ3VAfN/1+p5bvWPMjkZuUausF0fOIXmDMltN4OoSEeF5cN60OlY9VB467sT
-# EtbWYiY1QZn7ipJGbwbncT+MuWjrBDca0wOt+6qdwrC6IJv2o9pSlIMiZdFyDA==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUwrhhPVNcn0Ud
+# DzrVsfNw1OxU4e4wDQYJKoZIhvcNAQEBBQAEggEAZ5NiR9tajAAGsXSer7OJ+JUc
+# AAMMAavplTU18bNh2Ycj3np9p6NDBAGQUeJ82ZfxdEp0XTlbd2XrT0NljvWVGQ7Z
+# oIDPBN36Jc8fLCxl2Jp/Bo05sdXNrzEi1/CpV6F/7504xhb8WxAMZU2Sz9fVxwtw
+# ofCrZak+Av3zFIP+s0sQa9zzAPRrbr0su9AIdX296Qr0d80E6go2oQAl2qGJf8sW
+# WF6VZB/8WpW/S1sVogcUbwgPTi9WuT50ZkoyNJYZ44ec1jg52Ek04jTJ9BrsUtPy
+# s+DutNJYbMJb3YbE5/uh+xmwR/sMC89WNaaPq+qeQskjc12r6OYeJaqEbYId3w==
 # SIG # End signature block
