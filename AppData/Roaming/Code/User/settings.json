@@ -4,31 +4,7 @@
   "[cpp]": {
     "editor.defaultFormatter": null
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsx]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[yaml]": {
+  "[javascript][typescript][json][html][css][scss][jsx][markdown][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[shellscript]": {
@@ -42,6 +18,7 @@
     "featurename",
     "kamack",
     "minmax",
+    "nametag",
     "norestart",
     "powerline",
     "preconnect",
@@ -127,6 +104,9 @@
   "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
   "editor.tabCompletion": "on",
+  "editor.unicodeHighlight.ambiguousCharacters": true,
+  "editor.unicodeHighlight.invisibleCharacters": true,
+  "editor.unicodeHighlight.nonBasicASCII": true,
   "editor.wordWrap": "on",
   "emmet.extensionsPath": ["~\\.vscode", ".\\.vscode"],
   "emmet.variables": {
@@ -150,6 +130,8 @@
   "gitlens.hovers.currentLine.over": "line",
   "html.autoClosingTags": true,
   "javascript.autoClosingTags": true,
+  "javascript.preferences.jsxAttributeCompletionStyle": "auto",
+  "typescript.preferences.jsxAttributeCompletionStyle": "auto",
   "javascript.suggest.paths": false,
   "launch": {
     "compounds": [],
