@@ -1,5 +1,5 @@
 {
-    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh3/main/themes/schema.json",
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
     "blocks": [
         {
             "type": "prompt",
@@ -24,7 +24,7 @@
                         "centos": "\uf304",
                         "debian": "<#A90232>\uf306</>",
                         "elementary": "<#44A2E8>\uf309</>",
-                        "fedora": "\uf30a",
+                        "fedora": "<#072B61>\uf30a</>",
                         "gentoo": "<#61538D>\uf30d</>",
                         "linux": "<#F5C11B>\ue712</>",
                         "macos": "\ue711",
@@ -51,6 +51,7 @@
                         "mapped_locations": {
                             "~\\Documents": "\uf718",
                             "~\\Documents\\GitHUB": "\uf408",
+                            "~\\Documents\\CPlusPlus": "",
                             "~\\Music": "\ufc58",
                             "~\\Videos": "\uf03d",
                             "~\\Pictures": "\uf7ea",
@@ -163,6 +164,17 @@
                     "properties": {
                         "postfix": " \uE624 ",
                         "display_version": true
+                    }
+                },
+                {
+                    "type": "kubectl",
+                    "style": "powerline",
+                    "powerline_symbol": "\uE0B0",
+                    "foreground": "#000000",
+                    "background": "#ebcc34",
+                    "properties": {
+                        "prefix": " \uFD31 ",
+                        "template": "{{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}"
                     }
                 },
                 {
@@ -340,10 +352,46 @@
             ]
         }
     ],
+    "tooltips": [
+        {
+            "type": "node",
+            "tips": ["node", "n", "npm"],
+            "style": "diamond",
+            "foreground": "#ffffff",
+            "background": "#689f63",
+            "leading_diamond": "",
+            "trailing_diamond": "",
+            "properties": {
+                "display_mode": "always",
+                "home_enabled": true,
+                "postfix": " \uF898 ",
+                "display_version": true,
+                "display_package_manager": true,
+                "fetch_package_manager": true,
+                "template": "{{ .Full }}{{ .PackageManagerIcon }}"
+            }
+        },
+        {
+            "type": "java",
+            "tips": ["java", "jar"],
+            "style": "diamond",
+            "leading_diamond": "",
+            "trailing_diamond": "",
+            "foreground": "#E64747",
+            "background": "#29315A",
+            "properties": {
+                "display_mode": "always",
+                "home_enabled": true,
+                "prefix": "\uE738 ",
+                "postfix": " ",
+                "display_version": true
+            }
+        }
+    ],
     "transient_prompt": {
         "background": "transparent",
         "foreground": "#ffffff",
-        "template": "{{ .Shell }}> "
+        "template": "<#5555ff>{{ .Folder }}</> <#3BD01D>\u276F</> "
     },
     "final_space": true,
     "console_title": true,

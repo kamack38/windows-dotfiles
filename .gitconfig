@@ -23,6 +23,10 @@
 	unstage = !git restore --staged
 	s = status -s
 	b = branch -a
+	quickhelp = "!{ \
+                echo stash - create stash; \
+                echo clean - revert file to current commit; \
+            	};"
 
 # URL shorthands
 
