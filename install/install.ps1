@@ -40,7 +40,7 @@ choco install powershell-core --pre --limit-output
 choco install mpv --limit-output
 choco install yt-dlp --limit-output
 choco install ffmpeg --limit-output
-choco install neovim --limit-output
+choco install neovim --limit-output --pre
 choco install bat --limit-output
 choco install delta --limit-output
 choco install ripgrep --limit-output

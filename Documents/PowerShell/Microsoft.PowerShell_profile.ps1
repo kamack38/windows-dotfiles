@@ -20,6 +20,7 @@ Set-Alias -Name List-Module -Value Get-InstalledModule
 Set-Alias -Name choco -Value choco.exe
 Set-Alias -Name code -Value code.cmd
 Set-Alias -Name node -Value node.exe
+Set-Alias -Name firefox -Value "C:\Program Files\Firefox Developer Edition\firefox.exe"
 function rmrf { Remove-Item -Recurse -Force $args }
 function la { Get-ChildItem -Force }
 function lw { Get-ChildItem | Format-Wide }

@@ -39,9 +39,21 @@ local hooks = require "core.hooks"
 -- end)
 hooks.add("install_plugins", function(use)
     use {
-        "wakatime/vim-wakatime"
+        "wakatime/vim-wakatime",
+        "davidgranstrom/nvim-markdown-preview",
+        "andweeb/presence.nvim"
     }
 end)
+
+-- hooks.add("install_plugins", function(use)
+--   use {
+--       'iamcco/markdown-preview.nvim',
+--       run = function() vim.fn['mkdp#util#install']() end,
+--      ft = {'markdown'}
+--   }
+-- end)
+
+
 -- alternatively, put this in a sub-folder like "lua/custom/plugins/mkdir"
 -- then source it with
 
