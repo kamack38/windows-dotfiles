@@ -197,6 +197,7 @@ New-Shortcut "main.cpl" "$LinkDir\Mouse Settings.lnk" "main.cpl, 0"
 New-Shortcut "mmsys.cpl" "$LinkDir\Sound Settings.lnk" "mmsys.cpl,0"
 New-Shortcut "devmgmt.msc" "$LinkDir\Device Manager.lnk"
 New-Shortcut "control.exe" "$LinkDir\Control Panel.lnk"
+New-Shortcut "sndvol.exe" "$LinkDir\Sound Mixer.lnk"
 
 # Set nvim-qt settings (More info at: https://github.com/equalsraf/neovim-qt/wiki/Configuration-Options)
 $nvimQt = "HKCU:\Software\nvim-qt\nvim-qt"
@@ -297,8 +298,8 @@ pnputil -i -a $HOME\.config\themes\cursors\capitaine-cursors\install.inf
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUeY8RNp7GhxRYGtZ3O8cpYhps
-# Ea+gggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUhKzapb2fwoKJhARHa93kCgjP
+# +7mgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -320,11 +321,11 @@ pnputil -i -a $HOME\.config\themes\cursors\capitaine-cursors\install.inf
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUnPZh4QSUURVq
-# Ry7F+CI2yTak9tEwDQYJKoZIhvcNAQEBBQAEggEAFbpt3H/qN8nOVyogaoRNf0JF
-# 7f6l7bln36sdX5cyRP7T1OT9PKuU3QeswbyJ0b2+P1FLjS6+eWa1OGVo/mgu9eOZ
-# uDQNRQZMiwstyQWNbe/xEgpHPblA78xcihZwNpbuW26QLs2mbV8X0dzDEuM/SH3b
-# r3escoMdxloWDYEf1lQeSCbeOw8kDqrvrY2TS1TsRyXk8BwjQTd0HCbIA1/SOtv3
-# QBXGVfb44E2KVpep6yoStnIMCMqy7mZvGQ0bVAubdsNWBhEcBJMwb/YuhMdDxRnG
-# WueyaRDBLaH7h9Tq5Nnvb+evC5OMKMa0YpaI/6/AcP9UpB9ktsjveHH6UZjFSA==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQU7eMzMuXBOAnX
+# 5L4cWATFgxNxjnUwDQYJKoZIhvcNAQEBBQAEggEApadlFBv+IbLOnbHqLlVYlRwQ
+# tLRulUM5MfUNv68gfy3FAcmxZM+eI1c99Y3FCNaOvvm4es5OC+ydEB/MSmUYeK3Z
+# Ci1H7qB7uC6dFNMqRaCFk7a3Xr2XEbJ28Vzx4zrmDv15K3aEcqX/lGakbhZ/WoQ0
+# zj9yQDYeGgbobgI4huEThueFmUbxM3CdftvVeJZ8X4XokyjiSWEGb782dlHJBnmC
+# zCA4buScK0zr9yAIANFJaPJxxX85ggS2em1rr3DE4znAO4XctDPQzz7YtHGH+Cp9
+# z14hGU29dSDOfU0+DudvnKy6UAOaU0Zm6nSn8NynD+8ak8OrdZjyhDQ1ORD1jQ==
 # SIG # End signature block
