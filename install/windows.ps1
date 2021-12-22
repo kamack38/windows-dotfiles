@@ -198,6 +198,7 @@ New-Shortcut "mmsys.cpl" "$LinkDir\Sound Settings.lnk" "mmsys.cpl,0"
 New-Shortcut "devmgmt.msc" "$LinkDir\Device Manager.lnk"
 New-Shortcut "control.exe" "$LinkDir\Control Panel.lnk"
 New-Shortcut "sndvol.exe" "$LinkDir\Sound Mixer.lnk"
+New-Shortcut "appwiz.cpl" "$LinkDir\App Uninstaller.lnk" "appwiz.cpl,3"
 
 # Set nvim-qt settings (More info at: https://github.com/equalsraf/neovim-qt/wiki/Configuration-Options)
 $nvimQt = "HKCU:\Software\nvim-qt\nvim-qt"
