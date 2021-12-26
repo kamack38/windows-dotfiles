@@ -50,5 +50,14 @@
   {
     "key": "ctrl+shift+s",
     "command": "-workbench.action.files.saveAs"
+  },
+  {
+    "key": "ctrl+k ctrl+a",
+    "command": "-keybindings.editor.addKeybinding",
+    "when": "inKeybindings && keybindingFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+a",
+    "command": "editor.action.unicodeHighlight.disableHighlightingOfNonBasicAsciiCharacters"
   }
 ]

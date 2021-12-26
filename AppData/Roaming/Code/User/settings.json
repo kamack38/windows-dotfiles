@@ -1,6 +1,8 @@
 {
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 500}",
+  // "C_Cpp.intelliSenseEngine": "Disabled",
   "C_Cpp.updateChannel": "Insiders",
+  // "clangd.path": "C:\\Program Files\\LLVM\\bin\\clangd.exe",
   "[cpp]": {
     "editor.defaultFormatter": null
   },
@@ -80,6 +82,7 @@
   },
   "code-runner.runInTerminal": true,
   "code-runner.saveFileBeforeRun": true,
+  "debug.internalConsoleOptions": "neverOpen",
   "diffEditor.codeLens": true,
   "diffEditor.wordWrap": "on",
   "discord.idleTimeout": 1200,
@@ -100,7 +103,9 @@
   "editor.lineNumbers": "on",
   "editor.linkedEditing": true,
   "editor.minimap.enabled": true,
+  "editor.parameterHints.enabled": true,
   "editor.quickSuggestionsDelay": 0,
+  "editor.renderWhitespace": "selection",
   "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
   "editor.tabCompletion": "on",
@@ -263,5 +268,5 @@
   "workbench.iconTheme": "vscode-icons",
   "workbench.panel.defaultLocation": "right",
   "workbench.startupEditor": "welcomePage",
-  "zenMode.hideLineNumbers": false
+  "zenMode.hideLineNumbers": false,
 }
