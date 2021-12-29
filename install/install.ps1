@@ -81,6 +81,8 @@ pip install streamlink
 # NPM Packages
 npm i -g carbon-now-cli
 npm i -g neovim
+npm i -g vscode-langservers-extracted
+npm install -g typescript typescript-language-server
 
 npm i --prefix ~\.quokka dotenv-quokka-plugin
 npm i --prefix ~\.quokka jsdom-quokka-plugin
@@ -205,8 +207,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUk61VTAac9I2nUP0vAfuKPpIu
-# mSqgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUBcmP/1RrB7rPOPGYb+6AKm1U
+# exSgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -228,11 +230,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUPOPpoddYUfLk
-# RapWTx9CTrWDjLIwDQYJKoZIhvcNAQEBBQAEggEAO1rHANcB/r+rofMZXEXzp2S+
-# luzz00Sp5/kdUed64OKwrnVl5/pDYTPypGp5nQ3E0fk8VfIeLTCXi+4SD9Ic2X6l
-# gwbg0XamS3sjS+UncnHI6BJjbPQq/Id5D7fZUf6iZwFJ7LNKrcUoDlJY7nJssHwO
-# 7oovEWDdma72bnjvSk7gu/H6shBv+2+amwPHf+kwXibn2NDnlJpAQiKEJzaLfgzf
-# 2IJEjLhh31eAox1wwGB5uLR+O5VDVFIJpZO1UDau7A2pR/wAZXj+paGeIgCQMrPP
-# g8InpQlLjOqw/m22BuWx2r/tvyh6ICGd+W66AVG9aOEKQsp51+FtZhm5E5DYLg==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUZcPMFG9YZDIK
+# 3r4U+UUI8uC9WuUwDQYJKoZIhvcNAQEBBQAEggEAJswamx9Vi1ql7svDtfo2teP6
+# ZCPSQxt1SmHA69SmwIAIdcijUNmc8bMvtD3JHLGRXCuBqUnXa/93ZxYll31ruSKr
+# F5klEqKexL90N7ZuvNgcR1QAX3OzJhtBMWgiOX3vw5SXBVYLb3suBf9aIWE+zcQP
+# tfiUeYVgGW7JEyzr1cV0jNyl+SSEhw5bWRfZ8EeQDV2SgIoHTPN5BdkOxODdvHtM
+# T/kYOT6dKzYmeffeYrtLwybp/NLhp+N8ZryvxQ/Sd2A+oBXWIQndQd0bwU2/TX+X
+# 9EAZNfW5Z3S+kONt0sJkDVYAFiMN+ZV4QSUoLD5eyM/+c2TjW62VJQjLEYkWcQ==
 # SIG # End signature block

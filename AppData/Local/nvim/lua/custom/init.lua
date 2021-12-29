@@ -41,8 +41,29 @@ hooks.add("install_plugins", function(use)
     use {
         "wakatime/vim-wakatime",
         "davidgranstrom/nvim-markdown-preview",
-        "andweeb/presence.nvim"
+        "andweeb/presence.nvim",
     }
+    use {
+        "karb94/neoscroll.nvim",
+        opt = true,
+        config = function()
+          require("neoscroll").setup()
+        end,
+        -- lazy loading
+        setup = function()
+          require("core.utils").packer_lazy_load "neoscroll.nvim"
+        end,
+    }
+    use {
+      "jose-elias-alvarez/null-ls.nvim",
+      after = "nvim-lspconfig",
+      config = function()
+        require("custom.plugins.null-ls").setup()
+      end,
+    }
+
+-- load it after nvim-lspconfig , since we'll use some lspconfig stuff in the null-ls config!
+    -- use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 end)
 
 -- hooks.add("install_plugins", function(use)

@@ -212,6 +212,8 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
   </ul>
 </details>
 
+[My gists](https://gist.github.com/kamack38)
+
 ## Credits
 
 `windows.ps1` - some reg keys taken from [jayharris/dotfiles-windows](https://github.com/jayharris/dotfiles-windows/blob/master/windows.ps1)

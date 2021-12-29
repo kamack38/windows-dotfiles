@@ -215,6 +215,7 @@
   "tabnine.experimentalAutoImports": true,
   "task.quickOpen.showAll": true,
   "terminal.explorerKind": "external",
+  "terminal.external.windowsExec": "C:\\Users\\kamack38\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
   "terminal.integrated.commandsToSkipShell": [
     "psl.stepIn",
     "psl.stepOut",

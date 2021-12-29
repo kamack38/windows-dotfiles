@@ -2,7 +2,6 @@
 -- This file is for NvChad options & tools, custom settings are split between here and 'lua/custom/init.lua'
 
 local M = {}
-M.options, M.ui, M.mappings, M.plugins = {}, {}, {}, {}
 -- NOTE: To use this, make a copy with `cp example_chadrc.lua chadrc.lua`
 --------------------------------------------------------------------
 
@@ -41,10 +40,12 @@ M.plugins = {
       wakatime = true,
    },
    options = {
-      --   lspconfig = {
-      --    path of file containing setups of different lsps (ex : "custom.plugins.lspconfig"), read the docs for more info
-      --    setup_lspconf = "",
-      --   },
+      lspconfig = {
+         setup_lspconf = "custom.plugins.lspconfig",
+      },
+      presence = {
+         main_image = "file",
+      },   
       statusline = {
          hidden = {
             "NvimTree",
