@@ -5,10 +5,11 @@ A collection of configuration files fo Windows, including application installati
 <!-- TOC -->
 
 - [My .dotfiles for Windows 10](#my-dotfiles-for-windows-10)
-  - [Pre-requirements](#pre-requirements)
   - [Installation](#installation)
+    - [Pre-requirements](#pre-requirements)
     - [Installation using chocolatey and git via powershell script](#installation-using-chocolatey-and-git-via-powershell-script)
     - [Installation using batch script **[DEPRECATED]**](#installation-using-batch-script-deprecated)
+  - [Showcase](#showcase)
   - [Setup WSL 2](#setup-wsl-2)
     - [Enable WSL 2 and update the linux kernel (Source)](#enable-wsl-2-and-update-the-linux-kernel-source)
     - [Install common dependencies](#install-common-dependencies)
@@ -20,14 +21,14 @@ A collection of configuration files fo Windows, including application installati
 
 <!-- /TOC -->
 
-## Pre-requirements
+## Installation
+
+### Pre-requirements
 
 - Windows 10 version 1903 or higher with Build 18362 or higher
 - PowerShell 5.0 or higher
 
 > **Note:** With PowerShell, you must ensure `Get-ExecutionPolicy` is not Restricted. I suggest using `Set-ExecutionPolicy Bypass -Scope Process` to bypass the policy or `Set-ExecutionPolicy RemoteSigned` for quite a bit more security.
-
-## Installation
 
 ### Installation using chocolatey and git via powershell script
 
@@ -52,6 +53,14 @@ From CMD :
 ```batch
 curl "https://raw.githubusercontent.com/kamack38/dotfiles/main/install/setup.bat" -L -o setup.bat && setup.bat
 ```
+
+## Showcase
+
+![Windows Terminal](./Pictures/Showcase/Windows-Terminal-Showcase.png)
+![Bat](./Pictures/Showcase/Bat-Showcase.png)
+![NeoVim](./Pictures/Showcase/NeoVim-Showcase.png)
+![NeoVim - Telescope](./Pictures/Showcase/NeoVim-Showcase-Telescope.png)
+![VSCode](./Pictures/Showcase/VSCode-Showcase.png)
 
 ## Setup WSL 2
 
