@@ -129,11 +129,12 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
 
 <details>
   <summary>
-      VSCode Extesions
+      VSCode Extensions
   </summary>
   <ul>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments">aaron-bond.better-comments</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=akamud.vscode-caniuse">akamud.vscode-caniuse</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onedark">akamud.vscode-theme-onedark</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=aster.vscode-subtitles">aster.vscode-subtitles</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=austin.code-gnu-global">austin.code-gnu-global</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=bagetx.inf">bagetx.inf</a></li>
@@ -166,11 +167,15 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
       <li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github">GitHub.vscode-pull-request-github</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer">GrapeCity.gc-excelviewer</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">humao.rest-client</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=Hyeon.c-math-viewer">Hyeon.c-math-viewer</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=icrawl.discord-vscode">icrawl.discord-vscode</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ionutvmi.reg">ionutvmi.reg</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax">jeff-hykin.better-cpp-syntax</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=keyring.Lua">keyring.Lua</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=Kp.discord-js-snippets">Kp.discord-js-snippets</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=liximomo.sftp">liximomo.sftp</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=lukasz-wronski.ftp-sync">lukasz-wronski.ftp-sync</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=mammothb.gnuplot">mammothb.gnuplot</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel">mgmcdermott.vscode-language-babel</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv">mikestead.dotenv</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=mkaufman.HTMLHint">mkaufman.HTMLHint</a></li>
@@ -178,12 +183,17 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">ms-azuretools.vscode-docker</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">ms-python.python</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">ms-python.vscode-pylance</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter">ms-toolsai.jupyter</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-keymap">ms-toolsai.jupyter-keymap</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter-renderers">ms-toolsai.jupyter-renderers</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">ms-vscode-remote.remote-containers</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">ms-vscode-remote.remote-ssh</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit">ms-vscode-remote.remote-ssh-edit</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">ms-vscode-remote.remote-wsl</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">ms-vscode-remote.vscode-remote-extensionpack</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools">ms-vscode.cmake-tools</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">ms-vscode.cpptools</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor">ms-vscode.hexeditor</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.powershell">ms-vscode.powershell</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next">ms-vscode.vscode-typescript-next</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare">ms-vsliveshare.vsliveshare</a></li>
@@ -191,6 +201,7 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
       <li><a href="https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools">mtxr.sqltools</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=mutantdino.resourcemonitor">mutantdino.resourcemonitor</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=patbenatar.advanced-new-file">patbenatar.advanced-new-file</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=philnash.ngrok-for-vscode">philnash.ngrok-for-vscode</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme">PKief.material-icon-theme</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek">pranaygp.vscode-css-peek</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml">redhat.vscode-yaml</a></li>
@@ -200,20 +211,24 @@ If you already have a GPG key, restore it. If you did not have one, you can crea
       <li><a href="https://marketplace.visualstudio.com/items?itemName=SamuelCharpentier.remove-non-ascii-chars">SamuelCharpentier.remove-non-ascii-chars</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">shd101wyy.markdown-preview-enhanced</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=slevesque.vscode-autohotkey">slevesque.vscode-autohotkey</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=softwaredotcom.music-time">softwaredotcom.music-time</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server">SPGoding.datapack-language-server</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">streetsidesoftware.code-spell-checker</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-polish">streetsidesoftware.code-spell-checker-polish</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=sumneko.lua">sumneko.lua</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=syler.sass-indented">syler.sass-indented</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode">TabNine.tabnine-vscode</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=thomanq.math-snippets">thomanq.math-snippets</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf">tomoki1207.pdf</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=twxs.cmake">twxs.cmake</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=Tyriar.luna-paint">Tyriar.luna-paint</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag">vincaslt.highlight-matching-tag</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode">VisualStudioExptTeam.vscodeintellicode</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons">vscode-icons-team.vscode-icons</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime">WakaTime.vscode-wakatime</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode">WallabyJs.quokka-vscode</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=WallabyJs.wallaby-vscode">WallabyJs.wallaby-vscode</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost">wix.vscode-import-cost</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=wmanth.jar-viewer">wmanth.jar-viewer</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets">xabikos.JavaScriptSnippets</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=xyz.plsql-language">xyz.plsql-language</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">yzhang.markdown-all-in-one</a></li>

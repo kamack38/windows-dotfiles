@@ -2,6 +2,7 @@
 -- This file is for NvChad options & tools, custom settings are split between here and 'lua/custom/init.lua'
 
 local M = {}
+local opt = vim.opt
 -- NOTE: To use this, make a copy with `cp example_chadrc.lua chadrc.lua`
 --------------------------------------------------------------------
 
@@ -12,11 +13,13 @@ local M = {}
 --    relativenumber = true,
 -- }
 
-vim.opt.shell = 'pwsh -NoLogo'
-vim.opt.shellquote = '"'
-vim.opt.shellxquote = ''
-vim.opt.shellpipe = '| Out-File -Encoding UTF8 %s'
-vim.opt.shellredir = '| Out-File -Encoding UTF8 %s'
+opt.shell = 'pwsh -NoLogo'
+opt.shellquote = '"'
+opt.shellxquote = ''
+opt.shellpipe = '| Out-File -Encoding UTF8 %s'
+opt.shellredir = '| Out-File -Encoding UTF8 %s'
+
+opt.tabstop = 4
 
 M.ui = {
   theme = "onedark"

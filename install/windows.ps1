@@ -207,6 +207,9 @@ if (test-path $nvimQt) {
     Set-ItemProperty $nvimQt "ext_popupmenu" "false"
 }
 
+# Add AutoHotkey to Path
+Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH -Value ((Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).Path + ";C:\Program Files\AutoHotkey")
+
 ###############################################################################
 ### Devices, Power, and Startup                                               #
 ###############################################################################
@@ -299,8 +302,8 @@ pnputil -i -a $HOME\.config\themes\cursors\capitaine-cursors\install.inf
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUfn4aCqh5993r9eNaW9TkisLb
-# SLqgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUYQajjAz4dKxlZaqA+GpiwuVV
+# B9SgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -322,11 +325,11 @@ pnputil -i -a $HOME\.config\themes\cursors\capitaine-cursors\install.inf
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUXmUP7IBhpqX4
-# 6GGy2+Z6xjn6GJYwDQYJKoZIhvcNAQEBBQAEggEAeZMCn4XVx+NiY+ZVL8MXq+Lg
-# 8GCV9i/8mE4FbbseeJdWF4nAtol0I3yoobY2uqL4bCoFDnvb4REzKwIwWpgcMGOn
-# fChIK/q0vlz2aJPoTsGm5tHv8LcEmrar9+ot61JXU/rjlvHOFwokFppQvhpXF+5i
-# dc7OpsBoZ/oNsziWUqmzwwZ/GXxPxxz30Uw8sUT0wQarMw4HkrZrl/QX7ZGf/YGk
-# w6tNoRX7HsFrw22oL7L5Hmcl5r9T3iJjdgozJKBS0Qre3k9O+Xodm2hhyZAOV66N
-# wfoWoWrlI/a1xQ5Mebu2Hv5HrsSWiOwLa/ANS5mmrAz/CU+W1FBpYjdGJ9fvjw==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUgnxIGKo+VC+K
+# MMof9l0x5+N4bgAwDQYJKoZIhvcNAQEBBQAEggEAgNYujQZ/DrrBv0efCx+uFfGq
+# UCM8DAgNEKxptEUXnjpHjPRk0xadOKnNZuw9QdxFQoanqllFbd8g20FtfcPH5un5
+# W3frV3nCy36xDu4xmNBariau1Z+kXsJH+Xs8BUhEKTaPTYU6qpAQNswh1Q3QEqsC
+# DBQl17S8uRcPJSpaa88xk+SGsOsR+PDLxwE9tWlJ/IxVkfAoAIgsHfg3vvVVdwKU
+# TdNlOettsYwjzURxbm3L/RyDwlxxHF/gPMJUfArbLyy9QRWKqFy/f0JNpONkHNuG
+# umYJMzPy5QgRFUi+ojGE+JZMhdYpiCFXf3ErK2CfQeQ/PYfqT8Fg2odhWQOdjA==
 # SIG # End signature block
