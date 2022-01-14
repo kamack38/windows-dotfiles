@@ -20,23 +20,21 @@
             "keys": "alt+shift+c"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
             "keys": "ctrl+c"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
-            "command": 
-            {
+            "command": {
                 "action": "newTab"
             },
             "keys": "ctrl+t"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
         },
         {
             "command": 

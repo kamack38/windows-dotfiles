@@ -6,7 +6,7 @@
   "[cpp]": {
     "editor.defaultFormatter": null
   },
-  "[javascript][typescript][json][html][css][scss][jsx][markdown][yaml]": {
+  "[javascript][typescript][typescriptreact][react][json][html][css][scss][jsx][markdown][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[shellscript]": {
@@ -170,7 +170,7 @@
         "environment": [],
         "externalConsole": false,
         "miDebuggerPath": "C:\\ProgramData\\chocolatey\\bin\\gdb.exe",
-        "name": "g++.exe - Build and debug active file",
+        "name": "C/C++ - Build and debug",
         "preLaunchTask": "C/C++: build active file (g++)",
         "program": "${fileDirname}/bin/${fileBasenameNoExtension}.exe",
         "request": "launch",
@@ -272,5 +272,5 @@
   "workbench.iconTheme": "vscode-icons",
   "workbench.panel.defaultLocation": "right",
   "workbench.startupEditor": "welcomePage",
-  "zenMode.hideLineNumbers": false,
+  "zenMode.hideLineNumbers": false
 }

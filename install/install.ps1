@@ -29,14 +29,13 @@ choco feature enable -n allowGlobalConfirmation
 
 # Install Programs
 choco install firefox-dev --pre --limit-output
-choco install git --limit-output
+choco install git --params "/NoShellIntegration /NoOpenSSH" --limit-output
 choco install python3 --limit-output
 choco install openjdk --limit-output
 choco install nodejs --limit-output
-choco install nuget.commandline --limit-output
 choco install gpg4win --limit-output
 choco install winrar --limit-output
-choco install powershell-core --pre --limit-output
+choco install powershell-core --params '"/CleanUpPath"' --pre --limit-output
 choco install mpv --limit-output
 choco install yt-dlp --limit-output
 choco install ffmpeg --limit-output
@@ -61,10 +60,11 @@ choco install powertoys --limit-output
 choco install modernflyouts --limit-output
 choco install procmon --limit-output
 choco install winmerge --limit-output
-choco install vscode --limit-output
+choco install vscode --params "/NoDesktopIcon" --limit-output
 choco install firacodenf --limit-output
 choco install ngrok --limit-output
 choco install croc --limit-output
+choco install cmake --ia 'ADD_CMAKE_TO_PATH=System' --limit-output
 choco install autohotkey --limit-output
 
 # Non-chocolatey programs
@@ -82,7 +82,8 @@ pip install streamlink
 npm i -g carbon-now-cli
 npm i -g neovim
 npm i -g vscode-langservers-extracted
-npm install -g typescript typescript-language-server
+npm i -g typescript typescript-language-server
+npm i -g yarn
 
 npm i --prefix ~\.quokka dotenv-quokka-plugin
 npm i --prefix ~\.quokka jsdom-quokka-plugin
@@ -94,6 +95,7 @@ pwsh.exe -Command Install-Module -Name posh-git -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name npm-completion -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force
+# pwsh.exe -Command Install-Module -Name yarn-completion -Scope CurrentUser
 
 # Better Discord
 Set-Location $HOME\Downloads\
@@ -207,8 +209,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUBcmP/1RrB7rPOPGYb+6AKm1U
-# exSgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU7NZNzsryxOM+gOaAU6VnjqMs
+# ruSgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -230,11 +232,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUZcPMFG9YZDIK
-# 3r4U+UUI8uC9WuUwDQYJKoZIhvcNAQEBBQAEggEAJswamx9Vi1ql7svDtfo2teP6
-# ZCPSQxt1SmHA69SmwIAIdcijUNmc8bMvtD3JHLGRXCuBqUnXa/93ZxYll31ruSKr
-# F5klEqKexL90N7ZuvNgcR1QAX3OzJhtBMWgiOX3vw5SXBVYLb3suBf9aIWE+zcQP
-# tfiUeYVgGW7JEyzr1cV0jNyl+SSEhw5bWRfZ8EeQDV2SgIoHTPN5BdkOxODdvHtM
-# T/kYOT6dKzYmeffeYrtLwybp/NLhp+N8ZryvxQ/Sd2A+oBXWIQndQd0bwU2/TX+X
-# 9EAZNfW5Z3S+kONt0sJkDVYAFiMN+ZV4QSUoLD5eyM/+c2TjW62VJQjLEYkWcQ==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUn+PU/7gzDjGd
+# VcXMlQLi0LpLUy4wDQYJKoZIhvcNAQEBBQAEggEAoHUiZ60XUY2H/Qn05ESRQl4r
+# kHSjQjJGIEncDXkyWny9cJ0lrzjxNNVof/ej7+AhpOTJGQsQEBy4U5k11Nup/M89
+# ky57JxGyEGuZwpdTf5qofCxWAWyNvq8rDC+q9G0R1iS8548FVTdQPiUKnGEFUWiL
+# /YuMHZpfIWUL/DSHmNfTw8Ys/OPgLdujkp08sRRvlOh4AxQD8qv6YB7dvLlGqzAo
+# gJ3kbklnjYhZrjUMxB/VpI4gB/lo5D7un+GO2NbiLkkWXqMRB9DA9gIqGY2xtL0i
+# UfkkkdDI6dj3uEU7N/OOi28lkPyXMTYa1r54d2aH1egmrWPR57ssyRycKRdKqg==
 # SIG # End signature block
