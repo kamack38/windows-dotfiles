@@ -29,7 +29,7 @@ M.plugins = {
    status = {
       blankline = true, -- show code scope with symbols
       bufferline = true, -- list open buffers up the top, easy switching too
-      colorizer = false, -- color RGB, HEX, CSS, NAME color codes
+      colorizer = true, -- color RGB, HEX, CSS, NAME color codes
       comment = true, -- easily (un)comment code, language aware
       dashboard = true, -- NeoVim 'home screen' on open
       esc_insertmode = true, -- map to <ESC> with no lag
@@ -46,9 +46,6 @@ M.plugins = {
       lspconfig = {
          setup_lspconf = "custom.plugins.lspconfig",
       },
-      presence = {
-         main_image = "file",
-      },   
       statusline = {
          hidden = {
             "NvimTree",

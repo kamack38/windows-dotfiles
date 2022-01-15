@@ -1,6 +1,17 @@
 local M = {}
 M.setup_lsp = function(attach, capabilities)
     local lspconfig = require "lspconfig"
+    local lsp_installer = require "nvim-lsp-installer"
+    
+    lsp_installer.settings {
+      ui = {
+         icons = {
+            server_installed = "﫟" ,
+            server_pending = "",
+            server_uninstalled = "✗",
+         },
+      },
+    }
 
     local servers = {"html", "cssls", "ccls"}
 

@@ -41,13 +41,10 @@ local customPlugins = require "core.customPlugins"
 customPlugins.add(function(use)
   use {
     "wakatime/vim-wakatime",
-    "andweeb/presence.nvim",
     "Pocco81/TrueZen.nvim",
-    "nathom/filetype.nvim"
-  }
-  use {
     "williamboman/nvim-lsp-installer",
-    after = "nvim-lspconfig",
+    "andweeb/presence.nvim",
+    "nathom/filetype.nvim"
   }
   use {
     "karb94/neoscroll.nvim",
