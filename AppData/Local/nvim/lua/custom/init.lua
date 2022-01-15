@@ -1,7 +1,7 @@
 -- This is where your custom modules and plugins go.
 -- See the wiki for a guide on how to extend NvChad
 
-local hooks = require "core.hooks"
+local customPlugins = require "core.customPlugins"
 
 -- NOTE: To use this, make a copy with `cp example_init.lua init.lua`
 
@@ -37,42 +37,49 @@ local hooks = require "core.hooks"
 --       event = "InsertEnter",
 --    }
 -- end)
-hooks.add("install_plugins", function(use)
-    use {
-        "wakatime/vim-wakatime",
-        "davidgranstrom/nvim-markdown-preview",
-        "andweeb/presence.nvim",
-    }
-    use {
-        "karb94/neoscroll.nvim",
-        opt = true,
-        config = function()
-          require("neoscroll").setup()
-        end,
-        -- lazy loading
-        setup = function()
-          require("core.utils").packer_lazy_load "neoscroll.nvim"
-        end,
-    }
-    use {
-      "jose-elias-alvarez/null-ls.nvim",
-      after = "nvim-lspconfig",
-      config = function()
-        require("custom.plugins.null-ls").setup()
-      end,
-    }
 
--- load it after nvim-lspconfig , since we'll use some lspconfig stuff in the null-ls config!
-    -- use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+customPlugins.add(function(use)
+  use {
+    "wakatime/vim-wakatime",
+    "andweeb/presence.nvim",
+    "Pocco81/TrueZen.nvim",
+    "nathom/filetype.nvim"
+  }
+  use {
+    "williamboman/nvim-lsp-installer",
+    after = "nvim-lspconfig",
+  }
+  use {
+    "karb94/neoscroll.nvim",
+    opt = true,
+    config = function()
+      require("neoscroll").setup()
+    end,
+    -- lazy loading
+    setup = function()
+      require("core.utils").packer_lazy_load "neoscroll.nvim"
+    end,
+  }
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    after = "nvim-lspconfig",
+    config = function()
+      require("custom.plugins.null-ls").setup()
+    end,
+  }
+  
+  -- load it after nvim-lspconfig , since we'll use some lspconfig stuff in the null-ls config!
+  -- use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 end)
 
+vim.g.did_load_filetypes = 1
 -- hooks.add("install_plugins", function(use)
 --   use {
---       'iamcco/markdown-preview.nvim',
---       run = function() vim.fn['mkdp#util#install']() end,
---      ft = {'markdown'}
---   }
--- end)
+  --       'iamcco/markdown-preview.nvim',
+  --       run = function() vim.fn['mkdp#util#install']() end,
+  --      ft = {'markdown'}
+  --   }
+  -- end)
 
 
 -- alternatively, put this in a sub-folder like "lua/custom/plugins/mkdir"
