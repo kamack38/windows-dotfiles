@@ -1,23 +1,28 @@
-# My .dotfiles for Windows 10
+<h1 align="center">My .dotfiles for Windows 10</h1>
 
-A collection of configuration files fo Windows, including application installation through [**Chocolatey**](https://chocolatey.org/) or **Curl**
+<div align="center">
+
+A collection of configuration files fo Windows, including application installation through [**Chocolatey**](https://chocolatey.org/) or [**Curl**](https://curl.se/)
+
+[![PowerShell](https://img.shields.io/badge/Made%20with%20PowerShell-568ef7.svg?style=for-the-badge&logo=PowerShell&logoColor=white)](https://github.com/PowerShell/PowerShell)
+
+</div>
 
 <!-- TOC -->
 
-- [My .dotfiles for Windows 10](#my-dotfiles-for-windows-10)
-  - [Installation](#installation)
-    - [Pre-requirements](#pre-requirements)
-    - [Installation using chocolatey and git via powershell script](#installation-using-chocolatey-and-git-via-powershell-script)
-    - [Installation using batch script **[DEPRECATED]**](#installation-using-batch-script-deprecated)
-  - [Showcase](#showcase)
-  - [Setup WSL 2](#setup-wsl-2)
-    - [Enable WSL 2 and update the linux kernel (Source)](#enable-wsl-2-and-update-the-linux-kernel-source)
-    - [Install common dependencies](#install-common-dependencies)
-  - [GPG key](#gpg-key)
-    - [Restore](#restore)
-    - [Create](#create)
-  - [Other Settings](#other-settings)
-  - [Credits](#credits)
+- [Installation](#installation)
+  - [Pre-requirements](#pre-requirements)
+  - [Installation using chocolatey and git via powershell script](#installation-using-chocolatey-and-git-via-powershell-script)
+  - [Installation using batch script **[DEPRECATED]**](#installation-using-batch-script-deprecated)
+- [Showcase](#showcase)
+- [Setup WSL 2](#setup-wsl-2)
+  - [Enable WSL 2 and update the linux kernel (Source)](#enable-wsl-2-and-update-the-linux-kernel-source)
+  - [Install common dependencies](#install-common-dependencies)
+- [GPG key](#gpg-key)
+  - [Restore](#restore)
+  - [Create](#create)
+- [Other Settings](#other-settings)
+- [Credits](#credits)
 
 <!-- /TOC -->
 
@@ -56,11 +61,11 @@ curl "https://raw.githubusercontent.com/kamack38/dotfiles/main/install/setup.bat
 
 ## Showcase
 
-![Windows Terminal](./Pictures/Showcase/Windows-Terminal-Showcase.png)
-![Bat](./Pictures/Showcase/Bat-Showcase.png)
-![NeoVim](./Pictures/Showcase/NeoVim-Showcase.png)
-![NeoVim - Telescope](./Pictures/Showcase/NeoVim-Showcase-Telescope.png)
-![VSCode](./Pictures/Showcase/VSCode-Showcase.png)
+![Windows Terminal](../Pictures/Showcase/Windows-Terminal-Showcase.png)
+![Bat](../Pictures/Showcase/Bat-Showcase.png)
+![NeoVim](../Pictures/Showcase/NeoVim-Showcase.png)
+![NeoVim - Telescope](../Pictures/Showcase/NeoVim-Showcase-Telescope.png)
+![VSCode](../Pictures/Showcase/VSCode-Showcase.png)
 
 ## Setup WSL 2
 
