@@ -1,10 +1,14 @@
 {
+  "C_Cpp.autocompleteAddParentheses": true,
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 500}",
+  "C_Cpp.clang_format_path": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
   // "C_Cpp.intelliSenseEngine": "Disabled",
   "C_Cpp.updateChannel": "Insiders",
+  "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+  "C_Cpp.codeAnalysis.clangTidy.path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.exe",
   // "clangd.path": "C:\\Program Files\\LLVM\\bin\\clangd.exe",
   "[cpp]": {
-    "editor.defaultFormatter": null
+    "editor.defaultFormatter":"ms-vscode.cpptools"
   },
   "[javascript][typescript][typescriptreact][react][json][html][css][scss][jsx][markdown][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

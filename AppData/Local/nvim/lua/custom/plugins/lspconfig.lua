@@ -56,6 +56,14 @@ M.setup_lsp = function(attach, capabilities)
             vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
         end
     }
+
+    lspconfig.powershell_es.setup {
+        on_attach = attach,
+        capabilities = capabilities,
+        bundle = '%LocalAppData%/nvim-data/powershell_es/PowerShellEditorServices',
+        shell = "pwsh",
+        single_file_support = true
+    }
 end
 
 return M

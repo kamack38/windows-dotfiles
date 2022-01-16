@@ -1,25 +1,35 @@
 # Ensure that file is run as admin
 Write-Host "Checking for elevated permissions..."
 if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-	Write-Warning "Insufficient permissions to run this script. Open the PowerShell console as an administrator and run this script again."
-	Break
+    Write-Warning "Insufficient permissions to run this script. Open the PowerShell console as an administrator and run this script again."
+    Break
 }
 else {
-		Write-Host "Script is running as administrator - go on executing the script..." -ForegroundColor Green
+    Write-Host "Script is running as administrator - go on executing the script..." -ForegroundColor Green
 }
+
+# Send welcome message
+Write-Output "  ___  __    _____ ______   ________  ________"            
+Write-Output " |\  \|\  \ |\   _ \  _   \|\_____  \|\   __  \     "
+Write-Output " \ \  \/  /|\ \  \\\__\ \  \|_____\  \ \  \|\  \    Kamack38"
+Write-Output "  \ \   ___  \ \  \\|__| \  \|______  \ \   __  \   https://twitter.com/kamack38"
+Write-Output "   \ \  \\ \  \ \  \    \ \  \| ____\  \ \  \|\  \  https://github.com/kamack38"
+Write-Output "    \ \__\\ \__\ \__\    \ \__\|\_______\ \_______\ "
+Write-Output "     \|__| \|__|\|__|     \|__|\|_______|\|_______| "
+Write-Output " "
 
 # Ensure chocolatey is installed
 if (! (Get-Command choco -errorAction SilentlyContinue)) {
-	Write-Host "Chocolatey needs to be installed!" -ForegroundColor red
-	Write-Host "Installing Chocolatey..." -ForegroundColor yellow
-	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-	Write-Host "Chocolatey has been installed succesfully!" -ForegroundColor green
-	Write-Host "Refreshing environment variables..." -ForegroundColor yellow
-	$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-	Write-Host "Environment variables has been refreshed!" -ForegroundColor green
+    Write-Host "Chocolatey needs to be installed!" -ForegroundColor red
+    Write-Host "Installing Chocolatey..." -ForegroundColor yellow
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    Write-Host "Chocolatey has been installed succesfully!" -ForegroundColor green
+    Write-Host "Refreshing environment variables..." -ForegroundColor yellow
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+    Write-Host "Environment variables has been refreshed!" -ForegroundColor green
 }
 else {
-	Write-Host "Chocolatey is already installed!" -ForegroundColor green
+    Write-Host "Chocolatey is already installed!" -ForegroundColor green
 }
 
 Write-Host "Installing programs..." -ForegroundColor yellow
@@ -39,11 +49,12 @@ choco install powershell-core --params '"/CleanUpPath"' --pre --limit-output
 choco install mpv --limit-output
 choco install yt-dlp --limit-output
 choco install ffmpeg --limit-output
-choco install neovim --limit-output --pre
+choco install neovim --limit-output
 choco install bat --limit-output
 choco install delta --limit-output
 choco install ripgrep --limit-output
 choco install mingw --limit-output
+choco install llvm --limit-output
 choco install nircmd --limit-output
 choco install winfetch --limit-output
 choco install onefetch --limit-output
@@ -71,7 +82,7 @@ choco install autohotkey --limit-output
 
 # Refresh environmental variables
 Write-Host "Refreshing environment variables..." -ForegroundColor yellow
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
 Write-Host "Environment variables has been refreshed!" -ForegroundColor green
 
 # Python Packages
@@ -95,7 +106,7 @@ pwsh.exe -Command Install-Module -Name posh-git -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name npm-completion -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force
-# pwsh.exe -Command Install-Module -Name yarn-completion -Scope CurrentUser
+pwsh.exe -Command Install-Module -Name yarn-completion -Scope CurrentUser -Force
 
 # Better Discord
 Set-Location $HOME\Downloads\
@@ -136,8 +147,7 @@ for ($j = 0; $j -lt $myObject.length; $j++) {
 }
 
 for ($j = 0; $j -lt $myObject.Length; $j++) {
-    function Show-Menu
-    {
+    function Show-Menu {
         param (
             [string]$Title = 'My Menu'
         )
@@ -152,8 +162,7 @@ for ($j = 0; $j -lt $myObject.Length; $j++) {
         Write-Host "C: Press 'C' to cancel selection and go to another category."
         Write-Host "Q: Press 'Q' to cancel EVERYTHING and quit."
     }
-    do
-    {
+    do {
         Show-Menu -Title $myObject[$j].Name
         $selection = Read-Host "Please make a selection"
         if ($selection -match "^\d+$" -and $myObject[$j].Childs[$selection - 1].Color -ne "Green") {
@@ -164,7 +173,7 @@ for ($j = 0; $j -lt $myObject.Length; $j++) {
         }
         elseif ($selection -eq "a") {
             Write-Host Installing selected settings... -ForegroundColor yellow
-            (($myObject[$j].childs | Where-Object -Property color -EQ "Green").PSPath -split ".*::").Split('',[System.StringSplitOptions]::RemoveEmptyEntries).ForEach({$_ + "\Install\*"}) | Copy-Item -Destination ".\metro-for-steam-4.4\" -Force -Recurse
+            (($myObject[$j].childs | Where-Object -Property color -EQ "Green").PSPath -split ".*::").Split('', [System.StringSplitOptions]::RemoveEmptyEntries).ForEach({ $_ + "\Install\*" }) | Copy-Item -Destination ".\metro-for-steam-4.4\" -Force -Recurse
             break
         }
         elseif ($selection -eq "q") {
@@ -209,8 +218,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU7NZNzsryxOM+gOaAU6VnjqMs
-# ruSgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUCNtphaSGc0t0wEcgb6PVNTTV
+# fIWgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -232,11 +241,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUn+PU/7gzDjGd
-# VcXMlQLi0LpLUy4wDQYJKoZIhvcNAQEBBQAEggEAoHUiZ60XUY2H/Qn05ESRQl4r
-# kHSjQjJGIEncDXkyWny9cJ0lrzjxNNVof/ej7+AhpOTJGQsQEBy4U5k11Nup/M89
-# ky57JxGyEGuZwpdTf5qofCxWAWyNvq8rDC+q9G0R1iS8548FVTdQPiUKnGEFUWiL
-# /YuMHZpfIWUL/DSHmNfTw8Ys/OPgLdujkp08sRRvlOh4AxQD8qv6YB7dvLlGqzAo
-# gJ3kbklnjYhZrjUMxB/VpI4gB/lo5D7un+GO2NbiLkkWXqMRB9DA9gIqGY2xtL0i
-# UfkkkdDI6dj3uEU7N/OOi28lkPyXMTYa1r54d2aH1egmrWPR57ssyRycKRdKqg==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQU16QXDO6bMSmm
+# v+2z2SWpxJXrJ/EwDQYJKoZIhvcNAQEBBQAEggEAhW4BP36hSG8/0g+vsCC3lUSr
+# tOa3RBHZsY/BwfdmO89Idg2fYpDg7qKs5Ahi6lrJQmfM6I6NXs07oZj084NuK/IL
+# oe+qvH/7jPx4HP6JfurM6Ui/3fMluS2xrlm+O1j9ai+unvTQ+ApgbJtrUYWbY5cl
+# gzp/tz+qvLLSMJLyfXVucrjarHbf2hPtmZe6yOZPaaxfWRH+WwDKouv6B7mzxy8o
+# gA8q0ZZcIE97gRjfc83VOwyoSXDb2p3041B79Xu5cvcFvbkOto3YeQjl0Gm4DG8s
+# csuzPXT9GNmZL2SWxbZZytGbuo1/MDVg4cX56hfEZYecHaggJQ7CMdQg7sAagQ==
 # SIG # End signature block
