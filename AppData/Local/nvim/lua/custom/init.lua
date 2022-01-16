@@ -38,6 +38,8 @@ local customPlugins = require "core.customPlugins"
 --    }
 -- end)
 
+vim.g.did_load_filetypes = 1
+
 customPlugins.add(function(use)
   use {
     "wakatime/vim-wakatime",
@@ -69,7 +71,7 @@ customPlugins.add(function(use)
   -- use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 end)
 
-vim.g.did_load_filetypes = 1
+require "custom.mappings"
 -- hooks.add("install_plugins", function(use)
 --   use {
   --       'iamcco/markdown-preview.nvim',
