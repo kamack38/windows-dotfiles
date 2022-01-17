@@ -92,8 +92,6 @@ pip install streamlink
 # NPM Packages
 npm i -g carbon-now-cli
 npm i -g neovim
-npm i -g vscode-langservers-extracted
-npm i -g typescript typescript-language-server
 npm i -g yarn
 
 npm i --prefix ~\.quokka dotenv-quokka-plugin
