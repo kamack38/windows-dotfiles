@@ -13,7 +13,6 @@ A collection of configuration files fo Windows, including application installati
 - [Installation](#installation)
   - [Pre-requirements](#pre-requirements)
   - [Installation using chocolatey and git via powershell script](#installation-using-chocolatey-and-git-via-powershell-script)
-  - [Installation using batch script **[DEPRECATED]**](#installation-using-batch-script-deprecated)
 - [Showcase](#showcase)
 - [Other Settings](#other-settings)
 - [Credits](#credits)
@@ -43,14 +42,6 @@ iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.co
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
-```
-
-### Installation using batch script **[DEPRECATED]**
-
-From CMD :
-
-```batch
-curl "https://raw.githubusercontent.com/kamack38/dotfiles/main/install/setup.bat" -L -o setup.bat && setup.bat
 ```
 
 ## Showcase
