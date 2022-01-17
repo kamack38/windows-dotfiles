@@ -4,20 +4,20 @@
 
 A collection of configuration files fo Windows, including application installation through [**Chocolatey**](https://chocolatey.org/) or [**Curl**](https://curl.se/)
 
+<div align="center">
+      <a href="#installation">Install</a>
+  <span> • </span>
+       <a href="#showcase">Showcase</a>
+  <span> • </span>
+  <a href="#other-settings">Other Settings</a>
+  <span> • </span>
+        <a href="#credits">Credits</a>
+  <p></p>
+</div>
+
 [![PowerShell](https://img.shields.io/badge/Made%20with%20PowerShell-568ef7.svg?style=for-the-badge&logo=PowerShell&logoColor=white)](https://github.com/PowerShell/PowerShell)
 
 </div>
-
-<!-- TOC -->
-
-- [Installation](#installation)
-  - [Pre-requirements](#pre-requirements)
-  - [Installation using chocolatey and git via powershell script](#installation-using-chocolatey-and-git-via-powershell-script)
-- [Showcase](#showcase)
-- [Other Settings](#other-settings)
-- [Credits](#credits)
-
-<!-- /TOC -->
 
 ## Installation
 
