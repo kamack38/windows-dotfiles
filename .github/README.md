@@ -62,6 +62,7 @@ Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
       <li><a href="https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments">aaron-bond.better-comments</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=akamud.vscode-caniuse">akamud.vscode-caniuse</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onedark">akamud.vscode-theme-onedark</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite">alexcvzz.vscode-sqlite</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=aster.vscode-subtitles">aster.vscode-subtitles</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=austin.code-gnu-global">austin.code-gnu-global</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=bagetx.inf">bagetx.inf</a></li>

@@ -211,7 +211,6 @@
   "path-intellisense.showHiddenFiles": true,
   "powershell.codeFormatting.autoCorrectAliases": true,
   "powershell.promptToUpdatePowerShell": false,
-  "prettier.requireConfig": true,
   "python.languageServer": "Pylance",
   "quokka.automaticRestart": true,
   "redhat.telemetry.enabled": false,
