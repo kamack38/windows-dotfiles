@@ -8,6 +8,22 @@ else {
     Write-Host "Script is running as administrator - go on executing the script..." -ForegroundColor Green
 }
 
+# Checking execution policy
+Write-Host "Checking execution policy..."
+$executionPolicy = (Get-ExecutionPolicy)
+$allowedExecutionPolicies = @(
+    "RemoteSigned",
+    "Bypass",
+    "Unrestricted"
+)
+if ($executionPolicy -in $allowedExecutionPolicies) {
+    Write-Host "Execution policy is set to $executionPolicy. Continuing script execution." -ForegroundColor Green
+}
+else {
+    Write-Warning "Execution policy is set to $executionPolicy which is NOT recomended."
+    Break
+}
+
 # Send welcome message
 Write-Output "  ___  __    _____ ______   ________  ________"            
 Write-Output " |\  \|\  \ |\   _ \  _   \|\_____  \|\   __  \     "
@@ -216,8 +232,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUCNtphaSGc0t0wEcgb6PVNTTV
-# fIWgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUXV/P8KkxZMyu7LuUFqbVQ0Nu
+# NHagggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -239,11 +255,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQU16QXDO6bMSmm
-# v+2z2SWpxJXrJ/EwDQYJKoZIhvcNAQEBBQAEggEAhW4BP36hSG8/0g+vsCC3lUSr
-# tOa3RBHZsY/BwfdmO89Idg2fYpDg7qKs5Ahi6lrJQmfM6I6NXs07oZj084NuK/IL
-# oe+qvH/7jPx4HP6JfurM6Ui/3fMluS2xrlm+O1j9ai+unvTQ+ApgbJtrUYWbY5cl
-# gzp/tz+qvLLSMJLyfXVucrjarHbf2hPtmZe6yOZPaaxfWRH+WwDKouv6B7mzxy8o
-# gA8q0ZZcIE97gRjfc83VOwyoSXDb2p3041B79Xu5cvcFvbkOto3YeQjl0Gm4DG8s
-# csuzPXT9GNmZL2SWxbZZytGbuo1/MDVg4cX56hfEZYecHaggJQ7CMdQg7sAagQ==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQU/i8KvC760va8
+# icgNlQpq5m41+DwwDQYJKoZIhvcNAQEBBQAEggEAGubsjEEqfQDUapNMvnL8i9VS
+# KSYbfZjkXlkSxsOHQqoLYtgIvm9bAmeUwQ9I1A3wzGGnJ8F+qAlzRHMiA+CCqFV7
+# YHD5G0hLBpBESvEDRANHxUQDx68T1YFYhurD4oqq9I4F08EJGxORIAu9HopL+OpU
+# lKIpbgYMH49TnsL0b/rhuJfMSQWzydlO3J7Qgi4fmjcpheLkHzkNJ51Dz7xCMhZ8
+# 4lUJYC6PjTglTaLYqFddXX3mmVSgdpIbcA494GSS6YpSD+rjXuYFwvcofeTrmTvd
+# FTwkFizjdbe+YOZwzW8fhlyWgqIM2UmM6zEsHEhDOU6Mi45pXVlJ+N7Bb/V1pA==
 # SIG # End signature block

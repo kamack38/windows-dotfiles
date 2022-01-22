@@ -3,14 +3,13 @@
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 500}",
   "C_Cpp.clang_format_path": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
   // "C_Cpp.intelliSenseEngine": "Disabled",
-  "C_Cpp.updateChannel": "Insiders",
   "C_Cpp.codeAnalysis.clangTidy.enabled": true,
   "C_Cpp.codeAnalysis.clangTidy.path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.exe",
   // "clangd.path": "C:\\Program Files\\LLVM\\bin\\clangd.exe",
   "[cpp]": {
     "editor.defaultFormatter":"ms-vscode.cpptools"
   },
-  "[javascript][typescript][typescriptreact][react][json][html][css][scss][jsx][markdown][yaml]": {
+  "[javascript][typescript][typescriptreact][react][json][html][css][scss][jsx][markdown][yaml][json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[shellscript]": {
@@ -268,6 +267,7 @@
     "editorBracketPairGuide.activeBackground6": "#6fce85"
   },
   "workbench.colorTheme": "Community Material Theme High Contrast",
+  "workbench.editor.wrapTabs": true,
   "workbench.editorAssociations": {
     "*.lnk": "default",
     "*.ttf": "default"
