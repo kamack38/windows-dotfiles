@@ -71,7 +71,5 @@
 
 [interactive]
     diffFilter = delta --color-only
-[gui]
-    recentrepo = C:/Users/kamac/AppData/Local/nvim
 [init]
     defaultBranch = main

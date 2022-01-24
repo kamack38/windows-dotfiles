@@ -44,7 +44,6 @@ customPlugins.add(function(use)
   use {
     "wakatime/vim-wakatime",
     "Pocco81/TrueZen.nvim",
-    "williamboman/nvim-lsp-installer",
     "andweeb/presence.nvim",
     "nathom/filetype.nvim"
   }
@@ -60,26 +59,111 @@ customPlugins.add(function(use)
     end,
   }
   use {
+    "williamboman/nvim-lsp-installer",
+    config = function()
+        require "custom.plugins.lspconfig"
+    end,
+
+    -- lazy load!
+    setup = function()
+        require("core.utils").packer_lazy_load "nvim-lsp-installer"
+        -- reload the current file so lsp actually starts for it
+        vim.defer_fn(function()
+          vim.cmd 'if &ft == "packer" | echo "" | else | silent! e %'
+        end, 0)
+    end,
+    opt = true,
+  }
+  -- LSP stuff
+  use {
+    "neovim/nvim-lspconfig",
+    module = "lspconfig",
+    after = "nvim-lsp-installer",
+  }
+
+  use {
+    "ray-x/lsp_signature.nvim",
+    after = "nvim-lspconfig",
+    config = function()
+        require "custom.plugins.signature"
+    end,
+  }
+  use {
     "jose-elias-alvarez/null-ls.nvim",
     after = "nvim-lspconfig",
     config = function()
       require("custom.plugins.null-ls").setup()
     end,
   }
-  
+  -- Autocompletion pluggins
+  -- load luasnips + cmp related in insert mode only
+    use {
+      "rafamadriz/friendly-snippets",
+      event = "InsertEnter",
+   }
+
+   use {
+      "hrsh7th/nvim-cmp",
+      after = "friendly-snippets",
+      config = function()
+         require "custom.plugins.cmp"
+      end,
+   }
+
+   use {
+      "L3MON4D3/LuaSnip",
+      wants = "friendly-snippets",
+      after = "nvim-cmp",
+      config = function()
+         local luasnip = require "luasnip"
+         luasnip.config.set_config {
+            history = true,
+            updateevents = "TextChanged,TextChangedI",
+         }
+         require("luasnip/loaders/from_vscode").load()
+      end,
+   }
+   use {
+      "saadparwaiz1/cmp_luasnip",
+      after = "LuaSnip",
+   }
+
+   use {
+      "hrsh7th/cmp-nvim-lua",
+      after = "cmp_luasnip",
+   }
+
+   use {
+      "hrsh7th/cmp-nvim-lsp",
+      after = "cmp-nvim-lua",
+   }
+
+   use {
+      "hrsh7th/cmp-buffer",
+      after = "cmp-nvim-lsp",
+   }
+
+   use {
+      "hrsh7th/cmp-path",
+      after = "cmp-buffer",
+   }
+   use {
+      "windwp/nvim-autopairs",
+      after = "nvim-cmp",
+      config = function()
+         local autopairs = require "nvim-autopairs"
+         local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+
+         autopairs.setup { fast_wrap = {} }
+
+         local cmp = require "cmp"
+         cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+      end,
+   }
   -- load it after nvim-lspconfig , since we'll use some lspconfig stuff in the null-ls config!
-  -- use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 end)
 
 require "custom.mappings"
--- hooks.add("install_plugins", function(use)
---   use {
-  --       'iamcco/markdown-preview.nvim',
-  --       run = function() vim.fn['mkdp#util#install']() end,
-  --      ft = {'markdown'}
-  --   }
-  -- end)
-
 
 -- alternatively, put this in a sub-folder like "lua/custom/plugins/mkdir"
 -- then source it with

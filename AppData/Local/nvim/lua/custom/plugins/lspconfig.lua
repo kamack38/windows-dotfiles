@@ -1,69 +1,56 @@
-local M = {}
-M.setup_lsp = function(attach, capabilities)
-    local lspconfig = require "lspconfig"
-    local lsp_installer = require "nvim-lsp-installer"
-    
-    lsp_installer.settings {
-      ui = {
-         icons = {
-            server_installed = "﫟" ,
-            server_pending = "",
-            server_uninstalled = "✗",
-         },
-      },
-    }
+require("plugins.configs.others").lsp_handlers()
 
-    local servers = {"html", "cssls", "ccls"}
+local function on_attach(_, bufnr)
+   local function buf_set_option(...)
+      vim.api.nvim_buf_set_option(bufnr, ...)
+   end
 
-    for _, lsp in ipairs(servers) do
-        lspconfig[lsp].setup {
-            on_attach = attach,
-            capabilities = capabilities,
-            flags = {
-                debounce_text_changes = 150
-            }
-        }
-    end
-
-    -- lspconfig.clangd.setup {
-    --     -- cmd = { "clangd", "--background-index", "-std=c++14", "-target x86_64-w64-mingw64" },
-    --     cmd = { "clangd", "--background-index" },
-    --     on_attach = function(client, bufnr)
-    --         client.resolved_capabilities.document_formatting = false
-    --         vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
-    --     end
-    -- }
-
-    -- lspconfig.ccls.setup {
-    --     init_options = {
-    --         compilationDatabaseDirectory = "build";
-    --         index = {
-    --             threads = 0;
-    --         };
-    --         clang = {
-    --             excludeArgs = { "-frounding-math"} ;
-    --         };
-    --     },
-        -- on_attach = function(client, bufnr)
-        --     client.resolved_capabilities.document_formatting = false
-        --     vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
-        -- end
-    -- }
-
-    lspconfig.tsserver.setup {
-        on_attach = function(client, bufnr)
-            client.resolved_capabilities.document_formatting = false
-            vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
-        end
-    }
-
-    lspconfig.powershell_es.setup {
-        on_attach = attach,
-        capabilities = capabilities,
-        bundle = '%LocalAppData%/nvim-data/powershell_es/PowerShellEditorServices',
-        shell = "pwsh",
-        single_file_support = true
-    }
+   -- Enable completion triggered by <c-x><c-o>
+   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+   require("core.mappings").lspconfig()
 end
 
-return M
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+local lsp_installer = require "nvim-lsp-installer"
+
+lsp_installer.settings {
+   ui = {
+      icons = {
+         server_installed = "﫟",
+         server_pending = "",
+         server_uninstalled = "✗",
+      },
+   },
+}
+
+lsp_installer.on_server_ready(function(server)
+  -- server options, so default options for all servers
+  local opts = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    flags = {
+       debounce_text_changes = 150,
+    },
+    settings = {},
+  }
+
+  -- below 2 if conditions are just examples of changing server options
+  -- if you dont use those servers then remove them
+  -- disabling inbuilt formatter of tsserver to use null-ls formatter for it
+  if server.name == "tsserver" then
+    opts.on_attach = function(client, bufnr)
+       client.resolved_capabilities.document_formatting = false
+       vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
+    end
+  end
+  
+  if server.name == "powershell_es" then
+    opts.settings = {
+      bundle = '%LocalAppData%/nvim-data/powershell_es/PowerShellEditorServices',
+      shell = "pwsh",
+      single_file_support = true
+    }
+  end
+  server:setup(opts)
+  vim.cmd [[ do User LspAttachBuffers ]]
+end)
