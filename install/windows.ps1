@@ -239,6 +239,11 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advan
 # Explorer: Show path in title bar
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" "FullPath" 1
 
+# Explorer: Delete 3D Objects folder
+if (Test-Path "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\Namespace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}") {
+  Remove-Item "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\Namespace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
+}
+
 # Taskbar: Show colors on Taskbar, Start, and SysTray: Disabled: 0, Taskbar, Start, & SysTray: 1, Taskbar Only: 2
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "ColorPrevalence" 1
 
@@ -302,8 +307,8 @@ pnputil -i -a $HOME\.config\themes\cursors\capitaine-cursors\install.inf
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUYQajjAz4dKxlZaqA+GpiwuVV
-# B9SgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUAchNVbHQF3hc332DZdmUjUy3
+# 9WugggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -325,11 +330,11 @@ pnputil -i -a $HOME\.config\themes\cursors\capitaine-cursors\install.inf
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUgnxIGKo+VC+K
-# MMof9l0x5+N4bgAwDQYJKoZIhvcNAQEBBQAEggEAgNYujQZ/DrrBv0efCx+uFfGq
-# UCM8DAgNEKxptEUXnjpHjPRk0xadOKnNZuw9QdxFQoanqllFbd8g20FtfcPH5un5
-# W3frV3nCy36xDu4xmNBariau1Z+kXsJH+Xs8BUhEKTaPTYU6qpAQNswh1Q3QEqsC
-# DBQl17S8uRcPJSpaa88xk+SGsOsR+PDLxwE9tWlJ/IxVkfAoAIgsHfg3vvVVdwKU
-# TdNlOettsYwjzURxbm3L/RyDwlxxHF/gPMJUfArbLyy9QRWKqFy/f0JNpONkHNuG
-# umYJMzPy5QgRFUi+ojGE+JZMhdYpiCFXf3ErK2CfQeQ/PYfqT8Fg2odhWQOdjA==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUe2IaFXxj5jyU
+# f7BpoOZeIVnpjqowDQYJKoZIhvcNAQEBBQAEggEAb+Jwlx4xM7CvhyDVBfYhPsNy
+# QLBjWcUnLtl3Ysf5oO6y96a6MYPluDvbLsE5PIECbQeblG7IoPlPJDxUfmugPRrm
+# rJnScrUJAQh8mhlrflKmfD4VRnug7PLfL/MziSUvWEn8OaFrAwYk9sggTxPLz0+t
+# Mewt4uBlYVn3GfUNCXYAkXzdN2BKsjfbKbUHYxnzbIdwa2QMviQzG8cK0F9kwtHl
+# vsTNZ2mtFtq4RaoPLOKxtfRqUeBCC7agBXBrNJjx7kf9KnXhIguilioZhueW16QG
+# L2uNl3AoopbllDNgeRGqEeJ49dAPQFtQN5EgUyV3ldyYNbG6+MZAv8e+lWtH3Q==
 # SIG # End signature block

@@ -13,7 +13,8 @@ local opt = vim.opt
 --    relativenumber = true,
 -- }
 
-opt.shell = 'pwsh -NoLogo'
+opt.shell = 'pwsh -nol'
+opt.shellcmdflag = '-nop -c'
 opt.shellquote = '"'
 opt.shellxquote = ''
 opt.shellpipe = '| Out-File -Encoding UTF8 %s'

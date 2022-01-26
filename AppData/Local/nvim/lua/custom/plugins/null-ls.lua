@@ -6,7 +6,7 @@ local sources = {
    b.formatting.prettierd.with { filetypes = { "html", "markdown", "css", "json", "yaml", "scss" } },
    b.formatting.deno_fmt,
    b.formatting.eslint_d,
-   b.formatting.clang_format,
+   b.formatting.clang_format.with { filetypes = { "cpp" } },
 
 }
 

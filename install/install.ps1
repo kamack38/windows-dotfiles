@@ -25,6 +25,7 @@ else {
 }
 
 # Send welcome message
+Clear-Host
 Write-Output "  ___  __    _____ ______   ________  ________"            
 Write-Output " |\  \|\  \ |\   _ \  _   \|\_____  \|\   __  \     "
 Write-Output " \ \  \/  /|\ \  \\\__\ \  \|_____\  \ \  \|\  \    Kamack38"
@@ -33,6 +34,7 @@ Write-Output "   \ \  \\ \  \ \  \    \ \  \| ____\  \ \  \|\  \  https://github
 Write-Output "    \ \__\\ \__\ \__\    \ \__\|\_______\ \_______\ "
 Write-Output "     \|__| \|__|\|__|     \|__|\|_______|\|_______| "
 Write-Output " "
+Write-Output "Thank you for downloading my dotfiles <3"
 
 # Ensure chocolatey is installed
 if (! (Get-Command choco -errorAction SilentlyContinue)) {
@@ -136,7 +138,7 @@ Write-Host "LogitechG HUB Installer has been downloaded!" -ForegroundColor green
 
 # Steam skin (metro-for-steam)
 Write-Host "Downloading metro-for-steam..." -ForegroundColor yellow
-Invoke-WebRequest -Uri "https://github.com/minischetti/metro-for-steam/archive/v4.4.zip" -o metro-for-steam.zip
+Invoke-WebRequest -Uri "https://github.com/minischetti/metro-for-steam/archive/refs/heads/master.zip" -o metro-for-steam.zip
 Write-Host "metro-for-steam has been downloaded!" -ForegroundColor green
 Write-Host "Downloading Unofficial Patch for MetroForSteam..." -ForegroundColor yellow
 Invoke-WebRequest -Uri "https://github.com/redsigma/UPMetroSkin/archive/master.zip" -o UPMetroSkin.zip
@@ -232,8 +234,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUXV/P8KkxZMyu7LuUFqbVQ0Nu
-# NHagggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU3uJmYr86lDfcai8wul7BxvsE
+# saGgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -255,11 +257,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQU/i8KvC760va8
-# icgNlQpq5m41+DwwDQYJKoZIhvcNAQEBBQAEggEAGubsjEEqfQDUapNMvnL8i9VS
-# KSYbfZjkXlkSxsOHQqoLYtgIvm9bAmeUwQ9I1A3wzGGnJ8F+qAlzRHMiA+CCqFV7
-# YHD5G0hLBpBESvEDRANHxUQDx68T1YFYhurD4oqq9I4F08EJGxORIAu9HopL+OpU
-# lKIpbgYMH49TnsL0b/rhuJfMSQWzydlO3J7Qgi4fmjcpheLkHzkNJ51Dz7xCMhZ8
-# 4lUJYC6PjTglTaLYqFddXX3mmVSgdpIbcA494GSS6YpSD+rjXuYFwvcofeTrmTvd
-# FTwkFizjdbe+YOZwzW8fhlyWgqIM2UmM6zEsHEhDOU6Mi45pXVlJ+N7Bb/V1pA==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUPleEI0Bex1Jj
+# gFHmAKIpxuXdckowDQYJKoZIhvcNAQEBBQAEggEAFGNtDfYSJniqw2qwH7bfSOKL
+# iKNnbzGewRWGl7mo1TMZQroINScJtbS7ptll6kts2KhwtQzEoxmSGkhy50og2OqV
+# lCMInhJ1OjscYN3KUF2JR7+3wot8XY/lbg6jZ9FiQtU7+MptSb1dc+m71yMUhfps
+# CtoQZ7whA/tPLFTRFhH2ljRGieXLRE7nKTzeOWvWoMyB4GyL0njiIFzRU1W5T8Al
+# tjyW+CPNvDilrskLhdI+BvbO0KZE7/vOuBUmj5uOuOeZgki48/Za3k15v/glNEJi
+# aChN5dXhTOAB8DEkw3sgegWKuAC8s8b0xE9rMXT+OEZ+BRqTNHWaGrZPetVeiQ==
 # SIG # End signature block
