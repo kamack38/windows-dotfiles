@@ -113,7 +113,6 @@
   "editor.hover.above": true,
   "editor.lineNumbers": "on",
   "editor.linkedEditing": true,
-  "editor.minimap.enabled": true,
   "editor.parameterHints.enabled": true,
   "editor.quickSuggestionsDelay": 0,
   "editor.renderWhitespace": "selection",
@@ -272,14 +271,15 @@
     "editorBracketPairGuide.activeBackground5": "#E6E6E6",
     "editorBracketPairGuide.activeBackground6": "#6fce85"
   },
-  "workbench.colorTheme": "Community Material Theme High Contrast",
+  "workbench.colorTheme": "Atom One Dark",
   "workbench.editor.wrapTabs": true,
   "workbench.editorAssociations": {
     "*.lnk": "default",
     "*.ttf": "default"
   },
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.panel.defaultLocation": "right",
   "workbench.startupEditor": "welcomePage",
-  "zenMode.hideLineNumbers": false
+  "zenMode.hideLineNumbers": false,
+  "editor.minimap.enabled": false
 }

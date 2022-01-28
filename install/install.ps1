@@ -57,14 +57,14 @@ choco feature enable -n allowGlobalConfirmation
 
 # Install Programs
 choco install firefox-dev --pre --limit-output
-choco install git --params "/NoShellIntegration /NoOpenSSH" --limit-output
+choco install git.install --params "/NoShellIntegration /NoOpenSSH" --limit-output
 choco install python3 --limit-output
 choco install openjdk --limit-output
 choco install nodejs --limit-output
 choco install gpg4win --limit-output
 choco install winrar --limit-output
 choco install powershell-core --params '"/CleanUpPath"' --pre --limit-output
-choco install mpv --limit-output
+choco install mpv.install --limit-output
 choco install yt-dlp --limit-output
 choco install ffmpeg --limit-output
 choco install neovim --limit-output
@@ -79,7 +79,7 @@ choco install onefetch --limit-output
 choco install speedtest --limit-output
 choco install microsoft-windows-terminal --pre --limit-output
 choco install openssh --pre --limit-output
-choco install discord --limit-output
+choco install discord.install --limit-output
 choco install steam-client --limit-output
 choco install epicgameslauncher --limit-output
 choco install minecraft-launcher --limit-output
@@ -89,11 +89,11 @@ choco install powertoys --limit-output
 choco install modernflyouts --limit-output
 choco install procmon --limit-output
 choco install winmerge --limit-output
-choco install vscode --params "/NoDesktopIcon" --limit-output
+choco install vscode.install --params "/NoDesktopIcon" --limit-output
 choco install firacodenf --limit-output
 choco install ngrok --limit-output
 choco install croc --limit-output
-choco install cmake --ia 'ADD_CMAKE_TO_PATH=System' --limit-output
+choco install cmake.install --ia 'ADD_CMAKE_TO_PATH=System' --limit-output
 choco install autohotkey --limit-output
 
 # Non-chocolatey programs
@@ -234,8 +234,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU3uJmYr86lDfcai8wul7BxvsE
-# saGgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUVpQp0PiyEjCh7fUTf0cb+mcO
+# EFqgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -257,11 +257,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUPleEI0Bex1Jj
-# gFHmAKIpxuXdckowDQYJKoZIhvcNAQEBBQAEggEAFGNtDfYSJniqw2qwH7bfSOKL
-# iKNnbzGewRWGl7mo1TMZQroINScJtbS7ptll6kts2KhwtQzEoxmSGkhy50og2OqV
-# lCMInhJ1OjscYN3KUF2JR7+3wot8XY/lbg6jZ9FiQtU7+MptSb1dc+m71yMUhfps
-# CtoQZ7whA/tPLFTRFhH2ljRGieXLRE7nKTzeOWvWoMyB4GyL0njiIFzRU1W5T8Al
-# tjyW+CPNvDilrskLhdI+BvbO0KZE7/vOuBUmj5uOuOeZgki48/Za3k15v/glNEJi
-# aChN5dXhTOAB8DEkw3sgegWKuAC8s8b0xE9rMXT+OEZ+BRqTNHWaGrZPetVeiQ==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUqkp8XRe4halv
+# Q+QkrS1yZQYBvr8wDQYJKoZIhvcNAQEBBQAEggEAPhEj+iBvbguhvDNN23h5F0oX
+# jto/biONxLLrTprXN80lsiH7NCp3pC5YHYJUfsAjAa3Dio2Yi9R4pGDdONDjXEWf
+# ItFuQkSNKyB36X7hytcQy+zZ9jOaV0aoJb0sQt4UZyn/RZEVHJ4PzULXgywhjiBo
+# XyC0z+cco3lN4b19xESd0pz8zqsH5ZO9ZBm6jwdPQ682umixkiBfTMsxFff6LGwX
+# 9vY8ozlaDcvikSGGs8IrLtyBOr3Mx7PMj9fhnatxUpCegJ9WKGIsOtJW7808VSek
+# V6SNrvVD9iKVQRiGSKDZosKwBE/K0a4c5n6AUU2oBEYPFNxX5BnyVDM8+8dB3Q==
 # SIG # End signature block

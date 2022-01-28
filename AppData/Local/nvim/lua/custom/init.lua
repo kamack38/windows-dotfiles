@@ -45,7 +45,7 @@ customPlugins.add(function(use)
     "wakatime/vim-wakatime",
     "Pocco81/TrueZen.nvim",
     "andweeb/presence.nvim",
-    "nathom/filetype.nvim"
+    "nathom/filetype.nvim",
   }
   use {
     "karb94/neoscroll.nvim",
@@ -75,19 +75,19 @@ customPlugins.add(function(use)
     opt = true,
   }
   -- LSP stuff
-  use {
-    "neovim/nvim-lspconfig",
-    module = "lspconfig",
-    after = "nvim-lsp-installer",
-  }
+  -- use {
+  --   "neovim/nvim-lspconfig",
+  --   module = "lspconfig",
+  --   after = "nvim-lsp-installer",
+  -- }
 
-  use {
-    "ray-x/lsp_signature.nvim",
-    after = "nvim-lspconfig",
-    config = function()
-        require "custom.plugins.signature"
-    end,
-  }
+  -- use {
+  --   "ray-x/lsp_signature.nvim",
+  --   after = "nvim-lspconfig",
+  --   config = function()
+  --       require "custom.plugins.signature"
+  --   end,
+  -- }
   use {
     "jose-elias-alvarez/null-ls.nvim",
     after = "nvim-lspconfig",
@@ -97,69 +97,68 @@ customPlugins.add(function(use)
   }
   -- Autocompletion pluggins
   -- load luasnips + cmp related in insert mode only
-    use {
-      "rafamadriz/friendly-snippets",
-      event = "InsertEnter",
-   }
+  --   use {
+  --     "rafamadriz/friendly-snippets",
+  --     event = "InsertEnter",
+  --  }
 
-   use {
-      "hrsh7th/nvim-cmp",
-      after = "friendly-snippets",
-      config = function()
-         require "custom.plugins.cmp"
-      end,
-   }
+  --  use {
+  --     "hrsh7th/nvim-cmp",
+  --     after = "friendly-snippets",
+  --     config = function()
+  --        require "custom.plugins.cmp"
+  --     end,
+  --  }
+  --  use {
+  --     "L3MON4D3/LuaSnip",
+  --     wants = "friendly-snippets",
+  --     after = "nvim-cmp",
+  --     config = function()
+  --        local luasnip = require "luasnip"
+  --        luasnip.config.set_config {
+  --           history = true,
+  --           updateevents = "TextChanged,TextChangedI",
+  --        }
+  --        require("luasnip/loaders/from_vscode").load()
+  --     end,
+  --  }
+  --  use {
+  --     "saadparwaiz1/cmp_luasnip",
+  --     after = "LuaSnip",
+  --  }
 
-   use {
-      "L3MON4D3/LuaSnip",
-      wants = "friendly-snippets",
-      after = "nvim-cmp",
-      config = function()
-         local luasnip = require "luasnip"
-         luasnip.config.set_config {
-            history = true,
-            updateevents = "TextChanged,TextChangedI",
-         }
-         require("luasnip/loaders/from_vscode").load()
-      end,
-   }
-   use {
-      "saadparwaiz1/cmp_luasnip",
-      after = "LuaSnip",
-   }
+  --  use {
+  --     "hrsh7th/cmp-nvim-lua",
+  --     after = "cmp_luasnip",
+  --  }
 
-   use {
-      "hrsh7th/cmp-nvim-lua",
-      after = "cmp_luasnip",
-   }
+  --  use {
+  --     "hrsh7th/cmp-nvim-lsp",
+  --     after = "cmp-nvim-lua",
+  --  }
 
-   use {
-      "hrsh7th/cmp-nvim-lsp",
-      after = "cmp-nvim-lua",
-   }
+  --  use {
+  --     "hrsh7th/cmp-buffer",
+  --     after = "cmp-nvim-lsp",
+  --  }
 
-   use {
-      "hrsh7th/cmp-buffer",
-      after = "cmp-nvim-lsp",
-   }
+  --  use {
+  --     "hrsh7th/cmp-path",
+  --     after = "cmp-buffer",
+  --  }
+   -- use {
+   --    "windwp/nvim-autopairs",
+   --    after = "nvim-cmp",
+   --    config = function()
+   --       local autopairs = require "nvim-autopairs"
+   --       local cmp_autopairs = require "nvim-autopairs.completion.cmp"
 
-   use {
-      "hrsh7th/cmp-path",
-      after = "cmp-buffer",
-   }
-   use {
-      "windwp/nvim-autopairs",
-      after = "nvim-cmp",
-      config = function()
-         local autopairs = require "nvim-autopairs"
-         local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+   --       autopairs.setup { fast_wrap = {} }
 
-         autopairs.setup { fast_wrap = {} }
-
-         local cmp = require "cmp"
-         cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-      end,
-   }
+   --       local cmp = require "cmp"
+   --       cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+   --    end,
+   -- }
   -- load it after nvim-lspconfig , since we'll use some lspconfig stuff in the null-ls config!
 end)
 

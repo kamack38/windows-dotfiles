@@ -28,31 +28,23 @@ M.ui = {
 -- NvChad included plugin options & overrides
 M.plugins = {
    status = {
-      blankline = true, -- show code scope with symbols
-      bufferline = true, -- list open buffers up the top, easy switching too
+      blankline = true, -- indentline stuff
+      bufferline = true, -- manage and preview opened buffers
       colorizer = true, -- color RGB, HEX, CSS, NAME color codes
       comment = true, -- easily (un)comment code, language aware
-      dashboard = true, -- NeoVim 'home screen' on open
-      esc_insertmode = true, -- map to <ESC> with no lag
+      dashboard = true,
+      better_escape = true, -- map to <ESC> with no lag
       feline = true, -- statusline
-      gitsigns = true, -- gitsigns in statusline
+      gitsigns = true,
       lspsignature = true, -- lsp enhancements
-      telescope_media = false, -- media previews within telescope finders
-      vim_matchup = true, -- % operator enhancements
+      vim_matchup = true, -- improved matchit
       cmp = true,
       nvimtree = true,
-      wakatime = true,
+      autopairs = true,
    },
    options = {
       lspconfig = {
          setup_lspconf = "custom.plugins.lspconfig",
-      },
-      statusline = {
-         hidden = {
-            "NvimTree",
-            "terminal",
-            "dashboard",
-         },
       },
    },
    -- To change the Packer `config` of a plugin that comes with NvChad,
