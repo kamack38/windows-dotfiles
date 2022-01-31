@@ -111,6 +111,7 @@ pip install streamlink
 npm i -g carbon-now-cli
 npm i -g neovim
 npm i -g yarn
+npm i -g git-cz
 
 npm i --prefix ~\.quokka dotenv-quokka-plugin
 npm i --prefix ~\.quokka jsdom-quokka-plugin
@@ -234,8 +235,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUVpQp0PiyEjCh7fUTf0cb+mcO
-# EFqgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU2AnLUw4jjKj8sqQbaubw/T+6
+# B6mgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -257,11 +258,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUqkp8XRe4halv
-# Q+QkrS1yZQYBvr8wDQYJKoZIhvcNAQEBBQAEggEAPhEj+iBvbguhvDNN23h5F0oX
-# jto/biONxLLrTprXN80lsiH7NCp3pC5YHYJUfsAjAa3Dio2Yi9R4pGDdONDjXEWf
-# ItFuQkSNKyB36X7hytcQy+zZ9jOaV0aoJb0sQt4UZyn/RZEVHJ4PzULXgywhjiBo
-# XyC0z+cco3lN4b19xESd0pz8zqsH5ZO9ZBm6jwdPQ682umixkiBfTMsxFff6LGwX
-# 9vY8ozlaDcvikSGGs8IrLtyBOr3Mx7PMj9fhnatxUpCegJ9WKGIsOtJW7808VSek
-# V6SNrvVD9iKVQRiGSKDZosKwBE/K0a4c5n6AUU2oBEYPFNxX5BnyVDM8+8dB3Q==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUJnhwpm/MiuYH
+# tUZ3AqJLXvhONyUwDQYJKoZIhvcNAQEBBQAEggEAaMBj4UI6EUtsO+qxrnjlcmKN
+# u1tRFv7YbVw7ShkG7aJC+xeYGpBuy7bqSFRcmkJJ8/IB9MX2mVe1yuD1FyvkTuVz
+# BOthECPDsX36p2gxqxRRza59+dySHlAtYdRj9DQiU/tc2sFWJrJ3p0cJFgUzO1Ym
+# KEGw/7jaklX3bLr9IaM19GB3GsBi4MLd3QDB/5SI/xFMQ436jqoc69C0CgaL/MKH
+# Kfj5eR0hLQYtSI5t3ZOB4S9bs1HpAq4siuWF9ZEp/y6WB/pbUFgYnSGxF4n0hKYj
+# Aqw8XV4LboebswGrohgfA/y1Wy4Fln34WhHWOc/+iVg/NcxayrghlERItM8u/g==
 # SIG # End signature block

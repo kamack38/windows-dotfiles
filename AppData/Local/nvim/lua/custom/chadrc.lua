@@ -26,6 +26,9 @@ M.ui = {
   theme = "onedark"
 }
 -- NvChad included plugin options & overrides
+
+local userPlugins = require "custom.plugins" -- path to table
+
 M.plugins = {
    status = {
       blankline = true, -- indentline stuff
@@ -42,18 +45,16 @@ M.plugins = {
       nvimtree = true,
       autopairs = true,
    },
+   
    options = {
       lspconfig = {
          setup_lspconf = "custom.plugins.lspconfig",
       },
    },
-   -- To change the Packer `config` of a plugin that comes with NvChad,
-   -- add a table entry below matching the plugin github name
-   --              '-' -> '_', remove any '.lua', '.nvim' extensions
-   -- this string will be called in a `require`
-   --              use "(custom.configs).my_func()" to call a function
-   --              use "custom.blankline" to call a file
+
    default_plugin_config_replace = {},
+
+   install = userPlugins,
 }
 
 return M

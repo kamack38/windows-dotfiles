@@ -51,12 +51,6 @@ function wheater {
   Invoke-RestMethod http://wttr.in/$param1
 }
 function ip { 'Private Adress: ' + (Get-NetIPAddress | Where-Object { $_.AddressFamily -eq 'IPv4' -and $_.PrefixOrigin -eq 'Dhcp' }).IPAddress; 'Public Adress: ' + (curl -s ifconfig.me) }
-function gle {
-  for ( $i = 0; $i -lt $args.count; $i++ ) {
-    $search = $search + $($args[$i]) + "+"
-  } 
-  Start-Process "https://www.google.com/search?q=$search" 
-}
 function faceit {
   param (
     [Parameter(Mandatory)]
