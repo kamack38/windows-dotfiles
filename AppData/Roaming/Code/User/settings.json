@@ -204,12 +204,14 @@
   "markdown-preview-enhanced.mermaidTheme": "dark",
   "markdown-preview-enhanced.previewTheme": "github-dark.css",
   "markdown-preview-enhanced.revealjsTheme": "solarized.css",
-  "markdown-toc.updateOnSave": false,
   "markdown.extension.list.indentationSize": "inherit",
   "markdownlint.config": {
     "MD024": false,
     "MD033": false,
     "MD041": false
+  },
+  "material-icon-theme.folders.associations": {
+    ".bin": "dist",
   },
   "path-intellisense.extensionOnImport": true,
   "path-intellisense.showHiddenFiles": true,
@@ -217,6 +219,8 @@
   "powershell.promptToUpdatePowerShell": false,
   "python.languageServer": "Pylance",
   "quokka.automaticRestart": true,
+  "reactSnippets.settings.importReactOnTop": false,
+  "reactSnippets.settings.typescript": true,
   "redhat.telemetry.enabled": false,
   "remote.SSH.connectTimeout": 1200,
   "resmon.show.disk": true,
