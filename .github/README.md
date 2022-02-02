@@ -68,7 +68,6 @@ Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
       <li><a href="https://marketplace.visualstudio.com/items?itemName=bagetx.inf">bagetx.inf</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=bierner.emojisense">bierner.emojisense</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles">bierner.markdown-preview-github-styles</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml">bungcip.better-toml</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense">christian-kohler.npm-intellisense</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense">christian-kohler.path-intellisense</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=chunsen.bracket-select">chunsen.bracket-select</a></li>
@@ -85,13 +84,11 @@ Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
       <li><a href="https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night">enkia.tokyo-night</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-community-material-theme">Equinusocio.vsc-community-material-theme</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme">Equinusocio.vsc-material-theme</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=equinusocio.vsc-material-theme-icons">equinusocio.vsc-material-theme-icons</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">esbenp.prettier-vscode</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug">firefox-devtools.vscode-firefox-debug</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">formulahendry.code-runner</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format">foxundermoon.shell-format</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=GEEKiDoS.vdf">GEEKiDoS.vdf</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme">GitHub.github-vscode-theme</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github">GitHub.vscode-pull-request-github</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer">GrapeCity.gc-excelviewer</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">humao.rest-client</a></li>
@@ -99,16 +96,11 @@ Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
       <li><a href="https://marketplace.visualstudio.com/items?itemName=icrawl.discord-vscode">icrawl.discord-vscode</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ionutvmi.reg">ionutvmi.reg</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=jeff-hykin.better-cpp-syntax">jeff-hykin.better-cpp-syntax</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=keyring.Lua">keyring.Lua</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=Kp.discord-js-snippets">Kp.discord-js-snippets</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=liximomo.sftp">liximomo.sftp</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=lukasz-wronski.ftp-sync">lukasz-wronski.ftp-sync</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=mammothb.gnuplot">mammothb.gnuplot</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel">mgmcdermott.vscode-language-babel</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv">mikestead.dotenv</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=mkaufman.HTMLHint">mkaufman.HTMLHint</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-apache">mrmlnc.vscode-apache</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">ms-azuretools.vscode-docker</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">ms-python.python</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">ms-python.vscode-pylance</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter">ms-toolsai.jupyter</a></li>
@@ -119,7 +111,6 @@ Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh-edit">ms-vscode-remote.remote-ssh-edit</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">ms-vscode-remote.remote-wsl</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">ms-vscode-remote.vscode-remote-extensionpack</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools">ms-vscode.cmake-tools</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">ms-vscode.cpptools</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor">ms-vscode.hexeditor</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.powershell">ms-vscode.powershell</a></li>
@@ -136,22 +127,18 @@ Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
       <li><a href="https://marketplace.visualstudio.com/items?itemName=richie5um2.vscode-sort-json">richie5um2.vscode-sort-json</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass">ritwickdey.live-sass</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">ritwickdey.LiveServer</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=SamuelCharpentier.remove-non-ascii-chars">SamuelCharpentier.remove-non-ascii-chars</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">shd101wyy.markdown-preview-enhanced</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=slevesque.vscode-autohotkey">slevesque.vscode-autohotkey</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server">SPGoding.datapack-language-server</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker">streetsidesoftware.code-spell-checker</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-polish">streetsidesoftware.code-spell-checker-polish</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=sumneko.lua">sumneko.lua</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=syler.sass-indented">syler.sass-indented</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode">TabNine.tabnine-vscode</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=thomanq.math-snippets">thomanq.math-snippets</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=tldraw-org.tldraw-vscode">tldraw-org.tldraw-vscode</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf">tomoki1207.pdf</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=twxs.cmake">twxs.cmake</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=Tyriar.luna-paint">Tyriar.luna-paint</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag">vincaslt.highlight-matching-tag</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode">VisualStudioExptTeam.vscodeintellicode</a></li>
-      <li><a href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons">vscode-icons-team.vscode-icons</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime">WakaTime.vscode-wakatime</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode">WallabyJs.quokka-vscode</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=WallabyJs.wallaby-vscode">WallabyJs.wallaby-vscode</a></li>

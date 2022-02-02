@@ -6,10 +6,10 @@ Write-Host "Debloating Windows..." -ForegroundColor "Yellow"
 [regex]$WhitelistedApps = 'Microsoft.ScreenSketch|Microsoft.Paint3D|Microsoft.WindowsCalculator|Microsoft.WindowsStore|Microsoft.Windows.Photos|CanonicalGroupLimited.UbuntuonWindows|`
 Microsoft.WindowsCamera|.NET|Framework|Microsoft.HEIFImageExtension|Microsoft.ScreenSketch|Microsoft.StorePurchaseApp|`
 Microsoft.VP9VideoExtensions|Microsoft.WebMediaExtensions|Microsoft.WebpImageExtension|Microsoft.DesktopAppInstaller'
-Get-AppxPackage -AllUsers | Where-Object {$_.Name -NotMatch $WhitelistedApps} | Remove-AppxPackage -ErrorAction SilentlyContinue
+Get-AppxPackage -AllUsers | Where-Object { $_.Name -NotMatch $WhitelistedApps } | Remove-AppxPackage -ErrorAction SilentlyContinue
 # Run this again to avoid error on 1803 or having to reboot.
-Get-AppxPackage -AllUsers | Where-Object {$_.Name -NotMatch $WhitelistedApps} | Remove-AppxPackage -ErrorAction SilentlyContinue
-$AppxRemoval = Get-AppxProvisionedPackage -Online | Where-Object {$_.PackageName -NotMatch $WhitelistedApps} 
+Get-AppxPackage -AllUsers | Where-Object { $_.Name -NotMatch $WhitelistedApps } | Remove-AppxPackage -ErrorAction SilentlyContinue
+$AppxRemoval = Get-AppxProvisionedPackage -Online | Where-Object { $_.PackageName -NotMatch $WhitelistedApps } 
 ForEach ( $App in $AppxRemoval) {
     Remove-AppxProvisionedPackage -Online -PackageName $App.PackageName 
 }
@@ -55,6 +55,9 @@ ForEach ($Key in $Keys) {
     Write-Output "Removing $Key from registry"
     Remove-Item $Key -Recurse -ErrorAction SilentlyContinue
 }
+
+# Remove PowerShell ISE
+DISM /Online /Remove-Capability /CapabilityName:Microsoft.Windows.PowerShell.ISE~~~~0.0.1.0
 
 ###############################################################################
 ### Disable Telemetry                                                         #
@@ -134,9 +137,9 @@ If (Test-Path $Suggestions) {
 }
 
 
-    Write-Output "Removing CloudStore from registry if it exists"
-    $CloudStore = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\CloudStore'
-    If (Test-Path $CloudStore) {
+Write-Output "Removing CloudStore from registry if it exists"
+$CloudStore = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\CloudStore'
+If (Test-Path $CloudStore) {
     Stop-Process -Name explorer -Force
     Remove-Item $CloudStore -Recurse -Force
     Start-Process Explorer.exe -Wait
@@ -166,7 +169,7 @@ Get-ScheduledTask -TaskName DmClientOnScenarioDownload | Disable-ScheduledTask -
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Program Files\PowerShell\7\pwsh.exe" -PropertyType String -Force
 
 # Set Windows Terminal as default batch opening porgram
-if (!(Test-Path "HKCR:\")) {New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR}
+if (!(Test-Path "HKCR:\")) { New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR }
 Set-ItemProperty "HKCR:\batfile\shell\open\command" "(default)" """C:\Users\$env:USERNAME\AppData\Local\Microsoft\WindowsApps\wt.exe"" -p ""Command Prompt"" ""%1"" %*"
 
 # Set Windows Terminal as default .ps1 file opening porgram
@@ -241,7 +244,7 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Cabin
 
 # Explorer: Delete 3D Objects folder
 if (Test-Path "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\Namespace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}") {
-  Remove-Item "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\Namespace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
+    Remove-Item "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\Namespace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
 }
 
 # Taskbar: Show colors on Taskbar, Start, and SysTray: Disabled: 0, Taskbar, Start, & SysTray: 1, Taskbar Only: 2
@@ -281,7 +284,7 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Persona
 # System: Set Theme Colors
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Accent" "StartColorMenu" "4288567808"
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Accent" "AccentColorMenu" "4292311040"
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Accent" "AccentPalette" -Value ([byte[]](0xa6,0xd8,0xff,0x00,0x76,0xb9,0xed,0x00,0x42,0x9c,0xe3,0x00,0x00,0x78,0xd7,0x00,0x00,0x5a,0x9e,0x00,0x00,0x42,0x75,0x00,0x00,0x26,0x42,0x00,0xf7,0x63,0x0c,0x00)) -Type Binary
+Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Accent" "AccentPalette" -Value ([byte[]](0xa6, 0xd8, 0xff, 0x00, 0x76, 0xb9, 0xed, 0x00, 0x42, 0x9c, 0xe3, 0x00, 0x00, 0x78, 0xd7, 0x00, 0x00, 0x5a, 0x9e, 0x00, 0x00, 0x42, 0x75, 0x00, 0x00, 0x26, 0x42, 0x00, 0xf7, 0x63, 0x0c, 0x00)) -Type Binary
 
 # Mouse: Disable pointer precision
 Set-ItemProperty "HKCU:\Control Panel\Mouse" "MouseSpeed" 0
@@ -307,8 +310,8 @@ pnputil -i -a $HOME\.config\themes\cursors\capitaine-cursors\install.inf
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUAchNVbHQF3hc332DZdmUjUy3
-# 9WugggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUZd8Nyfmx97XSuHwEiSAUSJ/N
+# T2OgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -330,11 +333,11 @@ pnputil -i -a $HOME\.config\themes\cursors\capitaine-cursors\install.inf
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUe2IaFXxj5jyU
-# f7BpoOZeIVnpjqowDQYJKoZIhvcNAQEBBQAEggEAb+Jwlx4xM7CvhyDVBfYhPsNy
-# QLBjWcUnLtl3Ysf5oO6y96a6MYPluDvbLsE5PIECbQeblG7IoPlPJDxUfmugPRrm
-# rJnScrUJAQh8mhlrflKmfD4VRnug7PLfL/MziSUvWEn8OaFrAwYk9sggTxPLz0+t
-# Mewt4uBlYVn3GfUNCXYAkXzdN2BKsjfbKbUHYxnzbIdwa2QMviQzG8cK0F9kwtHl
-# vsTNZ2mtFtq4RaoPLOKxtfRqUeBCC7agBXBrNJjx7kf9KnXhIguilioZhueW16QG
-# L2uNl3AoopbllDNgeRGqEeJ49dAPQFtQN5EgUyV3ldyYNbG6+MZAv8e+lWtH3Q==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUdq44SDaczpQp
+# +I+kbhS7+9gzMvYwDQYJKoZIhvcNAQEBBQAEggEAY7dpNVEopzfwV6JwO0MtU5T7
+# aUfu3rBnY4h3uWfRu8Lb/dYAzNHssH1puFZhtHFw3buwWws3OnCl6Q1p8abqoUbq
+# xkEPS7dDTPX2eflM98xgK8JZSoHqo4q/YzvgPoVJT260dbrdGcYdLkKMOW/YsInd
+# RhSYuV6Sp1/xcParZrm0lHD5AWEZ2pcc6FHSY5jORKRTEvoBqPYS9cSuYeYb/Kit
+# qPRCvCMhj6qrYqST0Nu86Qv8XQEF05utWVOwpJcagJ8M+nhF1P/GRO8ki6/vsPH1
+# 0CJ3LzPYpOjG+X1YAZJNnmpuRX8QZ4Ek4/+oeuGM2jDr5Sj2Iey+Ei0EwQjoRQ==
 # SIG # End signature block
