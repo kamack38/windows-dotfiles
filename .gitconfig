@@ -23,6 +23,7 @@
     unstage = restore --staged
     s = status -s
     b = branch -a
+    pon = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
     quickhelp = "!{ \
             echo stash - create stash; \
             echo clean - revert file to current commit; \
