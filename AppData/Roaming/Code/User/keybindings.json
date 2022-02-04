@@ -27,8 +27,7 @@
   },
   {
     "key": "f7",
-    "command": "code-runner.run",
-    "when": "editorTextFocus"
+    "command": "code-runner.run"
   },
   {
     "key": "f7",

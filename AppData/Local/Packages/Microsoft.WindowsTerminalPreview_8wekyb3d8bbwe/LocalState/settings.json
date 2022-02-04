@@ -133,69 +133,54 @@
         "list": 
         [
             {
-                "colorScheme": "Cobalt2",
-                "commandline": "pwsh.exe -nologo -noexit -command winfetch",
-                "font": 
-                {
-                    "face": "FiraCode NF",
-                    "size": 12
-                },
-                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-                "hidden": false,
                 "name": "PowerShell",
-                "scrollbarState": "hidden",
+                "commandline": "pwsh.exe -nologo -noexit -command winfetch",
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "source": "Windows.Terminal.PowershellCore",
                 "tabColor": "#132738"
             },
             {
-                "colorScheme": "Cobalt2",
+                "name": "GitBash",
                 "commandline": "%PROGRAMFILES%/git/usr/bin/bash.exe -i -l",
                 "guid": "{00000000-0000-0000-ba54-000000000002}",
-                "icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico",
-                "name": "GitBash",
-                "startingDirectory": "%USERPROFILE%"
+                "icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico"
             },
             {
-                "colorScheme": "Dracula",
+                "name": "Command Prompt",
                 "commandline": "cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": false,
-                "name": "Command Prompt",
+                "colorScheme": "Dracula",
                 "padding": "6"
             },
             {
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": true,
                 "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "source": "Windows.Terminal.Azure",
+                "hidden": true
             },
             {
-                "colorScheme": "Cobalt2",
+                "name": "Windows PowerShell",
                 "commandline": "powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "hidden": false,
-                "name": "Windows PowerShell",
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "colorScheme": "Cobalt2",
-                "cursorShape": "underscore",
-                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
-                "hidden": true,
-                "icon": "%USERPROFILE%/.config/themes/icons/archlinux.ico",
                 "name": "Arch",
-                "opacity": 55,
+                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "//wsl$/Arch/home/kamack"  
+                "icon": "%USERPROFILE%/.config/themes/icons/archlinux.ico",
+                "startingDirectory": "~",
+                "cursorShape": "underscore",
+                "hidden": true,
+                "opacity": 55
             },
             {
-                "colorScheme": "Cobalt2",
-                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-                "hidden": true,
-                "icon": "%USERPROFILE%/.config/themes/icons/ubuntu.ico",
                 "name": "Ubuntu-20.04",
+                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "//wsl$/Ubuntu-20.04/home/kamack"
+                "icon": "%USERPROFILE%/.config/themes/icons/ubuntu.ico",
+                "startingDirectory": "~",
+                "hidden": true
             }
         ]
     },

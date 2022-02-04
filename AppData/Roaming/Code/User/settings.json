@@ -282,8 +282,8 @@
     "*.ttf": "default"
   },
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.panel.defaultLocation": "right",
   "workbench.startupEditor": "welcomePage",
   "zenMode.hideLineNumbers": false,
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "terminal.integrated.enablePersistentSessions": false
 }
