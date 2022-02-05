@@ -112,6 +112,7 @@ npm i -g carbon-now-cli
 npm i -g neovim
 npm i -g yarn
 npm i -g git-cz
+npm i -g nodemon
 
 npm i --prefix ~\.quokka dotenv-quokka-plugin
 npm i --prefix ~\.quokka jsdom-quokka-plugin
@@ -235,8 +236,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU2AnLUw4jjKj8sqQbaubw/T+6
-# B6mgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUXiUz7cLTczKROKoBNpxHimUG
+# NoqgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -258,11 +259,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUJnhwpm/MiuYH
-# tUZ3AqJLXvhONyUwDQYJKoZIhvcNAQEBBQAEggEAaMBj4UI6EUtsO+qxrnjlcmKN
-# u1tRFv7YbVw7ShkG7aJC+xeYGpBuy7bqSFRcmkJJ8/IB9MX2mVe1yuD1FyvkTuVz
-# BOthECPDsX36p2gxqxRRza59+dySHlAtYdRj9DQiU/tc2sFWJrJ3p0cJFgUzO1Ym
-# KEGw/7jaklX3bLr9IaM19GB3GsBi4MLd3QDB/5SI/xFMQ436jqoc69C0CgaL/MKH
-# Kfj5eR0hLQYtSI5t3ZOB4S9bs1HpAq4siuWF9ZEp/y6WB/pbUFgYnSGxF4n0hKYj
-# Aqw8XV4LboebswGrohgfA/y1Wy4Fln34WhHWOc/+iVg/NcxayrghlERItM8u/g==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQU/IPzFsgwPpRK
+# AGFdHyE3LXibSjUwDQYJKoZIhvcNAQEBBQAEggEAkeyKXOVtCPsLUeBN4/w5SDPG
+# zFWue+xeNW1rGJvQBMD4oAjMLYNThHPIkwgxBkh1rjvUJGBXkcIe0UowdT/mPe2v
+# jv+8qp+S/M686Sd58YpSY3ovjwsKDoXY60u4mweKn18ihQBatalihR1UoUnANXHS
+# PuVa8Q5eCNI7yk3lJ58f/GxH+cZ6DINfck2yyeX7CXrCv7AiK3yLc90Wl+Coikw4
+# BMX6HY+rg8d/uXNh+9y7uFiLsxIwcmL5an6qEfzULr7x49I7aoivug/HHSCpEAMS
+# KeV/9d7jVOCJ9wjjXNYnGCaZkRaE0dUCGmsdVhWoj3sU8k4LMQFVzWr7fhMGmg==
 # SIG # End signature block
