@@ -44,6 +44,8 @@ iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.co
 Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
 ```
 
+[Click here](https://github.com/kamack38/dotfiles/wiki/%5BDeprecated%5D-Installation-using-batch-script) to check out deprecated installation methods.
+
 ## Showcase
 
 ![Windows Terminal](../Pictures/Showcase/Windows-Terminal-Showcase.png)
