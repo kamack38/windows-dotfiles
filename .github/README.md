@@ -170,3 +170,9 @@ Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
 `playlistmanager.lua` - [jonniek/mpv-playlistmanager](https://github.com/jonniek/mpv-playlistmanager)
 
 `youtube-quality.lua` - [jgreco/mpv-youtube-quality](https://github.com/jgreco/mpv-youtube-quality)
+
+`youtube-search.lua` - [CogentRedTester/mpv-scripts](https://github.com/CogentRedTester/mpv-scripts/blob/master/youtube-search.lua)
+
+`user-input.lua` & `user-input-module.lua` - [CogentRedTester/mpv-user-input](https://github.com/CogentRedTester/mpv-user-input)
+
+`scroll-list.lua` - [CogentRedTester/mpv-scroll-list](https://github.com/CogentRedTester/mpv-scroll-list)
