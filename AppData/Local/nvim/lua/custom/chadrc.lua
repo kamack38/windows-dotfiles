@@ -20,8 +20,6 @@ opt.shellxquote = ''
 opt.shellpipe = '| Out-File -Encoding UTF8 %s'
 opt.shellredir = '| Out-File -Encoding UTF8 %s'
 
-opt.tabstop = 4
-
 M.ui = {
   theme = "onedark"
 }
