@@ -165,7 +165,7 @@ Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
 
 `menu.lua` - [jonniek/mpv-menu](https://github.com/jonniek/mpv-menu)
 
-`morden.lua` - [maoiscat/mpv-osc-morden](https://github.com/maoiscat/mpv-osc-morden)
+`mordenx.lua` - [cyl0/mpv-osc-morden-x](https://github.com/cyl0/mpv-osc-morden-x/pull/3)
 
 `pause-indicator.lua` - [by torque](https://gist.github.com/torque/9dbc69543118347d2e5f43239a7e609a)
 
