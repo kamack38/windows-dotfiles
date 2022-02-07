@@ -299,11 +299,11 @@ var shortcuts = [
     {
         category: 'Playback',
         shortcuts: [
-            { keys: 'p / SPACE', effect: 'Pause/unpause' },
+            { keys: 'SPACE', effect: 'Pause/unpause' },
             { keys: '[ / ]', effect: 'Decrease/increase speed [10%]' },
             { keys: '{ / }', effect: 'Halve/double speed' },
             { keys: 'BACKSPACE', effect: 'Reset speed' },
-            { keys: 'o / P', effect: 'Show progress' },
+            { keys: 'o', effect: 'Show progress' },
             { keys: 'O', effect: 'Toggle progress' },
             { keys: 'i / I', effect: 'Show/toggle stats' },
         ],

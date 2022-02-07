@@ -59,6 +59,9 @@ ForEach ($Key in $Keys) {
 # Remove PowerShell ISE
 DISM /Online /Remove-Capability /CapabilityName:Microsoft.Windows.PowerShell.ISE~~~~0.0.1.0
 
+# Remove WordPad
+DISM /Online /Remove-Capability /CapabilityName:Microsoft.Windows.WordPad~~~~0.0.1.0
+
 ###############################################################################
 ### Disable Telemetry                                                         #
 ###############################################################################
@@ -310,8 +313,8 @@ pnputil -i -a $HOME\.config\themes\cursors\capitaine-cursors\install.inf
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUZd8Nyfmx97XSuHwEiSAUSJ/N
-# T2OgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU83a9jFOfsUtknHa2nxBEE64r
+# asugggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -333,11 +336,11 @@ pnputil -i -a $HOME\.config\themes\cursors\capitaine-cursors\install.inf
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUdq44SDaczpQp
-# +I+kbhS7+9gzMvYwDQYJKoZIhvcNAQEBBQAEggEAY7dpNVEopzfwV6JwO0MtU5T7
-# aUfu3rBnY4h3uWfRu8Lb/dYAzNHssH1puFZhtHFw3buwWws3OnCl6Q1p8abqoUbq
-# xkEPS7dDTPX2eflM98xgK8JZSoHqo4q/YzvgPoVJT260dbrdGcYdLkKMOW/YsInd
-# RhSYuV6Sp1/xcParZrm0lHD5AWEZ2pcc6FHSY5jORKRTEvoBqPYS9cSuYeYb/Kit
-# qPRCvCMhj6qrYqST0Nu86Qv8XQEF05utWVOwpJcagJ8M+nhF1P/GRO8ki6/vsPH1
-# 0CJ3LzPYpOjG+X1YAZJNnmpuRX8QZ4Ek4/+oeuGM2jDr5Sj2Iey+Ei0EwQjoRQ==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUmxjQZYauiiNJ
+# s5UqkCfav21jGLEwDQYJKoZIhvcNAQEBBQAEggEAR7mjVd2ls4LUFK+xS020bulD
+# Hiya/BUYZ9gScdRWrkPNPRA2JOMy1VfHZk6zWAXaUstl5LwTyjDCAeHfO1VmgNLj
+# I4boAmbguHHClPCEZTDvmDImkeKjjjsrdrTfcmkD9QWhH77WWw2nlgnEXx6Esd+U
+# AO5Wxf3ONtMofscsY/zbbiDd/2v6JtaBtygRy+JD5k3IKMBVjBF06h4FpTDT1RdQ
+# wCGlGK3P/lIKXq1P9n1M6CRM23inc5o0G+qP8vVDjUnc8JRzYNIvHyz7+kf8ST8H
+# oNA3RxeverxczjIeQFMrNYkKxDCX8U8VU/6sHWsCevFVhkLr2gYb6/QxNr3IuQ==
 # SIG # End signature block
