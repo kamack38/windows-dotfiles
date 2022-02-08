@@ -23,6 +23,7 @@ function mouseEvent(event)
 	local x, y = mp.get_mouse_pos()
 	local window_width = mp.get_property("osd-width")
 	local window_height = mp.get_property("osd-height")
+    local dragArea = window_height * .05
 	local bottomArea = window_height * .8
 	local leftArea = window_width * .2
 	local rightArea = window_width * .8
@@ -30,11 +31,11 @@ function mouseEvent(event)
 
 	if(y > bottomArea) then
 		mp.commandv('osd-msg-bar','seek',seek_perc, 'absolute-percent')
-	elseif(x < leftArea and y < bottomArea) then
+	elseif(x < leftArea and y < bottomArea and y > dragArea) then
 		mp.commandv('playlist-prev')
-	elseif(x > rightArea and y < bottomArea) then
+	elseif(x > rightArea and y < bottomArea and y > dragArea) then
 		mp.commandv('playlist-next')
-    else
+    elseif(y > dragArea) then
          if(event == "leftClick") then
             mp.commandv('cycle','pause')
          elseif(event == "leftDoubleClick") then
