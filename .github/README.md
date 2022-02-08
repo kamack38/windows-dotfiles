@@ -155,6 +155,8 @@ Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
 
 [My gists](https://gist.github.com/kamack38)
 
+[My Essentials](https://github.com/kamack38/Essentials/wiki)
+
 ## Credits
 
 `windows.ps1` - some reg keys taken from [jayharris/dotfiles-windows](https://github.com/jayharris/dotfiles-windows/blob/master/windows.ps1)
