@@ -125,6 +125,7 @@ pwsh.exe -Command Install-Module -Name npm-completion -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name yarn-completion -Scope CurrentUser -Force
+pwsh.exe -Command Install-Module -Name nvm-completion -Scope CurrentUser -Force
 
 # Better Discord
 Set-Location $HOME\Downloads\
@@ -236,8 +237,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUXiUz7cLTczKROKoBNpxHimUG
-# NoqgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUpBRP23MWwOC7YL/f6GtIIz84
+# lgWgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -259,11 +260,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQU/IPzFsgwPpRK
-# AGFdHyE3LXibSjUwDQYJKoZIhvcNAQEBBQAEggEAkeyKXOVtCPsLUeBN4/w5SDPG
-# zFWue+xeNW1rGJvQBMD4oAjMLYNThHPIkwgxBkh1rjvUJGBXkcIe0UowdT/mPe2v
-# jv+8qp+S/M686Sd58YpSY3ovjwsKDoXY60u4mweKn18ihQBatalihR1UoUnANXHS
-# PuVa8Q5eCNI7yk3lJ58f/GxH+cZ6DINfck2yyeX7CXrCv7AiK3yLc90Wl+Coikw4
-# BMX6HY+rg8d/uXNh+9y7uFiLsxIwcmL5an6qEfzULr7x49I7aoivug/HHSCpEAMS
-# KeV/9d7jVOCJ9wjjXNYnGCaZkRaE0dUCGmsdVhWoj3sU8k4LMQFVzWr7fhMGmg==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQU/GH2MdrGXY3k
+# 77fMVf6Jc4OhjaEwDQYJKoZIhvcNAQEBBQAEggEAnbKOCjrIl7hYr6m8UX/BNIPC
+# PQNbf39byCPceMacWnwRZ004tnoMP0223wJ2Erl8CEv0o6QYIGJSk+0Uf0fFnCJX
+# 5WjHdCeIQ2+vXgQRUWdxEEcutWrUdnIK3rVx9/SNlTtejZLkuhfuVC4FpXEJ5aUc
+# MsZRuOLBTFmTdtwasBRT/l+f11gFiILZck9zrMvTzSQ4o5q4DmO+p4fkZqig23dv
+# +e2ezz1+CYVXQX6ys4YJI2ZWtJZMBa9/qbyIcS3y6UjKmy/oq5Qpfp0QTYq5Gvwf
+# 0Bg8H6vpSpo2TELsdyYgMFAgKbHI7gB5T5KcP9ui3bx6D0Pw82GYrMoJ6cmRbw==
 # SIG # End signature block
