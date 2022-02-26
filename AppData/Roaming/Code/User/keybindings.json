@@ -58,5 +58,9 @@
   {
     "key": "ctrl+k ctrl+a",
     "command": "editor.action.unicodeHighlight.disableHighlightingOfNonBasicAsciiCharacters"
+  },
+  {
+    "key": "ctrl+k c",
+    "command": "workbench.debug.panel.action.clearReplAction"
   }
 ]
