@@ -18,8 +18,8 @@ local userPlugins = require "custom.plugins" -- path to table
 M.plugins = {
    status = {
       colorizer = true, -- color RGB, HEX, CSS, NAME color codes
-      dashboard = true,
-      snippets = true,
+      alpha = true,
+      -- snippets = true
    },
    
    options = {
