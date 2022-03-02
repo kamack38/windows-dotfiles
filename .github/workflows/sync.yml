@@ -1,21 +1,27 @@
-name: Sync Files
+name: Workflow Sync
+
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
+env:
+  DRY_RUN: false
+  REPOSITORIES: |
+    kamack38/linux-dotfiles
+  WORKFLOW_FILES: |
+    .gitconfig
+    AppData/Local/nvim=.config/nvim
+
 jobs:
-  file_sync:
+  Github_Workflow_Sync:
     runs-on: ubuntu-latest
     steps:
       - name: Fetching Local Repository
-        uses: actions/checkout@main
-      - name: File Sync
-        uses: kbrashears5/github-action-file-sync@v2.0.0
+        uses: actions/checkout@master
+      - name: Running Workflow Sync
+        uses: varunsridharan/action-github-workflow-sync@main
         with:
-          REPOSITORIES: |
-            kamack38/linux-dotfiles@main
-          FILES: |
-            .gitconfig
-            AppData/Local/nvim/=.config/nvim/
-          TOKEN: ${{ secrets.GH_PAT }}
+          DRY_RUN: ${{ env.DRY_RUN }}
+          REPOSITORIES: ${{ env.REPOSITORIES }}
+          WORKFLOW_FILES: ${{ env.WORKFLOW_FILES }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
