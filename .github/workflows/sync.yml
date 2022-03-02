@@ -10,10 +10,14 @@ env:
     kamack38/linux-dotfiles
   WORKFLOW_FILES: |
     .gitconfig
-    AppData/Local/nvim=.config/nvim
+    yt-dlp.conf
+    changelog.config.js
+    AppData/Local/nvim=.config
+    AppData/Roaming/mpv=.config
+    AppData/Roaming/bat=.config
 
 jobs:
-  Github_Workflow_Sync:
+  Sync-Files:
     runs-on: ubuntu-latest
     steps:
       - name: Fetching Local Repository
