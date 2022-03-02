@@ -12,7 +12,7 @@ env:
     .gitconfig
     yt-dlp.conf
     changelog.config.js
-    AppData/Local/nvim=.config
+    AppData/Local/nvim=.config/nvim
     AppData/Roaming/mpv=.config
     AppData/Roaming/bat=.config
 
