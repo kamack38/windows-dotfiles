@@ -187,6 +187,28 @@
                     "type": "python"
                 },
                 {
+                    "foreground": "#ffffff",
+                    "background": "#906cff",
+                    "invert_powerline": true,
+                    "powerline_symbol": "\ue0b2",
+                    "properties": {
+                        "template": " \ufa05 {{ .Full }} "
+                    },
+                    "style": "powerline",
+                    "type": "kotlin"
+                },
+                {
+                    "foreground": "#ffffff",
+                    "background": "#4063D8",
+                    "invert_powerline": true,
+                    "powerline_symbol": "\ue0b2",
+                    "properties": {
+                        "template": " \uE370 {{ .Full }} "
+                    },
+                    "style": "powerline",
+                    "type": "crystal"
+                },
+                {
                     "background": "#AE1401",
                     "foreground": "#ffffff",
                     "invert_powerline": true,
