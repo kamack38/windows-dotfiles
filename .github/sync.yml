@@ -1,4 +1,0 @@
-kamack38/dotfiles:
-  - .gitconfig
-  - source: AppData/Local/nvim/
-    dest: .config/nvim/

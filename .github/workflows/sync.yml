@@ -5,12 +5,17 @@ on:
       - main
   workflow_dispatch:
 jobs:
-  sync:
+  file_sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@master
-      - name: Run GitHub File Sync
-        uses: BetaHuhn/repo-file-sync-action@v1
+      - name: Fetching Local Repository
+        uses: actions/checkout@main
+      - name: File Sync
+        uses: kbrashears5/github-action-file-sync@v2.0.0
         with:
-          GH_PAT: ${{ secrets.GH_PAT }}
+          REPOSITORIES: |
+            kamack38/linux-dotfiles@main
+          FILES: |
+            .gitconfig
+            AppData/Local/nvim/=.config/nvim/
+          TOKEN: ${{ secrets.GH_PAT }}
