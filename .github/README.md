@@ -180,3 +180,5 @@ Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
 `user-input.lua` & `user-input-module.lua` - [CogentRedTester/mpv-user-input](https://github.com/CogentRedTester/mpv-user-input)
 
 `scroll-list.lua` - [CogentRedTester/mpv-scroll-list](https://github.com/CogentRedTester/mpv-scroll-list)
+
+`.config/themes/backgrounds/` - [HerrDierk/ArtworkLinux](https://github.com/HerrDierk/ArtworkLinux)

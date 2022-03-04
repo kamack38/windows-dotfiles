@@ -279,7 +279,7 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Persona
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "AppsUseLightTheme" 0
 
 # Desktop: Set Custom Wallpaper
-Set-ItemProperty "HKCU:\Control Panel\Desktop" "WallPaper" "$HOME\.config\themes\Minimalist Code by Daze_.jpg"
+Set-ItemProperty "HKCU:\Control Panel\Desktop" "WallPaper" "$HOME\.config\themes\backgrounds\Minimalist Code by Daze_.jpg"
 
 # System: Enable Transparency
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "EnableTransparency" 1
@@ -313,8 +313,8 @@ pnputil -i -a $HOME\.config\themes\cursors\capitaine-cursors\install.inf
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU83a9jFOfsUtknHa2nxBEE64r
-# asugggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQU55kj//KkF7IX5YToEWAKtJ/P
+# L5GgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -336,11 +336,11 @@ pnputil -i -a $HOME\.config\themes\cursors\capitaine-cursors\install.inf
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUmxjQZYauiiNJ
-# s5UqkCfav21jGLEwDQYJKoZIhvcNAQEBBQAEggEAR7mjVd2ls4LUFK+xS020bulD
-# Hiya/BUYZ9gScdRWrkPNPRA2JOMy1VfHZk6zWAXaUstl5LwTyjDCAeHfO1VmgNLj
-# I4boAmbguHHClPCEZTDvmDImkeKjjjsrdrTfcmkD9QWhH77WWw2nlgnEXx6Esd+U
-# AO5Wxf3ONtMofscsY/zbbiDd/2v6JtaBtygRy+JD5k3IKMBVjBF06h4FpTDT1RdQ
-# wCGlGK3P/lIKXq1P9n1M6CRM23inc5o0G+qP8vVDjUnc8JRzYNIvHyz7+kf8ST8H
-# oNA3RxeverxczjIeQFMrNYkKxDCX8U8VU/6sHWsCevFVhkLr2gYb6/QxNr3IuQ==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUPsfrdV2+okjC
+# wk6BjjgTHiE4q6EwDQYJKoZIhvcNAQEBBQAEggEALlna7ZfXBl+TPRcISiahVb88
+# a1Ioqkhpd/O5okKxpSmKzXNNTmH2LFUJihu8EPRMEKpM49GTxp9PC7U7gZ3nWZuB
+# ffYXwV4X4hGVHEgkbEgqCUoo/IjDfg/hxgAUUMibfopbFrcTfZRT/wZRcKIaUBfO
+# glnOq1AOX9ik3089cX/9EFyyMtHBzbjhBbVecFI2mnrsN6+CGinGo7i7+FgAzDe0
+# ECqfsBaWcAxD2o/RdIRo/90UJENLAj3AcYTKi+6ujQd3RwrzyRddRZ9Nxl+Bon4O
+# +Q7zOKfq0ludPzXZSGf0ihaw5rp5phDWBM1phdCe0PdXgM0AKdIATopfAvpdmA==
 # SIG # End signature block
