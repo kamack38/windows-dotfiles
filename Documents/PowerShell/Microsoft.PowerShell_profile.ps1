@@ -80,4 +80,4 @@ function faceit {
 }
 # Enable-PoshTooltips
 # Enable-PoshTransientPrompt
-oh-my-posh --init --shell pwsh --config ~/.config/themes/kamack.omp.json | Invoke-Expression
+oh-my-posh --init --shell pwsh --config ~/.config/oh-my-posh/kamack.omp.json | Invoke-Expression
