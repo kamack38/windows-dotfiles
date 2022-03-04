@@ -1,14 +1,12 @@
 # Modules
-Import-Module oh-my-posh
 Import-Module posh-git
-Set-PoshPrompt -Theme ~/.config/themes/kamack.omp.json
 Import-Module npm-completion
 Import-Module yarn-completion
 Import-Module nvm-completion
 Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 Import-Module -Name Appx -UseWindowsPowerShell -WarningAction SilentlyContinue
 $env:POSH_GIT_ENABLED = $true
-Import-Module -Name Terminal-Icons
+Import-Module Terminal-Icons
 Import-Module PSReadLine
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
@@ -41,7 +39,6 @@ function Uninstall-AllOutdated {
     Get-InstalledModule -Name $PSItem.Name -AllVersions | Where-Object -Property Version -LT -Value $CurrentVersion
   } | Uninstall-Module -Verbose
 }
-Set-Alias -Name ytdl -Value youtube-dl.exe
 function yt-dlp-best { yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio" $args }
 function yt-dlp-mp3 { yt-dlp --extract-audio -f bestaudio[ext=mp3] --no-playlist $args }
 function yt-dlp-music { yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 --embed-thumbnail -o "%(title)s.%(ext)s" $args }
@@ -83,3 +80,4 @@ function faceit {
 }
 # Enable-PoshTooltips
 # Enable-PoshTransientPrompt
+oh-my-posh --init --shell pwsh --config ~/.config/themes/kamack.omp.json | Invoke-Expression

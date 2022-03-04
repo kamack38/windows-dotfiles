@@ -26,7 +26,7 @@ else {
 
 # Send welcome message
 Clear-Host
-Write-Output "  ___  __    _____ ______   ________  ________"            
+Write-Output "  ___  __    _____ ______   ________  ________"
 Write-Output " |\  \|\  \ |\   _ \  _   \|\_____  \|\   __  \     "
 Write-Output " \ \  \/  /|\ \  \\\__\ \  \|_____\  \ \  \|\  \    Kamack38"
 Write-Output "  \ \   ___  \ \  \\|__| \  \|______  \ \   __  \   https://twitter.com/kamack38"
@@ -93,6 +93,7 @@ choco install vscode.install --params "/NoDesktopIcon" --limit-output
 choco install firacodenf --limit-output
 choco install ngrok --limit-output
 choco install croc --limit-output
+choco install oh-my-posh --limit-output
 choco install cmake.install --ia 'ADD_CMAKE_TO_PATH=System' --limit-output
 choco install autohotkey --limit-output
 
@@ -119,7 +120,6 @@ npm i --prefix ~\.quokka jsdom-quokka-plugin
 
 # Install powershell modules
 pwsh.exe -Command Set-PSRepository PSGallery -InstallationPolicy Trusted
-pwsh.exe -Command Install-Module -Name oh-my-posh -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name posh-git -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name npm-completion -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
@@ -237,8 +237,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUpBRP23MWwOC7YL/f6GtIIz84
-# lgWgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUCQfU1xRWsgVgHAn92VMp/8ZI
+# oOOgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -260,11 +260,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQU/GH2MdrGXY3k
-# 77fMVf6Jc4OhjaEwDQYJKoZIhvcNAQEBBQAEggEAnbKOCjrIl7hYr6m8UX/BNIPC
-# PQNbf39byCPceMacWnwRZ004tnoMP0223wJ2Erl8CEv0o6QYIGJSk+0Uf0fFnCJX
-# 5WjHdCeIQ2+vXgQRUWdxEEcutWrUdnIK3rVx9/SNlTtejZLkuhfuVC4FpXEJ5aUc
-# MsZRuOLBTFmTdtwasBRT/l+f11gFiILZck9zrMvTzSQ4o5q4DmO+p4fkZqig23dv
-# +e2ezz1+CYVXQX6ys4YJI2ZWtJZMBa9/qbyIcS3y6UjKmy/oq5Qpfp0QTYq5Gvwf
-# 0Bg8H6vpSpo2TELsdyYgMFAgKbHI7gB5T5KcP9ui3bx6D0Pw82GYrMoJ6cmRbw==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUBLa4XnvJsP4r
+# ccfGQYKGe07BekYwDQYJKoZIhvcNAQEBBQAEggEABRiMdzUVi+rvRToj0xAfcSHY
+# cOdF/rPdTIlEqQrX1MBY9nnyFUceSRZ5WXvvracyI8sN5aqnVS73H6lNgujEJy00
+# l927UNZ4H7r4zSOE+K6B9ImzuuaQzRW2OTGLmWQyTzWvof1sTSxDHu3ug7zMrCc1
+# +1jvVPoFJOYK4rl2cgAFpWbwe4d/RgoZTWYAzIfcpNJ0XFncGYRuoj+8FlRb5UCP
+# eV3xDYuMLQ/CvbkKp2vWzpgCF/e+ckOysk+VHkJ3HpgVyYq5DDL22yxo30aFoWbV
+# lhqHeT1qU8UoBqdrZFraGyccw7h7pWSHXRkhHXiTlKqF3LeGgNwVoCY+eAd/7g==
 # SIG # End signature block
