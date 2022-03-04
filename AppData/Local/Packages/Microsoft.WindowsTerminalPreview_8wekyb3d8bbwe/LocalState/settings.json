@@ -165,7 +165,7 @@
                 "name": "Manjaro",
                 "icon": "%USERPROFILE%/.config/themes/icons/manjaro.ico",
                 "backgroundImage": "%USERPROFILE%/.config/themes/backgrounds/manjaroHex.png",
-                "backgroundImageOpacity": 0.1,
+                "backgroundImageOpacity": 0.15,
                 "startingDirectory": "\\\\wsl$\\Manjaro\\home\\kamack38",
                 "tabColor": "#11473a"
             },
