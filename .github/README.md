@@ -182,3 +182,5 @@ Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
 `scroll-list.lua` - [CogentRedTester/mpv-scroll-list](https://github.com/CogentRedTester/mpv-scroll-list)
 
 `.config/themes/backgrounds/` - [HerrDierk/ArtworkLinux](https://github.com/HerrDierk/ArtworkLinux)
+
+`.config/themes/backgrounds/pwsh.png` - [wallpaperaccess.com](https://wallpaperaccess.com/download/powershell-4834959)

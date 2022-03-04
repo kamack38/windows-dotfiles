@@ -127,6 +127,8 @@
                 "hidden": false,
                 "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore",
+                "backgroundImage": "%USERPROFILE%/.config/themes/backgrounds/pwsh.png",
+                "backgroundImageOpacity": 0.15,
                 "tabColor": "#132738"
             },
             {
