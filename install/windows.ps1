@@ -186,7 +186,8 @@ function New-Shortcut {
     param ( 
         [Parameter(Mandatory)][string]$SourceExe, 
         [Parameter(Mandatory)][string]$DestinationPath,
-        [string]$IconPath
+        [string]$IconPath,
+        [string]$Arguments
     )
 
     $WshShell = New-Object -comObject WScript.Shell
@@ -194,6 +195,9 @@ function New-Shortcut {
     $Shortcut.TargetPath = $SourceExe
     if (![System.String]::IsNullOrEmpty($IconPath)) {
         $Shortcut.IconLocation = "$IconPath"
+    }
+    if (![System.String]::IsNullOrEmpty($Arguments)) {
+        $Shortcut.Arguments = $Arguments
     }
     $Shortcut.Save()
 }
@@ -205,6 +209,7 @@ New-Shortcut "devmgmt.msc" "$LinkDir\Device Manager.lnk"
 New-Shortcut "control.exe" "$LinkDir\Control Panel.lnk"
 New-Shortcut "sndvol.exe" "$LinkDir\Sound Mixer.lnk"
 New-Shortcut "appwiz.cpl" "$LinkDir\App Uninstaller.lnk" "appwiz.cpl,3"
+New-Shortcut (where.exe rundll32.exe) "$LinkDir\Set Env Variables.lnk" "sysdm.cpl,2" "sysdm.cpl,EditEnvironmentVariables"
 
 # Set nvim-qt settings (More info at: https://github.com/equalsraf/neovim-qt/wiki/Configuration-Options)
 $nvimQt = "HKCU:\Software\nvim-qt\nvim-qt"
