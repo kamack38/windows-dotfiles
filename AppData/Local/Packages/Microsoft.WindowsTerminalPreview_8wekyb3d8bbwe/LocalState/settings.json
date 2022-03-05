@@ -48,17 +48,27 @@
             "keys": "ctrl+c"
         },
         {
+            "name": "New tab",
             "command": {
                 "action": "newTab"
             },
             "keys": "ctrl+t"
         },
         {
+            "name": "Delete previous word",
             "command": {
                 "action": "sendInput",
                 "input": "\u0017"
             },
             "keys": "ctrl+backspace"
+        },
+        {
+            "name": "Delete next word",
+            "command": {
+                "action": "sendInput",
+                "input": "\u001B\u0064"
+            },
+            "keys": "ctrl+delete"
         },
         {
             "command": {
@@ -150,8 +160,7 @@
             },
             {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "name": "Windows PowerShell",
-                "startingDirectory": "%USERPROFILE%"
+                "name": "Windows PowerShell"
             },
             {
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
