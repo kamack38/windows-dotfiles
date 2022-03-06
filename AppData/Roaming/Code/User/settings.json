@@ -293,5 +293,7 @@
   "zenMode.hideLineNumbers": false,
   "editor.minimap.enabled": false,
   "terminal.integrated.enablePersistentSessions": false,
-  "errorLens.fontWeight": "500"
+  "errorLens.fontWeight": "500",
+  "keyboard.layout": "00000415",
+  "terminal.integrated.enableMultiLinePasteWarning": false
 }

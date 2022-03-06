@@ -88,7 +88,7 @@ choco install dcforoffice --limit-output
 choco install powertoys --limit-output
 choco install modernflyouts --limit-output
 choco install procmon --limit-output
-choco install winmerge --limit-output
+# choco install winmerge --limit-output
 choco install vscode.install --params "/NoDesktopIcon" --limit-output
 choco install firacodenf --limit-output
 choco install ngrok --limit-output
@@ -113,7 +113,6 @@ npm i -g carbon-now-cli
 npm i -g neovim
 npm i -g yarn
 npm i -g git-cz
-npm i -g nodemon
 
 npm i --prefix ~\.quokka dotenv-quokka-plugin
 npm i --prefix ~\.quokka jsdom-quokka-plugin
@@ -237,8 +236,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUCQfU1xRWsgVgHAn92VMp/8ZI
-# oOOgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUpaH9FiQ0nJImEHdUzehrKjhk
+# 72GgggNmMIIDYjCCAkqgAwIBAgIQd+iaMdafpqFFfJUoPJ1kJDANBgkqhkiG9w0B
 # AQsFADBJMR0wGwYDVQQDDBRLcnp5c3p0b2YgTWFja2lld2ljejEoMCYGCSqGSIb3
 # DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWlsLmNvbTAeFw0yMTA4MDcxOTE2MTFa
 # Fw0yOTEyMzEyMjAwMDBaMEkxHTAbBgNVBAMMFEtyenlzenRvZiBNYWNraWV3aWN6
@@ -260,11 +259,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # TWFja2lld2ljejEoMCYGCSqGSIb3DQEJARYZa2FtYWNrMzguYml6bmVzQGdtYWls
 # LmNvbQIQd+iaMdafpqFFfJUoPJ1kJDAJBgUrDgMCGgUAoHgwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUBLa4XnvJsP4r
-# ccfGQYKGe07BekYwDQYJKoZIhvcNAQEBBQAEggEABRiMdzUVi+rvRToj0xAfcSHY
-# cOdF/rPdTIlEqQrX1MBY9nnyFUceSRZ5WXvvracyI8sN5aqnVS73H6lNgujEJy00
-# l927UNZ4H7r4zSOE+K6B9ImzuuaQzRW2OTGLmWQyTzWvof1sTSxDHu3ug7zMrCc1
-# +1jvVPoFJOYK4rl2cgAFpWbwe4d/RgoZTWYAzIfcpNJ0XFncGYRuoj+8FlRb5UCP
-# eV3xDYuMLQ/CvbkKp2vWzpgCF/e+ckOysk+VHkJ3HpgVyYq5DDL22yxo30aFoWbV
-# lhqHeT1qU8UoBqdrZFraGyccw7h7pWSHXRkhHXiTlKqF3LeGgNwVoCY+eAd/7g==
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkqhkiG9w0BCQQxFgQUfMjk03724/aA
+# R+SmpxzWM04zNQIwDQYJKoZIhvcNAQEBBQAEggEAYEyrE47g01oQro/Wgob+GzRm
+# hJsxdm/PStMJrClNdT5Wm/8XTqoWg8m9ITlQkY9DUR9li341sING3CKG3CJYzysA
+# RNzQfTw3NJYT2x97+1FM/FNtY9Ui+EsOk3H4dngtf/RIvmlGB9wY1oTJGmJxmcH1
+# 29r0VXNKfpl9+DBZmneb3XpGTRs34amMUpGfpmPcy+zWtRTnZFD+247sWrZ7CmDq
+# SsIPpJJM2T8EZfj4s/KpT1APLh0yAoRy/gmi5dOKo2lWeg7r4qyXZdq0yxd3BsFn
+# KMgc/Py8w3Fi8MmxT8PZC9GRJVCryoh+8weOC3aAz/bJuJ7s8sXoZPjKKeGGEg==
 # SIG # End signature block
