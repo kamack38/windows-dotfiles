@@ -145,6 +145,7 @@
                 "commandline": "%PROGRAMFILES%/git/usr/bin/bash.exe -i -l",
                 "guid": "{00000000-0000-0000-ba54-000000000002}",
                 "icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico",
+                "colorScheme": "One Half Dark",
                 "name": "GitBash"
             },
             {
@@ -177,7 +178,6 @@
                 "icon": "%USERPROFILE%/.config/themes/icons/manjaro.ico",
                 "backgroundImage": "%USERPROFILE%/.config/themes/backgrounds/manjaroHex.png",
                 "backgroundImageOpacity": 0.15,
-                "startingDirectory": "\\\\wsl$\\Manjaro\\home\\kamack38",
                 "tabColor": "#11473a"
             },
             {

@@ -9,7 +9,6 @@ env:
   REPOSITORIES: |
     kamack38/linux-dotfiles
   WORKFLOW_FILES: |
-    .gitconfig
     yt-dlp.conf
     changelog.config.js
     AppData/Local/nvim=.config/nvim
