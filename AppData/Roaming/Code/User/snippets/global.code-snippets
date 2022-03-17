@@ -1,0 +1,13 @@
+{
+  "uuid": {
+    "prefix": "!uuid",
+    "body": "$UUID",
+    "description": "Generates uuid"
+  },
+
+  "hex": {
+    "prefix": "!hex",
+    "body": "$RANDOM_HEX",
+    "description": "Generates ranodm hex number"
+  }
+}

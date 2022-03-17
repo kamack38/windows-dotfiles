@@ -45,7 +45,7 @@
     "description": "snippet for #include"
   },
 
-  "using": {
+  "namespace": {
     "prefix": "!using",
     "body": ["using namespace ${1:std};$0"],
     "description": "Add namespace"
@@ -63,8 +63,54 @@
     "description": "Create array"
   },
 
+  "fastPowMod": {
+    "prefix": "!fastPowMod",
+    "body": [
+      "long long myPow(int a, int b, int m) {",
+      "  if (b == 0) return 1;",
+      "  if (b % 2 == 0) {",
+      "    long long tmp = myPow(a, b / 2, m);",
+      "    return (tmp * tmp) % m;",
+      "  } else {",
+      "    long long tmp = myPow(a, b / 2, m);",
+      "    return (((tmp * tmp) % m) * a) % m;",
+      "  }",
+      "}"
+    ],
+    "description": "Quickly calculate a^b mod c"
+  },
+
+  "longlong": {
+    "prefix": "!LL",
+    "body": ["using LL = long long"],
+    "description": "Create lias LL of long long"
+  },
+
+  "for": {
+    "prefix": "!for",
+    "body": ["for (int i = 0; i < ${1:n}; i++) {", "    $2", "}$0"],
+    "description": "Simple for loop"
+  },
+
+  "forr": {
+    "prefix": "!forr",
+    "body": ["for (int i = ${1:n - 1}; i >= 0; i++) {", "    $2", "}$0"],
+    "description": "Reverse for loop"
+  },
+
+  "find": {
+    "prefix": "!find",
+    "body": [
+      "int Find(int a) {",
+      "if (A[a] != a) A[a] = Find(A[a]);",
+      "return A[a];",
+      "}"
+    ],
+    "description": "Find function"
+  },
+
   "fileheader": {
-    "prefix": "fileheader",
+    "prefix": "!fileheader",
     "body": [
       "/**",
       "**********************************************************************************************************************************************************************************************************************************",
