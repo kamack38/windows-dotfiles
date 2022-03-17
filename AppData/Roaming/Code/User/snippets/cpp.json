@@ -39,7 +39,7 @@
     "body": ["int main () {", "    $0", "    return 0;", "}"]
   },
 
-  "#inc": {
+  "include": {
     "prefix": "#inc",
     "body": ["#include <${1:bits/stdc++.h}>$0"],
     "description": "snippet for #include"
@@ -49,6 +49,18 @@
     "prefix": "!using",
     "body": ["using namespace ${1:std};$0"],
     "description": "Add namespace"
+  },
+
+  "vector": {
+    "prefix": "!vec",
+    "body": ["vector<${1:int}> vec;"],
+    "description": "Create vector"
+  },
+
+  "tab": {
+    "prefix": "!tab",
+    "body": ["${1:int} A[${2:1000000}];"],
+    "description": "Create array"
   },
 
   "fileheader": {

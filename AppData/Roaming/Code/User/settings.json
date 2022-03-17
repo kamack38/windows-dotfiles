@@ -21,7 +21,7 @@
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "cSpell.language": "en,pl",
+  "cSpell.language": "en-GB,pl",
   "cSpell.userWords": [
     "Cheatsheet",
     "commandline",
