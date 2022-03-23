@@ -49,7 +49,7 @@
     "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "clojure": "lein exec",
     "coffeescript": "coffee",
-    "cpp": "$folder = $dirWithoutTrailingSlash + \"\\bin\"; if (!(Test-Path $folder)) { New-Item -Type Directory -Path $folder | Out-Null}; cd $folder && g++ ../$fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+    "cpp": "$folder = $dirWithoutTrailingSlash + \"\\bin\"; if (!(Test-Path $folder)) { New-Item -Type Directory -Path $folder | Out-Null}; cd $folder && g++ \"../$fileName\" -o \"$fileNameWithoutExt\" && & './$fileNameWithoutExt'",
     "crystal": "crystal",
     "csharp": "scriptcs",
     "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
@@ -295,5 +295,8 @@
   "terminal.integrated.enablePersistentSessions": false,
   "errorLens.fontWeight": "500",
   "keyboard.layout": "00000415",
-  "terminal.integrated.enableMultiLinePasteWarning": false
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "[dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

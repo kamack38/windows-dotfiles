@@ -57,10 +57,70 @@
     "description": "Create vector"
   },
 
+  "set": {
+    "prefix": "!set",
+    "body": ["set<${1:int}> S;"],
+    "description": "Create set"
+  },
+
+  "unordered set": {
+    "prefix": "!uset",
+    "body": ["unordered_set<${1:int}> S;"],
+    "description": "Creates unordered set"
+  },
+
+  "multiset": {
+    "prefix": "!mset",
+    "body": ["multiset<${1:int}> S;"],
+    "description": "Creates multiset"
+  },
+
+  "map": {
+    "prefix": "!map",
+    "body": ["map<${1:int}, ${2:int}> m;"],
+    "description": "Create map"
+  },
+
+  "unordered map": {
+    "prefix": "!umap",
+    "body": ["unordered_map<${1:int}, ${2:int}> m;"],
+    "description": "Create unordered map"
+  },
+
+  "queue": {
+    "prefix": "!queue",
+    "body": ["queue<${1:int}> Q;"],
+    "description": "Create queue"
+  },
+
+  "priority queue": {
+    "prefix": "!pqueue",
+    "body": ["priority_queue<${1:int}> Q;"],
+    "description": "Create priority queue"
+  },
+
+  "nest permutation": {
+    "prefix": "!nperm",
+    "body": ["next_permutation(${1:vec}.begin(), ${1:vec}.end());"],
+    "description": "Create priority queue"
+  },
+
+  "swap": {
+    "prefix": "!swap",
+    "body": ["swap(${1:a}, ${2:b});"],
+    "description": "Create unordered set"
+  },
+
   "tab": {
     "prefix": "!tab",
     "body": ["${1:int} A[${2:1000000}];"],
     "description": "Create array"
+  },
+
+  "pair": {
+    "prefix": "!pair",
+    "body": ["pair<${1:int}, ${2:int}>"],
+    "description": "Create a pair"
   },
 
   "fastPowMod": {
@@ -82,7 +142,7 @@
 
   "longlong": {
     "prefix": "!LL",
-    "body": ["using LL = long long"],
+    "body": ["using LL = long long;"],
     "description": "Create lias LL of long long"
   },
 
@@ -107,6 +167,23 @@
       "}"
     ],
     "description": "Find function"
+  },
+
+  "binary search": {
+    "prefix": "!binsrc",
+    "body": [
+      "int binSrc(int a, int b) {",
+      "  while (a + 1 != b) {",
+      "    int c = (a + b) / 2;",
+      "    if (${1:/* Your condition goes here */}) {",
+      "        a = c;",
+      "    } else {",
+      "        b = c;",
+      "    }",
+      "  }",
+      "}"
+    ],
+    "description": "Binary search function"
   },
 
   "fileheader": {
