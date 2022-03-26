@@ -53,8 +53,14 @@
 
   "vector": {
     "prefix": "!vec",
-    "body": ["vector<${1:int}> vec;"],
+    "body": ["vector<${1:int}> ${2:vec};"],
     "description": "Create vector"
+  },
+
+  "array": {
+    "prefix": "!arr",
+    "body": ["array<${1:int}, ${2:2}>"],
+    "description": "Create an array"
   },
 
   "set": {
@@ -75,15 +81,21 @@
     "description": "Creates multiset"
   },
 
+  "unordered multiset": {
+    "prefix": "!umset",
+    "body": ["unordered_multiset<${1:int}> S;"],
+    "description": "Creates unordered multiset"
+  },
+
   "map": {
     "prefix": "!map",
-    "body": ["map<${1:int}, ${2:int}> m;"],
+    "body": ["map<${1:int}, ${2:int}> M;"],
     "description": "Create map"
   },
 
   "unordered map": {
     "prefix": "!umap",
-    "body": ["unordered_map<${1:int}, ${2:int}> m;"],
+    "body": ["unordered_map<${1:int}, ${2:int}> M;"],
     "description": "Create unordered map"
   },
 
@@ -91,6 +103,12 @@
     "prefix": "!queue",
     "body": ["queue<${1:int}> Q;"],
     "description": "Create queue"
+  },
+
+  "dequeue": {
+    "prefix": "!dequeue",
+    "body": ["dequeue<${1:int}> Q;"],
+    "description": "Create dequeue"
   },
 
   "priority queue": {
@@ -123,6 +141,12 @@
     "description": "Create a pair"
   },
 
+  "endline": {
+    "prefix": "!n",
+    "body": "<< '\\n'",
+    "description": "Adds endline to cout"
+  },
+
   "fastPowMod": {
     "prefix": "!fastPowMod",
     "body": [
@@ -140,21 +164,38 @@
     "description": "Quickly calculate a^b mod c"
   },
 
+  "pow": {
+    "prefix": "!pow",
+    "body": [
+      "long long powi(int y, int x) {",
+      "    if (x == 0) return 1;",
+      "    return y * powi(y, x - 1);",
+      "}"
+    ],
+    "description": "Quickly calculate a^b mod c"
+  },
+
   "longlong": {
     "prefix": "!LL",
     "body": ["using LL = long long;"],
     "description": "Create lias LL of long long"
   },
 
-  "for": {
+  "Normal for loop": {
     "prefix": "!for",
     "body": ["for (int i = 0; i < ${1:n}; i++) {", "    $2", "}$0"],
     "description": "Simple for loop"
   },
 
-  "forr": {
+  "Reverse for loop": {
     "prefix": "!forr",
-    "body": ["for (int i = ${1:n - 1}; i >= 0; i++) {", "    $2", "}$0"],
+    "body": ["for (int i = ${1:n - 1}; i >= 0; i--) {", "    $2", "}$0"],
+    "description": "Reverse for loop"
+  },
+
+  "Colon for loop": {
+    "prefix": "!fora",
+    "body": ["for (auto i : ${1:vec}) {", "    $2", "}$0"],
     "description": "Reverse for loop"
   },
 
@@ -181,6 +222,7 @@
       "        b = c;",
       "    }",
       "  }",
+      "  return a;",
       "}"
     ],
     "description": "Binary search function"
