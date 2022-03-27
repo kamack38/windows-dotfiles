@@ -3,20 +3,6 @@
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [
         {
-            "command": "closePane",
-            "keys": "ctrl+w"
-        },
-        {
-            "command": "find",
-            "keys": "ctrl+f"
-        },
-        {
-            "command": {
-                "action": "quakeMode"
-            },
-            "keys": "alt+q"
-        },
-        {
             "command": "unbound",
             "keys": "ctrl+shift+w"
         },
@@ -33,12 +19,18 @@
             "keys": "alt+shift+c"
         },
         {
-            "command": "toggleAlwaysOnTop",
-            "keys": "alt+t"
+            "command": {
+                "action": "quakeMode"
+            },
+            "keys": "alt+q"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
+            "command": "find",
+            "keys": "ctrl+f"
+        },
+        {
+            "command": "closePane",
+            "keys": "ctrl+w"
         },
         {
             "command": {
@@ -48,27 +40,39 @@
             "keys": "ctrl+c"
         },
         {
-            "name": "New tab",
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "toggleAlwaysOnTop",
+            "keys": "alt+t"
+        },
+        {
             "command": {
                 "action": "newTab"
             },
-            "keys": "ctrl+t"
+            "keys": "ctrl+t",
+            "name": "New tab"
         },
         {
-            "name": "Delete previous word",
             "command": {
                 "action": "sendInput",
                 "input": "\u0017"
             },
-            "keys": "ctrl+backspace"
+            "keys": "ctrl+backspace",
+            "name": "Delete previous word"
         },
         {
-            "name": "Delete next word",
+            "command": "togglePaneZoom",
+            "keys": "alt+z"
+        },
+        {
             "command": {
                 "action": "sendInput",
                 "input": "\u001B\u0064"
             },
-            "keys": "ctrl+delete"
+            "keys": "ctrl+delete",
+            "name": "Delete next word"
         },
         {
             "command": {
@@ -78,12 +82,12 @@
             "keys": "alt+c"
         },
         {
-            "command": "openNewTabDropdown",
-            "keys": "alt+n"
-        },
-        {
             "command": "toggleFocusMode",
             "keys": "alt+shift+f"
+        },
+        {
+            "command": "openNewTabDropdown",
+            "keys": "alt+n"
         },
         {
             "command": {
@@ -104,10 +108,6 @@
             "command": {
                 "action": "splitPane"
             }
-        },
-        {
-            "command": "togglePaneZoom",
-            "keys": "alt+z"
         }
     ],
     "copyFormatting": "none",
@@ -132,20 +132,20 @@
         },
         "list": [
             {
+                "backgroundImage": "%USERPROFILE%/.config/themes/backgrounds/pwsh.png",
+                "backgroundImageOpacity": 0.15,
                 "commandline": "pwsh.exe -nologo -noexit -command winfetch",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore",
-                "backgroundImage": "%USERPROFILE%/.config/themes/backgrounds/pwsh.png",
-                "backgroundImageOpacity": 0.15,
                 "tabColor": "#132738"
             },
             {
+                "colorScheme": "One Half Dark",
                 "commandline": "%PROGRAMFILES%/git/usr/bin/bash.exe -i -l",
                 "guid": "{00000000-0000-0000-ba54-000000000002}",
                 "icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico",
-                "colorScheme": "One Half Dark",
                 "name": "GitBash"
             },
             {
@@ -164,31 +164,21 @@
                 "name": "Windows PowerShell"
             },
             {
+                "backgroundImage": "%USERPROFILE%/.config/themes/backgrounds/manjaroHex.png",
+                "backgroundImageOpacity": 0.15,
+                "commandline": "manjaro.exe run",
+                "guid": "{92edbd4e-b7d8-4148-bdd5-6810cc0b4b75}",
+                "hidden": false,
+                "icon": "%USERPROFILE%/.config/themes/icons/manjaro.ico",
+                "name": "Manjaro",
+                "tabColor": "#11473A"
+            },
+            {
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": true,
                 "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl",
                 "icon": "%USERPROFILE%/.config/themes/icons/ubuntu.ico"
-            },
-            {
-                "commandline": "manjaro.exe run",
-                "guid": "{92edbd4e-b7d8-4148-bdd5-6810cc0b4b75}",
-                "hidden": false,
-                "name": "Manjaro",
-                "icon": "%USERPROFILE%/.config/themes/icons/manjaro.ico",
-                "backgroundImage": "%USERPROFILE%/.config/themes/backgrounds/manjaroHex.png",
-                "backgroundImageOpacity": 0.15,
-                "tabColor": "#11473a"
-            },
-            {
-                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
-                "hidden": true,
-                "name": "Arch",
-                "source": "Windows.Terminal.Wsl",
-                "icon": "%USERPROFILE%/.config/themes/icons/archlinux.ico",
-                "startingDirectory": "~",
-                "cursorShape": "underscore",
-                "opacity": 55
             }
         ]
     },
@@ -445,6 +435,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#D3D7CF",
             "yellow": "#C4A000"
+        },
+        {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "UbuntuColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
         },
         {
             "background": "#000000",

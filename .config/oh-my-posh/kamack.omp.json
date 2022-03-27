@@ -129,6 +129,14 @@
                     "type": "php"
                 },
                 {
+                    "type": "r",
+                    "style": "powerline",
+                    "powerline_symbol": "\ue0b2",
+                    "foreground": "blue",
+                    "background": "lightWhite",
+                    "template": " R {{ .Full }} "
+                },
+                {
                     "background": "#c3002f",
                     "foreground": "#ffffff",
                     "powerline_symbol": "\ue0b2",
