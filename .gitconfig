@@ -25,6 +25,7 @@
     b = branch -a
     co = checkout
     pon = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
+    t = tag -m $(git show -s --format=%s)
     quickhelp = "!{ \
             echo stash - create stash; \
             echo clean - revert file to current commit; \
@@ -76,3 +77,5 @@
     diffFilter = delta --color-only
 [init]
     defaultBranch = main
+[push]
+	followTags = true

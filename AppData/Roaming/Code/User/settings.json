@@ -3,10 +3,7 @@
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 500 }",
   "C_Cpp.clang_format_path": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
   // "C_Cpp.intelliSenseEngine": "Disabled",
-  "C_Cpp.codeAnalysis.clangTidy.checks.enabled": [
-    "cppcoreguidelines-*",
-    "clang-analyzer-core.*"
-  ],
+  "C_Cpp.codeAnalysis.clangTidy.checks.enabled": ["cppcoreguidelines-*", "clang-analyzer-core.*"],
   "C_Cpp.codeAnalysis.clangTidy.checks.disabled": ["cppcoreguidelines-avoid-*"],
   "C_Cpp.codeAnalysis.clangTidy.args": ["-std=c++11", "-x", "c++"],
   "C_Cpp.codeAnalysis.clangTidy.enabled": true,
@@ -15,7 +12,7 @@
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
-  "[javascript][typescript][typescriptreact][react][json][html][css][scss][jsx][markdown][yaml][json][jsonc]": {
+  "[javascript][typescript][typescriptreact][react][json][html][css][scss][jsx][markdown][yaml][json][jsonc][dockercompose]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[shellscript]": {
@@ -116,6 +113,7 @@
   "editor.hover.above": true,
   "editor.lineNumbers": "on",
   "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
   "editor.parameterHints.enabled": true,
   "editor.quickSuggestionsDelay": 0,
   "editor.renderWhitespace": "selection",
@@ -221,6 +219,13 @@
   "path-intellisense.showHiddenFiles": true,
   "powershell.codeFormatting.autoCorrectAliases": true,
   "powershell.promptToUpdatePowerShell": false,
+  "prettier.arrowParens": "always",
+  "prettier.bracketSpacing": true,
+  "prettier.printWidth": 180,
+  "prettier.requireConfig": true,
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "prettier.trailingComma": "all",
   "python.languageServer": "Pylance",
   "quokka.automaticRestart": true,
   "reactSnippets.settings.importReactOnTop": false,
@@ -234,23 +239,12 @@
   "task.quickOpen.showAll": true,
   "terminal.explorerKind": "external",
   "terminal.external.windowsExec": "C:\\Users\\kamack38\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
-  "terminal.integrated.commandsToSkipShell": [
-    "psl.stepIn",
-    "psl.stepOut",
-    "psl.stepOver",
-    "psl.sendToHostTerminal"
-  ],
+  "terminal.integrated.commandsToSkipShell": ["psl.stepIn", "psl.stepOut", "psl.stepOver", "psl.sendToHostTerminal"],
   "terminal.integrated.confirmOnKill": "never",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.fontSize": 14,
-  "terminal.integrated.localEchoExcludePrograms": [
-    "vim",
-    "vi",
-    "nano",
-    "tmux",
-    "nvim"
-  ],
+  "terminal.integrated.localEchoExcludePrograms": ["vim", "vi", "nano", "tmux", "nvim"],
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
       "args": ["-NoExit", "-NoLogo", "-ExecutionPolicy", "Bypass"],
@@ -258,6 +252,8 @@
     }
   },
   "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.enablePersistentSessions": false,
   "typescript.autoClosingTags": true,
   "typescript.suggest.paths": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -288,12 +284,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "welcomePage",
   "zenMode.hideLineNumbers": false,
-  "editor.minimap.enabled": false,
-  "terminal.integrated.enablePersistentSessions": false,
   "errorLens.fontWeight": "500",
   "keyboard.layout": "00000415",
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "[dockercompose]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "prettier.requirePragma": true
 }
