@@ -60,7 +60,7 @@ choco install firefox-dev --pre --limit-output
 choco install git.install --params "/NoShellIntegration /NoOpenSSH" --limit-output
 choco install python3 --limit-output
 choco install openjdk --limit-output
-choco install nodejs --limit-output
+choco install nvm.install --limit-output
 choco install gpg4win --limit-output
 choco install winrar --limit-output
 choco install powershell-core --params '"/CleanUpPath"' --pre --limit-output
@@ -104,6 +104,10 @@ Write-Host "Refreshing environment variables..." -ForegroundColor yellow
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
 Write-Host "Environment variables has been refreshed!" -ForegroundColor green
 
+# Install node
+nvm install lts
+nvm use lts
+
 # Python Packages
 pip install spotdl
 pip install streamlink
@@ -113,6 +117,8 @@ npm i -g carbon-now-cli
 npm i -g neovim
 npm i -g yarn
 npm i -g git-cz
+npm i -g npm-check-updates
+npm i -g pm2
 
 npm i --prefix ~\.quokka dotenv-quokka-plugin
 npm i --prefix ~\.quokka jsdom-quokka-plugin

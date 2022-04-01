@@ -151,6 +151,19 @@
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+
+  "explorer.experimental.fileNesting.enabled": true,
+  "explorer.experimental.fileNesting.patterns": {
+    "*.ts": "$(capture).js, $(capture).d.ts, $(capture).test.ts",
+    "*.js": "$(capture).js.map, $(capture).min.js, $(capture).d.ts, $(capture).test.js",
+    "*.jsx": "$(capture).js",
+    "*.tsx": "$(capture).ts, $(capture).*.ts, $(capture).*.tsx",
+    "tsconfig.json": "tsconfig.*.json",
+    "docker-compose.yml": "docker-compose.*.yml",
+    ".env": ".env.*",
+    "next.config.*": "next-env.d.ts",
+    "package.json": "package-lock.json, .npmrc, yarn.lock, .yarnrc, .eslintrc.json, .swcrc"
+  },
   "files.associations": {
     "*.cfg": "CSGO cfg"
   },
@@ -223,6 +236,7 @@
   "prettier.bracketSpacing": true,
   "prettier.printWidth": 180,
   "prettier.requireConfig": true,
+  "prettier.requirePragma": true,
   "prettier.singleQuote": true,
   "prettier.semi": false,
   "prettier.trailingComma": "all",
@@ -254,6 +268,7 @@
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.enableMultiLinePasteWarning": false,
   "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.minimumContrastRatio": 1,
   "typescript.autoClosingTags": true,
   "typescript.suggest.paths": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -286,5 +301,5 @@
   "zenMode.hideLineNumbers": false,
   "errorLens.fontWeight": "500",
   "keyboard.layout": "00000415",
-  "prettier.requirePragma": true
+  "githubPullRequests.createOnPublishBranch": "never"
 }
