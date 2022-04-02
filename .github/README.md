@@ -2,7 +2,7 @@
 
 <div align="center">
 
-A collection of configuration files fo Windows, including application installation through [**Chocolatey**](https://chocolatey.org/) or [**Curl**](https://curl.se/)
+A collection of configuration files for Windows, including application installation through [**Chocolatey**](https://chocolatey.org/) or [**Curl**](https://curl.se/)
 
 <div align="center">
       <a href="#installation">Install</a>
