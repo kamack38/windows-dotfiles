@@ -14,7 +14,7 @@ env:
     AppData/Local/nvim=.config/nvim
     AppData/Roaming/mpv=.config
     AppData/Roaming/bat=.config
-    .config/themes/kamack.omp.json=.config/ohmyposh/kamack.omp.json
+    .config/themes/kamack.omp.json=.config/oh-my-posh/kamack.omp.json
 
 jobs:
   Sync-Files:
