@@ -16,6 +16,7 @@ env:
     AppData/Roaming/mpv=.config
     AppData/Roaming/bat=.config
     .config/oh-my-posh/kamack.omp.json
+    .quokka/config.json
 
 jobs:
   Sync-Files:
