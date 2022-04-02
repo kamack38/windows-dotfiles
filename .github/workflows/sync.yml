@@ -10,11 +10,12 @@ env:
     kamack38/linux-dotfiles
   WORKFLOW_FILES: |
     yt-dlp.conf
+    .prettierrc
     changelog.config.js
     AppData/Local/nvim=.config/nvim
     AppData/Roaming/mpv=.config
     AppData/Roaming/bat=.config
-    .config/oh-my-posh/kamack.omp.json=.config/oh-my-posh/kamack.omp.json
+    .config/oh-my-posh/kamack.omp.json
 
 jobs:
   Sync-Files:
