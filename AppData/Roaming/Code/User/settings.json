@@ -1,7 +1,6 @@
 {
   "C_Cpp.autocompleteAddParentheses": true,
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 500 }",
-  // "C_Cpp.intelliSenseEngine": "Disabled",
   "C_Cpp.codeAnalysis.clangTidy.checks.enabled": ["cppcoreguidelines-*", "clang-analyzer-core.*"],
   "C_Cpp.codeAnalysis.clangTidy.checks.disabled": ["cppcoreguidelines-avoid-*"],
   "C_Cpp.codeAnalysis.clangTidy.args": ["-std=c++11", "-x", "c++"],
@@ -242,6 +241,13 @@
       "nodes": {
         "editor.fontFamily": "FiraCode NF"
       }
+    },
+    "linux": {
+      "inherits": "default",
+      "nodes": {
+        "C_Cpp.clang_format_path": "clang-format",
+        "C_Cpp.codeAnalysis.clangTidy.path": "clang-tidy"
+      }
     }
   },
   "powershell.codeFormatting.autoCorrectAliases": true,
@@ -314,5 +320,7 @@
   "workbench.startupEditor": "welcomePage",
   "zenMode.hideLineNumbers": false,
   "errorLens.fontWeight": "500",
-  "keyboard.layout": "00000415"
+  "keyboard.layout": "00000415",
+  "C_Cpp.clang_format_path": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
+  "C_Cpp.codeAnalysis.clangTidy.path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.exe"
 }
