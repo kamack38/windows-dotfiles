@@ -216,7 +216,7 @@
   "markdown-preview-enhanced.revealjsTheme": "solarized.css",
   "markdown.extension.list.indentationSize": "inherit",
   "markdownlint.config": {
-    "MD007": { "indent": 4 },
+    "MD007": { "indent": 2 },
     "MD013": false,
     "MD024": false,
     "MD033": false,
@@ -276,9 +276,22 @@
   "terminal.integrated.commandsToSkipShell": ["psl.stepIn", "psl.stepOut", "psl.stepOver", "psl.sendToHostTerminal"],
   "terminal.integrated.confirmOnKill": "never",
   "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.defaultProfile.linux": "fish",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.localEchoExcludePrograms": ["vim", "vi", "nano", "tmux", "nvim"],
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    }
+  },
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
       "args": ["-NoExit", "-NoLogo", "-ExecutionPolicy", "Bypass"],
