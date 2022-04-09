@@ -12,7 +12,7 @@ env:
     yt-dlp.conf
     .prettierrc
     changelog.config.js
-    AppData/Local/nvim=.config/nvim
+    AppData/Local/nvim=.config
     AppData/Roaming/mpv=.config
     AppData/Roaming/bat=.config
     .config/oh-my-posh/kamack.omp.json
