@@ -1,4 +1,4 @@
-name: Workflow Sync
+name: 🔄 Files sync
 
 on:
   push:
@@ -17,10 +17,10 @@ env:
     AppData/Roaming/bat=.config
     .config/oh-my-posh/kamack.omp.json
     .quokka/config.json
-    .vscode
+    .vscode/
 
 jobs:
-  Sync-Files:
+  sync:
     runs-on: ubuntu-latest
     steps:
       - name: 📚 Checkout
