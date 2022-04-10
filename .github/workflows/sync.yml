@@ -17,6 +17,7 @@ env:
     AppData/Roaming/bat=.config
     .config/oh-my-posh/kamack.omp.json
     .quokka/config.json
+    .vscode
 
 jobs:
   Sync-Files:

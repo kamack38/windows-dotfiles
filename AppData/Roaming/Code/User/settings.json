@@ -11,8 +11,9 @@
   "[javascript][typescript][typescriptreact][react][json][html][css][scss][jsx][markdown][yaml][json][jsonc][dockercompose]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+  "[shellscript][sh][fish]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "files.eol": "\n"
   },
   "cSpell.language": "en-GB,pl",
   "cSpell.userWords": [
@@ -144,6 +145,16 @@
   "emmet.variables": {
     "lang": "pl"
   },
+  "emojisense.languages": {
+    "markdown": true,
+    "plaintext": {
+      "markupCompletionsEnabled": false,
+      "emojiDecoratorsEnabled": false
+    },
+    "scminput": true,
+    "git-commit": true,
+    "yaml": true
+  },
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -233,20 +244,23 @@
     "default": {
       "nodes": {
         "C_Cpp.clang_format_path": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
-        "C_Cpp.codeAnalysis.clangTidy.path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.exe"
+        "C_Cpp.codeAnalysis.clangTidy.path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.exe",
+        "editor.fontFamily": "FiraCode NF"
       }
     },
     "win32": {
       "inherits": "default",
       "nodes": {
-        "editor.fontFamily": "FiraCode NF"
+        "editor.fontFamily": "FiraCode NF",
+        "shellformat.path": "C:\\Users\\kamack38\\.local\\bin\\shfmt.exe"
       }
     },
     "linux": {
       "inherits": "default",
       "nodes": {
-        "C_Cpp.clang_format_path": "clang-format",
-        "C_Cpp.codeAnalysis.clangTidy.path": "clang-tidy"
+        "editor.fontFamily": "FiraCode Nerd Font",
+        "C_Cpp.clang_format_path": "/usr/bin/clang-format",
+        "C_Cpp.codeAnalysis.clangTidy.path": "/usr/bin/clang-tidy"
       }
     }
   },
@@ -335,5 +349,6 @@
   "errorLens.fontWeight": "500",
   "keyboard.layout": "00000415",
   "C_Cpp.clang_format_path": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
-  "C_Cpp.codeAnalysis.clangTidy.path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.exe"
+  "C_Cpp.codeAnalysis.clangTidy.path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.exe",
+  "shellformat.path": "C:\\Users\\kamack38\\.local\\bin\\shfmt.exe"
 }
