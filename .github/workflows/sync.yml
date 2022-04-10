@@ -23,9 +23,9 @@ jobs:
   Sync-Files:
     runs-on: ubuntu-latest
     steps:
-      - name: Fetching Local Repository
+      - name: 📚 Checkout
         uses: actions/checkout@master
-      - name: Running Workflow Sync
+      - name: 🔄 Sync files
         uses: varunsridharan/action-github-workflow-sync@main
         with:
           DRY_RUN: ${{ env.DRY_RUN }}
