@@ -1,6 +1,8 @@
 {
   "C_Cpp.autocompleteAddParentheses": true,
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 500 }",
+  "C_Cpp.clang_format_path": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
+  "C_Cpp.codeAnalysis.clangTidy.path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.exe",
   "C_Cpp.codeAnalysis.clangTidy.checks.enabled": ["cppcoreguidelines-*", "clang-analyzer-core.*"],
   "C_Cpp.codeAnalysis.clangTidy.checks.disabled": ["cppcoreguidelines-avoid-*"],
   "C_Cpp.codeAnalysis.clangTidy.args": ["-std=c++11", "-x", "c++"],
@@ -243,8 +245,6 @@
   "platformSettings.platforms": {
     "default": {
       "nodes": {
-        "C_Cpp.clang_format_path": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
-        "C_Cpp.codeAnalysis.clangTidy.path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.exe",
         "editor.fontFamily": "FiraCode NF"
       }
     },
@@ -252,7 +252,9 @@
       "inherits": "default",
       "nodes": {
         "editor.fontFamily": "FiraCode NF",
-        "shellformat.path": "C:\\Users\\kamack38\\.local\\bin\\shfmt.exe"
+        "C_Cpp.clang_format_path": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
+        "C_Cpp.codeAnalysis.clangTidy.path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.exe",
+        "shellformat.path": "C:\\ProgramData\\chocolatey\\bin\\shfmt.exe"
       }
     },
     "linux": {
@@ -283,6 +285,7 @@
   "resmon.show.disk": true,
   "resmon.disk.format": "PercentUsed",
   "security.workspace.trust.untrustedFiles": "open",
+  "shellformat.path": "C:\\ProgramData\\chocolatey\\bin\\shfmt.exe",
   "tabnine.experimentalAutoImports": true,
   "task.quickOpen.showAll": true,
   "terminal.explorerKind": "external",
@@ -347,8 +350,5 @@
   "workbench.startupEditor": "welcomePage",
   "zenMode.hideLineNumbers": false,
   "errorLens.fontWeight": "500",
-  "keyboard.layout": "00000415",
-  "C_Cpp.clang_format_path": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
-  "C_Cpp.codeAnalysis.clangTidy.path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.exe",
-  "shellformat.path": "C:\\Users\\kamack38\\.local\\bin\\shfmt.exe"
+  "keyboard.layout": "00000415"
 }
