@@ -18,6 +18,7 @@ env:
     .config/oh-my-posh/kamack.omp.json
     .quokka/config.json
     .vscode/
+    .carbon-now.json
 
 jobs:
   sync:
