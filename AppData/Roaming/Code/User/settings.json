@@ -13,13 +13,22 @@
   "[javascript][typescript][typescriptreact][react][json][html][css][scss][jsx][markdown][yaml][json][jsonc][dockercompose]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[shellscript][sh][fish]": {
+  "[shellscript][sh]": {
     "editor.defaultFormatter": "foxundermoon.shell-format",
     "files.eol": "\n"
   },
+  "[fish]": {
+    "files.eol": "\n"
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
   "cSpell.language": "en-GB,pl",
   "cSpell.userWords": [
+    "alacritty",
+    "capslock",
     "Cheatsheet",
+    "colors",
     "commandline",
     "CRSF",
     "dotfiles",
@@ -29,6 +38,8 @@
     "minmax",
     "nametag",
     "norestart",
+    "numlock",
+    "polybar",
     "powerline",
     "preconnect",
     "quokka",
@@ -45,7 +56,8 @@
     "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "clojure": "lein exec",
     "coffeescript": "coffee",
-    "cpp": "$folder = $dirWithoutTrailingSlash + \"\\bin\"; if (!(Test-Path $folder)) { New-Item -Type Directory -Path $folder | Out-Null}; cd $folder && g++ \"../$fileName\" -o \"$fileNameWithoutExt\" && & './$fileNameWithoutExt'",
+    // "cpp": "$folder = $dirWithoutTrailingSlash + \"\\bin\"; if (!(Test-Path $folder)) { New-Item -Type Directory -Path $folder | Out-Null}; cd $folder && g++ \"../$fileName\" -o \"$fileNameWithoutExt\" && & './$fileNameWithoutExt'",
+    "cpp": "mkdir -p $dirWithoutTrailingSlash/bin && cd $dirWithoutTrailingSlash/bin && g++ ../$fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
     "crystal": "crystal",
     "csharp": "scriptcs",
     "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
@@ -200,9 +212,30 @@
         "environment": [],
         "externalConsole": false,
         "miDebuggerPath": "C:\\ProgramData\\chocolatey\\bin\\gdb.exe",
-        "name": "C/C++ - Build and debug",
-        "preLaunchTask": "C/C++: build active file (g++)",
+        "name": "C/C++ - Build and debug (Windows)",
+        "preLaunchTask": "C++: build active file (Windows)",
         "program": "${fileDirname}/bin/${fileBasenameNoExtension}.exe",
+        "request": "launch",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "ignoreFailures": true,
+            "text": "-enable-pretty-printing"
+          }
+        ],
+        "stopAtEntry": false,
+        "type": "cppdbg"
+      },
+      {
+        "MIMode": "gdb",
+        "args": [],
+        "cwd": "${fileDirname}/bin",
+        "environment": [],
+        "externalConsole": false,
+        "miDebuggerPath": "/usr/bin/gdb",
+        "name": "C/C++ - Build and debug (Linux)",
+        "preLaunchTask": "C++: build active file (Linux)",
+        "program": "${fileDirname}/bin/${fileBasenameNoExtension}",
         "request": "launch",
         "setupCommands": [
           {
@@ -252,6 +285,7 @@
       "inherits": "default",
       "nodes": {
         "editor.fontFamily": "FiraCode NF",
+        "terminal.integrated.fontFamily": "FiraCode NF",
         "C_Cpp.clang_format_path": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
         "C_Cpp.codeAnalysis.clangTidy.path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.exe",
         "shellformat.path": "C:\\ProgramData\\chocolatey\\bin\\shfmt.exe"
@@ -261,8 +295,10 @@
       "inherits": "default",
       "nodes": {
         "editor.fontFamily": "FiraCode Nerd Font",
+        "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
         "C_Cpp.clang_format_path": "/usr/bin/clang-format",
-        "C_Cpp.codeAnalysis.clangTidy.path": "/usr/bin/clang-tidy"
+        "C_Cpp.codeAnalysis.clangTidy.path": "/usr/bin/clang-tidy",
+        "shellformat.path": "/usr/bin/shfmt"
       }
     }
   },
@@ -289,12 +325,14 @@
   "tabnine.experimentalAutoImports": true,
   "task.quickOpen.showAll": true,
   "terminal.explorerKind": "external",
-  "terminal.external.windowsExec": "C:\\Users\\kamack38\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
+  "terminal.external.windowsExec": "wt.exe",
+  "terminal.external.linuxExec": "alacritty",
   "terminal.integrated.commandsToSkipShell": ["psl.stepIn", "psl.stepOut", "psl.stepOver", "psl.sendToHostTerminal"],
   "terminal.integrated.confirmOnKill": "never",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.defaultProfile.linux": "fish",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontFamily": "FiraCode NF",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.localEchoExcludePrograms": ["vim", "vi", "nano", "tmux", "nvim"],
   "terminal.integrated.profiles.linux": {
@@ -350,5 +388,10 @@
   "workbench.startupEditor": "welcomePage",
   "zenMode.hideLineNumbers": false,
   "errorLens.fontWeight": "500",
-  "keyboard.layout": "00000415"
+  "keyboard.layout": "00000415",
+  "cSpell.enableFiletypes": ["ini"],
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "Lua.telemetry.enable": true
 }

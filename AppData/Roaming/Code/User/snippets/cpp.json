@@ -1,32 +1,12 @@
 {
   "Initialize cpp": {
     "prefix": "!!!",
-    "body": [
-      "#include <${1:bits/stdc++.h}>",
-      "",
-      "using namespace std;",
-      "",
-      "int main() {",
-      "    $0",
-      "    return 0;",
-      "}"
-    ]
+    "body": ["#include <${1:bits/stdc++.h}>", "", "using namespace std;", "", "int main() {", "    $0", "    return 0;", "}"]
   },
 
   "Initialize cpp with array": {
     "prefix": "!!",
-    "body": [
-      "#include <${1:bits/stdc++.h}>",
-      "",
-      "using namespace std;",
-      "",
-      "int T[${2:/* length */}];",
-      "",
-      "int main() {",
-      "    $0",
-      "    return 0;",
-      "}"
-    ]
+    "body": ["#include <${1:bits/stdc++.h}>", "", "using namespace std;", "", "int T[${2:/* length */}];", "", "int main() {", "    $0", "    return 0;", "}"]
   },
 
   "Make ur code faster": {
@@ -143,7 +123,7 @@
 
   "endline": {
     "prefix": "!n",
-    "body": "<< '\\n'",
+    "body": "<< '\\n';",
     "description": "Adds endline to cout"
   },
 
@@ -166,12 +146,7 @@
 
   "pow": {
     "prefix": "!pow",
-    "body": [
-      "long long powi(int y, int x) {",
-      "    if (x == 0) return 1;",
-      "    return y * powi(y, x - 1);",
-      "}"
-    ],
+    "body": ["long long powi(int y, int x) {", "    if (x == 0) return 1;", "    return y * powi(y, x - 1);", "}"],
     "description": "Quickly calculate a^b mod c"
   },
 
@@ -201,12 +176,7 @@
 
   "find": {
     "prefix": "!find",
-    "body": [
-      "int Find(int a) {",
-      "if (A[a] != a) A[a] = Find(A[a]);",
-      "return A[a];",
-      "}"
-    ],
+    "body": ["int Find(int a) {", "if (A[a] != a) A[a] = Find(A[a]);", "return A[a];", "}"],
     "description": "Find function"
   },
 
