@@ -32,7 +32,8 @@ A collection of configuration files for Windows, including application installat
 
 From [PowerShell](https://docs.microsoft.com/en-us/powershell/):
 
-> **Note:** You **DON'T** need [**Chocolatey**](https://chocolatey.org/) and [**Git**](https://git-scm.com/) installed, because the script will download them automatically, but make sure PowerShell is run as administrator.
+> **Note** 
+> You **DON'T** need [**Chocolatey**](https://chocolatey.org/) and [**Git**](https://git-scm.com/) installed, because the script will download them automatically, but make sure PowerShell is run as administrator.
 
 ```powershell
 iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1'))
