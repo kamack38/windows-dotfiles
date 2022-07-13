@@ -10,6 +10,9 @@
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
   "[javascript][typescript][typescriptreact][react][json][html][css][scss][jsx][markdown][yaml][json][jsonc][dockercompose]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -23,6 +26,7 @@
   "[lua]": {
     "editor.defaultFormatter": "sumneko.lua"
   },
+  "cSpell.enableFiletypes": ["ini"],
   "cSpell.language": "en-GB,pl",
   "cSpell.userWords": [
     "alacritty",
@@ -36,6 +40,7 @@
     "Fira",
     "kamack",
     "minmax",
+    "multiset",
     "nametag",
     "norestart",
     "numlock",
@@ -44,8 +49,10 @@
     "preconnect",
     "quokka",
     "signin",
+    "stdc",
     "webclient",
-    "webdev"
+    "webdev",
+    "webp"
   ],
   "code-runner.executorMap": {
     "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
@@ -57,7 +64,7 @@
     "clojure": "lein exec",
     "coffeescript": "coffee",
     // "cpp": "$folder = $dirWithoutTrailingSlash + \"\\bin\"; if (!(Test-Path $folder)) { New-Item -Type Directory -Path $folder | Out-Null}; cd $folder && g++ \"../$fileName\" -o \"$fileNameWithoutExt\" && & './$fileNameWithoutExt'",
-    "cpp": "mkdir -p $dirWithoutTrailingSlash/bin && cd $dirWithoutTrailingSlash/bin && g++ ../$fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+    "cpp": "mkdir -p $dirWithoutTrailingSlash/bin && cd $dirWithoutTrailingSlash/bin && g++ ../$fileName -o $fileNameWithoutExt -fsanitize=address && ./$fileNameWithoutExt",
     "crystal": "crystal",
     "csharp": "scriptcs",
     "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
@@ -109,6 +116,10 @@
   "diffEditor.wordWrap": "on",
   "discord.idleTimeout": 1200,
   "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.cursorStyle": "line",
@@ -167,14 +178,15 @@
     },
     "scminput": true,
     "git-commit": true,
-    "yaml": true
+    "yaml": true,
+    "ts": true
   },
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
 
-  "explorer.experimental.fileNesting.enabled": true,
-  "explorer.experimental.fileNesting.patterns": {
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
     "*.ts": "$(capture).js, $(capture).d.ts, $(capture).test.ts",
     "*.js": "$(capture).js.map, $(capture).min.js, $(capture).d.ts, $(capture).test.js",
     "*.jsx": "$(capture).js",
@@ -183,7 +195,8 @@
     "docker-compose.yml": "docker-compose.*.yml",
     ".env": ".env.*",
     "next.config.*": "next-env.d.ts",
-    "package.json": "package-lock.json, .npmrc, yarn.lock, .yarnrc, .eslintrc.json, .swcrc"
+    "package.json": "package-lock.json, .npmrc, yarn.lock, .yarnrc, .eslintrc*, .prettierrc*, .swcrc",
+    ".gitignore": ".*ignore"
   },
   "files.associations": {
     "*.cfg": "CSGO cfg"
@@ -194,12 +207,14 @@
   "git.confirmSync": false,
   "git.enableCommitSigning": true,
   "git.enableSmartCommit": true,
+  "git.mergeEditor": true,
   "githubPullRequests.createOnPublishBranch": "never",
   "gitlens.hovers.currentLine.over": "line",
   "html.autoClosingTags": true,
   "javascript.autoClosingTags": true,
   "javascript.preferences.jsxAttributeCompletionStyle": "auto",
   "javascript.suggest.paths": false,
+  "Lua.telemetry.enable": false,
   "typescript.preferences.jsxAttributeCompletionStyle": "auto",
   "typescript.updateImportsOnFileMove.enabled": "never",
   "launch": {
@@ -208,33 +223,11 @@
       {
         "MIMode": "gdb",
         "args": [],
-        "cwd": "${fileDirname}\\bin",
-        "environment": [],
-        "externalConsole": false,
-        "miDebuggerPath": "C:\\ProgramData\\chocolatey\\bin\\gdb.exe",
-        "name": "C/C++ - Build and debug (Windows)",
-        "preLaunchTask": "C++: build active file (Windows)",
-        "program": "${fileDirname}/bin/${fileBasenameNoExtension}.exe",
-        "request": "launch",
-        "setupCommands": [
-          {
-            "description": "Enable pretty-printing for gdb",
-            "ignoreFailures": true,
-            "text": "-enable-pretty-printing"
-          }
-        ],
-        "stopAtEntry": false,
-        "type": "cppdbg"
-      },
-      {
-        "MIMode": "gdb",
-        "args": [],
         "cwd": "${fileDirname}/bin",
         "environment": [],
         "externalConsole": false,
-        "miDebuggerPath": "/usr/bin/gdb",
-        "name": "C/C++ - Build and debug (Linux)",
-        "preLaunchTask": "C++: build active file (Linux)",
+        "name": "C/C++ - Build and debug active file",
+        "preLaunchTask": "C++: build active file",
         "program": "${fileDirname}/bin/${fileBasenameNoExtension}",
         "request": "launch",
         "setupCommands": [
@@ -245,7 +238,11 @@
           }
         ],
         "stopAtEntry": false,
-        "type": "cppdbg"
+        "type": "cppdbg",
+        "windows": {
+          "program": "${fileDirname}/bin/${fileBasenameNoExtension}.exe",
+          "cwd": "${fileDirname}\\bin"
+        }
       }
     ]
   },
@@ -326,7 +323,7 @@
   "task.quickOpen.showAll": true,
   "terminal.explorerKind": "external",
   "terminal.external.windowsExec": "wt.exe",
-  "terminal.external.linuxExec": "alacritty",
+  "terminal.external.linuxExec": "kitty",
   "terminal.integrated.commandsToSkipShell": ["psl.stepIn", "psl.stepOut", "psl.stepOver", "psl.sendToHostTerminal"],
   "terminal.integrated.confirmOnKill": "never",
   "terminal.integrated.cursorStyle": "line",
@@ -360,6 +357,8 @@
   "typescript.autoClosingTags": true,
   "typescript.suggest.paths": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.commandCenter": true,
+  "window.titleBarStyle": "custom",
   "workbench.colorCustomizations": {
     // Brackets
     "editorBracketHighlight.foreground1": "#FFB86C",
@@ -388,10 +387,5 @@
   "workbench.startupEditor": "welcomePage",
   "zenMode.hideLineNumbers": false,
   "errorLens.fontWeight": "500",
-  "keyboard.layout": "00000415",
-  "cSpell.enableFiletypes": ["ini"],
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
-  "Lua.telemetry.enable": true
+  "keyboard.layout": "00000415"
 }
