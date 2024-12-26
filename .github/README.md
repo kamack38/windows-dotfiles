@@ -32,7 +32,7 @@ installation through [**Chocolatey**](https://chocolatey.org/).
 > suggest using `Set-ExecutionPolicy Bypass -Scope Process` to bypass the policy
 > or `Set-ExecutionPolicy RemoteSigned` for quite a bit more security.
 
-### Installation using chocolatey and git via powershell script
+### Installation script
 
 From [PowerShell](https://docs.microsoft.com/en-us/powershell/):
 
