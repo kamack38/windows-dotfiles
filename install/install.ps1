@@ -76,20 +76,15 @@ choco install llvm --limit-output
 choco install nircmd --limit-output
 choco install winfetch --limit-output
 choco install onefetch --limit-output
-choco install speedtest --limit-output
-choco install microsoft-windows-terminal --pre --limit-output
+choco install microsoft-windows-terminal --limit-output
 choco install openssh --pre --limit-output
 choco install discord.install --limit-output
 choco install steam-client --limit-output
 choco install epicgameslauncher --limit-output
 choco install minecraft-launcher --limit-output
-choco install edgedeflector --limit-output
-choco install dcforoffice --limit-output
 choco install powertoys --limit-output
 choco install modernflyouts --limit-output
 choco install procmon --limit-output
-# choco install winmerge --limit-output
-choco install vscode.install --params "/NoDesktopIcon" --limit-output
 choco install firacodenf --limit-output
 choco install ngrok --limit-output
 choco install croc --limit-output
@@ -108,20 +103,8 @@ Write-Host "Environment variables has been refreshed!" -ForegroundColor green
 nvm install lts
 nvm use lts
 
-# Python Packages
-pip install spotdl
-pip install streamlink
-
 # NPM Packages
-npm i -g carbon-now-cli
-npm i -g neovim
-npm i -g yarn
 npm i -g git-cz
-npm i -g npm-check-updates
-npm i -g pm2
-
-npm i --prefix ~\.quokka dotenv-quokka-plugin
-npm i --prefix ~\.quokka jsdom-quokka-plugin
 
 # Install powershell modules
 pwsh.exe -Command Set-PSRepository PSGallery -InstallationPolicy Trusted
@@ -129,7 +112,6 @@ pwsh.exe -Command Install-Module -Name posh-git -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name npm-completion -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force
-pwsh.exe -Command Install-Module -Name yarn-completion -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name nvm-completion -Scope CurrentUser -Force
 
 # Better Discord
@@ -218,10 +200,6 @@ Write-Host "All files has been extracted and moved!" -ForegroundColor yellow
 git clone https://github.com/woodruffw/ff2mpv/ $HOME\ff2mpv
 Set-Location $HOME\ff2mpv
 python .\check-config-win.py -i
-
-# Setup NvChad
-git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
-git clone https://github.com/NvChad/NvChad "$env:LOCALAPPDATA\nvim"
 
 # Restore settings files
 $DOTFILES = "$HOME\.dotfiles"
