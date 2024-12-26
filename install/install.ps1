@@ -20,7 +20,7 @@ if ($executionPolicy -in $allowedExecutionPolicies) {
     Write-Host "Execution policy is set to $executionPolicy. Continuing script execution." -ForegroundColor Green
 }
 else {
-    Write-Warning "Execution policy is set to $executionPolicy which is NOT recomended."
+    Write-Warning "Execution policy is set to $executionPolicy which is NOT recommended."
     Break
 }
 
@@ -41,7 +41,7 @@ if (! (Get-Command choco -errorAction SilentlyContinue)) {
     Write-Host "Chocolatey needs to be installed!" -ForegroundColor red
     Write-Host "Installing Chocolatey..." -ForegroundColor yellow
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-    Write-Host "Chocolatey has been installed succesfully!" -ForegroundColor green
+    Write-Host "Chocolatey has been installed successfully!" -ForegroundColor green
     Write-Host "Refreshing environment variables..." -ForegroundColor yellow
     $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
     Write-Host "Environment variables has been refreshed!" -ForegroundColor green

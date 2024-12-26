@@ -1,10 +1,8 @@
 # Modules
 Import-Module posh-git
 Import-Module npm-completion
-Import-Module yarn-completion
 Import-Module nvm-completion
 Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-Import-Module -Name Appx -UseWindowsPowerShell -WarningAction SilentlyContinue
 $env:POSH_GIT_ENABLED = $true
 Import-Module Terminal-Icons
 Import-Module PSReadLine
@@ -44,7 +42,7 @@ function yt-dlp-mp3 { yt-dlp --extract-audio -f bestaudio[ext=mp3] --no-playlist
 function yt-dlp-music { yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 --embed-thumbnail -o "%(title)s.%(ext)s" $args }
 
 # Custom Functions
-function wheater {
+function weather {
   param ($param1)
   Invoke-RestMethod http://wttr.in/$param1
 }
@@ -78,7 +76,4 @@ function faceit {
     Write-Host "to stop restart"
   }
 }
-# Enable-PoshTooltips
-# Enable-PoshTransientPrompt
-# Enable-PoshLineError
 oh-my-posh --init --shell pwsh --config ~/.config/oh-my-posh/kamack.omp.json | Invoke-Expression
