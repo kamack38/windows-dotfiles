@@ -165,6 +165,13 @@ to check out deprecated installation methods.
 
 [My Essentials](https://github.com/kamack38/Essentials/wiki)
 
+[winutil](https://github.com/ChrisTitusTech/winutil)
+
+[Optimizer](https://github.com/hellzerg/optimizer)
+
+[Panjo](https://www.youtube.com/channel/UCXKZHfs9sDLYV9HDuz9MLDA) - shows best
+settings for GPU and general system performance
+
 ## Credits
 
 `windows.ps1` - some reg keys taken from
