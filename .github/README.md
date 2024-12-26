@@ -2,7 +2,8 @@
 
 <div align="center">
 
-A collection of configuration files for Windows, including application installation through [**Chocolatey**](https://chocolatey.org/) or [**Curl**](https://curl.se/)
+A collection of configuration files for Windows, including application
+installation through [**Chocolatey**](https://chocolatey.org/).
 
 <div align="center">
       <a href="#installation">Install</a>
@@ -26,14 +27,19 @@ A collection of configuration files for Windows, including application installat
 - Windows 10 version 1903 or higher with Build 18362 or higher
 - PowerShell 5.0 or higher
 
-> **Note:** With PowerShell, you must ensure `Get-ExecutionPolicy` is not Restricted. I suggest using `Set-ExecutionPolicy Bypass -Scope Process` to bypass the policy or `Set-ExecutionPolicy RemoteSigned` for quite a bit more security.
+> [!NOTE]
+> With PowerShell, you must ensure `Get-ExecutionPolicy` is not Restricted. I
+> suggest using `Set-ExecutionPolicy Bypass -Scope Process` to bypass the policy
+> or `Set-ExecutionPolicy RemoteSigned` for quite a bit more security.
 
 ### Installation using chocolatey and git via powershell script
 
 From [PowerShell](https://docs.microsoft.com/en-us/powershell/):
 
-> **Note** 
-> You **DON'T** need [**Chocolatey**](https://chocolatey.org/) and [**Git**](https://git-scm.com/) installed, because the script will download them automatically, but make sure PowerShell is run as administrator.
+> [!NOTE]
+> You **DON'T** need [**Chocolatey**](https://chocolatey.org/) and
+> [**Git**](https://git-scm.com/) installed, because the script will download
+> them automatically, but make sure PowerShell is run as administrator.
 
 ```powershell
 iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1'))
@@ -45,7 +51,8 @@ iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.co
 Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
 ```
 
-[Click here](https://github.com/kamack38/dotfiles/wiki/%5BDeprecated%5D-Installation-using-batch-script) to check out deprecated installation methods.
+[Click here](https://github.com/kamack38/dotfiles/wiki/%5BDeprecated%5D-Installation-using-batch-script)
+to check out deprecated installation methods.
 
 ## Showcase
 
@@ -160,28 +167,37 @@ Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
 
 ## Credits
 
-`windows.ps1` - some reg keys taken from [jayharris/dotfiles-windows](https://github.com/jayharris/dotfiles-windows/blob/master/windows.ps1)
+`windows.ps1` - some reg keys taken from
+[jayharris/dotfiles-windows](https://github.com/jayharris/dotfiles-windows/blob/master/windows.ps1)
 
-`windows.ps1` - debloat script taken from [Sycnex/Windows10Debloater](https://github.com/Sycnex/Windows10Debloater/blob/master/Windows10SysPrepDebloater.ps1)
-
-`windows.ps1` - capitaine-cursors taken from [keeferrourke/capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors)
+`windows.ps1` - capitaine-cursors taken from
+[keeferrourke/capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors)
 
 `menu.lua` - [jonniek/mpv-menu](https://github.com/jonniek/mpv-menu)
 
-`mordenx.lua` - [cyl0/mpv-osc-morden-x](https://github.com/cyl0/mpv-osc-morden-x/pull/3)
+`mordenx.lua` -
+[cyl0/mpv-osc-morden-x](https://github.com/cyl0/mpv-osc-morden-x/pull/3)
 
-`pause-indicator.lua` - [by torque](https://gist.github.com/torque/9dbc69543118347d2e5f43239a7e609a)
+`pause-indicator.lua` -
+[by torque](https://gist.github.com/torque/9dbc69543118347d2e5f43239a7e609a)
 
-`playlistmanager.lua` - [jonniek/mpv-playlistmanager](https://github.com/jonniek/mpv-playlistmanager)
+`playlistmanager.lua` -
+[jonniek/mpv-playlistmanager](https://github.com/jonniek/mpv-playlistmanager)
 
-`youtube-quality.lua` - [jgreco/mpv-youtube-quality](https://github.com/jgreco/mpv-youtube-quality)
+`youtube-quality.lua` -
+[jgreco/mpv-youtube-quality](https://github.com/jgreco/mpv-youtube-quality)
 
-`youtube-search.lua` - [CogentRedTester/mpv-scripts](https://github.com/CogentRedTester/mpv-scripts/blob/master/youtube-search.lua)
+`youtube-search.lua` -
+[CogentRedTester/mpv-scripts](https://github.com/CogentRedTester/mpv-scripts/blob/master/youtube-search.lua)
 
-`user-input.lua` & `user-input-module.lua` - [CogentRedTester/mpv-user-input](https://github.com/CogentRedTester/mpv-user-input)
+`user-input.lua` & `user-input-module.lua` -
+[CogentRedTester/mpv-user-input](https://github.com/CogentRedTester/mpv-user-input)
 
-`scroll-list.lua` - [CogentRedTester/mpv-scroll-list](https://github.com/CogentRedTester/mpv-scroll-list)
+`scroll-list.lua` -
+[CogentRedTester/mpv-scroll-list](https://github.com/CogentRedTester/mpv-scroll-list)
 
-`.config/themes/backgrounds/` - [HerrDierk/ArtworkLinux](https://github.com/HerrDierk/ArtworkLinux)
+`.config/themes/backgrounds/` -
+[HerrDierk/ArtworkLinux](https://github.com/HerrDierk/ArtworkLinux)
 
-`.config/themes/backgrounds/pwsh.png` - [wallpaperaccess.com](https://wallpaperaccess.com/download/powershell-4834959)
+`.config/themes/backgrounds/pwsh.png` -
+[wallpaperaccess.com](https://wallpaperaccess.com/download/powershell-4834959)
