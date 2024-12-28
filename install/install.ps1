@@ -63,7 +63,7 @@ choco install openjdk --limit-output
 choco install nvm.install --limit-output
 choco install gpg4win --limit-output
 choco install winrar --limit-output
-choco install powershell-core --params '"/CleanUpPath"' --pre --limit-output
+choco install powershell-core --params '"/CleanUpPath"' --limit-output
 choco install mpv.install --limit-output
 choco install yt-dlp --limit-output
 choco install ffmpeg --limit-output
@@ -77,7 +77,7 @@ choco install nircmd --limit-output
 choco install winfetch --limit-output
 choco install onefetch --limit-output
 choco install microsoft-windows-terminal --limit-output
-choco install openssh --pre --limit-output
+choco install openssh --limit-output
 choco install discord.install --limit-output
 choco install steam-client --limit-output
 choco install epicgameslauncher --limit-output
@@ -203,7 +203,7 @@ python .\check-config-win.py -i
 
 # Restore settings files
 $DOTFILES = "$HOME\.dotfiles"
-$repo = "https://github.com/kamack38/dotfiles.git"
+$repo = "https://github.com/kamack38/windows-dotfiles.git"
 
 git clone --bare $repo $DOTFILES
 git --git-dir="$DOTFILES" --work-tree="$HOME" fetch --all
@@ -215,7 +215,7 @@ Write-Host "Programs settings have been restored!" -ForegroundColor green
 Write-Host "Restoring Windows settings..." -ForegroundColor yellow
 Write-Warning "This script will change your Windows settings!" -WarningAction Inquire
 
-Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/windows.ps1'))
+Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/windows-dotfiles/main/install/windows.ps1'))
 
 # SIG # Begin signature block
 # MIIF+gYJKoZIhvcNAQcCoIIF6zCCBecCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB

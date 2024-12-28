@@ -42,17 +42,8 @@ From [PowerShell](https://docs.microsoft.com/en-us/powershell/):
 > them automatically, but make sure PowerShell is run as administrator.
 
 ```powershell
-iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/kamack38/dotfiles/main/install/install.ps1'))
+Set-ExecutionPolicy RemoteSigned; iwr -useb https://github.com/kamack38/windows-dotfiles/raw/main/install/install.ps1 | iex
 ```
-
-**OR** (Shorter version)
-
-```powershell
-Set-ExecutionPolicy RemoteSigned; iwr -useb https://git.io/J1CXE | iex
-```
-
-[Click here](https://github.com/kamack38/dotfiles/wiki/%5BDeprecated%5D-Installation-using-batch-script)
-to check out deprecated installation methods.
 
 ## Showcase
 
