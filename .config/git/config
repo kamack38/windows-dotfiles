@@ -1,0 +1,120 @@
+[core]
+  editor = nvim
+
+[user]
+  name = kamack38
+  email = 64226248+kamack38@users.noreply.github.com
+  signingkey = 706A3FF0C395D52B
+
+[commit]
+  gpgsign = true
+
+[tag]
+  gpgSign = true
+
+[alias]
+  dtf = !git --git-dir=$HOME/.dotfiles --work-tree=$HOME
+  alias = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
+  gconfig = config --global
+  commits = log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an> %C(yellow)(%G?)%Creset'
+  unstage = restore --staged
+  uncommit = reset --soft HEAD^
+  clean-remotes = remote prune origin
+  repo-size = count-objects -vH
+  s = status -s
+  u = add -u
+  b = branch
+  ba = branch -a
+  co = checkout
+  cm = !git cz && git push
+  cdf = diff --cached
+  can = commit --amend --no-edit
+  pon = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
+  pt = push --tags
+  pf = push --force
+  pl = push --force-with-lease
+  pr = pull --rebase
+  d-rem-tags = !git push origin --delete $(git tag -l) 
+  dtag = !git tag -d \"$1\" && git push --delete origin \"$1\" "#"
+  quickhelp = "!{ \
+    echo stash - create stash; \
+    echo clean - revert file to current commit; \
+    };"
+  resign = rebase --exec 'GIT_COMMITTER_DATE=\"$(git log -n 1 --format=%aD)\" git commit --amend --no-edit -n -S'
+
+# URL shorthands
+
+# Github
+[url "git@github.com:"]
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+  insteadOf = "github:"
+
+# Gist
+[url "git@gist.github.com:"]
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
+
+# Gitlab
+[url "git@gitlab.com:"]
+  insteadOf = "gl:"
+  pushInsteadOf = "gitlab:"
+  pushInsteadOf = "git://gitlab.com/"
+
+[url "git://gitlab.com/"]
+  insteadOf = "gitlab:"
+
+# AUR
+[url "aur@aur.archlinux.org:"]
+  insteadOf = "aur:"
+  pushInsteadOf = "git://aur@aur.archlinux.org"
+
+[color]
+  ui = true
+
+[format]
+  pretty = "%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
+
+[help]
+  autocorrect = 1
+
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
+
+[delta]
+  plus-style = "syntax #012800"
+  minus-style = "syntax #340001"
+  syntax-theme = OneHalfDark
+  navigate = true
+  line-numbers = true
+  side-by-side = true
+
+[interactive]
+  diffFilter = delta --color-only
+
+[init]
+  defaultBranch = main
+
+[credential "https://github.com"]
+  helper = !gh auth git-credential
+
+[credential "https://gist.github.com"]
+  helper = !gh auth git-credential
+
+[merge]
+  tool = nvimdiff
+
+[push]
+  followTags = true
+[gpg]
+	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
