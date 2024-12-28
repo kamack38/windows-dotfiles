@@ -85,7 +85,7 @@ choco install epicgameslauncher --limit-output
 choco install minecraft-launcher --limit-output
 choco install powertoys --limit-output
 choco install procmon --limit-output
-choco install firacodenf --limit-output
+choco install nerd-fonts-firacode --limit-output
 choco install croc --limit-output
 choco install oh-my-posh --limit-output
 choco install cmake.install --ia 'ADD_CMAKE_TO_PATH=System' --limit-output
