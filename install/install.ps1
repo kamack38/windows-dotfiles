@@ -58,6 +58,7 @@ choco feature enable -n allowGlobalConfirmation
 # Install Programs
 choco install firefox-dev --pre --limit-output
 choco install git.install --params "/NoShellIntegration /NoOpenSSH" --limit-output
+choco install gh --limit-output
 choco install python3 --limit-output
 choco install openjdk --limit-output
 choco install nvm.install --limit-output
@@ -75,18 +76,16 @@ choco install mingw --limit-output
 choco install llvm --limit-output
 choco install nircmd --limit-output
 choco install fastfetch --limit-output
-choco install onefetch --limit-output
-choco install microsoft-windows-terminal --limit-output
+#Present by default on Windows 11
+#choco install microsoft-windows-terminal --limit-output
 choco install openssh --limit-output
 choco install discord.install --limit-output
 choco install steam-client --limit-output
 choco install epicgameslauncher --limit-output
 choco install minecraft-launcher --limit-output
 choco install powertoys --limit-output
-choco install modernflyouts --limit-output
 choco install procmon --limit-output
 choco install firacodenf --limit-output
-choco install ngrok --limit-output
 choco install croc --limit-output
 choco install oh-my-posh --limit-output
 choco install cmake.install --ia 'ADD_CMAKE_TO_PATH=System' --limit-output
@@ -126,76 +125,6 @@ Write-Host "Downloading LogitechG HUB Installer..." -ForegroundColor yellow
 Invoke-WebRequest -Uri "https://download01.logi.com/web/ftp/pub/techsupport/gaming/lghub_installer.exe" -o LGHUBInstaller.exe
 Write-Host "LogitechG HUB Installer has been downloaded!" -ForegroundColor green
 
-# Steam skin (metro-for-steam)
-Write-Host "Downloading metro-for-steam..." -ForegroundColor yellow
-Invoke-WebRequest -Uri "https://github.com/minischetti/metro-for-steam/archive/refs/heads/master.zip" -o metro-for-steam.zip
-Write-Host "metro-for-steam has been downloaded!" -ForegroundColor green
-Write-Host "Downloading Unofficial Patch for MetroForSteam..." -ForegroundColor yellow
-Invoke-WebRequest -Uri "https://github.com/redsigma/UPMetroSkin/archive/master.zip" -o UPMetroSkin.zip
-Write-Host "Unofficial Patch for MetroForSteam has been downloaded!" -ForegroundColor green
-Write-Host "Extracting files..." -ForegroundColor yellow
-Expand-Archive "UPMetroSkin.zip" -Force
-Expand-Archive "metro-for-steam.zip" -Force
-Remove-Item "UPMetroSkin.zip", "metro-for-steam.zip" -Recurse -Force -ErrorAction SilentlyContinue
-Move-Item "UPMetroSkin\UPMetroSkin-master", "metro-for-steam\metro-for-steam-4.4" -Destination "C:\Program Files (x86)\Steam\skins" -Force
-Remove-Item "UPMetroSkin", "metro-for-steam" -Recurse -Force
-Set-Location "C:\Program Files (x86)\Steam\skins"
-Copy-Item ".\UPMetroSkin-master\Unofficial 4.x Patch\Main Files ``[Install First``]\*" -Destination ".\metro-for-steam-4.4\" -Force -Recurse 
-Write-Host "Customize your settings..." -ForegroundColor yellow
-
-$categories = (Get-ChildItem ".\UPMetroSkin-master\Unofficial 4.x Patch\Extras" -Directory -Exclude '*install*', '*Remastered Extra*')
-$myObject = [pscustomobject]$categories
-for ($j = 0; $j -lt $myObject.length; $j++) {
-    $myObject[$j] | Add-Member -NotePropertyName Childs -NotePropertyValue (Get-ChildItem $myObject[$j])
-    for ($i = 0; $i -lt $myObject[$j].Childs.Length; $i++) {
-        $myObject[$j].Childs[$i] | Add-Member -NotePropertyName Color -NotePropertyValue "Red"
-    }
-}
-
-for ($j = 0; $j -lt $myObject.Length; $j++) {
-    function Show-Menu {
-        param (
-            [string]$Title = 'My Menu'
-        )
-        Clear-Host
-        Write-Host "================ $Title ================"
-        Write-Host "What dou you want to install?"
-        for ($i = 0; $i -lt $myObject[$j].Childs.Length; $i++) {
-            $index = $i + 1
-            Write-Host "Press '$index' to select: " $myObject[$j].Childs[$i].Name -ForegroundColor $myObject[$j].Childs[$i].Color
-        }
-        Write-Host "A: Press 'A' to save settings and install them."
-        Write-Host "C: Press 'C' to cancel selection and go to another category."
-        Write-Host "Q: Press 'Q' to cancel EVERYTHING and quit."
-    }
-    do {
-        Show-Menu -Title $myObject[$j].Name
-        $selection = Read-Host "Please make a selection"
-        if ($selection -match "^\d+$" -and $myObject[$j].Childs[$selection - 1].Color -ne "Green") {
-            $myObject[$j].Childs[$selection - 1].Color = "Green"
-        }
-        elseif ($selection -match "^\d+$" -and $myObject[$j].Childs[$selection - 1].Color -ne "Red") {
-            $myObject[$j].Childs[$selection - 1].Color = "Red"
-        }
-        elseif ($selection -eq "a") {
-            Write-Host Installing selected settings... -ForegroundColor yellow
-            (($myObject[$j].childs | Where-Object -Property color -EQ "Green").PSPath -split ".*::").Split('', [System.StringSplitOptions]::RemoveEmptyEntries).ForEach({ $_ + "\Install\*" }) | Copy-Item -Destination ".\metro-for-steam-4.4\" -Force -Recurse
-            break
-        }
-        elseif ($selection -eq "q") {
-            $j = $myObject.Length
-            break
-        }
-        elseif ($selection -ne "c") {
-            Write-Host 'Wrong Input!' -ForegroundColor red
-            pause
-        }
-    }
-    until ($selection -eq "c")
-}
-
-Write-Host "All files has been extracted and moved!" -ForegroundColor yellow
-
 # Install ff2mpv
 git clone https://github.com/woodruffw/ff2mpv/ $HOME\ff2mpv
 Set-Location $HOME\ff2mpv
@@ -208,7 +137,7 @@ $repo = "https://github.com/kamack38/windows-dotfiles.git"
 git clone --bare $repo $DOTFILES
 git --git-dir="$DOTFILES" --work-tree="$HOME" fetch --all
 git --git-dir="$DOTFILES" --work-tree="$HOME" config --local status.showUntrackedFiles no
-git --git-dir="$DOTFILES" --work-tree="$HOME" checkout
+git --git-dir="$DOTFILES" --work-tree="$HOME" checkout -f
 
 Write-Host "Programs settings have been restored!" -ForegroundColor green
 
