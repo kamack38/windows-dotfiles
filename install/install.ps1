@@ -74,7 +74,7 @@ choco install ripgrep --limit-output
 choco install mingw --limit-output
 choco install llvm --limit-output
 choco install nircmd --limit-output
-choco install winfetch --limit-output
+choco install fastfetch --limit-output
 choco install onefetch --limit-output
 choco install microsoft-windows-terminal --limit-output
 choco install openssh --limit-output
