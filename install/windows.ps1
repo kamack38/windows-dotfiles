@@ -1,15 +1,4 @@
 ###############################################################################
-### Debloat Windows                                                           #
-###############################################################################
-Write-Host "Debloating Windows..." -ForegroundColor "Yellow"
-
-# Remove PowerShell ISE
-DISM /Online /Remove-Capability /CapabilityName:Microsoft.Windows.PowerShell.ISE~~~~0.0.1.0
-
-# Remove WordPad
-DISM /Online /Remove-Capability /CapabilityName:Microsoft.Windows.WordPad~~~~0.0.1.0
-
-###############################################################################
 ### Set Default Windows Applications                                          #
 ###############################################################################
 
