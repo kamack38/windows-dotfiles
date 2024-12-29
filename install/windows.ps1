@@ -5,13 +5,9 @@
 # Set pwsh.exe as default OpenSSH
 New-ItemProperty -Path "HKLM:\Software\OpenSSH" -Name DefaultShell -Value "C:\Program Files\PowerShell\7\pwsh.exe" -PropertyType String -Force
 
-# Set Windows Terminal as default batch opening porgram
-if (!(Test-Path "HKCR:\")) { New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR }
-Set-ItemProperty "HKCR:\batfile\shell\open\command" "(default)" """C:\Users\$env:USERNAME\AppData\Local\Microsoft\WindowsApps\wt.exe"" -p ""Command Prompt"" ""%1"" %*"
-
-# Set Windows Terminal as default .ps1 file opening porgram
-cmd /c assoc .ps1=PowerShellFileV
-cmd /c ftype PowerShellFileV=wt.exe pwsh.exe -wd "%1\.." -NoExit -NoLogo -ExecutionPolicy Bypass -File %1 -Command "& `"%1`""
+# Set WindowsTerminal as the default terminal app
+Set-ItemProperty "HKCU:\Console\%%Startup" "DelegationConsole" "{2EACA947-7F5F-4CFA-BA87-8F7FBEEFBE69}"
+Set-ItemProperty "HKCU:\Console\%%Startup" "DelegationTerminal" "{E12CFF52-A866-4C77-9A90-F570A7AA2C6B}"
 
 # Create Links to System Utilities
 $LinkDir = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs"
