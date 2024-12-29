@@ -1,4 +1,4 @@
-<h1 align="center">My .dotfiles for Windows 10</h1>
+<h1 align="center">My .dotfiles for Windows 11</h1>
 
 <div align="center">
 
@@ -24,7 +24,7 @@ installation through [**Chocolatey**](https://chocolatey.org/).
 
 ### Pre-requirements
 
-- Windows 10 version 1903 or higher with Build 18362 or higher
+- Windows 11 23H2 or higher
 - PowerShell 5.0 or higher
 
 > [!NOTE]
