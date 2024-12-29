@@ -3,7 +3,7 @@
 ###############################################################################
 
 # Set pwsh.exe as default OpenSSH
-New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Program Files\PowerShell\7\pwsh.exe" -PropertyType String -Force
+New-ItemProperty -Path "HKLM:\Software\OpenSSH" -Name DefaultShell -Value "C:\Program Files\PowerShell\7\pwsh.exe" -PropertyType String -Force
 
 # Set Windows Terminal as default batch opening porgram
 if (!(Test-Path "HKCR:\")) { New-PSDrive -PSProvider registry -Root HKEY_CLASSES_ROOT -Name HKCR }
@@ -68,7 +68,7 @@ powercfg /hibernate on
 ###############################################################################
 
 # Sound: Don't do anything when detecting comunication
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Multimedia\Audio" "UserDuckingPreference" 3
+Set-ItemProperty "HKCU:\Software\Microsoft\Multimedia\Audio" "UserDuckingPreference" 3
 
 ###############################################################################
 ### Customization                                                             #
@@ -76,63 +76,66 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Multimedia\Audio" "UserDuckingPrefere
 Write-Host "Configuring Explorer, Taskbar, and System Tray..." -ForegroundColor "Yellow"
 
 # Explorer: Show hidden files by default: Show Files: 1, Hide Files: 2
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "Hidden" 1
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "Hidden" 1
 
 # Explorer: Show file extensions by default
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
 
 # Explorer: Show path in title bar
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" "FullPath" 1
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" "FullPath" 1
 
 # Explorer: Delete 3D Objects folder
-if (Test-Path "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\Namespace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}") {
-    Remove-Item "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\Namespace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
+if (Test-Path "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\Namespace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}") {
+    Remove-Item "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\Namespace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}"
 }
 
 # Taskbar: Show colors on Taskbar, Start, and SysTray: Disabled: 0, Taskbar, Start, & SysTray: 1, Taskbar Only: 2
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "ColorPrevalence" 1
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" "ColorPrevalence" 1
 
 # Taskbar: Enable Transparency
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "EnableTransparency" 0
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" "EnableTransparency" 0
 
 # Taskbar: Combine taskbar buttons: 0 - Always combine, hide labels, 1 - Combine when taskbar is full, 2 - Never combine
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "TaskbarGlomLevel" 0
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "TaskbarGlomLevel" 0
 
 # Taskbar: Show on screen keyboard button: 0 - Disabled, 1 - Enabled
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\TabletTip\1.7" "TipbandDesiredVisibility" 1
+Set-ItemProperty "HKCU:\Software\Microsoft\TabletTip\1.7" "TipbandDesiredVisibility" 1
 
 # Taskbar: Show windows search: 0 - Hide, 1 - Show search icon, 2 - Show search bar
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" "SearchboxTaskbarMode" 0
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" "SearchboxTaskbarMode" 0
 
 # Taskbar: Disable task view button
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "ShowTaskViewButton" 0
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "ShowTaskViewButton" 0
 
 # Taskbar: Don't show taskbar on multiple displays
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "MMTaskbarEnabled" 0
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "MMTaskbarEnabled" 0
+
+# Taskbar: Show the end task button
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDeveloperSettings" "TaskbarEndTask" 1
 
 # Titlebar: Enable theme colors on titlebar
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\DWM" "ColorPrevalence" 1
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\DWM" "ColorPrevalence" 1
 
 # Recycle Bin: Disable Delete Confirmation Dialog
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" "ConfirmFileDelete" 0
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "ConfirmFileDelete" 0
 
 # System: Enable Dark Theme
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "SystemUsesLightTheme" 0
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "AppsUseLightTheme" 0
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" "SystemUsesLightTheme" 0
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" "AppsUseLightTheme" 0
 
 # Desktop: Set Custom Wallpaper
 Set-ItemProperty "HKCU:\Control Panel\Desktop" "WallPaper" "$HOME\.config\themes\backgrounds\Minimalist Code by Daze_.jpg"
 
 # System: Enable Transparency
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "EnableTransparency" 1
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" "EnableTransparency" 1
 
 # System: Set Theme Colors
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Accent" "StartColorMenu" "4288567808"
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Accent" "AccentColorMenu" "4292311040"
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Accent" "AccentPalette" -Value ([byte[]](0xa6, 0xd8, 0xff, 0x00, 0x76, 0xb9, 0xed, 0x00, 0x42, 0x9c, 0xe3, 0x00, 0x00, 0x78, 0xd7, 0x00, 0x00, 0x5a, 0x9e, 0x00, 0x00, 0x42, 0x75, 0x00, 0x00, 0x26, 0x42, 0x00, 0xf7, 0x63, 0x0c, 0x00)) -Type Binary
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent" "StartColorMenu" "4288567808"
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent" "AccentColorMenu" "4292311040"
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent" "AccentPalette" -Value ([byte[]](0xa6, 0xd8, 0xff, 0x00, 0x76, 0xb9, 0xed, 0x00, 0x42, 0x9c, 0xe3, 0x00, 0x00, 0x78, 0xd7, 0x00, 0x00, 0x5a, 0x9e, 0x00, 0x00, 0x42, 0x75, 0x00, 0x00, 0x26, 0x42, 0x00, 0xf7, 0x63, 0x0c, 0x00)) -Type Binary
 
 # Start Menu: Enable Settings, Explorer and Downloads
-Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Start" "VisiblePlaces" -Value ([byte[]](0x86, 0x08, 0x73, 0x52, 0xAA, 0x51, 0x43, 0x42, 0x9F, 0x7B, 0x27, 0x76, 0x58, 0x46, 0x59, 0xD4, 0xBC, 0x24, 0x8A, 0x14, 0x0C, 0xD6, 0x89, 0x42, 0xA0, 0x80, 0x6E, 0xD9, 0xBB, 0xA2, 0x48, 0x82, 0x2F, 0xB3, 0x67, 0xE3, 0xDE, 0x89, 0x55, 0x43, 0xBF, 0xCE, 0x61, 0xF3, 0x7B, 0x18, 0xA9, 0x37)) -Type Binary
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Start" "VisiblePlaces" -Value ([byte[]](0x86, 0x08, 0x73, 0x52, 0xAA, 0x51, 0x43, 0x42, 0x9F, 0x7B, 0x27, 0x76, 0x58, 0x46, 0x59, 0xD4, 0xBC, 0x24, 0x8A, 0x14, 0x0C, 0xD6, 0x89, 0x42, 0xA0, 0x80, 0x6E, 0xD9, 0xBB, 0xA2, 0x48, 0x82, 0x2F, 0xB3, 0x67, 0xE3, 0xDE, 0x89, 0x55, 0x43, 0xBF, 0xCE, 0x61, 0xF3, 0x7B, 0x18, 0xA9, 0x37)) -Type Binary
 
 # Mouse: Disable pointer precision
 Set-ItemProperty "HKCU:\Control Panel\Mouse" "MouseSpeed" 0
