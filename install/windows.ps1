@@ -103,6 +103,9 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" "Searc
 # Taskbar: Disable task view button
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "ShowTaskViewButton" 0
 
+# Taskbar: Hide News and Interests feed
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Feeds" "ShellFeedsTaskbarViewMode" 2
+
 # Taskbar: Don't show taskbar on multiple displays
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "MMTaskbarEnabled" 0
 
