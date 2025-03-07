@@ -125,6 +125,11 @@ Write-Host "Downloading LogitechG HUB Installer..." -ForegroundColor yellow
 Invoke-WebRequest -Uri "https://download01.logi.com/web/ftp/pub/techsupport/gaming/lghub_installer.exe" -o LGHUBInstaller.exe
 Write-Host "LogitechG HUB Installer has been downloaded!" -ForegroundColor green
 
+# Faceit Anit-Cheat
+Write-Host "Downloading Faceit Anit-Cheat Installer..." -ForegroundColor yellow
+Invoke-WebRequest -Uri "https://anticheat-client.faceit-cdn.net/FACEITInstaller_64.exe" -o "Faceit-Anit-Cheat.exe"
+Write-Host "Faceit Anit-Cheat Installer has been downloaded!" -ForegroundColor green
+
 # Install ff2mpv
 git clone https://github.com/woodruffw/ff2mpv/ $HOME\ff2mpv
 Set-Location $HOME\ff2mpv
@@ -149,8 +154,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIGHwYJKoZIhvcNAQcCoIIGEDCCBgwCAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCB9QQqKa9bIII2Q
-# RwQYrAOWgB49YPpCi5lvrwo4LnhrWqCCA2YwggNiMIICSqADAgECAhB36Jox1p+m
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCCyRvSPINlFPfsI
+# rku7sNTNsUOJ+km16Bt6J5ruhJKfi6CCA2YwggNiMIICSqADAgECAhB36Jox1p+m
 # oUV8lSg8nWQkMA0GCSqGSIb3DQEBCwUAMEkxHTAbBgNVBAMMFEtyenlzenRvZiBN
 # YWNraWV3aWN6MSgwJgYJKoZIhvcNAQkBFhlrYW1hY2szOC5iaXpuZXNAZ21haWwu
 # Y29tMB4XDTIxMDgwNzE5MTYxMVoXDTI5MTIzMTIyMDAwMFowSTEdMBsGA1UEAwwU
@@ -173,11 +178,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # YW1hY2szOC5iaXpuZXNAZ21haWwuY29tAhB36Jox1p+moUV8lSg8nWQkMA0GCWCG
 # SAFlAwQCAQUAoIGEMBgGCisGAQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcN
 # AQkDMQwGCisGAQQBgjcCAQQwHAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUw
-# LwYJKoZIhvcNAQkEMSIEIGUFsB7hPkj/cTRXZtl84TlGPZqSQ1q+A+9iaA3P6RVo
-# MA0GCSqGSIb3DQEBAQUABIIBAHODtIjpmkoSdNHCDl8gTk5OBYZOgeSZ+SBc9DrV
-# O/oj4KD22Tz5UIkjnEGVdGP6lm0yY38BOoeRg9QqtGegNwGHyo8XGQQaZWTt1/uV
-# s/NWtXq6mQLS0dXsYKQ4C0ksAlDLUgeyYsPq4hQgcSSxshWvULIpEvNrf7WuCh5r
-# c+GE5SspMRFAgo76PD7oSKNoJ0LsdVMnE1YODVj5XwBtBQLzOvw7y7QcwsszNd2b
-# 5u4iHiT/LrZOCU3fBEE3Nvgqu/wCo2w8sDfFd7oA4G+VsKQh1LnE6z8MmYhO1dcp
-# I1415TNqPz6N/6Qa1xtwBDnVdsikR9V9VmFg1dWf5zY97NI=
+# LwYJKoZIhvcNAQkEMSIEIJ3MdGnP0DwAxu6SW/2Ul6xFxgQ5yaNXV299jS3KBFgw
+# MA0GCSqGSIb3DQEBAQUABIIBADpC4xGm7jWtkGUkBPitTqr6HIBGzt4rf8Zb//i0
+# We9bnKXKcECStx/7S/5Q1dOnGiZiC0PkR17Mx06fGeEZJwMQK+BP1qdEWEUUtP9M
+# u7NiL5Km29X+lc60UWjEIaUmSYGaspShIxoJsHnq/avzK+4etugg7MPHWZMX8FdM
+# MLXJgyv3orOxAbCvGeim15vgSSvaqdUnnPoi9CHXca8/J5zSXutHGNEgZf+x8msN
+# uSvXjnqWgU1IQ1eCyhIKcYqRQ92fxh+01xo9IWrDzy7OGo9cIPmCFjSXXb2MY0f9
+# aCguD/M7O+CcseOxuHo1BamYQS98jHn8+vCrb87EiqFdzXE=
 # SIG # End signature block
