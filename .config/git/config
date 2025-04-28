@@ -8,6 +8,8 @@
 
 [commit]
   gpgsign = true
+  template = ~/.config/git/template
+  status = true
 
 [tag]
   gpgSign = true
@@ -23,12 +25,17 @@
   repo-size = count-objects -vH
   s = status -s
   u = add -u
+  p = add -p
+  ra = !git --git-dir=$GIT_DIR --work-tree=$GIT_WORK_TREE diff --name-only --cached | xargs git --git-dir=$GIT_DIR --work-tree=$GIT_WORK_TREE add
   b = branch
   ba = branch -a
   co = checkout
   cm = !git cz && git push
-  cdf = diff --cached
+  c = commit
+  ce = !git commit --edit --cleanup=strip -F $GIT_DIR/COMMIT_EDITMSG
+  ca = commit --amend
   can = commit --amend --no-edit
+  cdf = diff --cached
   pon = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
   pt = push --tags
   pf = push --force
@@ -36,39 +43,39 @@
   pr = pull --rebase
   d-rem-tags = !git push origin --delete $(git tag -l) 
   dtag = !git tag -d \"$1\" && git push --delete origin \"$1\" "#"
-  quickhelp = "!{ \
-    echo stash - create stash; \
-    echo clean - revert file to current commit; \
-    };"
-  resign = rebase --exec 'GIT_COMMITTER_DATE=\"$(git log -n 1 --format=%aD)\" git commit --amend --no-edit -n -S'
+  resign = rebase --exec 'GIT_COMMITTER_DATE="$(git log -n 1 --format=%aD)" git commit --amend --no-edit -n -S'
+  largest-objects = !git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | sed -n 's/^blob //p' | sort --numeric-sort --key=2 | cut -c 1-12,41- | numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
 
 # URL shorthands
 
 # Github
-[url "git@github.com:"]
+[url "https://github.com/"]
   insteadOf = "gh:"
   pushInsteadOf = "github:"
   pushInsteadOf = "git://github.com/"
 
-[url "git://github.com/"]
+[url "git@github.com:"]
   insteadOf = "github:"
 
+[url "https://github.com/kamack38/"]
+  insteadOf = "me:"
+
 # Gist
-[url "git@gist.github.com:"]
+[url "https://gist.github.com/"]
   insteadOf = "gst:"
   pushInsteadOf = "gist:"
   pushInsteadOf = "git://gist.github.com/"
 
-[url "git://gist.github.com/"]
+[url "git@gist.github.com:"]
   insteadOf = "gist:"
 
 # Gitlab
-[url "git@gitlab.com:"]
+[url "https://gitlab.com/"]
   insteadOf = "gl:"
   pushInsteadOf = "gitlab:"
   pushInsteadOf = "git://gitlab.com/"
 
-[url "git://gitlab.com/"]
+[url "git@gitlab.com:"]
   insteadOf = "gitlab:"
 
 # AUR
@@ -101,6 +108,7 @@
 
 [interactive]
   diffFilter = delta --color-only
+  singleKey = true
 
 [init]
   defaultBranch = main
@@ -115,6 +123,15 @@
   tool = nvimdiff
 
 [push]
+  autoSetupRemote = true
   followTags = true
+
+[pull]
+  rebase = true
+
+[rebase]
+  autoStash = true
+  missingCommitsCheck = warn
+
 [gpg]
 	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
