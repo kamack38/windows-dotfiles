@@ -1,6 +1,6 @@
 ---@type NvPluginSpec[]
 return {
-  ----------------------------------- LSP PLugins -----------------------------------
+  ----------------------------------- LSP Plugins -----------------------------------
 
   -- Add more lsp servers
   {
@@ -34,6 +34,7 @@ return {
         "tsx",
 
         "json",
+        "jsonc",
         "yaml",
         "toml",
 
@@ -72,9 +73,9 @@ return {
             ["if"] = "@function.inner",
           },
           selection_modes = {
-            ["@parameter.outer"] = "v", -- charwise
-            ["@function.outer"] = "V", -- linewise
-            ["@class.outer"] = "<c-v>", -- blockwise
+            ["@parameter.outer"] = "v", -- char wise
+            ["@function.outer"] = "V", -- line wise
+            ["@class.outer"] = "<c-v>", -- block wise
           },
           -- If you set this to `true` (default is `false`) then any textobject is
           -- extended to include preceding or succeeding whitespace. Succeeding
@@ -104,29 +105,31 @@ return {
   },
 
   -- Autocompletion
-  {
-    "hrsh7th/nvim-cmp",
-    url = "https://github.com/iguanacucumber/magazine.nvim",
-    opts = {
-      sources = {
-        { name = "luasnip" },
-        { name = "nvim_lsp" },
-        { name = "buffer" },
-        { name = "nvim_lua" },
-        { name = "path" },
-        { name = "crates" },
-      },
-      experimental = {
-        ghost_text = true,
-      },
-    },
-  },
+  { import = "nvchad.blink.lazyspec" },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   url = "https://github.com/iguanacucumber/magazine.nvim",
+  --   opts = {
+  --     sources = {
+  --       { name = "luasnip" },
+  --       { name = "nvim_lsp" },
+  --       { name = "buffer" },
+  --       { name = "nvim_lua" },
+  --       { name = "path" },
+  --       { name = "crates" },
+  --     },
+  --     experimental = {
+  --       ghost_text = true,
+  --     },
+  --   },
+  -- },
 
   -- Show all problems in your code
   {
     "folke/trouble.nvim",
     cmd = { "Trouble", "TroubleToggle", "TroubleClose", "TroubleRefresh" },
     config = function()
+      dofile(vim.g.base46_cache .. "trouble")
       require("trouble").setup()
     end,
   },
@@ -137,14 +140,11 @@ return {
   {
     "Saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("crates").setup {
-        popup = {
-          autofocus = true,
-        },
-      }
-    end,
+    opts = {
+      popup = {
+        autofocus = true,
+      },
+    },
   },
 
   -- Quicker NPM package managing
@@ -152,9 +152,7 @@ return {
     "vuki656/package-info.nvim",
     event = { "BufRead package.json" },
     dependencies = { "MunifTanjim/nui.nvim" },
-    config = function()
-      require("package-info").setup()
-    end,
+    opts = {},
   },
 
   -- LSP utils (rename, code actions, peek definition)
@@ -162,22 +160,20 @@ return {
     "jinzhongjia/LspUI.nvim",
     event = "LspAttach",
     branch = "main",
-    config = function()
-      require("LspUI").setup {
-        prompt = false,
-        code_action = {
-          enable = true,
-          command_enable = true,
-          icon = "💡",
-          keybind = {
-            exec = "<CR>",
-            prev = "k",
-            next = "j",
-            quit = "q",
-          },
+    opts = {
+      prompt = false,
+      code_action = {
+        enable = true,
+        command_enable = true,
+        icon = "💡",
+        keybind = {
+          exec = "<CR>",
+          prev = "k",
+          next = "j",
+          quit = "q",
         },
-      }
-    end,
+      },
+    },
   },
 
   -- Typst highlighting
@@ -205,9 +201,7 @@ return {
   {
     "axelvc/template-string.nvim",
     ft = { "typescript", "javascript", "typescriptreact", "javascriptreact", "python", "html" },
-    config = function()
-      require("template-string").setup()
-    end,
+    opts = {},
   },
 
   -- TS context aware comments
@@ -220,14 +214,24 @@ return {
   -- Markdown previewer
   {
     "OXY2DEV/markview.nvim",
-    ft = "markdown",
-    branch = "main",
+    ft = { "markdown", "typst", "Avante" },
     config = function()
       local presets = require "markview.presets"
       require("markview").setup {
-        modes = { "n", "no", "i" },
-        hybrid_modes = { "i" },
+        preview = {
+          modes = { "n", "no", "i" },
+          hybrid_modes = { "i" },
+        },
         checkboxes = presets.checkboxes.nerd,
+        markdown_inline = {
+          hyperlinks = {
+            ["neovim%.io"] = {
+              priority = 9999,
+              icon = " ",
+              hl = "MarkviewPalette4Fg",
+            },
+          },
+        },
       }
     end,
     dependencies = {
@@ -262,9 +266,11 @@ return {
           },
         },
       },
+      sync_root_with_cwd = true,
+      respect_buf_cwd = true,
       update_focused_file = {
         enable = true,
-        update_cwd = true,
+        update_root = true,
       },
     },
   },
@@ -273,9 +279,6 @@ return {
   {
     "svampkorg/moody.nvim",
     event = { "ModeChanged", "BufWinEnter", "WinEnter" },
-    dependencies = {
-      "NvChad/base46",
-    },
     opts = {
       blends = {
         normal = 0.15,
@@ -301,7 +304,7 @@ return {
       },
       -- disable filetypes here. Add for example "TelescopePrompt" to
       -- not have any coloured cursorline for the telescope prompt.
-      disabled_filetypes = { "TelescopePrompt" },
+      disabled_filetypes = { "TelescopePrompt", "nvdash" },
       -- you can turn on or off bold characters for the line numbers
       bold_nr = true,
     },
@@ -310,68 +313,39 @@ return {
   -- Show whitespace symbols in visual mode
   {
     "mcauley-penney/visual-whitespace.nvim",
-    event = "ModeChanged *:[vV]",
-    opts = {
-      highlight = { link = "VisualWhitespace" },
-    },
-  },
-
-  -- Syntax highlighted folds
-  {
-    "kevinhwang91/nvim-ufo",
-    dependencies = { "kevinhwang91/promise-async" },
-    event = "VeryLazy",
-    opts = {
-      provider_selector = function()
-        return { "treesitter", "indent" }
-      end,
-      open_fold_hl_timeout = 200,
-      close_fold_kinds_for_ft = {
-        default = { "imports", "comment" },
-      },
-      preview = {
-        win_config = {
-          border = { "", "─", "", "", "", "─", "", "" },
-          -- winhighlight = "Normal:Folded",
-          winblend = 0,
-        },
-      },
-      enable_get_fold_virt_text = true,
-    },
-    init = function()
-      vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-      vim.o.foldlevel = 40
-      vim.o.foldlevelstart = 99
-      vim.o.foldenable = true
-    end,
-    config = function(_, opts)
-      local handler = function(virtText, _, endLnum, _, _, ctx)
-        local endVirtText = ctx.get_fold_virt_text(endLnum)
-        endVirtText[1][1] = endVirtText[1][1]:gsub("^%s*(.-)%s*$", "%1")
-        table.insert(virtText, { " ⋯ ", "NonText" })
-        for _, chunk in ipairs(endVirtText) do
-          table.insert(virtText, chunk)
-        end
-        return virtText
-      end
-      opts["fold_virt_text_handler"] = handler
-      require("ufo").setup(opts)
-    end,
+    event = "ModeChanged *:[vV\22]",
   },
 
   -- Mark signatures
   {
-    "kamack38/marks.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("marks").setup {
-        mappings = {
-          set = false,
-          toggle_mark = "m",
-        },
-        force_write_shada = true,
-      }
-    end,
+    "2KAbhishek/markit.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = {
+      mappings = {
+        set = false,
+        toggle_mark = "m",
+      },
+    },
+  },
+
+  -- Remove the press enter prompt
+  {
+    "jake-stewart/auto-cmdheight.nvim",
+    lazy = false,
+    opts = {
+      -- max cmdheight before displaying hit enter prompt.
+      max_lines = 5,
+
+      -- number of seconds until the cmdheight can restore.
+      duration = 2,
+
+      -- whether key press is required to restore cmdheight.
+      remove_on_key = true,
+
+      -- always clear the cmdline after duration and key press.
+      -- by default it will only happen when cmdheight changed.
+      clear_always = false,
+    },
   },
 
   ------------------------------------ Bindings -------------------------------------
@@ -389,9 +363,7 @@ return {
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup {}
-    end,
+    opts = {},
   },
 
   -- Easily move lines
@@ -410,6 +382,10 @@ return {
   -- Fast search plugin
   {
     "ggandor/leap.nvim",
+    config = function()
+      dofile(vim.g.base46_cache .. "leap")
+      require("leap").setup {}
+    end,
     dependencies = {
       { "tpope/vim-repeat" },
     },
@@ -419,10 +395,34 @@ return {
   {
     "chrisgrieser/nvim-various-textobjs",
     event = "UIEnter",
-    opts = { useDefaultKeymaps = true },
+    opts = {
+      keymaps = {
+        useDefaults = true,
+      },
+    },
   },
 
   ------------------------------------- Other ---------------------------------------
+
+  -- AI features
+  -- {
+  --   "yetone/avante.nvim",
+  --   event = "VeryLazy",
+  --   version = false,
+  --   config = function()
+  --     dofile(vim.g.base46_cache .. "avante")
+  --     require("configs.avante")
+  --   end,
+  --   build = "make",
+  --   dependencies = {
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "stevearc/dressing.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "MunifTanjim/nui.nvim",
+  --     "hrsh7th/nvim-cmp",
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  -- },
 
   -- Nerdfont symbol picker
   {
@@ -444,9 +444,7 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     cmd = { "Octo" },
-    config = function()
-      require("octo").setup()
-    end,
+    opts = {},
   },
 
   -- Track the time you're spending with your code
@@ -468,11 +466,9 @@ return {
   {
     "karb94/neoscroll.nvim",
     keys = { "<C-d>", "<C-u>" },
-    config = function()
-      require("neoscroll").setup {
-        duration_multiplier = 0.6,
-      }
-    end,
+    opts = {
+      duration_multiplier = 0.6,
+    },
   },
 
   -- Organize your work with comments
@@ -481,6 +477,7 @@ return {
     event = { "VeryLazy" },
     dependencies = "nvim-lua/plenary.nvim",
     config = function()
+      dofile(vim.g.base46_cache .. "todo")
       require("todo-comments").setup()
     end,
   },
@@ -490,22 +487,23 @@ return {
     "CRAG666/code_runner.nvim",
     dependencies = "nvim-lua/plenary.nvim",
     cmd = { "RunCode", "RunFile", "RunProject" },
-    config = function()
-      require("code_runner").setup {
-        filetype = {
-          cpp = 'cd $dir && mkdir -p "$dir/bin" && g++ "$dir/$fileName" -o "$dir/bin/$fileNameWithoutExt" -std=c++11 -fsanitize=address,undefined && "$dir/bin/$fileNameWithoutExt"',
-          tex = 'mkdir -p "$dir/bin" && pdflatex -output-directory="$dir/bin" "$dir/$fileName"',
-          rust = 'cargo run "$dir/$fileName"',
-        },
-        startinsert = true,
-      }
-    end,
+    opts = {
+      filetype = {
+        cpp = 'cd "$dir" && mkdir -p "$dir/bin" && g++ "$dir/$fileName" -o "$dir/bin/$fileNameWithoutExt" -std=c++11 -fsanitize=address,undefined && "$dir/bin/$fileNameWithoutExt"',
+        tex = 'mkdir -p "$dir/bin" && pdflatex -output-directory="$dir/bin" "$dir/$fileName"',
+        rust = 'cargo run "$dir/$fileName"',
+      },
+      startinsert = true,
+    },
   },
 
   -- Set project root correctly
   {
-    "ahmedkhalf/project.nvim",
+    "DrKJeff16/project.nvim",
     lazy = false,
+    enabled = function()
+      return vim.fn.has "win32" == 0
+    end,
     config = function()
       require("project_nvim").setup {
         patterns = { ">.config" },

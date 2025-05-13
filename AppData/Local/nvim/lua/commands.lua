@@ -64,41 +64,85 @@ create_cmd("TexPreview", function()
   })
 end, {})
 
--- Cargo.toml keybindigs
-augroup("Cargo.toml", { clear = true })
-autocmd("BufRead", {
-  group = "Cargo.toml",
-  pattern = "*Cargo.toml",
-  callback = function(opts)
-    local crates = require "crates"
-    local map = vim.keymap.set
-    map("n", "<leader>ct", crates.toggle, { buffer = opts.buf, desc = "Crates Toggle" })
-    map("n", "<leader>cr", crates.reload, { buffer = opts.buf, desc = "Crates Reload" })
-    map("n", "<leader>cv", crates.show_versions_popup, { buffer = opts.buf, desc = "Crates Versions popup" })
-    map("n", "<leader>cf", crates.show_features_popup, { buffer = opts.buf, desc = "Crates Features popup" })
-    map("n", "<leader>cd", crates.show_dependencies_popup, { buffer = opts.buf, desc = "Crates Dependencies popup" })
-    map("n", "<leader>cu", crates.update_crate, { buffer = opts.buf, desc = "Crates Update crate" })
-    map("n", "<leader>cU", crates.upgrade_crate, { buffer = opts.buf, desc = "Crates Upgrade crate" })
-    map("n", "<leader>ca", crates.update_all_crates, { buffer = opts.buf, desc = "Crates Update all crates" })
-    map("n", "<leader>cA", crates.upgrade_all_crates, { buffer = opts.buf, desc = "Crates Upgrade all crates" })
-    map("n", "<leader>cH", crates.open_homepage, { buffer = opts.buf, desc = "Crates Open homepage" })
-    map("n", "<leader>cR", crates.open_repository, { buffer = opts.buf, desc = "Crates Open repository" })
-    map("n", "<leader>cD", crates.open_documentation, { buffer = opts.buf, desc = "Crates Open documentation" })
-    map("n", "<leader>cC", crates.open_crates_io, { buffer = opts.buf, desc = "Crates Open crates.io" })
+-- Show Nvdash when no buffers are opened
+autocmd("BufDelete", {
+  callback = function()
+    local bufs = vim.t.bufs
+    if #bufs == 1 and vim.api.nvim_buf_get_name(bufs[1]) == "" then
+      vim.cmd "Nvdash"
+    end
   end,
 })
 
--- package.json keybindigs
-augroup("package.json", { clear = true })
-autocmd("BufRead", {
-  group = "package.json",
-  pattern = "*package.json",
-  callback = function(opts)
-    local package = require "package-info"
-    local map = vim.keymap.set
-    map("n", "<leader>nu", package.update, { buffer = opts.buf, desc = "Package.json Update selected package" })
-    map("n", "<leader>nd", package.delete, { buffer = opts.buf, desc = "Package.json Delete selected package" })
-    map("n", "<leader>ni", package.install, { buffer = opts.buf, desc = "Package.json Install new package" })
-    map("n", "<leader>np", package.change_version, { buffer = opts.buf, desc = "Package.json Change package version" })
+-- Restore cursor position on file open
+autocmd("BufReadPost", {
+  pattern = "*",
+  callback = function()
+    local line = vim.fn.line "'\""
+    if
+        line > 1
+        and line <= vim.fn.line "$"
+        and vim.bo.filetype ~= "commit"
+        and vim.bo.filetype ~= "gitcommit"
+        and vim.fn.index({ "xxd", "gitrebase" }, vim.bo.filetype) == -1
+    then
+      vim.cmd 'normal! g`"'
+    end
+  end,
+})
+
+local user_cmds = vim.api.nvim_create_augroup("user_cmds", { clear = true })
+
+local function update_git_env_for_dotfiles()
+  -- Auto change ENV variables to enable
+  -- bare git repository for dotfiles after
+  -- loading saved session
+  local home = vim.fn.expand("~")
+  local git_dir = home .. "/.dotfiles"
+
+  if vim.env.GIT_DIR ~= nil and vim.env.GIT_DIR ~= git_dir then
+    return
+  end
+
+  -- check dotfiles dir exists on current machine
+  if vim.fn.isdirectory(git_dir) ~= 1 then
+    vim.env.GIT_DIR = nil
+    vim.env.GIT_WORK_TREE = nil
+    return
+  end
+
+  -- check if the current working directory should belong to dotfiles
+  local cwd = vim.loop.cwd()
+  if vim.startswith(cwd, home .. "/.config/") or cwd == home or cwd == home .. "/.local/bin" then
+    if vim.env.GIT_DIR == nil then
+      -- export git location into ENV
+      vim.env.GIT_DIR = git_dir
+      vim.env.GIT_WORK_TREE = home
+    end
+  else
+    if vim.env.GIT_DIR == git_dir then
+      -- unset variables
+      vim.env.GIT_DIR = nil
+      vim.env.GIT_WORK_TREE = nil
+    end
+  end
+end
+
+vim.api.nvim_create_autocmd("DirChanged", {
+  pattern = { "*" },
+  group = user_cmds,
+  desc = "Update git env for dotfiles after changing directory",
+  callback = function()
+    update_git_env_for_dotfiles()
+  end,
+})
+
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = { "SessionLoadPost" },
+  group = user_cmds,
+  desc = "Update git env for dotfiles after loading session",
+  callback = function()
+    update_git_env_for_dotfiles()
   end,
 })
