@@ -489,7 +489,7 @@ return {
     cmd = { "RunCode", "RunFile", "RunProject" },
     opts = {
       filetype = {
-        cpp = 'cd "$dir" && mkdir -p "$dir/bin" && g++ "$dir/$fileName" -o "$dir/bin/$fileNameWithoutExt" -std=c++11 -fsanitize=address,undefined && "$dir/bin/$fileNameWithoutExt"',
+        cpp = 'cd "$dir" && mkdir -p "$dir/bin" -Force > $null && g++ "$dir\\$fileName" -std=c++11 -o "$dir\\bin\\$fileNameWithoutExt.exe" && & "$dir\\bin\\$fileNameWithoutExt.exe"',
         tex = 'mkdir -p "$dir/bin" && pdflatex -output-directory="$dir/bin" "$dir/$fileName"',
         rust = 'cargo run "$dir/$fileName"',
       },
