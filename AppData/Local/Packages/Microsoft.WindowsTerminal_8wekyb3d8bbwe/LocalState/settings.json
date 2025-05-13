@@ -6,39 +6,11 @@
         {
             "command": 
             {
-                "action": "copy",
-                "singleLine": false
+                "action": "sendInput",
+                "input": "\u0017"
             },
-            "id": "User.copy.644BA8F2",
-            "keys": "ctrl+c"
-        },
-        {
-            "command": "experimental.openScratchpad",
-            "id": "User.experimental.openScratchpad"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+shift+w"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+shift+t"
-        },
-        {
-            "command": "unbound",
-            "keys": "alt+shift+s"
-        },
-        {
-            "command": "unbound",
-            "keys": "alt+shift+c"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+s"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+shift+s"
+            "id": "User.sendInput.817164EE",
+            "name": "Delete previous word"
         },
         {
             "command": 
@@ -46,25 +18,27 @@
                 "action": "sendInput",
                 "input": "cls\r"
             },
-            "id": "User.sendInput.8D41B6BB",
-            "keys": "alt+c"
+            "id": "User.sendInput.8D41B6BB"
+        },
+        {
+            "command": "experimental.openScratchpad",
+            "id": "User.experimental.openScratchpad"
         },
         {
             "command": 
             {
-                "action": "newTab"
+                "action": "copy",
+                "singleLine": false
             },
-            "id": "User.newTab.5DEADB41",
-            "keys": "ctrl+t",
-            "name": "New tab"
+            "id": "User.copy.644BA8F2"
         },
         {
-            "command": 
-            {
-                "action": "quakeMode"
-            },
-            "id": "User.quakeMode.F1E129A4",
-            "keys": "alt+q"
+            "command": "closePane",
+            "id": "User.closePane"
+        },
+        {
+            "command": "openNewTabDropdown",
+            "id": "User.openNewTabDropdown"
         },
         {
             "command": 
@@ -73,48 +47,38 @@
                 "split": "auto",
                 "splitMode": "duplicate"
             },
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+shift+d"
-        },
-        {
-            "command": "openNewTabDropdown",
-            "id": "User.openNewTabDropdown",
-            "keys": "alt+n"
-        },
-        {
-            "command": "closePane",
-            "id": "User.closePane",
-            "keys": "ctrl+w"
-        },
-        {
-            "command": "find",
-            "id": "User.find",
-            "keys": "ctrl+f"
+            "id": "User.splitPane.A6751878"
         },
         {
             "command": "paste",
-            "id": "User.paste",
-            "keys": "ctrl+v"
-        },
-        {
-            "command": "toggleAlwaysOnTop",
-            "id": "User.toggleAlwaysOnTop",
-            "keys": "alt+t"
+            "id": "User.paste"
         },
         {
             "command": 
             {
-                "action": "sendInput",
-                "input": "\u0017"
+                "action": "newTab"
             },
-            "id": "User.sendInput.817164EE",
-            "keys": "ctrl+backspace",
-            "name": "Delete previous word"
+            "id": "User.newTab.5DEADB41",
+            "name": "New tab"
+        },
+        {
+            "command": 
+            {
+                "action": "quakeMode"
+            },
+            "id": "User.quakeMode.F1E129A4"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
+        },
+        {
+            "command": "toggleAlwaysOnTop",
+            "id": "User.toggleAlwaysOnTop"
         },
         {
             "command": "togglePaneZoom",
-            "id": "User.togglePaneZoom",
-            "keys": "alt+z"
+            "id": "User.togglePaneZoom"
         },
         {
             "command": 
@@ -123,13 +87,11 @@
                 "input": "\u001bd"
             },
             "id": "User.sendInput.53EE635F",
-            "keys": "ctrl+delete",
             "name": "Delete next word"
         },
         {
             "command": "toggleFocusMode",
-            "id": "User.toggleFocusMode",
-            "keys": "alt+shift+f"
+            "id": "User.toggleFocusMode"
         },
         {
             "command": 
@@ -137,8 +99,7 @@
                 "action": "sendInput",
                 "input": "cd ..\r"
             },
-            "id": "User.sendInput.9CC2D8C2",
-            "keys": "ctrl+up"
+            "id": "User.sendInput.9CC2D8C2"
         },
         {
             "command": 
@@ -153,6 +114,89 @@
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "initialCols": 126,
     "initialRows": 34,
+    "keybindings": 
+    [
+        {
+            "id": null,
+            "keys": "alt+shift+c"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+w"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+t"
+        },
+        {
+            "id": "User.sendInput.8D41B6BB",
+            "keys": "alt+c"
+        },
+        {
+            "id": null,
+            "keys": "alt+shift+s"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+s"
+        },
+        {
+            "id": "User.openNewTabDropdown",
+            "keys": "alt+n"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+s"
+        },
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.newTab.5DEADB41",
+            "keys": "ctrl+t"
+        },
+        {
+            "id": "User.quakeMode.F1E129A4",
+            "keys": "alt+q"
+        },
+        {
+            "id": "User.closePane",
+            "keys": "ctrl+w"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+f"
+        },
+        {
+            "id": "User.toggleAlwaysOnTop",
+            "keys": "alt+t"
+        },
+        {
+            "id": "User.sendInput.817164EE",
+            "keys": "ctrl+backspace"
+        },
+        {
+            "id": "User.sendInput.53EE635F",
+            "keys": "ctrl+delete"
+        },
+        {
+            "id": "User.togglePaneZoom",
+            "keys": "alt+z"
+        },
+        {
+            "id": "User.toggleFocusMode",
+            "keys": "alt+shift+f"
+        },
+        {
+            "id": "User.sendInput.9CC2D8C2",
+            "keys": "ctrl+up"
+        }
+    ],
     "newTabMenu": 
     [
         {
@@ -203,6 +247,12 @@
             {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "name": "Windows PowerShell"
+            },
+            {
+                "guid": "{47302f9c-1ac4-566c-aa3e-8cf29889d6ab}",
+                "hidden": false,
+                "name": "Nushell",
+                "source": "nu"
             }
         ]
     },
@@ -301,7 +351,6 @@
             "yellow": "#A2734C"
         }
     ],
-    "startOnUserLogin": false,
     "theme": "dark",
     "themes": [],
     "windowingBehavior": "useAnyExisting"

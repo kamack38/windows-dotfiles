@@ -1,5 +1,5 @@
 # Modules
-Import-Module posh-git, npm-completion, nvm-completion, "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1", Terminal-Icons, PSReadLine
+Import-Module posh-git, "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1", PSReadLine
 $env:POSH_GIT_ENABLED = $true
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
