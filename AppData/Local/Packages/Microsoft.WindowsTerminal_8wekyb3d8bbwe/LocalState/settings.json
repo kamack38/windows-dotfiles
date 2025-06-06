@@ -111,22 +111,18 @@
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "defaultProfile": "{47302f9c-1ac4-566c-aa3e-8cf29889d6ab}",
     "initialCols": 126,
     "initialRows": 34,
     "keybindings": 
     [
         {
             "id": null,
-            "keys": "alt+shift+c"
-        },
-        {
-            "id": null,
             "keys": "ctrl+shift+w"
         },
         {
             "id": null,
-            "keys": "ctrl+shift+t"
+            "keys": "alt+shift+c"
         },
         {
             "id": "User.sendInput.8D41B6BB",
@@ -134,19 +130,23 @@
         },
         {
             "id": null,
-            "keys": "alt+shift+s"
+            "keys": "ctrl+shift+t"
         },
         {
             "id": null,
-            "keys": "ctrl+s"
+            "keys": "alt+shift+s"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
         },
         {
             "id": "User.openNewTabDropdown",
             "keys": "alt+n"
         },
         {
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+shift+d"
+            "id": null,
+            "keys": "ctrl+s"
         },
         {
             "id": null,
@@ -225,7 +225,7 @@
             {
                 "backgroundImage": "%USERPROFILE%/.config/themes/backgrounds/pwsh.png",
                 "backgroundImageOpacity": 0.15,
-                "commandline": "pwsh.exe -nologo -noexit -command fastfetch",
+                "commandline": "pwsh.exe -nologo",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",

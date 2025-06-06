@@ -1,5 +1,5 @@
 # Modules
-Import-Module posh-git, "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1", PSReadLine
+Import-Module posh-git, PSReadLine
 $env:POSH_GIT_ENABLED = $true
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
@@ -43,5 +43,5 @@ function weather {
   Invoke-RestMethod http://wttr.in/$param1
 }
 function ip { 'Private Adress: ' + (Get-NetIPAddress | Where-Object { $_.AddressFamily -eq 'IPv4' -and $_.PrefixOrigin -eq 'Dhcp' }).IPAddress; 'Public Adress: ' + (curl -s ifconfig.me) }
-
-oh-my-posh --init --shell pwsh --config ~/.config/oh-my-posh/kamack.omp.json | Invoke-Expression
+#
+oh-my-posh init pwsh --config ~/.config/oh-my-posh/kamack.omp.json | Invoke-Expression

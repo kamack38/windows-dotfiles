@@ -26,11 +26,11 @@
         },
         { "type": "kernel", "key": "󰍛 ", "keyColor": "red" },
         { "type": "uptime", "key": "󱑎 ", "keyColor": "blue" },
-        {
-            "type": "packages",
-            "key": "󰏗 ",
-            "keyColor": "green"
-        },
+        // {
+        //     "type": "packages",
+        //     "key": "󰏗 ",
+        //     "keyColor": "green"
+        // },
         { "type": "shell", "key": " ", "keyColor": "blue" },
         { "type": "memory", "key": " ", "keyColor": "magenta" },
         "break",
