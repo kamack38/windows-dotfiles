@@ -2,15 +2,15 @@ local options = {
   lsp_fallback = true,
 
   formatters = {
-    ["clang-format"] = {
-      append_args = { "--style", "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 100 }" },
-    },
     shfmt = {
       prepend_args = { "-i", "0" },
     },
     biome = {
       append_args = { "--indent-style=space" },
-    }
+    },
+    ["deno_fmt"] = {
+      append_args = { "--line-width", "100" },
+    },
   },
 
   formatters_by_ft = {
@@ -28,7 +28,6 @@ local options = {
     typst = { "typstyle" },
     sql = { "sqruff" },
 
-    cpp = { "clang-format" },
     rust = { "rustfmt" },
     nix = { "nixfmt" },
     lua = { "stylua" },

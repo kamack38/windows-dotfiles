@@ -1,4 +1,5 @@
 local servers = {
+  bashls = {},
   clangd = {},
   cssls = {},
   -- emmet_ls = {},
@@ -15,11 +16,15 @@ local servers = {
   -- },
   rust_analyzer = {
     filetypes = { "rust" },
-    settings = {
-      ["rust_analyzer"] = {
-        cargo = {
-          allFeatures = true,
-        },
+    ["rust-analyzer"] = {
+      checkOnSave = true,
+      check = {
+        enable = true,
+        command = "clippy",
+        features = "all",
+      },
+      procMacro = {
+        enable = true,
       },
     },
   },
@@ -32,7 +37,7 @@ local servers = {
       exportPdf = "onType",
       outputPath = "$root/target/$dir/$name",
     },
-  }
+  },
 }
 
 for name, opts in pairs(servers) do
