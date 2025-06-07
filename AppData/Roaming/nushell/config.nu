@@ -6,6 +6,7 @@ $env.EDITOR = "nvim"
 # Aliases
 alias n = nvim
 alias g = git
+alias exp = explorer.exe
 
 alias ll = ls -l
 alias la = ls -a

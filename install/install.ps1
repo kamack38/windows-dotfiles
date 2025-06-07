@@ -50,6 +50,9 @@ else {
     Write-Host "Chocolatey is already installed!" -ForegroundColor green
 }
 
+Write-Host "Settting environment variables..." -ForegroundColor yellow
+[System.Environment]::SetEnvironmentVariable("WAKATIME_HOME", "$HOME\.config\wakatime", "User")
+
 Write-Host "Installing programs..." -ForegroundColor yellow
 
 # Disable confirmation
