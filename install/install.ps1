@@ -68,6 +68,7 @@ choco install nvm.install --limit-output
 choco install gpg4win --limit-output
 choco install winrar --limit-output
 choco install powershell-core --params '"/CleanUpPath"' --limit-output
+choco install nushell --limit-output
 choco install mpv.install --limit-output
 choco install yt-dlp --limit-output
 choco install ffmpeg --limit-output
@@ -157,8 +158,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIGHwYJKoZIhvcNAQcCoIIGEDCCBgwCAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCCyRvSPINlFPfsI
-# rku7sNTNsUOJ+km16Bt6J5ruhJKfi6CCA2YwggNiMIICSqADAgECAhB36Jox1p+m
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCBw+R2/BQ6phTE2
+# CxORw9/7lt6w8ixj84sAmYB+U+wpDaCCA2YwggNiMIICSqADAgECAhB36Jox1p+m
 # oUV8lSg8nWQkMA0GCSqGSIb3DQEBCwUAMEkxHTAbBgNVBAMMFEtyenlzenRvZiBN
 # YWNraWV3aWN6MSgwJgYJKoZIhvcNAQkBFhlrYW1hY2szOC5iaXpuZXNAZ21haWwu
 # Y29tMB4XDTIxMDgwNzE5MTYxMVoXDTI5MTIzMTIyMDAwMFowSTEdMBsGA1UEAwwU
@@ -181,11 +182,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # YW1hY2szOC5iaXpuZXNAZ21haWwuY29tAhB36Jox1p+moUV8lSg8nWQkMA0GCWCG
 # SAFlAwQCAQUAoIGEMBgGCisGAQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcN
 # AQkDMQwGCisGAQQBgjcCAQQwHAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUw
-# LwYJKoZIhvcNAQkEMSIEIJ3MdGnP0DwAxu6SW/2Ul6xFxgQ5yaNXV299jS3KBFgw
-# MA0GCSqGSIb3DQEBAQUABIIBADpC4xGm7jWtkGUkBPitTqr6HIBGzt4rf8Zb//i0
-# We9bnKXKcECStx/7S/5Q1dOnGiZiC0PkR17Mx06fGeEZJwMQK+BP1qdEWEUUtP9M
-# u7NiL5Km29X+lc60UWjEIaUmSYGaspShIxoJsHnq/avzK+4etugg7MPHWZMX8FdM
-# MLXJgyv3orOxAbCvGeim15vgSSvaqdUnnPoi9CHXca8/J5zSXutHGNEgZf+x8msN
-# uSvXjnqWgU1IQ1eCyhIKcYqRQ92fxh+01xo9IWrDzy7OGo9cIPmCFjSXXb2MY0f9
-# aCguD/M7O+CcseOxuHo1BamYQS98jHn8+vCrb87EiqFdzXE=
+# LwYJKoZIhvcNAQkEMSIEIMy4+8ifd/pA1iobaF0is9MiYok1Phc62xsjZAVTTDOp
+# MA0GCSqGSIb3DQEBAQUABIIBACkgWZGeWMepklOJYszYnAvct34FWBN+TkOUc1QJ
+# gcETxMW9A/SwUmd30tskVpvDTPT60VgqhgGFtIf6mbOYY2k/IV9o8gv6YdooiqH9
+# yGp8rustlZL5/qIE2EKa23XhwOZAlEFlBpIBPTudawemGyqs6mukSKL22Ge6j7BT
+# 2RptUmBBlFC852gE1uYxZUt5+wQxwMp7RjKoY6P0oaU8IJMHMxgD4qT2hQg0ISBO
+# iM7byLi3ARmiC1GLM+FpKTJucrKG3Oz4sURa1aTfut4pRUfajFg+xDjCOzky363w
+# TW4l5RHGnP1FP1qQJhU1C/5jQmncSONuduj0dWN+YUu89gs=
 # SIG # End signature block
