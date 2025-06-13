@@ -102,13 +102,6 @@ Write-Host "Refreshing environment variables..." -ForegroundColor yellow
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
 Write-Host "Environment variables has been refreshed!" -ForegroundColor green
 
-# Install node
-nvm install lts
-nvm use lts
-
-# NPM Packages
-npm i -g git-cz
-
 # Install powershell modules
 pwsh.exe -Command Set-PSRepository PSGallery -InstallationPolicy Trusted
 pwsh.exe -Command Install-Module -Name posh-git -Scope CurrentUser -Force
@@ -118,7 +111,7 @@ pwsh.exe -Command Install-Module -Name PSReadLine -AllowPrerelease -Scope Curren
 pwsh.exe -Command Install-Module -Name nvm-completion -Scope CurrentUser -Force
 
 # Better Discord
-Set-Location $HOME\Downloads\
+Set-Location "$HOME\Downloads"
 $ProgressPreference = 'SilentlyContinue'
 Write-Host "Downloading BetterDiscord Installer..." -ForegroundColor yellow
 Invoke-WebRequest -Uri "https://github.com/BetterDiscord/Installer/releases/download/v1.0.0-hotfix/BetterDiscord-Windows.exe" -o BetterDiscord.exe
@@ -158,8 +151,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIGHwYJKoZIhvcNAQcCoIIGEDCCBgwCAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCBw+R2/BQ6phTE2
-# CxORw9/7lt6w8ixj84sAmYB+U+wpDaCCA2YwggNiMIICSqADAgECAhB36Jox1p+m
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCB8adA8B3GOmdpC
+# ljjpp/ImjuQjAW0jZACMjAYN0E6QrKCCA2YwggNiMIICSqADAgECAhB36Jox1p+m
 # oUV8lSg8nWQkMA0GCSqGSIb3DQEBCwUAMEkxHTAbBgNVBAMMFEtyenlzenRvZiBN
 # YWNraWV3aWN6MSgwJgYJKoZIhvcNAQkBFhlrYW1hY2szOC5iaXpuZXNAZ21haWwu
 # Y29tMB4XDTIxMDgwNzE5MTYxMVoXDTI5MTIzMTIyMDAwMFowSTEdMBsGA1UEAwwU
@@ -182,11 +175,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # YW1hY2szOC5iaXpuZXNAZ21haWwuY29tAhB36Jox1p+moUV8lSg8nWQkMA0GCWCG
 # SAFlAwQCAQUAoIGEMBgGCisGAQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcN
 # AQkDMQwGCisGAQQBgjcCAQQwHAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUw
-# LwYJKoZIhvcNAQkEMSIEIMy4+8ifd/pA1iobaF0is9MiYok1Phc62xsjZAVTTDOp
-# MA0GCSqGSIb3DQEBAQUABIIBACkgWZGeWMepklOJYszYnAvct34FWBN+TkOUc1QJ
-# gcETxMW9A/SwUmd30tskVpvDTPT60VgqhgGFtIf6mbOYY2k/IV9o8gv6YdooiqH9
-# yGp8rustlZL5/qIE2EKa23XhwOZAlEFlBpIBPTudawemGyqs6mukSKL22Ge6j7BT
-# 2RptUmBBlFC852gE1uYxZUt5+wQxwMp7RjKoY6P0oaU8IJMHMxgD4qT2hQg0ISBO
-# iM7byLi3ARmiC1GLM+FpKTJucrKG3Oz4sURa1aTfut4pRUfajFg+xDjCOzky363w
-# TW4l5RHGnP1FP1qQJhU1C/5jQmncSONuduj0dWN+YUu89gs=
+# LwYJKoZIhvcNAQkEMSIEIJxUmAP9shuN8z9U1U6XrOiXGFurGeUTbfv540t/HRj9
+# MA0GCSqGSIb3DQEBAQUABIIBACtGwHVHPAoEd5vDNjqG/gBahl6+4xyATt2B44Qa
+# akmpKTj8E/It1QNjzJT5nyktzYUdTUxamiBAWGo/Q/QbCgPt+1Ioz4wiEW1D2LGJ
+# 3rx3qoNGFyEbI5ckY4Zio1AeuTERffSaO3HR6XqAP6kLYMiqygK6Vmi/ugxPhbk/
+# c3UeDlZoO+oV4ORBerirLg7fhiHFfaYXXSHzUdR6vnfAQwop7LbQQQPcgxeVJjBw
+# m+UcbkpewRLrqGU5jlKoFTBGqSozTyFwpdaJ4Cvlhx3zKHxbwx7sDciNXkLSRG1V
+# vx3m+Kle+VLNBcBZcmqUOFZnBnLR+qXnNV5OHqW8VNOWUp8=
 # SIG # End signature block
