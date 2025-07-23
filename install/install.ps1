@@ -64,7 +64,6 @@ choco install git.install --params "/NoShellIntegration /NoOpenSSH" --limit-outp
 choco install gh --limit-output
 choco install python3 --limit-output
 choco install openjdk --limit-output
-choco install nvm.install --limit-output
 choco install gpg4win --limit-output
 choco install winrar --limit-output
 choco install powershell-core --params '"/CleanUpPath"' --limit-output
