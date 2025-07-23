@@ -86,14 +86,11 @@ choco install openssh --limit-output
 choco install discord.install --limit-output
 choco install steam-client --limit-output
 choco install epicgameslauncher --limit-output
-choco install minecraft-launcher --limit-output
 choco install powertoys --limit-output
 choco install procmon --limit-output
 choco install nerd-fonts-firacode --limit-output
 choco install croc --limit-output
 choco install oh-my-posh --limit-output
-choco install cmake.install --ia 'ADD_CMAKE_TO_PATH=System' --limit-output
-choco install autohotkey --limit-output
 
 # Non-chocolatey programs
 
@@ -105,10 +102,8 @@ Write-Host "Environment variables has been refreshed!" -ForegroundColor green
 # Install powershell modules
 pwsh.exe -Command Set-PSRepository PSGallery -InstallationPolicy Trusted
 pwsh.exe -Command Install-Module -Name posh-git -Scope CurrentUser -Force
-pwsh.exe -Command Install-Module -Name npm-completion -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force
-pwsh.exe -Command Install-Module -Name nvm-completion -Scope CurrentUser -Force
 
 # Better Discord
 Set-Location "$HOME\Downloads"

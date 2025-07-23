@@ -37,11 +37,4 @@ function yt-dlp-best { yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvide
 function yt-dlp-mp3 { yt-dlp --extract-audio -f bestaudio[ext=mp3] --no-playlist $args }
 function yt-dlp-music { yt-dlp --extract-audio --audio-format mp3 --audio-quality 0 --embed-thumbnail -o "%(title)s.%(ext)s" $args }
 
-# Custom Functions
-function weather {
-  param ($param1)
-  Invoke-RestMethod http://wttr.in/$param1
-}
-function ip { 'Private Adress: ' + (Get-NetIPAddress | Where-Object { $_.AddressFamily -eq 'IPv4' -and $_.PrefixOrigin -eq 'Dhcp' }).IPAddress; 'Public Adress: ' + (curl -s ifconfig.me) }
-#
 oh-my-posh init pwsh --config ~/.config/oh-my-posh/kamack.omp.json | Invoke-Expression
