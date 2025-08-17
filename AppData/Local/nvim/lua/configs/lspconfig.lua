@@ -4,16 +4,18 @@ local servers = {
   cssls = {},
   -- emmet_ls = {},
   html = {},
-  nil_ls = {},
+  -- nil_ls = {},
   ruff = {},
   -- tailwindcss = {},
-  texlab = {},
+  -- texlab = {},
   ts_ls = {},
+  marksman = {},
   -- ltex_plus = {
   --   settings = {
   --     language = "pl-PL"
   --   }
   -- },
+  kotlin_lsp = {},
   rust_analyzer = {
     filetypes = { "rust" },
     ["rust-analyzer"] = {
@@ -30,6 +32,7 @@ local servers = {
   },
   biome = {
     single_file_support = true,
+    workspace_required = false,
   },
   tinymist = {
     single_file_support = true,

@@ -16,9 +16,19 @@ map("n", "<RightMouse>", function()
   require("menu").open(options, { mouse = true })
 end, {})
 
--- Telescope
-map("n", "<leader>wk", "<cmd> Telescope keymaps <CR>", { desc = "Telescope find keys" })
-map("n", "<leader>fn", "<cmd> Nerdy <CR>", { desc = "Find NerdFonts" })
+-- FzfLua
+map("n", "<leader>wk", "<cmd> FzfLua keymaps <CR>", { desc = "FzfLua find keys" })
+-- map("n", "<leader>fn", "<cmd> Nerdy <CR>", { desc = "Find NerdFonts" })
+map("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "FzfLua find files" })
+map("n", "<leader>fw", "<cmd>FzfLua live_grep<CR>", { desc = "FzfLua live grep" })
+map("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", { desc = "FzfLua find buffers" })
+map("n", "<leader>fh", "<cmd>FzfLua help_tags<CR>", { desc = "FzfLua help page" })
+map("n", "<leader>ma", "<cmd>FzfLua marks<CR>", { desc = "FzfLua find marks" })
+map("n", "<leader>fo", "<cmd>FzfLua oldfiles<CR>", { desc = "FzfLua find oldfiles" })
+map("n", "<leader>fz", "<cmd>FzfLua current_buffer_fuzzy_find<CR>", { desc = "FzfLua find in current buffer" })
+map("n", "<leader>cm", "<cmd>FzfLua git_commits<CR>", { desc = "FzfLua git commits" })
+map("n", "<leader>gt", "<cmd>FzfLua git_status<CR>", { desc = "FzfLua git status" })
+map("n", "<leader>fl", "<cmd>FzfLua highlights<CR>", { desc = "FzfLua highlights" })
 
 -- CodeRunner
 map("n", "<F7>", "<cmd> RunFile <CR>", { desc = "Run code" })
@@ -64,10 +74,28 @@ map({ "n", "t" }, "<A-e>", function()
 
   if current_height ~= vim.b.max_height then
     vim.b.default_height = current_height
-    vim.api.nvim_win_set_height(win_id, 100)
+    vim.api.nvim_win_set_height(win_id, vim.b.max_height)
     vim.b.max_height = vim.api.nvim_win_get_height(win_id)
   else
     vim.api.nvim_win_set_height(win_id, vim.b.default_height)
+  end
+end, { noremap = true, silent = true })
+
+-- Toggle split width between its default and its max
+map({ "n", "t" }, "<A-y>", function()
+  local win_id = vim.api.nvim_get_current_win()
+  local current_width = vim.api.nvim_win_get_width(win_id)
+
+  if vim.b.max_width == nil then
+    vim.b.max_width = 999
+  end
+
+  if current_width ~= vim.b.max_width then
+    vim.b.default_width = current_width
+    vim.api.nvim_win_set_width(win_id, vim.b.max_width)
+    vim.b.max_width = vim.api.nvim_win_get_width(win_id)
+  else
+    vim.api.nvim_win_set_width(win_id, vim.b.default_width)
   end
 end, { noremap = true, silent = true })
 
@@ -117,23 +145,27 @@ map("n", "gx", function()
   -- plugin only switches to visual mode when textobj is found
   local foundURL = vim.fn.mode():find "v"
   if not foundURL then
+    vim.cmd("tag " .. vim.fn.expand("<cword>"))
     return
   end
 
-  -- retrieve URL with the z-register as intermediary
-  vim.cmd.normal { '"zy', bang = true }
-  local url = vim.fn.getreg "z"
+  local url = vim.fn.getregion(vim.fn.getpos("."), vim.fn.getpos("v"), { type = "v" })[1]
   vim.ui.open(url)
+  vim.cmd.normal { "v", bang = true } -- leave visual mode
 end, { desc = "Open next available link" })
 
 -- Terminal
 map({ "n" }, "<leader>tt", ":terminal<CR>i")
 
--- LspUI
-map("n", "<leader>cn", "<cmd> LspUI rename <CR>", { desc = "LSP rename (change name)" })
-map("n", "<C-space>", "<cmd> LspUI code_action <CR>", { desc = "LSP show code action menu" })
--- map("n", "K", "<cmd> LspUI hover <CR>", { desc = "  LSP hover" })
-map("n", "gl", vim.diagnostic.open_float, { desc = "Show diagnostics" })
+-- Lsp
+map("n", "<leader>cn", require "nvchad.lsp.renamer", { desc = "LSP Rename" })
+map({ "n", "x" }, "<leader>ca", function()
+  require("tiny-code-action").code_action()
+end, { noremap = true, silent = true, desc = "LSP Code actions" })
+map("n", "gl", vim.diagnostic.open_float, { desc = "LSP Show diagnostics" })
+map("n", "K", function()
+  vim.lsp.buf.hover({ border = "rounded" })
+end, { desc = "LSP Hover" })
 
 -- Leap
 map("n", "<leader>s", function()
@@ -142,43 +174,3 @@ end, { desc = "Jump to search" })
 map("n", "<leader>S", function()
   require("leap").leap { offset = -1, target_windows = { vim.fn.win_getid() } }
 end, { desc = "Jump till search" })
-
-local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
-local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
-
--- Cargo.toml keybindigs
-augroup("Cargo.toml", { clear = true })
-autocmd("BufRead", {
-  group = "Cargo.toml",
-  pattern = "*Cargo.toml",
-  callback = function(opts)
-    local crates = require "crates"
-    map("n", "<leader>ct", crates.toggle, { buffer = opts.buf, desc = "Crates Toggle" })
-    map("n", "<leader>cr", crates.reload, { buffer = opts.buf, desc = "Crates Reload" })
-    map("n", "<leader>cv", crates.show_versions_popup, { buffer = opts.buf, desc = "Crates Versions popup" })
-    map("n", "<leader>cf", crates.show_features_popup, { buffer = opts.buf, desc = "Crates Features popup" })
-    map("n", "<leader>cd", crates.show_dependencies_popup, { buffer = opts.buf, desc = "Crates Dependencies popup" })
-    map("n", "<leader>cu", crates.update_crate, { buffer = opts.buf, desc = "Crates Update crate" })
-    map("n", "<leader>cU", crates.upgrade_crate, { buffer = opts.buf, desc = "Crates Upgrade crate" })
-    map("n", "<leader>ca", crates.update_all_crates, { buffer = opts.buf, desc = "Crates Update all crates" })
-    map("n", "<leader>cA", crates.upgrade_all_crates, { buffer = opts.buf, desc = "Crates Upgrade all crates" })
-    map("n", "<leader>cH", crates.open_homepage, { buffer = opts.buf, desc = "Crates Open homepage" })
-    map("n", "<leader>cR", crates.open_repository, { buffer = opts.buf, desc = "Crates Open repository" })
-    map("n", "<leader>cD", crates.open_documentation, { buffer = opts.buf, desc = "Crates Open documentation" })
-    map("n", "<leader>cC", crates.open_crates_io, { buffer = opts.buf, desc = "Crates Open crates.io" })
-  end,
-})
-
--- package.json keybindigs
-augroup("package.json", { clear = true })
-autocmd("BufRead", {
-  group = "package.json",
-  pattern = "*package.json",
-  callback = function(opts)
-    local package = require "package-info"
-    map("n", "<leader>nu", package.update, { buffer = opts.buf, desc = "Package.json Update selected package" })
-    map("n", "<leader>nd", package.delete, { buffer = opts.buf, desc = "Package.json Delete selected package" })
-    map("n", "<leader>ni", package.install, { buffer = opts.buf, desc = "Package.json Install new package" })
-    map("n", "<leader>np", package.change_version, { buffer = opts.buf, desc = "Package.json Change package version" })
-  end,
-})

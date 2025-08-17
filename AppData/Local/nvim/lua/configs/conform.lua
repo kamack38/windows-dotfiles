@@ -1,12 +1,10 @@
 local options = {
-  lsp_fallback = true,
-
   formatters = {
     shfmt = {
       prepend_args = { "-i", "0" },
     },
     biome = {
-      append_args = { "--indent-style=space" },
+      append_args = { "--config-path", (os.getenv "XDG_CONFIG_HOME") .. "/biome.json" }
     },
     ["deno_fmt"] = {
       append_args = { "--line-width", "100" },
@@ -34,11 +32,13 @@ local options = {
 
     sh = { "shfmt" },
     fish = { "fish_indent" },
+
+    kotlin = { "ktlint" },
   },
 
   format_on_save = {
     timeout_ms = 500,
-    lsp_format = "fallback",
+    lsp_format = "prefer",
   },
 }
 
