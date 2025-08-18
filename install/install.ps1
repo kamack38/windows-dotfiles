@@ -72,6 +72,7 @@ choco install mpv.install --limit-output
 choco install yt-dlp --limit-output
 choco install ffmpeg --limit-output
 choco install neovim --limit-output
+choco install fzf --limit-output
 choco install bat --limit-output
 choco install delta --limit-output
 choco install ripgrep --limit-output
