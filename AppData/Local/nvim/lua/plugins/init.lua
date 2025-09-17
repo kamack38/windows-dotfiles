@@ -253,6 +253,7 @@ return {
         ignore = false,
       },
       renderer = {
+        group_empty = true,
         icons = {
           git_placement = "after",
           glyphs = {
@@ -320,14 +321,14 @@ return {
 
   -- Mark signatures
   {
-    "2KAbhishek/markit.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    "dimtion/guttermarks.nvim",
     opts = {
-      mappings = {
-        set = false,
-        toggle_mark = "m",
+      special_mark = {
+        enabled = true,
+        priority = 9,
       },
     },
+    event = { "BufReadPre", "BufNewFile" },
   },
 
   -- Remove the press enter prompt
@@ -543,11 +544,18 @@ return {
   {
     "DrKJeff16/project.nvim",
     lazy = false,
-    config = function()
-      require("project").setup {
-        patterns = { ">.config" },
-      }
-    end,
+    opts = {
+      patterns = {
+        ">.config",
+        ".git",
+        ".github",
+        "_darcs",
+        ".hg",
+        ".bzr",
+        ".svn",
+        "Pipfile",
+      },
+    },
   },
 
   -- Don't open Neovim inside Neovim
