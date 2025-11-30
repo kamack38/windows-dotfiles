@@ -105,13 +105,6 @@ pwsh.exe -Command Install-Module -Name posh-git -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
 pwsh.exe -Command Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force
 
-# Better Discord
-Set-Location "$HOME\Downloads"
-$ProgressPreference = 'SilentlyContinue'
-Write-Host "Downloading BetterDiscord Installer..." -ForegroundColor yellow
-Invoke-WebRequest -Uri "https://github.com/BetterDiscord/Installer/releases/download/v1.0.0-hotfix/BetterDiscord-Windows.exe" -o BetterDiscord.exe
-Write-Host "BetterDiscord Installer has been downloaded!" -ForegroundColor green
-
 # LogitechG HUB
 Write-Host "Downloading LogitechG HUB Installer..." -ForegroundColor yellow
 Invoke-WebRequest -Uri "https://download01.logi.com/web/ftp/pub/techsupport/gaming/lghub_installer.exe" -o LGHUBInstaller.exe
