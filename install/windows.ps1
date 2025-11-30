@@ -125,6 +125,9 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Persona
 # Desktop: Set Custom Wallpaper
 Set-ItemProperty "HKCU:\Control Panel\Desktop" "WallPaper" "$HOME\.config\themes\backgrounds\Minimalist Code by Daze_.jpg"
 
+# Desktop: Decrease Menu Show Delay
+Set-ItemProperty "HKCU:\Control Panel\Desktop" "MenuShowDelay" -Value "200" -Type String
+
 # System: Enable Transparency
 Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" "EnableTransparency" 1
 
