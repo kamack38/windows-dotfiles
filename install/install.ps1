@@ -83,7 +83,7 @@ choco install fastfetch -r
 #Present by default on Windows 11
 #choco install microsoft-windows-terminal -r
 choco install openssh -r
-choco install discord.install -r
+choco install dorion -r
 choco install steam-client -r --pin
 choco install epicgameslauncher -r --pin
 choco install powertoys -r
@@ -145,8 +145,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIGHwYJKoZIhvcNAQcCoIIGEDCCBgwCAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCCscvXTKNd21AY6
-# a/dQHRRNQ6/hCK/mX9PPwlbGc9kZ26CCA2YwggNiMIICSqADAgECAhB36Jox1p+m
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCDMJdoGtPs+LpYw
+# DXXNo5bTN1ZubjJSy0ZD/xTAi70576CCA2YwggNiMIICSqADAgECAhB36Jox1p+m
 # oUV8lSg8nWQkMA0GCSqGSIb3DQEBCwUAMEkxHTAbBgNVBAMMFEtyenlzenRvZiBN
 # YWNraWV3aWN6MSgwJgYJKoZIhvcNAQkBFhlrYW1hY2szOC5iaXpuZXNAZ21haWwu
 # Y29tMB4XDTIxMDgwNzE5MTYxMVoXDTI5MTIzMTIyMDAwMFowSTEdMBsGA1UEAwwU
@@ -169,11 +169,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # YW1hY2szOC5iaXpuZXNAZ21haWwuY29tAhB36Jox1p+moUV8lSg8nWQkMA0GCWCG
 # SAFlAwQCAQUAoIGEMBgGCisGAQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcN
 # AQkDMQwGCisGAQQBgjcCAQQwHAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUw
-# LwYJKoZIhvcNAQkEMSIEIJq8QTfMx+sDE2S6feMSZnCIFmsJE1rSYkN+hLgp7mUF
-# MA0GCSqGSIb3DQEBAQUABIIBAIaJAAusUBzuVF/RbeBrldUH4Rpl4tLMDlaAdO4f
-# kobtDFfJDLYXgBr/Ihb8Olabx/DWck3etoFllyfF7qe7FLN7dDLLi425Ny84PIIM
-# XiiFjn+r5y3v2lcEtkHnszmGwSUUrDdxQh01guHuDj7hTy4Zk8JXdD9d67X700J0
-# 9tT8pvm4X3GGUE3s7Xi+QZndKrC1ooQh3IO9Kgy02iQHSv65j/fAg5q0/UO4jN8g
-# Gu5m3LjLnHE8E8OJzpMoyU+51jbVKZ6kAvwcIiKP2UDmozVMYpHdjGSWN1tqrp/N
-# EQvYiXrQ4CaKulXmNQZJcr8k6HDQUAPFSy0Kuf67zRWekO8=
+# LwYJKoZIhvcNAQkEMSIEIKjOlumv72SXo72Yfs3UGZRDSKlgMH0UbHf1aLxdviDb
+# MA0GCSqGSIb3DQEBAQUABIIBAAkW555bAVHTx6AeHrAXR++TluiYndVOmiM/2gMl
+# XEY8PYD9YaCeuf2MtHAn0sXDj5DbkaG28OsOoIZWD9kr3jr5sdKTnWLP2xS/SRNw
+# 9eMvCbxt2RypEDWz0WLYRAX30k6oi/ZHbh9N7T3Zu/nrMIVZnJLyJkKs0N9nvLUU
+# o6QACA7S1ACk/iIx/gH+ilRPTmkpM5FKd5A6UoFUe3ST2QZsr8jFoqh4cQqjMZPo
+# dp2wmZwZevuZoBsirL3p+zfFIRb1KM9qP6rvtC60xzrchQg70TRhRnq84RIPEEkf
+# bIczjfHJe4R1r3O41ulnzqGGUROBE9+bxemk0nTnAACjGdo=
 # SIG # End signature block
