@@ -59,38 +59,44 @@ Write-Host "Installing programs..." -ForegroundColor yellow
 choco feature enable -n allowGlobalConfirmation
 
 # Install Programs
-choco install firefox-dev --pre --limit-output
-choco install git.install --params "/NoShellIntegration /NoOpenSSH" --limit-output
-choco install gh --limit-output
-choco install python3 --limit-output
-choco install openjdk --limit-output
-choco install gpg4win --limit-output
-choco install winrar --limit-output
-choco install powershell-core --params '"/CleanUpPath"' --limit-output
-choco install nushell --limit-output
-choco install mpv.install --limit-output
-choco install yt-dlp --limit-output
-choco install ffmpeg --limit-output
-choco install neovim --limit-output
-choco install fzf --limit-output
-choco install bat --limit-output
-choco install delta --limit-output
-choco install ripgrep --limit-output
-choco install mingw --limit-output
-choco install llvm --limit-output
-choco install nircmd --limit-output
-choco install fastfetch --limit-output
+choco install firefox-dev --pre -r --pin
+choco install git.install --params "/NoShellIntegration /NoOpenSSH" -r
+choco install gh -r
+choco install python3 -r
+choco install openjdk -r
+choco install gpg4win -r
+choco install winrar -r
+choco install powershell-core --params '"/CleanUpPath"' -r
+choco install nushell -r
+choco install mpv.install -r
+choco install yt-dlp -r
+choco install ffmpeg -r
+choco install neovim -r
+choco install fzf -r
+choco install bat -r
+choco install delta -r
+choco install ripgrep -r
+choco install mingw -r
+choco install llvm -r
+choco install nircmd -r
+choco install fastfetch -r
 #Present by default on Windows 11
-#choco install microsoft-windows-terminal --limit-output
-choco install openssh --limit-output
-choco install discord.install --limit-output
-choco install steam-client --limit-output
-choco install epicgameslauncher --limit-output
-choco install powertoys --limit-output
-choco install procmon --limit-output
-choco install nerd-fonts-firacode --limit-output
-choco install croc --limit-output
-choco install oh-my-posh --limit-output
+#choco install microsoft-windows-terminal -r
+choco install openssh -r
+choco install discord.install -r
+choco install steam-client -r --pin
+choco install epicgameslauncher -r --pin
+choco install powertoys -r
+choco install nerd-fonts-firacode -r
+choco install croc -r
+choco install oh-my-posh -r
+$nvidiaGpu = Get-CimInstance Win32_VideoController | Where-Object { $_.Name -like "*NVIDIA*" }
+if ($nvidiaGpu) {
+  Write-Host "NVIDIA graphics card detected. Installing Nvidia App..." -ForegroundColor Blue
+  choco install nvidia-app -r --pin
+} else {
+  Write-Output "No NVIDIA graphics card found."
+}
 
 # Non-chocolatey programs
 
@@ -139,8 +145,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIGHwYJKoZIhvcNAQcCoIIGEDCCBgwCAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCDt6SW9oGcs1bG7
-# 2hsu0kfoVqad8DRNsxnvZyDVQvlSgKCCA2YwggNiMIICSqADAgECAhB36Jox1p+m
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCCscvXTKNd21AY6
+# a/dQHRRNQ6/hCK/mX9PPwlbGc9kZ26CCA2YwggNiMIICSqADAgECAhB36Jox1p+m
 # oUV8lSg8nWQkMA0GCSqGSIb3DQEBCwUAMEkxHTAbBgNVBAMMFEtyenlzenRvZiBN
 # YWNraWV3aWN6MSgwJgYJKoZIhvcNAQkBFhlrYW1hY2szOC5iaXpuZXNAZ21haWwu
 # Y29tMB4XDTIxMDgwNzE5MTYxMVoXDTI5MTIzMTIyMDAwMFowSTEdMBsGA1UEAwwU
@@ -163,11 +169,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # YW1hY2szOC5iaXpuZXNAZ21haWwuY29tAhB36Jox1p+moUV8lSg8nWQkMA0GCWCG
 # SAFlAwQCAQUAoIGEMBgGCisGAQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcN
 # AQkDMQwGCisGAQQBgjcCAQQwHAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUw
-# LwYJKoZIhvcNAQkEMSIEIAoTr35+gdie8BZYZQMm+5CjtJ1dPbcpbcKmlJyZN3ZI
-# MA0GCSqGSIb3DQEBAQUABIIBAEHyTASJWd6K+N0hY4/8FiXX8RShvR/LHWPCkSOb
-# 3e5Yg7hp7YwFFOW0dgI5lUlJmsicm+PAVn29BlXRNTLRgz4KIN/vf+XOGWQitlF8
-# lFStp/tRPODIfBAB27sVCk+c47vhAhV1dLCJmIG1QB613AaOzJp+gRuH4CBJ7kJX
-# d8jJDFkyeuQg2LnsU0u2pTjV7exHekFiNMljyChP5QGBnSo12yQnzPrrKhdGP7MB
-# hzkQxu52t5H5bNSVssyXa0FrRrPyn+dimlGkmjF7B4ZbQKZ91ule3SkmdpNEIQ22
-# CLyKLoRQEMjSlBJwNkIMZftpwovh0CYmZRFQ2HSnCBZ4n50=
+# LwYJKoZIhvcNAQkEMSIEIJq8QTfMx+sDE2S6feMSZnCIFmsJE1rSYkN+hLgp7mUF
+# MA0GCSqGSIb3DQEBAQUABIIBAIaJAAusUBzuVF/RbeBrldUH4Rpl4tLMDlaAdO4f
+# kobtDFfJDLYXgBr/Ihb8Olabx/DWck3etoFllyfF7qe7FLN7dDLLi425Ny84PIIM
+# XiiFjn+r5y3v2lcEtkHnszmGwSUUrDdxQh01guHuDj7hTy4Zk8JXdD9d67X700J0
+# 9tT8pvm4X3GGUE3s7Xi+QZndKrC1ooQh3IO9Kgy02iQHSv65j/fAg5q0/UO4jN8g
+# Gu5m3LjLnHE8E8OJzpMoyU+51jbVKZ6kAvwcIiKP2UDmozVMYpHdjGSWN1tqrp/N
+# EQvYiXrQ4CaKulXmNQZJcr8k6HDQUAPFSy0Kuf67zRWekO8=
 # SIG # End signature block

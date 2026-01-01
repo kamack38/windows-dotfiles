@@ -52,3 +52,4 @@ $env.config = {
 }
 
 fastfetch
+oh-my-posh init nu --config ~/.config/oh-my-posh/kamack.omp.json
