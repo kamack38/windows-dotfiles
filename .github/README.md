@@ -173,8 +173,8 @@ settings for GPU and general system performance
 
 `menu.lua` - [jonniek/mpv-menu](https://github.com/jonniek/mpv-menu)
 
-`mordenx.lua` -
-[cyl0/mpv-osc-morden-x](https://github.com/cyl0/mpv-osc-morden-x/pull/3)
+`mordenz.lua` -
+[Samillion/ModernZ](https://github.com/Samillion/ModernZ)
 
 `pause-indicator.lua` -
 [by torque](https://gist.github.com/torque/9dbc69543118347d2e5f43239a7e609a)
@@ -193,6 +193,9 @@ settings for GPU and general system performance
 
 `scroll-list.lua` -
 [CogentRedTester/mpv-scroll-list](https://github.com/CogentRedTester/mpv-scroll-list)
+
+`thumbfast.lua` -
+[po5/thumbfast](https://github.com/po5/thumbfast)
 
 `.config/themes/backgrounds/` -
 [HerrDierk/ArtworkLinux](https://github.com/HerrDierk/ArtworkLinux)
