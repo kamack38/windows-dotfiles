@@ -122,9 +122,9 @@ Invoke-WebRequest -Uri "https://anticheat-client.faceit-cdn.net/FACEITInstaller_
 Write-Host "Faceit Anit-Cheat Installer has been downloaded!" -ForegroundColor green
 
 # Install ff2mpv
-git clone https://github.com/woodruffw/ff2mpv/ $HOME\ff2mpv
-Set-Location $HOME\ff2mpv
-python .\check-config-win.py -i
+git clone https://github.com/woodruffw/ff2mpv/ "$HOME\ff2mpv"
+Set-Location "$HOME\ff2mpv"
+.\install.ps1 firefox
 
 # Restore settings files
 $DOTFILES = "$HOME\.dotfiles"
@@ -145,8 +145,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIGHwYJKoZIhvcNAQcCoIIGEDCCBgwCAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCDMJdoGtPs+LpYw
-# DXXNo5bTN1ZubjJSy0ZD/xTAi70576CCA2YwggNiMIICSqADAgECAhB36Jox1p+m
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCChcQDj1nGxBhRP
+# AzKgR4++8JRSQQ0yaOiw7kOPKV4DeaCCA2YwggNiMIICSqADAgECAhB36Jox1p+m
 # oUV8lSg8nWQkMA0GCSqGSIb3DQEBCwUAMEkxHTAbBgNVBAMMFEtyenlzenRvZiBN
 # YWNraWV3aWN6MSgwJgYJKoZIhvcNAQkBFhlrYW1hY2szOC5iaXpuZXNAZ21haWwu
 # Y29tMB4XDTIxMDgwNzE5MTYxMVoXDTI5MTIzMTIyMDAwMFowSTEdMBsGA1UEAwwU
@@ -169,11 +169,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # YW1hY2szOC5iaXpuZXNAZ21haWwuY29tAhB36Jox1p+moUV8lSg8nWQkMA0GCWCG
 # SAFlAwQCAQUAoIGEMBgGCisGAQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcN
 # AQkDMQwGCisGAQQBgjcCAQQwHAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUw
-# LwYJKoZIhvcNAQkEMSIEIKjOlumv72SXo72Yfs3UGZRDSKlgMH0UbHf1aLxdviDb
-# MA0GCSqGSIb3DQEBAQUABIIBAAkW555bAVHTx6AeHrAXR++TluiYndVOmiM/2gMl
-# XEY8PYD9YaCeuf2MtHAn0sXDj5DbkaG28OsOoIZWD9kr3jr5sdKTnWLP2xS/SRNw
-# 9eMvCbxt2RypEDWz0WLYRAX30k6oi/ZHbh9N7T3Zu/nrMIVZnJLyJkKs0N9nvLUU
-# o6QACA7S1ACk/iIx/gH+ilRPTmkpM5FKd5A6UoFUe3ST2QZsr8jFoqh4cQqjMZPo
-# dp2wmZwZevuZoBsirL3p+zfFIRb1KM9qP6rvtC60xzrchQg70TRhRnq84RIPEEkf
-# bIczjfHJe4R1r3O41ulnzqGGUROBE9+bxemk0nTnAACjGdo=
+# LwYJKoZIhvcNAQkEMSIEIAChyjecf3K6an6xGXXwafIniXwoMGNdNNxcq+FGcxzM
+# MA0GCSqGSIb3DQEBAQUABIIBABmIUjMI51efoTgiOS6LwPNY7CutCVkNhsBqpZbD
+# ZHCgub9QUp25opmwcHk/LdXcYzRg2OMQ3rvp74qvD0NB8uFrPZlVUg0pTjwRTi5i
+# TRIL3LLeuKkzjDOUzfeLZ+ew09QiPhQ1fFP9SLFyLr1B/a6gj/0dSebm5PGCiZhc
+# b4pti4xCee00PIG+H92LoMmrA1iIydBr1JjFFzmJ85S+s+A6KZRJMEapVDnRHWFo
+# joM0c1nhNR2UdMRgtrDCW7vSw439/Tl01xdqSzPkzh0VPLd3o2V8cB69FAnv8MrG
+# 9wb0FlJ38VrlzmlAy6gSHEAhmjKfQnvw7Ok/xI7/7744V5E=
 # SIG # End signature block
