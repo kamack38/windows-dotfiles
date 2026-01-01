@@ -52,6 +52,11 @@ return {
         "typst",
       },
 
+      indent = {
+        enable = true,
+        disable = { "html" },
+      },
+
       incremental_selection = {
         enable = true,
         keymaps = {
@@ -173,15 +178,17 @@ return {
     },
   },
 
-  -- Typst highlighting
+  -- Typst live preview
   {
-    "kaarmu/typst.vim",
-    ft = "typst",
-    config = function()
-      vim.g.typst_conceal_math = 1
-      vim.g.typst_conceal_emoji = 1
-      vim.g.typst_conceal = 1
-    end,
+    'chomosuke/typst-preview.nvim',
+    ft = 'typst',
+    version = '1.*',
+    opts = {
+      dependencies_bin = {
+        tinymist = "/usr/bin/tinymist",
+        websocat = "/usr/bin/websocat"
+      }
+    },
   },
 
   -- Template string converter
@@ -196,6 +203,14 @@ return {
     "folke/ts-comments.nvim",
     opts = {},
     event = "VeryLazy",
+  },
+
+  -- Typescript tools
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    ft = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
+    opts = {},
   },
 
   -- Markdown previewer
@@ -328,7 +343,7 @@ return {
         priority = 9,
       },
     },
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile", "BufWritePre" },
   },
 
   -- Remove the press enter prompt
@@ -436,23 +451,36 @@ return {
     "ibhagwan/fzf-lua",
     cmd = { "FzfLua" },
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-      keymap = {
-        builtin = {
-          ["<C-d>"] = "preview-page-down",
-          ["<C-u>"] = "preview-page-up",
+    config = function()
+      local actions = require("fzf-lua.actions")
+      require("fzf-lua").setup({
+        keymap = {
+          builtin = {
+            ["<C-d>"] = "preview-page-down",
+            ["<C-u>"] = "preview-page-up",
+          },
+          fzf = {
+            ["alt-;"] = "abort",
+          },
         },
-        fzf = {
-          ["alt-;"] = "abort",
+        hls = { cursorline = "IncSearch" },
+        defaults = {
+          hidden = false,
         },
-      },
-      hls = { cursorline = "IncSearch" },
-      fzf_colors = {
-        ["fg+"] = { "fg", { "VisualNOS" }, "bold", "underline" },
-        ["bg+"] = { "bg", { "VisualNonText" }, "bold", "underline" },
-        ["gutter"] = "-1",
-      },
-    },
+        actions = {
+          files = {
+            true,
+            ["ctrl-h"] = { actions.toggle_hidden },
+          },
+        },
+        fzf_colors = {
+          ["fg+"] = { "fg", { "VisualNOS" }, "bold", "underline" },
+          ["bg+"] = { "bg", { "VisualNonText" }, "bold", "underline" },
+          ["gutter"] = "-1",
+        },
+      }
+      )
+    end,
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -509,7 +537,7 @@ return {
   -- Organize your work with comments
   {
     "folke/todo-comments.nvim",
-    event = { "VeryLazy" },
+    event = { "BufReadPost" },
     dependencies = "nvim-lua/plenary.nvim",
     config = function()
       dofile(vim.g.base46_cache .. "todo")
@@ -524,6 +552,8 @@ return {
     cmd = { "RunCode", "RunFile", "RunProject" },
     opts = {
       filetype = {
+        c =
+        'cd "$dir" && mkdir -p "$dir/bin" && gcc "$dir/$fileName" -o "$dir/bin/$fileNameWithoutExt" -std=c11 -Wall -Wextra -fsanitize=address,undefined && "$dir/bin/$fileNameWithoutExt"',
         cpp = function()
           if vim.fn.has "win32" == 1 then
             return
@@ -540,12 +570,40 @@ return {
     },
   },
 
-  -- Set project root correctly
+  -- Debugger
+  { import = "configs.dap" },
+
+  -- Leetcode plugin
+  {
+    "kawre/leetcode.nvim",
+    cmd = "Leet",
+    dependencies = {
+      -- include a picker of your choice, see picker section for more details
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+    },
+    opts = {
+      picker = {
+        provider = "fzf-lua"
+      }
+    },
+  },
+
+  -- -- Set project root correctly
   {
     "DrKJeff16/project.nvim",
     lazy = false,
+    init = function()
+      vim.g.project_lsp_nowarn = 1
+    end,
     opts = {
+      fzf_lua = {
+        enabled = true,
+      },
+      detection_methods = { "lsp", "pattern" },
       patterns = {
+        "bin",
+        ">Documents",
         ">.config",
         ".git",
         ".github",
