@@ -97,6 +97,11 @@ if ($nvidiaGpu) {
 } else {
   Write-Output "No NVIDIA graphics card found."
 }
+$asusManufacturer = Get-CimInstance -ClassName Win32_ComputerSystem | Where-Object { $_.Manufacturer -like "*ASUS*" }
+if ($asusManufacturer) {
+  Write-Host "Asus Laptop detected. Installing G-Helper..." -ForegroundColor Blue
+  choco install g-helper -r
+}
 
 # Non-chocolatey programs
 
@@ -145,8 +150,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIGHwYJKoZIhvcNAQcCoIIGEDCCBgwCAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCChcQDj1nGxBhRP
-# AzKgR4++8JRSQQ0yaOiw7kOPKV4DeaCCA2YwggNiMIICSqADAgECAhB36Jox1p+m
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCBQ54IdMf2n0iPU
+# 0ffneqiH2sA4Cx8Nx1+h/9hzv2VndqCCA2YwggNiMIICSqADAgECAhB36Jox1p+m
 # oUV8lSg8nWQkMA0GCSqGSIb3DQEBCwUAMEkxHTAbBgNVBAMMFEtyenlzenRvZiBN
 # YWNraWV3aWN6MSgwJgYJKoZIhvcNAQkBFhlrYW1hY2szOC5iaXpuZXNAZ21haWwu
 # Y29tMB4XDTIxMDgwNzE5MTYxMVoXDTI5MTIzMTIyMDAwMFowSTEdMBsGA1UEAwwU
@@ -169,11 +174,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # YW1hY2szOC5iaXpuZXNAZ21haWwuY29tAhB36Jox1p+moUV8lSg8nWQkMA0GCWCG
 # SAFlAwQCAQUAoIGEMBgGCisGAQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcN
 # AQkDMQwGCisGAQQBgjcCAQQwHAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUw
-# LwYJKoZIhvcNAQkEMSIEIAChyjecf3K6an6xGXXwafIniXwoMGNdNNxcq+FGcxzM
-# MA0GCSqGSIb3DQEBAQUABIIBABmIUjMI51efoTgiOS6LwPNY7CutCVkNhsBqpZbD
-# ZHCgub9QUp25opmwcHk/LdXcYzRg2OMQ3rvp74qvD0NB8uFrPZlVUg0pTjwRTi5i
-# TRIL3LLeuKkzjDOUzfeLZ+ew09QiPhQ1fFP9SLFyLr1B/a6gj/0dSebm5PGCiZhc
-# b4pti4xCee00PIG+H92LoMmrA1iIydBr1JjFFzmJ85S+s+A6KZRJMEapVDnRHWFo
-# joM0c1nhNR2UdMRgtrDCW7vSw439/Tl01xdqSzPkzh0VPLd3o2V8cB69FAnv8MrG
-# 9wb0FlJ38VrlzmlAy6gSHEAhmjKfQnvw7Ok/xI7/7744V5E=
+# LwYJKoZIhvcNAQkEMSIEIIJ+2WUKkDBZU60IIL2+9NCu1QzbcgMe8ax8ehGNUp7b
+# MA0GCSqGSIb3DQEBAQUABIIBAJ04ju6dIH9609ZbbhEUi8sRBtcxXKC6F/aeCImQ
+# Jt6wgSkAO0DhLptCtlofyEYg3hSVNubMrBhx2J3L6snCZelYV/8OljTUta/D5BvF
+# tyc3Qzhh3siVTRibO/c8uXHetFEA1xD148lLThGS66hMM0Fh8uNplhQhs6HFWz0P
+# TfeTa6p9FFDg1+JMa7KSjA2Wr7qKfUdjPG2X5kGTKUsCRk73gNl/DHjieGTSQRax
+# Z15xYUqanHluhRJ96CSNQSM8nElnhsX8qHdb/NIcJn6KcKkeK1rhDtjcc1Z+PrgT
+# yFjUG/UQZmnQ4bZ7LUUmlCWQ0AnDpZmeyvayzRhuB3a+xmg=
 # SIG # End signature block
