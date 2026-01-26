@@ -96,7 +96,7 @@ return {
       },
     },
     dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
+      { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" },
     },
   },
 
@@ -113,6 +113,7 @@ return {
   { import = "nvchad.blink.lazyspec" },
   {
     "Saghen/blink.cmp",
+    version = "1.*",
     opts = {
       sources = {
         providers = {
