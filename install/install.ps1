@@ -90,6 +90,7 @@ choco install powertoys -r
 choco install nerd-fonts-firacode -r
 choco install croc -r
 choco install oh-my-posh -r
+choco install windhawk -r
 $nvidiaGpu = Get-CimInstance Win32_VideoController | Where-Object { $_.Name -like "*NVIDIA*" }
 if ($nvidiaGpu) {
   Write-Host "NVIDIA graphics card detected. Installing Nvidia App..." -ForegroundColor Blue
@@ -150,8 +151,8 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # SIG # Begin signature block
 # MIIGHwYJKoZIhvcNAQcCoIIGEDCCBgwCAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCBQ54IdMf2n0iPU
-# 0ffneqiH2sA4Cx8Nx1+h/9hzv2VndqCCA2YwggNiMIICSqADAgECAhB36Jox1p+m
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCAZAmpYrPMII6fX
+# 5/GMsmHLMmThh484zn4SVNo25wiSSaCCA2YwggNiMIICSqADAgECAhB36Jox1p+m
 # oUV8lSg8nWQkMA0GCSqGSIb3DQEBCwUAMEkxHTAbBgNVBAMMFEtyenlzenRvZiBN
 # YWNraWV3aWN6MSgwJgYJKoZIhvcNAQkBFhlrYW1hY2szOC5iaXpuZXNAZ21haWwu
 # Y29tMB4XDTIxMDgwNzE5MTYxMVoXDTI5MTIzMTIyMDAwMFowSTEdMBsGA1UEAwwU
@@ -174,11 +175,11 @@ Invoke-Expression ((new-object net.webclient).DownloadString('https://raw.github
 # YW1hY2szOC5iaXpuZXNAZ21haWwuY29tAhB36Jox1p+moUV8lSg8nWQkMA0GCWCG
 # SAFlAwQCAQUAoIGEMBgGCisGAQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcN
 # AQkDMQwGCisGAQQBgjcCAQQwHAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUw
-# LwYJKoZIhvcNAQkEMSIEIIJ+2WUKkDBZU60IIL2+9NCu1QzbcgMe8ax8ehGNUp7b
-# MA0GCSqGSIb3DQEBAQUABIIBAJ04ju6dIH9609ZbbhEUi8sRBtcxXKC6F/aeCImQ
-# Jt6wgSkAO0DhLptCtlofyEYg3hSVNubMrBhx2J3L6snCZelYV/8OljTUta/D5BvF
-# tyc3Qzhh3siVTRibO/c8uXHetFEA1xD148lLThGS66hMM0Fh8uNplhQhs6HFWz0P
-# TfeTa6p9FFDg1+JMa7KSjA2Wr7qKfUdjPG2X5kGTKUsCRk73gNl/DHjieGTSQRax
-# Z15xYUqanHluhRJ96CSNQSM8nElnhsX8qHdb/NIcJn6KcKkeK1rhDtjcc1Z+PrgT
-# yFjUG/UQZmnQ4bZ7LUUmlCWQ0AnDpZmeyvayzRhuB3a+xmg=
+# LwYJKoZIhvcNAQkEMSIEIP7oM000wXWkbcLgI4rMhXVlhaM6YQ9h447pXhqnJoS8
+# MA0GCSqGSIb3DQEBAQUABIIBAE8/EqSX6W76Yc6xfCPBY9iRU9FAcm6ePm53jrmD
+# Jr/1wKmokrQUtYhraoruS+PV5Q+rIwk7jZ62mM7tjs1fbyvsaw9em07JYMBEBJPZ
+# XOCgjea9zPLQbFCp4DjdvfbmpIYOCJ7QULsCiL68R42kAVTW+JC9qfPudI0FQqpQ
+# EiqmTv2DfeFzQmA3BTia/eVGbTS8c+De/PYYwoyuMlWMjqDyuRE7XMDUebDA8KAV
+# 7ya5uucvwyOUyfKVM17XNP/kFD/4eJFdM+/s8I37Zq5UbxolGOWZgPejcBP3m56W
+# oYhzlKGXKjcl4MtsaAhLdHXCqKaKZFhJ1L4staGvQ38v+nE=
 # SIG # End signature block
