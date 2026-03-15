@@ -111,6 +111,44 @@ map({ "o", "x" }, "ac", '<cmd>lua require("various-textobjs").subword("outer")<C
 map({ "o", "x" }, "ic", '<cmd>lua require("various-textobjs").subword("inner")<CR>')
 map("n", "gx", utils.open_next_link, { desc = "Open next available link" })
 
+-- TS Textobjects
+local ts_repeat_move = require "nvim-treesitter-textobjects.repeatable_move"
+local ts_move = require("nvim-treesitter-textobjects.move")
+local ts_keymaps = {
+  ["aa"] = "@parameter.outer",
+  ["ia"] = "@parameter.inner",
+  ["af"] = "@function.outer",
+  ["if"] = "@function.inner",
+  ["as"] = "@local.sope",
+}
+for mapping, query in pairs(ts_keymaps) do
+  map({ "x", "o" }, mapping, function()
+    require("nvim-treesitter-textobjects.select").select_textobject(query, "textobjects")
+  end, { desc = "Select " .. query })
+end
+map({ "n", "x", "o" }, "]m", function()
+  ts_move.goto_next_start("@function.outer", "textobjects")
+end)
+map({ "n", "x", "o" }, "]M", function()
+  ts_move.goto_next_end("@function.outer", "textobjects")
+end)
+map({ "n", "x", "o" }, "[m", function()
+  ts_move.goto_previous_start("@function.outer", "textobjects")
+end)
+map({ "n", "x", "o" }, "[M", function()
+  ts_move.goto_previous_end("@function.outer", "textobjects")
+end)
+
+-- Repeat movement with ; and ,
+map({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
+map({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)
+
+-- Make builtin f, F, t, T also repeatable with ; and ,
+map({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f_expr, { expr = true })
+map({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F_expr, { expr = true })
+map({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t_expr, { expr = true })
+map({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T_expr, { expr = true })
+
 -- Terminal
 map({ "n" }, "<leader>tt", ":terminal<CR>i")
 

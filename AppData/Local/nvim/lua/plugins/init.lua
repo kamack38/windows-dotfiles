@@ -46,6 +46,7 @@ return {
         "bash",
         "fish",
 
+        "sql",
         "lua",
         "vim",
         "markdown",
@@ -71,12 +72,6 @@ return {
         select = {
           enable = true,
           lookahead = true,
-          keymaps = {
-            ["aa"] = "@parameter.outer",
-            ["ia"] = "@parameter.inner",
-            ["af"] = "@function.outer",
-            ["if"] = "@function.inner",
-          },
           selection_modes = {
             ["@parameter.outer"] = "v", -- char wise
             ["@function.outer"] = "V",  -- line wise
@@ -551,25 +546,11 @@ return {
     "CRAG666/code_runner.nvim",
     dependencies = "nvim-lua/plenary.nvim",
     cmd = { "RunCode", "RunFile", "RunProject" },
-    opts = {
-      filetype = {
-        c =
-        'cd "$dir" && mkdir -p "$dir/bin" && gcc "$dir/$fileName" -o "$dir/bin/$fileNameWithoutExt" -std=c11 -Wall -Wextra -fsanitize=address,undefined && "$dir/bin/$fileNameWithoutExt"',
-        cpp = function()
-          if vim.fn.has "win32" == 1 then
-            return
-            'cd "$dir" && mkdir -p "$dir/bin" -Force > $null && g++ "$dir\\$fileName" -std=c++11 -o "$dir\\bin\\$fileNameWithoutExt.exe" && & "$dir\\bin\\$fileNameWithoutExt.exe"'
-          else
-            return
-            'cd "$dir" && mkdir -p "$dir/bin" && g++ "$dir/$fileName" -o "$dir/bin/$fileNameWithoutExt" -std=c++11 -fsanitize=address,undefined && "$dir/bin/$fileNameWithoutExt"'
-          end
-        end,
-        tex = 'mkdir -p "$dir/bin" && pdflatex -output-directory="$dir/bin" "$dir/$fileName"',
-        rust = 'cargo run "$dir/$fileName"',
-      },
-      startinsert = true,
-    },
+    opts = require("configs.code_runner"),
   },
+
+  -- REPL
+  { import = "configs.iron" },
 
   -- Debugger
   { import = "configs.dap" },
@@ -601,7 +582,10 @@ return {
       fzf_lua = {
         enabled = true,
       },
-      detection_methods = { "lsp", "pattern" },
+      lsp = {
+        enabled = true,
+        no_fallback = true,
+      },
       patterns = {
         "bin",
         ">Documents",
