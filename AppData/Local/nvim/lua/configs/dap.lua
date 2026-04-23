@@ -1,10 +1,11 @@
 return {
   {
     "mfussenegger/nvim-dap",
+    cmd = { "DapToggleBreakpoint" },
     keys = {
       { "<F8>",      "<cmd>DapContinue<cr>",         { desc = "Debug: Continue" },         mode = { "n", "t" } },
-      { "<F10>",     "<cmd>DapStepOver<cr>",         { desc = "Debug: Step Over" } },
-      { "<F11>",     "<cmd>DapStepInto<cr>",         { desc = "Debug: Step Into" } },
+      { "<F6>",      "<cmd>DapStepOver<cr>",         { desc = "Debug: Step Over" },        mode = { "n", "t" } },
+      { "<F5>",      "<cmd>DapStepInto<cr>",         { desc = "Debug: Step Into" },        mode = { "n", "t" } },
       { "<F12>",     "<cmd>DapStepOut<cr>",          { desc = "Debug: Step Out" } },
       { "<leader>b", "<cmd>DapToggleBreakpoint<cr>", { desc = "Debug: Toggle Breakpoint" } },
       { "<leader>B",
@@ -94,6 +95,31 @@ return {
         },
       }
 
+      dap.configurations.asm = {
+        {
+          name = "Compile & Launch file",
+          type = "codelldb",
+          request = "launch",
+          program = function()
+            local filepath = vim.api.nvim_buf_get_name(0)
+            local filedir = vim.fn.fnamemodify(filepath, ":p:h")
+            local filename = vim.fn.expand("%:t:r")
+            local bindir = filedir .. "/bin/debug"
+            local exepath = bindir .. "/" .. filename
+            local command = "cd '" ..
+                filedir ..
+                "' && mkdir -p '" ..
+                bindir .. "' && clang -g -no-pie -nostartfiles '" .. filepath .. "' -o '" .. exepath .. "'"
+            vim.fn.system(command)
+            return exepath
+          end,
+          cwd = "${workspaceFolder}",
+          externalTerminal = false,
+          stopOnEntry = true,
+          args = {},
+        },
+      }
+
       vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
       vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "", linehl = "", numhl = "" })
 
@@ -124,7 +150,46 @@ return {
       "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio"
     },
-    opts = {},
+    opts = {
+      layouts = {
+        {
+          elements = {
+            {
+              id = "scopes",
+              size = 0.40
+            },
+            {
+              id = "stacks",
+              size = 0.25
+            },
+            {
+              id = "watches",
+              size = 0.25
+            },
+            {
+              id = "breakpoints",
+              size = 0.10
+            }
+          },
+          position = "left",
+          size = 40
+        },
+        {
+          elements = {
+            {
+              id = "repl",
+              size = 0.5
+            },
+            {
+              id = "console",
+              size = 0.5
+            }
+          },
+          position = "bottom",
+          size = 15
+        }
+      }
+    },
   },
 
   {
